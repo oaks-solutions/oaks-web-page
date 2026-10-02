@@ -1,0 +1,13 @@
+# Supported by Netlify and Cloudflare Pages. Other hosts need equivalent rules.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/export-assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/_ds/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate

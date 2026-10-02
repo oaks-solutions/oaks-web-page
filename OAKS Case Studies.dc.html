@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/tokens/colors.css">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/tokens/typography.css">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/tokens/base.css">
+<link rel="stylesheet" href="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/styles.css">
+<script defer src="assets/vendor/react-18.3.1.min.js"></script>
+<script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
+<script defer src="media.js"></script>
+<script defer src="_ds/oaksteam-design-system-54b38e63-b4aa-4bec-9aa4-fbadcce35505/_ds_bundle.js"></script>
+<script defer src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <script src="forms.js"></script>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0795C9">
+    <link rel="preconnect" href="https://oaks-public.s3.ap-south-1.amazonaws.com" crossorigin="">
+  <link rel="preconnect" href="https://videos.pexels.com" crossorigin="">
+  <link rel="dns-prefetch" href="https://heysiya.tech">
+  
+
+
+
+
+
+
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f7f9fb;font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-600);text-decoration:none}
+a:hover{color:var(--blue-700);text-decoration:underline}
+*{box-sizing:border-box}
+img,video{max-width:100%}
+h1,h2,h3,p{overflow-wrap:break-word}
+</style>
+</helmet>
+
+<div style="font-family: var(--font-sans); color: var(--text-body); background: #fff; overflow-x: clip;">
+
+
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle);">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px); height: 72px; display: flex; align-items: center; gap: 28px;">
+    <a href="OAKS%20Home.dc.html" style="display: flex; align-items: center; flex-shrink: 0;"><img sc-camel-src="assets/optimized/assets_oaks-logo.webp" alt="OAKS Solutions" fetchpriority="high" style="height: 36px; width: auto; display: block;" decoding="async"></a>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display: flex; align-items: center; gap: 24px; flex: 1; justify-content: center;">
+        <sc-for list="{{ nav }}" as="l" hint-placeholder-count="7">
+          <a href="{{ l.href }}" style="font-size: 14px; font-weight: 700; color: var(--navy-600); white-space: nowrap;" style-hover="color: var(--blue-500); text-decoration: none;">{{ l.label }}</a>
+        </sc-for>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 18px; flex-shrink: 0;">
+        <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Button" size="sm" on-click="{{ goContact }}" hint-size="150px,36px">Start a project →</x-import>
+      </div>
+    </sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1;"></div>
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-default); background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer;">
+        <span style="width: 18px; height: 2px; background: var(--navy-600); border-radius: 2px;"></span>
+        <span style="width: 18px; height: 2px; background: var(--navy-600); border-radius: 2px;"></span>
+        <span style="width: 18px; height: 2px; background: var(--navy-600); border-radius: 2px;"></span>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="background: #fff; border-top: 1px solid var(--border-subtle); padding: 8px 20px 20px; display: flex; flex-direction: column;">
+      <sc-for list="{{ nav }}" as="l">
+        <a href="{{ l.href }}" onClick="{{ closeMenu }}" style="font-size: 17px; font-weight: 700; color: var(--navy-600); padding: 14px 0; border-bottom: 1px solid var(--slate-100);">{{ l.label }}</a>
+      </sc-for>
+      <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Button" full-width="{{ true }}" on-click="{{ goContact }}" hint-size="100%,44px">Start a project →</x-import>
+    </div>
+  </sc-if>
+</header>
+
+<section data-screen-label="00 Case studies banner" style="position: relative; overflow: hidden; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%); color: #fff; padding: clamp(56px,8vw,96px) 0 clamp(48px,6vw,72px);">
+  <div style="position: absolute; right: -180px; top: -220px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(41,169,221,0.3) 0%, rgba(41,169,221,0) 65%); pointer-events: none;"></div>
+  <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px); display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy-200);"><a href="OAKS%20Home.dc.html" style="color: var(--navy-200);" style-hover="color: #fff;">Home</a><span>/</span><span style="color: #fff;">Case studies</span></div>
+    <h1 style="margin: 0; max-width: 860px; font-size: clamp(34px,5vw,60px); font-weight: 900; line-height: 1.04; letter-spacing: -0.03em; color: #fff; text-wrap: balance;">Production AI in real operations.</h1>
+    <p style="margin: 0; max-width: 680px; font-size: clamp(16px,1.6vw,19px); line-height: 1.6; color: var(--navy-100); text-wrap: pretty;">The BGR Mining deployment in full, client work for YuppTV and Vidura, and the agentic workflows we can build next.</p>
+  </div>
+</section>
+
+<section id="enterprise" data-screen-label="03 Enterprise" style="scroll-margin-top: 72px; background: var(--slate-50); padding: clamp(80px,10vw,128px) 0;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end;">
+      <div style="flex: 1 1 440px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">03 / OUR SOLUTIONS · ENTERPRISE CASE STUDIES</div>
+        <h2 style="margin: 16px 0 0; font-size: clamp(34px,4.6vw,56px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.04; color: var(--navy-700); text-wrap: balance;">Production AI for complex operations.</h2>
+      </div>
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px;"><p style="margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty; max-width: 58ch;">Computer vision and document intelligence that read the records operations run on — trip cards, maintenance logs, handover notes — and show teams exactly where time is lost.</p><div style="display: flex; flex-wrap: wrap; gap: 10px 24px;"><sc-for list="{{ kp.ent }}" as="k" hint-placeholder-count="3"><div style="display: flex; align-items: center; gap: 10px;"><span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ k.i }}" size="{{ 18 }}" hint-size="18px,18px"></x-import></span><span style="font-size: 14px; font-weight: 700; line-height: 1.3; color: var(--navy-700);">{{ k.t }}</span></div></sc-for></div></div>
+    </div>
+    <article style="margin-top: 64px; border-radius: 32px; overflow: hidden; background: #fff; border: 1px solid var(--slate-200); box-shadow: var(--shadow-md);">
+      <div style="position: relative; min-height: clamp(440px,46vw,560px); background: #0F172A; color: #fff; display: flex; flex-direction: column; justify-content: flex-end;">
+        <video ref="{{ caseVid }}" playsInline="{{ true }}" loop="{{ true }}" preload="none" data-src="assets/video/mining-preview.mp4" sc-camel-poster="assets/video/mining-preview.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.1) 35%, rgba(15,23,42,0.92) 100%);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0) 65%);"></div>
+        <div style="position: absolute; top: clamp(20px,3vw,36px); left: clamp(24px,4vw,56px); right: clamp(24px,4vw,56px); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;">
+          <span style="color: #fff;">CASE STUDY · ENTERPRISE</span>
+          <span style="color: var(--navy-100);">KERANDARI, JHARKHAND · 200 VEHICLES</span>
+        </div>
+        <div style="position: relative; padding: clamp(24px,4vw,56px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 56px;">
+          <div style="flex: 1 1 460px; max-width: 640px; display: flex; flex-direction: column; gap: 16px;">
+            <img loading="lazy" decoding="async" sc-camel-src="export-assets/assets_logos_bgr-white.webp" alt="BGR Mining &amp; Infra Limited" style="height: clamp(40px,4vw,52px); width: auto; display: block; align-self: flex-start; margin-bottom: 4px;">
+            <h3 style="margin: 0; font-size: clamp(30px,4vw,52px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.04; color: #fff; text-wrap: balance;">Trip Card Intelligence for a 200-vehicle coal mine.</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--navy-100); text-wrap: pretty;">A mine does not need another dashboard. It needs to know which vehicle lost time, where the delay began, and what the next shift should do differently.</p>
+          </div>
+          <div style="flex: 0 1 420px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px;">
+            <sc-for list="{{ bgrStats }}" as="s">
+              <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px; display: flex; flex-direction: column; gap: 6px;">
+                <div style="font-size: clamp(28px,3vw,40px); font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: #fff;">{{ s.v }}</div>
+                <div style="font-size: 13px; line-height: 1.4; color: var(--navy-100);">{{ s.l }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="padding: clamp(28px,4vw,56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px 64px; border-bottom: 1px solid var(--slate-200);">
+        <div style="display: flex; flex-direction: column; gap: 10px;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">THE PROBLEM</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;"><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--coral-100); color: var(--coral-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="alert" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">Handwritten trip cards, maintenance logs and shift records pile up after every shift</span></li><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--coral-100); color: var(--coral-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="alert" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">The same vehicle is logged under a different ID in each record</span></li><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--coral-100); color: var(--coral-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="alert" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">Teams spend hours reconstructing events instead of improving the operation</span></li></ul></div>
+        <div style="display: flex; flex-direction: column; gap: 10px;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-600);">WHAT WE BUILT</span><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;"><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">Trip records extracted from handwritten cards</span></li><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">Vehicle IDs reconciled into one history per vehicle</span></li><li style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.55; color: var(--navy-700);"><span style="flex-shrink: 0; width: 24px; height: 24px; margin-top: 1px; border-radius: 999px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import></span><span style="text-wrap: pretty;">Maintenance and shift data linked, with utilisation shown and the original record one click away</span></li></ul></div>
+      </div>
+      <div style="padding: clamp(28px,4vw,56px); background: var(--slate-50);">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-600);">HOW IT WORKS ON SITE</span>
+            <span style="font-size: clamp(22px,2.4vw,30px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; color: var(--navy-700);">From a handwritten trip card to the next shift’s decision.</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button onClick="{{ bgrPrev }}" aria-label="Previous step" style="all: unset; cursor: pointer; width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--slate-300); display: flex; align-items: center; justify-content: center; color: var(--navy-700); font-size: 17px; font-weight: 900;" style-hover="background: #fff;">←</button>
+            <button onClick="{{ bgrNext }}" aria-label="Next step" style="all: unset; cursor: pointer; width: 44px; height: 44px; border-radius: 999px; background: var(--navy-700); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 17px; font-weight: 900;" style-hover="background: var(--navy-800);">→</button>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 32px 40px; align-items: center;">
+          <div style="flex: 1.5 1 520px; min-width: 0; position: relative; aspect-ratio: 1774 / 887;">
+            <img loading="lazy" decoding="async" sc-camel-src="assets/optimized/export-assets_assets_kerandari-iso.webp" alt="Illustrative isometric view of the Kerandari mine: open pit with excavator and haul trucks, haul road, workshop, fuel tanks and coal handling plant" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block;">
+            <sc-for list="{{ bgrFlow }}" as="p" hint-placeholder-count="4">
+              <button onClick="{{ p.pick }}" aria-label="{{ p.t }}" style="all: unset; cursor: pointer; position: absolute; left: {{ p.x }}; top: {{ p.y }}; transform: translate(-50%,-100%); display: flex; flex-direction: column; align-items: center;">
+                <span style="display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: {{ p.bg }}; color: {{ p.fg }}; box-shadow: 0 8px 20px rgba(40,60,83,0.28); white-space: nowrap; transition: background 300ms, color 300ms;">
+                  <span style="width: 24px; height: 24px; border-radius: 999px; background: {{ p.nb }}; color: {{ p.nf }}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900;">{{ p.n }}</span>
+                  <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em;">{{ p.place }}</span>
+                </span>
+                <span style="width: 2px; height: 22px; background: {{ p.stem }};"></span>
+                <span style="width: 10px; height: 10px; border-radius: 999px; background: {{ p.stem }}; border: 2px solid #fff; box-shadow: 0 0 0 6px {{ p.halo }}; transition: box-shadow 400ms;"></span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="flex: 1 1 340px; min-width: 0; background: #fff; border: 1px solid var(--border-subtle); border-radius: 20px; box-shadow: var(--shadow-sm); padding: clamp(20px,3vw,28px); display: flex; flex-direction: column; gap: 20px; min-height: 480px; box-sizing: border-box;">
+            <div style="display: flex; flex-direction: column; gap: 8px; min-height: 132px; flex-shrink: 0;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-600);">STEP {{ bgrCur.n }} · {{ bgrCur.place }}</span>
+              <span style="font-size: 22px; font-weight: 900; letter-spacing: -0.01em; line-height: 1.2; color: var(--navy-700);">{{ bgrCur.t }}</span>
+              <span style="font-size: 15px; line-height: 1.55; color: var(--slate-600); text-wrap: pretty;">{{ bgrCur.d }}</span>
+            </div>
+            <div style="border-top: 1px solid var(--slate-200); padding-top: 20px; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center;">
+              <sc-if value="{{ bgrS1 }}" hint-placeholder-val="{{ true }}">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
+                  <div style="flex: 1 1 130px; background: #fbf7ee; border: 1px solid #eadfc8; border-radius: 6px; padding: 14px; transform: rotate(-2deg); box-shadow: 0 4px 10px rgba(40,60,83,0.12); display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-style: italic; color: #5b4a2e;">
+                    <span style="font-size: 10px; font-style: normal; font-weight: 700; letter-spacing: 0.12em; color: #9a8660;">TRIP CARD</span>
+                    <span style="border-bottom: 1px dashed #d9ccb0; padding-bottom: 4px;">Veh. HT 7</span>
+                    <span style="border-bottom: 1px dashed #d9ccb0; padding-bottom: 4px;">Load 4 — 6.42</span>
+                    <span>Pit B → CHP</span>
+                  </div>
+                  <span style="font-size: 20px; font-weight: 900; color: var(--blue-500);">→</span>
+                  <div style="flex: 1.3 1 160px; display: flex; flex-direction: column; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; font-size: 13px;">
+                    <div style="display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid var(--slate-100);"><span style="color: var(--slate-500);">Vehicle</span><span style="font-weight: 700; color: var(--navy-700);">HT-07</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid var(--slate-100);"><span style="color: var(--slate-500);">Trip</span><span style="font-weight: 700; color: var(--navy-700);">4</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid var(--slate-100);"><span style="color: var(--slate-500);">Out</span><span style="font-weight: 700; color: var(--navy-700);">06:42</span></div>
+                    <div style="display: flex; justify-content: space-between; padding: 8px 12px; background: var(--blue-50);"><span style="color: var(--slate-500);">Source</span><span style="font-weight: 700; color: var(--blue-600);">Original card ↗</span></div>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ bgrS2 }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <span style="padding: 6px 12px; border-radius: 999px; border: 1px dashed var(--slate-300); font-size: 13px; font-weight: 700; color: var(--slate-600);">HT 7 · trip card</span>
+                    <span style="padding: 6px 12px; border-radius: 999px; border: 1px dashed var(--slate-300); font-size: 13px; font-weight: 700; color: var(--slate-600);">Haul-07 · workshop</span>
+                    <span style="padding: 6px 12px; border-radius: 999px; border: 1px dashed var(--slate-300); font-size: 13px; font-weight: 700; color: var(--slate-600);">T-007 · fuel log</span>
+                  </div>
+                  <div style="width: 28px; align-self: stretch; margin: 16px 0; border: 2px solid var(--blue-300); border-left: none; border-radius: 0 14px 14px 0;"></div>
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border-radius: 14px; background: var(--navy-700); color: #fff;">
+                    <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-200);">ONE VEHICLE</span>
+                    <span style="font-size: 20px; font-weight: 900;">HT-07</span>
+                    <span style="font-size: 12px; color: var(--navy-100);">3 records linked</span>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ bgrS3 }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column;">
+                  <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500); margin-bottom: 12px;">HT-07 · ONE SHIFT</span>
+                  <sc-for list="{{ bgrTimeline }}" as="e" hint-placeholder-count="4">
+                    <div style="display: grid; grid-template-columns: 48px 14px minmax(0,1fr); gap: 12px; align-items: start;">
+                      <span style="font-size: 13px; font-weight: 700; color: var(--navy-700); font-variant-numeric: tabular-nums; padding-top: 1px;">{{ e.t }}</span>
+                      <span style="display: flex; flex-direction: column; align-items: center; align-self: stretch;"><span style="width: 12px; height: 12px; border-radius: 999px; background: {{ e.c }}; margin-top: 3px; flex-shrink: 0;"></span><span style="flex: 1; width: 2px; background: var(--slate-200); min-height: 20px;"></span></span>
+                      <span style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px;"><span style="font-size: 14px; font-weight: 700; color: var(--navy-700);">{{ e.what }}</span><span style="font-size: 12px; color: var(--slate-500);">{{ e.src }}</span></span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ bgrS4 }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">UTILISATION BY SHIFT</span><span style="display: flex; gap: 12px; font-size: 12px; color: var(--slate-600);"><span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--blue-500);"></span>Working</span><span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--amber-400);"></span>Idle</span></span></div>
+                  <sc-for list="{{ bgrShifts }}" as="b" hint-placeholder-count="3">
+                    <div style="display: grid; grid-template-columns: 60px minmax(0,1fr); gap: 12px; align-items: center;">
+                      <span style="font-size: 13px; font-weight: 700; color: var(--navy-700);">{{ b.k }}</span>
+                      <span style="display: flex; height: 14px; border-radius: 4px; overflow: hidden; background: var(--slate-100);"><span style="width: {{ b.w }}; background: var(--blue-500); transition: width 700ms cubic-bezier(0.2,0.8,0.2,1);"></span><span style="width: {{ b.i }}; background: var(--amber-400); transition: width 700ms cubic-bezier(0.2,0.8,0.2,1);"></span></span>
+                    </div>
+                  </sc-for>
+                  <span style="font-size: 13px; line-height: 1.5; color: var(--slate-600);">Each idle block opens the trip card, log or handover note behind it.</span>
+                </div>
+              </sc-if>
+            </div>
+            <span style="font-size: 11px; color: var(--slate-400);">Illustrative records, not client data.</span>
+          </div>
+        </div>
+        <div style="margin-top: 32px; display: grid; grid-template-columns: {{ flowCols }}; gap: 0 28px;">
+          <sc-for list="{{ bgrFlow }}" as="p" hint-placeholder-count="4">
+            <button onClick="{{ p.pick }}" style="all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 16px 0 8px; border-top: 2px solid {{ p.line }}; transition: border-color 300ms;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: {{ p.kc }};">{{ p.n }}</span>
+              <span style="font-size: 15px; font-weight: 900; line-height: 1.3; color: {{ p.tc }}; transition: color 300ms;">{{ p.t }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <p style="margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: var(--slate-500);">Measured April–August 2026 against a January–March 2026 baseline, 200 vehicles. Figures confirmed in writing by BGR Mining &amp; Infra.</p>
+      </div>
+    </article>
+    <div style="margin-top: 72px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px;">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--slate-500);">MORE CLIENT WORK</span>
+      <span style="font-size: 13px; color: var(--slate-500);">Select a client</span>
+    </div>
+    <div style="margin-top: 14px; display: grid; grid-template-columns: {{ csTabCols }}; gap: 10px;">
+      <sc-for list="{{ caseTabs }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.pick }}" style="font-family: inherit; cursor: pointer; position: relative; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; text-align: left; background: #fff; border: 1.5px solid {{ t.bd }}; box-shadow: {{ t.sh }}; transition: border-color 200ms, box-shadow 200ms; overflow: hidden;" style-hover="border-color: var(--blue-300);">
+          <span style="width: 64px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;"><img loading="lazy" decoding="async" sc-camel-src="{{ t.logo }}" alt="" style="max-width: 64px; max-height: 40px; width: auto; height: auto; object-fit: contain; display: block;"></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0;"><span style="font-size: 15px; font-weight: 900; color: var(--navy-700);">{{ t.label }}</span><span style="font-size: 12px; color: var(--slate-500);">{{ t.sub }}</span></span>
+          <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: {{ t.bar }};"></span>
+        </button>
+      </sc-for>
+    </div>
+    <article style="margin-top: 16px; border-radius: 24px; overflow: hidden; background: #fff; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-md);">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 24px clamp(20px,3vw,36px); border-bottom: 1px solid var(--slate-200);">
+        <span style="height: 64px; min-width: 96px; padding: 0 16px; border-radius: 14px; background: var(--slate-50); border: 1px solid var(--slate-200); display: flex; align-items: center; justify-content: center;"><img loading="lazy" decoding="async" sc-camel-src="{{ cz.logo }}" alt="{{ cz.client }}" style="max-height: {{ cz.lh }}; max-width: 150px; width: auto; height: auto; object-fit: contain; display: block;"></span>
+        <span style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-600);">{{ cz.n }}</span>
+          <h3 style="margin: 0; font-size: clamp(22px,2.4vw,28px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--navy-700); text-wrap: balance;">{{ cz.title }}</h3>
+        </span>
+      </div>
+      <div style="display: grid; grid-template-columns: {{ csCols }};">
+        <div style="padding: clamp(24px,3vw,36px); display: flex; flex-direction: column; gap: 22px; min-width: 0;">
+          <div style="display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px;">
+            <span style="width: 40px; height: 40px; border-radius: 12px; background: var(--coral-100); color: var(--coral-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="alert" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>
+            <span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--slate-500);">THE BRIEF</span><span style="font-size: 18px; font-weight: 700; line-height: 1.5; color: var(--navy-700); text-wrap: pretty;">{{ cz.ctx }}</span></span>
+          </div>
+          <div style="display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 14px;">
+            <span style="width: 40px; height: 40px; border-radius: 12px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="sparkles" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>
+            <span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--slate-500);">WHAT WE DID</span><ul style="margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;"><sc-for list="{{ cz.pts }}" as="x" hint-placeholder-count="3"><li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.55; color: var(--slate-600);"><span style="flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; border-radius: 999px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="check" size="{{ 12 }}" hint-size="12px,12px"></x-import></span><span style="text-wrap: pretty;">{{ x }}</span></li></sc-for></ul></span>
+          </div>
+        </div>
+        <div ref="{{ csRef }}" style="background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%); color: #fff; padding: clamp(24px,3vw,36px); display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200); margin-bottom: 8px;">OUTCOMES</span>
+          <sc-for list="{{ cz.stats }}" as="s">
+            <div style="padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-direction: column; gap: 4px;">
+              <span style="font-size: clamp(34px,3.6vw,44px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: #fff; font-variant-numeric: tabular-nums;">{{ s.cur }}</span>
+              <span style="font-size: 14px; line-height: 1.4; color: var(--navy-100);">{{ s.l }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ cz.note }}"><span style="margin-top: auto; padding-top: 12px; font-size: 12px; color: var(--navy-200);">{{ cz.note }}</span></sc-if>
+        </div>
+      </div>
+    </article>
+    <div style="margin-top: 88px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 32px;">
+        <span style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-600);">REFERENCE DESIGNS · AGENTIC WORKFLOWS</span><h3 style="margin: 0; font-size: clamp(26px,2.8vw,34px); font-weight: 900; color: var(--navy-700); letter-spacing: -0.02em;">What we can build next</h3><span style="font-size: 14px; color: var(--slate-600);">Agentic workflow designs, ready to prototype on your data in two weeks. Not yet client deployments.</span></span>
+        <div style="display: flex; gap: 6px; padding: 4px; border-radius: 999px; background: var(--slate-100);">
+          <sc-for list="{{ rfTabs }}" as="t" hint-placeholder-count="2">
+            <button onClick="{{ t.pick }}" style="font-family: inherit; cursor: pointer; height: 40px; padding: 0 18px; border-radius: 999px; border: none; font-size: 14px; font-weight: 700; background: {{ t.bg }}; color: {{ t.fg }}; box-shadow: {{ t.sh }}; transition: background 200ms;">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="margin-top: 20px; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at 15% 0%, #16365a 0%, #0b1627 60%); color: #fff; box-shadow: 0 30px 60px rgba(15,23,42,0.22);">
+  <div style="padding: clamp(24px,3.4vw,40px) clamp(20px,3.4vw,40px) 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px;">
+    <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px; min-width: 0;"><span style="font-size: clamp(22px,2.4vw,30px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; color: #fff;">{{ rf.title }}</span><span style="font-size: 15px; line-height: 1.6; color: var(--navy-100); max-width: 64ch; text-wrap: pretty;">{{ rf.lead }}</span></div>
+    <div style="flex: 0 1 auto; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--navy-200);">WHAT WE MEASURE</span><div style="display: flex; flex-wrap: wrap; gap: 6px;"><sc-for list="{{ rf.kpis }}" as="k" hint-placeholder-count="3"><span style="padding: 6px 12px; border-radius: 999px; background: rgba(141,212,240,0.1); border: 1px solid rgba(141,212,240,0.3); font-size: 12px; font-weight: 700; color: #cfeefb;">{{ k }}</span></sc-for></div></div>
+  </div>
+  <div style="padding: clamp(24px,3vw,36px) clamp(20px,3.4vw,40px); display: grid; grid-template-columns: {{ fdCols }}; align-items: stretch;">
+    <div style="min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+      <span style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8dd4f0;">01 · IN THE FIELD</span></span>
+      <sc-for list="{{ fdSites }}" as="x" hint-placeholder-count="4"><div style="position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: {{ x.bg }}; border: 1px solid {{ x.bd }}; box-shadow: {{ x.glow }}; transition: all 400ms;"><span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: {{ x.ibg }}; color: {{ x.ic }}; display: flex; align-items: center; justify-content: center; transition: all 400ms;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ x.icon }}" size="{{ 18 }}" hint-size="18px,18px"></x-import></span><span style="display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1;"><span style="font-size: 14px; font-weight: 900; color: #fff;">{{ x.name }}</span><span style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: {{ x.rc }}; transition: color 400ms;">{{ x.rec }}</span></span><sc-if value="{{ x.flag }}"><span style="flex-shrink: 0; font-size: 10px; font-weight: 900; letter-spacing: 0.06em; padding: 4px 8px; border-radius: 999px; background: {{ x.fbg }}; color: {{ x.ffg }}; white-space: nowrap;">{{ x.flag }}</span></sc-if></div></sc-for>
+    </div>
+    <sc-for list="{{ fdC1 }}" as="C"><div style="display: flex; align-items: center; justify-content: center; padding: {{ fdConnPad }};"><span style="position: relative; display: block; width: {{ fdConnW }}; height: {{ fdConnH }}; border-radius: 2px; background: rgba(255,255,255,0.12); overflow: hidden;"><span style="position: absolute; left: 0; top: 0; width: {{ C.w }}; height: {{ C.h }}; background: {{ C.c }}; transition: width 700ms cubic-bezier(0.2,0.8,0.2,1), height 700ms cubic-bezier(0.2,0.8,0.2,1);"></span></span></div></sc-for>
+    <div style="min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+      <span style="display: flex; align-items: center; gap: 8px; color: #8dd4f0;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="sparkles" size="{{ 14 }}" hint-size="14px,14px"></x-import><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8dd4f0;">02 · OAKS AGENT</span></span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 20px; background: rgba(7,149,201,0.08); border: 1px solid rgba(141,212,240,0.25);">
+        <sc-for list="{{ fdAgents }}" as="a" hint-placeholder-count="3"><div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 14px; background: {{ a.bg }}; border: 1px solid {{ a.bd }}; transition: all 400ms;"><span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 999px; background: {{ a.nbg }}; color: {{ a.nfg }}; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; transition: all 400ms;">{{ a.n }}</span><span style="display: flex; flex-direction: column; gap: 2px; min-width: 0;"><span style="font-size: 10px; font-weight: 900; letter-spacing: 0.12em; color: {{ a.kc }};">{{ a.k }}</span><span style="font-size: 14px; font-weight: 700; color: #fff;">{{ a.t }}</span><span style="font-size: 12px; line-height: 1.45; color: var(--navy-100);">{{ a.d }}</span></span></div></sc-for>
+        <div style="margin-top: auto; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,0.3); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; min-width: 0;"><span style="width: 7px; height: 7px; flex-shrink: 0; border-radius: 999px; background: {{ agDot }};"></span><span style="flex-shrink: 0; color: {{ fdLive.c }};">{{ fdLive.tag }}</span><span style="color: #e2e8f0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ fdLive.t }}</span></div>
+      </div>
+    </div>
+    <sc-for list="{{ fdC2 }}" as="C"><div style="display: flex; align-items: center; justify-content: center; padding: {{ fdConnPad }};"><span style="position: relative; display: block; width: {{ fdConnW }}; height: {{ fdConnH }}; border-radius: 2px; background: rgba(255,255,255,0.12); overflow: hidden;"><span style="position: absolute; left: 0; top: 0; width: {{ C.w }}; height: {{ C.h }}; background: {{ C.c }}; transition: width 700ms cubic-bezier(0.2,0.8,0.2,1), height 700ms cubic-bezier(0.2,0.8,0.2,1);"></span></span></div></sc-for>
+    <div style="min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8dd4f0;">03 · DECISION</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: 20px; background: {{ fdHum.bg }}; border: 1.5px solid {{ fdHum.bd }}; transition: all 400ms;"><span style="width: 40px; height: 40px; border-radius: 999px; background: {{ fdHum.ibg }}; color: {{ fdHum.ic }}; display: flex; align-items: center; justify-content: center; transition: all 400ms;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="user" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 10px; font-weight: 900; letter-spacing: 0.12em; color: var(--amber-100);">HUMAN CHECKPOINT</span><span style="font-size: 15px; font-weight: 700; line-height: 1.4; color: #fff;">{{ fdHum.t }}</span></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: 20px; background: {{ fdOut.bg }}; border: 1.5px solid {{ fdOut.bd }}; transition: all 400ms;"><span style="width: 40px; height: 40px; border-radius: 999px; background: {{ fdOut.ibg }}; color: {{ fdOut.ic }}; display: flex; align-items: center; justify-content: center; transition: all 400ms;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="checkCircle" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 10px; font-weight: 900; letter-spacing: 0.12em; color: var(--teal-100);">OUTCOME</span><span style="font-size: 15px; font-weight: 700; line-height: 1.4; color: #fff;">{{ fdOut.t }}</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 16px clamp(20px,3.4vw,40px); border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px;">
+    <span style="display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; min-width: 0;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--navy-200);">EVIDENCE</span><span style="font-size: 13px; line-height: 1.5; color: var(--navy-100);">{{ rf.ev }}</span></span>
+    <button onClick="{{ agReplay }}" style="all: unset; cursor: pointer; font-size: 13px; font-weight: 700; color: var(--blue-200);" style-hover="color: #fff;">↻ Replay</button>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-screen-label="12 Contact" style="scroll-margin-top: 72px; background: var(--navy-900); color: #fff; padding: clamp(80px,10vw,128px) 0 clamp(64px,8vw,96px); position: relative; overflow: hidden;">
+  <div style="position: absolute; right: -200px; top: -260px; width: 720px; height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(7,149,201,0.28) 0%, rgba(7,149,201,0) 65%); pointer-events: none;"></div>
+  <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
+    <h2 style="margin: 16px 0 0; font-size: clamp(34px,4.6vw,56px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.04; color: #fff; text-wrap: balance; margin: 0; max-width: 20ch;">Tell us the problem. We’ll show you a working prototype in two weeks.</h2>
+    <div style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 48px 64px;">
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <h3 style="margin: 0; font-size: 24px; font-weight: 900; color: #fff;">For Government &amp; Education</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-200);">TELL US</span><ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;"><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">1</span>The programme and its goals</li><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">2</span>The outcomes you are accountable for</li><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">3</span>The data you already collect</li></ol><p style="margin: 4px 0 0; font-size: 15px; line-height: 1.6; color: var(--navy-100);">We will propose a two-week pilot in a group of schools or a single district.</p></div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 8px;">
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Button" on-click="{{ openGov }}" hint-size="260px,44px">Request a programme briefing →</x-import>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <h3 style="margin: 0; font-size: 24px; font-weight: 900; color: #fff;">For Enterprise Operations</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-200);">TELL US</span><ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;"><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">1</span>What slows the operation down</li><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">2</span>Which decisions need to improve</li><li style="display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.45; color: #fff;"><span style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 999px; border: 1px solid rgba(141,212,240,0.5); color: #8dd4f0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900;">3</span>The records you already keep</li></ol><p style="margin: 4px 0 0; font-size: 15px; line-height: 1.6; color: var(--navy-100);">We will scope a two-week prototype on your own data.</p></div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 8px;">
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Button" on-click="{{ openEnt }}" hint-size="220px,44px">Talk to an architect →</x-import>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 13 FOOTER -->
+
+<footer data-screen-label="13 Footer" style="background: #0a1424; color: var(--navy-200); padding: 56px 0 28px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
+    <div style="display: grid; grid-template-columns: {{ footCols }}; gap: 40px 48px;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <img loading="lazy" decoding="async" sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" style="height: 40px; width: auto; align-self: flex-start;">
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--navy-100); max-width: 34ch;">Advanced, scalable AI systems for government, education and industry — from first prototype to production.</p>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span style="font-size: 14px; font-weight: 900; color: #fff;">OAKS Solutions Pvt Ltd</span>
+          <span style="font-size: 13px; line-height: 1.5;">Formerly OVI Learning Pvt Ltd · Founded 2017</span>
+          <span style="font-size: 13px; line-height: 1.5;">Sister company: Sunitha Infovision Ltd</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">EXPLORE</span>
+        <sc-for list="{{ footNavA }}" as="l"><a href="{{ l.href }}" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">{{ l.label }}</a></sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">COMPANY</span>
+        <sc-for list="{{ footNavB }}" as="l"><a href="{{ l.href }}" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">{{ l.label }}</a></sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">CONTACT</span>
+        <span style="font-size: 14px; line-height: 1.6;">F2, Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, Telangana</span>
+        <a href="mailto:info@oaks.guru" style="font-size: 15px; font-weight: 700; color: #fff;" style-hover="color: var(--blue-200);">info@oaks.guru</a>
+        <a href="tel:+917207633633" style="font-size: 15px; font-weight: 700; color: #fff;" style-hover="color: var(--blue-200);">+91 72076 33633</a>
+      </div>
+    </div>
+    <div style="margin-top: 40px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 12px; color: var(--navy-200);">
+      <span><strong style="color: var(--navy-100);">GeM</strong> ZX7T250013803032</span>
+      <span><strong style="color: var(--navy-100);">DPIIT</strong> DIPP222769</span>
+      <span><strong style="color: var(--navy-100);">CIN</strong> U85499TS2025PTC199477</span>
+      <span><strong style="color: var(--navy-100);">ISO</strong> 9001:2015 · 27001:2022</span>
+    </div>
+    <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners. All logos and emblems are used with the written permission of each organisation.</p>
+    <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;">
+      <span>© 2026 OAKS Solutions Pvt Ltd · Hyderabad, India</span>
+      <div style="display: flex; gap: 20px;"><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids' privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+
+<sc-if value="{{ clip }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeClip }}" style="position: fixed; inset: 0; z-index: 120; background: rgba(15,23,42,0.82); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 24px;">
+    <div onClick="{{ stop }}" style="position: relative; max-width: min(92vw, 820px); max-height: 90vh; display: flex; flex-direction: column; gap: 14px;">
+      <img loading="lazy" decoding="async" sc-camel-src="{{ clip.img }}" alt="{{ clip.outlet }} clipping" style="max-width: 100%; max-height: calc(90vh - 90px); object-fit: contain; border-radius: 8px; background: #fff; display: block; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; color: #fff;">
+        <span style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 16px; font-weight: 900;">{{ clip.what }}</span><span style="font-size: 13px; color: var(--navy-200);">{{ clip.outlet }} · {{ clip.date }}</span></span>
+        <button onClick="{{ closeClip }}" style="all: unset; cursor: pointer; width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;">✕</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<!-- CREDENTIAL MODAL -->
+<sc-if value="{{ cred }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeCred }}" style="position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.6); display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div onClick="{{ stop }}" style="background: #fff; border-radius: 20px; max-width: 560px; width: 100%; padding: 32px; box-shadow: var(--shadow-xl); display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 26px; font-weight: 900; color: var(--navy-700);">{{ cred.name }}</span>
+        <button onClick="{{ closeCred }}" aria-label="Close" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-default); background: #fff; cursor: pointer; font-size: 18px; color: var(--navy-600);">×</button>
+      </div>
+      <sc-for list="{{ cred.refs }}" as="r">
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; padding-top: 12px; border-top: 1px solid var(--slate-100);">{{ r }}</p>
+      </sc-for>
+      <sc-if value="{{ cred.tbc }}"><span style="align-self: flex-start; font-size: 13px; font-weight: 700; background: var(--yellow-100); color: var(--navy-700); padding: 4px 10px; border-radius: 6px;">{{ cred.tbc }}</span></sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<!-- CONTACT FORM MODAL -->
+<sc-if value="{{ formOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeForm }}" style="position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,0.6); display: flex; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto;">
+    <div data-oaks-form="modal" onClick="{{ stop }}" style="background: #fff; border-radius: 20px; max-width: 640px; width: 100%; margin: auto; padding: clamp(24px,4vw,36px); box-shadow: var(--shadow-xl); display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">{{ formSubject }}</span>
+          <span style="font-size: 26px; font-weight: 900; color: var(--navy-700); line-height: 1.2;">Start a project</span>
+        </div>
+        <button onClick="{{ closeForm }}" aria-label="Close" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border-default); background: #fff; cursor: pointer; font-size: 20px; color: var(--navy-600);">×</button>
+      </div>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="padding: 24px; border-radius: 16px; background: var(--green-100); color: var(--navy-700); font-size: 16px; line-height: 1.6;">Thank you. We will reply within two working days.</div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 14px;">
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Input" name="name" label="Name" placeholder="Your full name" hint-size="100%,70px"></x-import>
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Input" name="email" label="Email" type="email" placeholder="name@organisation.in" hint-size="100%,70px"></x-import>
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Input" name="phone" label="Phone" type="tel" placeholder="+91" hint-size="100%,70px"></x-import>
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Input" name="org" label="Organisation" placeholder="Department, school society or company" hint-size="100%,70px"></x-import>
+          <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Input" name="role" label="Role" placeholder="Your role" hint-size="100%,70px"></x-import>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy-700);">I am a…
+            <select name="who" value="{{ audience }}" onChange="{{ setAudience }}" style="height: 44px; border-radius: 12px; border: 1.5px solid var(--border-default); padding: 0 12px; font-family: inherit; font-size: 15px; color: var(--navy-700); background: #fff;">
+              <option value="gov">Government department or agency</option>
+              <option value="edu">School, society or institution</option>
+              <option value="ent">Enterprise</option>
+              <option value="ngo">NGO or foundation</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy-700);">Project scale
+            <select name="scale" style="height: 44px; border-radius: 12px; border: 1.5px solid var(--border-default); padding: 0 12px; font-family: inherit; font-size: 15px; color: var(--navy-700); background: #fff;">
+              <option>Pilot</option>
+              <option>District or single site</option>
+              <option>State or multi-site</option>
+              <option>National</option>
+            </select>
+          </label>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy-700);">Message
+          <textarea name="message" rows="4" style="border-radius: 12px; border: 1.5px solid var(--border-default); padding: 12px; font-family: inherit; font-size: 15px; resize: vertical;"></textarea>
+        </label>
+        <x-import component-from-global-scope="OAKSDesignSystem_54b38e.Button" size="lg" on-click="{{ submit }}" hint-size="160px,54px">Send →</x-import>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: 1280, menuOpen: false, fleet: 200, months: 5, env: 0, lab: 0, lang: 0, playing: false, st: 0, cred: null, formOpen: false, audience: 'gov', subject: 'General enquiry', sent: false, prog: 0, cs: 0 };
+  REEL = [
+    { label: 'CLASSROOM', cap: 'Adaptive learning and AI assessment · 10 lakh+ learners across five states', srcs: ['https://videos.pexels.com/video-files/5734825/5734825-hd_1920_1080_30fps.mp4'] },
+    { label: 'MINING', cap: 'Trip Card Intelligence · 200-vehicle coal fleet, BGR Mining & Infra', srcs: ['https://videos.pexels.com/video-files/8382430/8382430-hd_1920_1080_30fps.mp4', 'https://videos.pexels.com/video-files/8382430/8382430-uhd_3840_2160_30fps.mp4'] },
+    { label: 'GOVERNMENT', cap: 'Programmes for state departments and national agencies', srcs: ['https://videos.pexels.com/video-files/8061381/8061381-hd_1920_1080_30fps.mp4', 'https://www.pexels.com/download/video/8061381/'] },
+    { label: 'LOGISTICS', cap: 'Document intelligence for operational records', srcs: ['https://videos.pexels.com/video-files/4778072/4778072-hd_1920_1080_25fps.mp4', 'https://videos.pexels.com/video-files/4778072/4778072-uhd_2562_1440_25fps.mp4'] },
+  ];
+  SHOT = 8000;
+  vRefs = this.REEL.map(() => React.createRef());
+  bRefs = this.REEL.map(() => React.createRef());
+  proofRef = React.createRef();
+  caseVid = React.createRef();
+  mapRef = React.createRef();
+  footRef = React.createRef();
+  measureMap() {
+    const svg = this.mapRef.current; if (!svg) return;
+    const c = {};
+    ['tg', 'ap', 'jh', 'as', 'mp'].forEach(id => { const p = svg.querySelector('path[data-id="' + id + '"]'); if (!p) return; const b = p.getBBox(); c[id] = { x: b.x + b.width / 2, y: b.y + b.height / 2 }; if (id === 'tg') { c[id].hx = b.x + b.width * 0.42; c[id].hy = b.y + b.height * 0.62; c[id].x = b.x + b.width * 0.62; c[id].y = b.y + b.height * 0.32; } });
+    this.setState({ centers: c });
+  }
+  runFoot() {
+    if (this.footDone) return; this.footDone = true;
+    const t0 = performance.now(), D = 2000;
+    const step = now => { const t = Math.min(1, (now - t0) / D); this.setState({ fc: 1 - Math.pow(1 - t, 3) }); if (t < 1) this.fRaf = requestAnimationFrame(step); };
+    this.fRaf = requestAnimationFrame(step);
+  }
+  archVid = el => {
+    if (this.aio) { this.aio.disconnect(); this.aio = null; }
+    if (!el) return;
+    el.muted = true; el.setAttribute('muted', '');
+    this.aio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const p = el.play(); p && p.catch && p.catch(() => {}); } else el.pause(); }), { threshold: 0.1 });
+    this.aio.observe(el);
+  };
+  componentDidUpdate(pp, ps) { if (ps && ps.prog !== this.state.prog && this.animProg) this.animProg(); if (window.OAKSMedia) document.querySelectorAll('video[data-src]').forEach(window.OAKSMedia.observe); }
+  csRef = el => { if (this.csIO) this.csIO.disconnect(); if (!el) return; this.csIO = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { this.csIO.disconnect(); this.animCase(); } }, { threshold: 0.3 }); this.csIO.observe(el); };
+  animCase() { cancelAnimationFrame(this.csRaf); const t0 = performance.now(), D = 1100; const step = t => { const p = Math.min(1, (t - t0) / D); this.setState({ csK: 1 - Math.pow(1 - p, 3) }); if (p < 1) this.csRaf = requestAnimationFrame(step); }; this.csRaf = requestAnimationFrame(step); }
+  loadTF() { if (!this.tfP) this.tfP = import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.2'); return this.tfP; }
+  async runVision(src) {
+    const url = new URL(src, location.href).href;
+    this.setState({ visImg: src, visBusy: true, visRes: null, visMs: 0, visMsg: this.clf ? 'Analysing on your device…' : 'Loading the model…' });
+    try { const T = await this.loadTF();
+      if (!this.clf) this.clf = await T.pipeline('image-classification', 'Xenova/vit-base-patch16-224', { progress_callback: p => { if (p.status === 'progress' && /onnx/.test(p.file || '')) this.setState({ visMsg: 'Downloading the model · ' + Math.round(p.progress || 0) + '%' }); } });
+      this.setState({ visMsg: 'Analysing on your device…' }); const t0 = performance.now(); const out = await this.clf(url, { top_k: 5 });
+      this.setState({ visBusy: false, visRes: out, visMs: Math.round(performance.now() - t0), visMsg: '' });
+    } catch (e) { this.setState({ visBusy: false, visMsg: 'This browser could not run the model (' + (e && e.message || e) + ').' }); } }
+  loadTess() { if (!this.tsP) this.tsP = new Promise((res, rej) => { if (window.Tesseract) return res(window.Tesseract); const sc = document.createElement('script'); sc.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js'; sc.onload = () => res(window.Tesseract); sc.onerror = () => { this.tsP = null; rej(new Error('OCR engine failed to load')); }; document.head.appendChild(sc); }); return this.tsP; }
+  async runDoc(src) {
+    this.setState({ docImg: src, docBusy: true, docText: null, docFields: null, docMs: 0, docMsg: 'Loading the OCR engine…' });
+    try { const T = await this.loadTess(); const t0 = performance.now();
+      const r = await T.recognize(src, 'eng', { logger: m => { if (m && m.progress != null && m.status) this.setState({ docMsg: m.status.replace(/^./, c => c.toUpperCase()) + ' · ' + Math.round(m.progress * 100) + '%' }); } });
+      const text = r.data.text || ''; this.setState({ docBusy: false, docText: text, docFields: this.extractFields(text), docMs: Math.round(performance.now() - t0), docConf: Math.round(r.data.confidence || 0), docMsg: '' });
+    } catch (e) { this.setState({ docBusy: false, docMsg: 'Could not read this document (' + (e && e.message || e) + ').' }); } }
+  extractFields(t) { const out = [], seen = new Set(), add = (k, re) => { (t.match(re) || []).forEach(v => { v = v.trim(); if (!seen.has(v)) { seen.add(v); out.push({ k, v }); } }); };
+    add('DATE', /\b\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4}\b|\b\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s\d{4}\b/gi);
+    add('AMOUNT', /(?:₹|Rs\.?|INR)\s?[\d,]+(?:\.\d{1,2})?/gi);
+    add('VEHICLE NO.', /\b[A-Z]{2}\s?\d{1,2}\s?[A-Z]{1,3}\s?\d{4}\b/g);
+    add('PHONE', /(?:\+91[\s-]?)?\b[6-9]\d{4}[\s-]?\d{5}\b/g);
+    add('EMAIL', /[\w.+-]+@[\w-]+\.[\w.]+/g);
+    add('REFERENCE', /\b[A-Z]{2,5}[-\/]\d{2,}[\w\/-]*\b/g);
+    add('PIN CODE', /\b[1-9]\d{5}\b(?![\d,])/g);
+    return out.slice(0, 12); }
+  sampleDoc() { const c = document.createElement('canvas'); c.width = 1100; c.height = 760; const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, 1100, 760); x.fillStyle = '#111';
+    const T = (s, px, py, sz, w) => { x.font = (w || 400) + ' ' + sz + 'px Arial, sans-serif'; x.fillText(s, px, py); };
+    T('DELIVERY CHALLAN', 60, 90, 44, 700); T('SAMPLE DOCUMENT FOR THE OAKS AI LAB', 60, 130, 20);
+    x.fillRect(60, 155, 980, 3);
+    [['Challan No:', 'DC-2041/26'], ['Date:', '14/09/2026'], ['Vehicle No:', 'TS 09 UB 4471'], ['From:', 'Hyderabad Depot 500033'], ['To:', 'Kothagudem Site 507101'], ['Material:', 'Diesel, 2 drums'], ['Amount:', 'Rs. 48,250.00'], ['Driver contact:', '+91 98480 12345']].forEach(([k, v], i) => { T(k, 60, 220 + i * 62, 28, 700); T(v, 330, 220 + i * 62, 28); });
+    return c.toDataURL('image/png'); }
+  progVid = el => { if (window.OAKSMedia) window.OAKSMedia.observe(el); };
+  componentDidMount() {
+    { const m = (location.hash || '').match(/^#p(\d)$/); if (m) { this.setState({ prog: +m[1] }); setTimeout(() => { const el = document.getElementById('prog-unit'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150 }); }, 600); } }
+    this.onR = () => this.setState({ w: window.innerWidth, h: window.innerHeight });
+    this.onR(); window.addEventListener('resize', this.onR);
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.vRefs.forEach((r, i) => { const v = r.current; if (!v) return; v.muted = true; v.defaultMuted = true; v.loop = true; v.setAttribute('muted', '');
+      const srcs = this.REEL[i].srcs; let k = 0;
+      v.addEventListener('error', () => { if (++k < srcs.length) { v.src = srcs[k]; v.load(); if (this.state.scene === i && this.state.reelOn) this.playV(i); } });
+      v.src = srcs[0]; v.load(); });
+    this.setState({ scene: 0, reelOn: !reduce, zoom: true, flowOff: reduce });
+    fetch('assets/assam-districts.json').then(r => r.json()).then(o => { this.assam = o.districts; this.assamView = o.viewBox; this.forceUpdate(); }).catch(() => {});
+    fetch('assets/india-map.json').then(r => r.json()).then(o => { this.india = o.locations; this.setState({ mapReady: 1 }, () => requestAnimationFrame(() => this.measureMap())); }).catch(() => {});
+    if (reduce) this.setState({ fc: 1 }); else { this.fio = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { this.fio.disconnect(); this.runFoot(); } }, { threshold: 0.3 }); setTimeout(() => this.footRef.current && this.fio.observe(this.footRef.current), 0); }
+    this.vis = new Set(); this.heroVis = true;
+    this.sio = new IntersectionObserver(es => es.forEach(e => { const id = e.target.id; if (e.isIntersecting) this.vis.add(id); else this.vis.delete(id);
+      if (id === 'hero') { this.heroVis = e.isIntersecting; const v = this.vRefs[this.state.scene || 0] && this.vRefs[this.state.scene || 0].current; if (v && this.state.reelOn) { if (e.isIntersecting) this.playV(this.state.scene || 0); else v.pause(); } } }), { threshold: 0.05 });
+    ['hero', 'method', 'stack', 'architecture'].forEach(id => { const el = document.getElementById(id); if (el) this.sio.observe(el); });
+    this.agT = setInterval(() => { if (document.hidden) return; this.setState(st => ({ agS: st.agS == null ? 0 : st.agS >= 7 ? 0 : st.agS + 1 })); }, 1600);
+    this.msT = setInterval(() => { if (!this.state.msManual && !document.hidden && this.vis.has('method')) this.setState(st => ({ ms: ((st.ms || 0) + 1) % 6 })); }, 3200);
+    this.lyT = setInterval(() => { if (!this.state.lyManual && !document.hidden && this.vis.has('stack')) this.setState(st => ({ ly: ((st.ly == null ? 4 : st.ly) + 4) % 5 })); }, 5000);
+    this.flowT = setInterval(() => { if (!this.state.flowOff && !document.hidden && this.vis.has('architecture')) this.setState(st => ({ fs: (st.fs || 0) + 1 })); }, 1400);
+    const cv = this.caseVid.current;
+    if (cv) window.OAKSMedia.observe(cv);
+    this.elapsed = 0; this.last = performance.now();
+    if (!reduce) this.playV(0);
+    this.raf = requestAnimationFrame(this.tickReel);
+    this.io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { this.io.disconnect(); this.runCount(reduce); } }, { threshold: 0 });
+    this.cntT = setTimeout(() => { if (this.state.cnt == null || this.state.cnt === 0) { this.io.disconnect(); this.runCount(reduce); } }, 1500);
+    if (this.proofRef.current) this.io.observe(this.proofRef.current); else this.runCount(true);
+  }
+  playV(i) { const v = this.vRefs[i].current; if (!v) return; v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+  tickReel = now => {
+    const dt = now - this.last; this.last = now;
+    const s = this.state;
+    if (s.reelOn && this.heroVis && !document.hidden) {
+      this.elapsed += Math.min(dt, 100);
+      if (this.elapsed >= this.SHOT) this.goScene((s.scene + 1) % this.REEL.length);
+    }
+    const cur = this.state.scene || 0;
+    this.bRefs.forEach((r, i) => { if (r.current) r.current.style.height = (i < cur ? 100 : i === cur ? Math.min(100, this.elapsed / this.SHOT * 100) : 0) + '%'; });
+    this.raf = requestAnimationFrame(this.tickReel);
+  };
+  goScene(i) {
+    const prev = this.state.scene || 0;
+    this.elapsed = 0;
+    const v = this.vRefs[i].current; if (v) { try { const m = (v.currentSrc || v.src || '').match(/#t=(\d+)/); v.currentTime = m ? +m[1] : 0; } catch (e) {} }
+    if (this.state.reelOn) this.playV(i);
+    this.setState({ scene: i, zoom: false }, () => requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ zoom: true }))));
+    clearTimeout(this.pauseT);
+    if (prev !== i) this.pauseT = setTimeout(() => { const p = this.vRefs[prev].current; if (p && this.state.scene !== prev) p.pause(); }, 2000);
+  }
+  toggleReel() {
+    const on = !this.state.reelOn, v = this.vRefs[this.state.scene || 0].current;
+    if (v) on ? this.playV(this.state.scene || 0) : v.pause();
+    this.setState({ reelOn: on });
+  }
+  runCount(instant) {
+    if (this.counted) return; this.counted = true;
+    if (instant) return this.setState({ cnt: 1 });
+    const t0 = performance.now(), D = 2200;
+    let lastSet = 0;
+    const step = now => {
+      const t = Math.min(1, (now - t0) / D);
+      if (t === 1 || now - lastSet > 33) { lastSet = now; this.setState({ cnt: 1 - Math.pow(1 - t, 4) }); }
+      if (t < 1) this.cRaf = requestAnimationFrame(step);
+    };
+    this.setState({ cnt: 0 }); this.cRaf = requestAnimationFrame(step);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); clearInterval(this.t); cancelAnimationFrame(this.raf); cancelAnimationFrame(this.cRaf); clearTimeout(this.pauseT); clearTimeout(this.cntT); clearInterval(this.flowT); clearInterval(this.lyT); clearInterval(this.msT); clearInterval(this.agT); cancelAnimationFrame(this.csRaf); this.sio && this.sio.disconnect(); this.fio && this.fio.disconnect(); cancelAnimationFrame(this.fRaf); this.aio && this.aio.disconnect(); this.io && this.io.disconnect(); this.cio && this.cio.disconnect(); this.tio && this.tio.disconnect(); }
+  openForm(audience, subject) { this.setState({ formOpen: true, audience, subject, sent: false, menuOpen: false }); }
+  togglePlay() {
+    clearInterval(this.t);
+    if (this.state.playing) return this.setState({ playing: false });
+    this.setState({ playing: true, tick: 0 });
+    this.t = setInterval(() => this.setState(s => s.tick >= 40 ? (clearInterval(this.t), { playing: false, tick: 0 }) : { tick: s.tick + 1 }), 120);
+  }
+  renderVals() {
+    const s = this.state, desktop = s.w >= 1200;
+    const pill = (on, dark) => dark
+      ? { bg: on ? '#0795c9' : 'transparent', fg: on ? '#fff' : '#d4dbe4', bd: on ? '#0795c9' : 'rgba(255,255,255,0.25)' }
+      : { bg: on ? '#283c53' : '#fff', fg: on ? '#fff' : '#283c53', bd: on ? '#283c53' : '#cbd4de' };
+    const nav = [['Solutions','OAKS%20Solutions.dc.html'],['Case studies','OAKS%20Case%20Studies.dc.html'],['Technology','OAKS%20Technology.dc.html'],['About','OAKS%20About.dc.html'],['Trust & Compliance','OAKS%20Trust.dc.html'],['Contact','OAKS%20Contact.dc.html']].map(([label,href])=>({label,href}));
+    const CREDS = [
+      { name: 'QCI', logo: 'export-assets/assets_logos_qci.webp', lh: '50px', line: 'Empanelled agency for e-learning module development', refs: ['Empanelled agency for e-learning module development · Letter QCI/EMP/1125/3908, 5 Nov 2025'] },
+      { name: 'BECIL', logo: 'export-assets/assets_logos_becil.webp', lh: '64px', line: 'Empanelled back-end partner, projects up to ₹10 crore', refs: ['Empanelled back-end partner for supply of digital and conventional educational and teaching-learning material, projects up to ₹10 crore · Ref. BECIL/Centralized Empanelment/2025/12/02, 3 Jul 2026, valid to Jul 2028'], tbc: '[TBC: second BECIL empanelment — scope and reference]' },
+      { name: 'EdCIL', logo: 'export-assets/assets_logos_edcil.webp', lh: '58px', line: 'Software solutions in education · OLabs rate contract', refs: ['Empanelled for software solutions in education (EoI EdCIL/DES/EoI/2022-23/003, extended Oct 2024)', 'Rate contract for OLabs development (EdCIL/DES/RC-OLabs/2025/01, renewed 2026)', 'Held by sister company Sunitha Infovision Ltd'] },
+      { name: 'NCERT', logo: 'export-assets/assets_logos_ncert.webp', lh: '76px', line: 'Digital content producer for the NCERT portal', refs: ['Digital content producer: science-experiment videos and Virtual Skill Labs for the NCERT portal, delivered through EdCIL'] },
+    ];
+    const ENVS = [
+      { name: 'Mining', problem: 'Handwritten trip cards, maintenance logs and disconnected records hide the same vehicle behind inconsistent IDs.', solution: 'One operational history per vehicle, with utilisation patterns surfaced for the operating team.', agents: ['Trip-card extraction', 'Vehicle identity normalisation', 'Maintenance and shift linkage', 'Utilisation analysis'], control: 'Every figure links back to the original record. Supervisors see mine → site → shift.', data: ['Trip cards', 'Maintenance logs', 'Shift records'] },
+      { name: 'Government', problem: 'State programmes need to know which students are falling behind, in which concept, and what the teacher should do next week.', solution: 'Assessment, survey and programme data rolled up into school, district and state reports.', agents: ['Assessment scoring', 'Survey analysis', 'District reporting', 'Programme monitoring'], control: 'Access follows the hierarchy: state → district → school → teacher.', data: ['Assessments', 'Surveys', 'Attendance', 'Device usage'] },
+      { name: 'Education', problem: 'Teachers spend hours marking handwritten sheets, and leaders cannot see where reasoning breaks down.', solution: 'SIYA reads each sheet, places answers on Bloom\u2019s levels against the teacher\u2019s scheme and shows class-wide misconceptions.', agents: ['Handwriting recognition', 'Bloom\u2019s-level classification', 'Misconception detection'], control: 'The teacher reviews and approves every result.', data: ['Answer-sheet photos', 'Marking schemes'] },
+      { name: 'Logistics', problem: 'Dispatch, arrival and receiving records disagree, and teams get another alert instead of an exception they can resolve.', solution: 'An exception queue with source evidence, ownership and a dispatcher approval step.', agents: ['Event reconciliation', 'Exception triage', 'Ownership routing'], control: 'Dispatchers approve every exception.', data: ['Shipment events', 'Timestamps', 'Receiving records'] },
+      { name: 'Energy', problem: 'Equipment observations and unresolved actions are lost at shift handover.', solution: 'A structured handover with unresolved actions, cited records and operator confirmation.', agents: ['Shift-log reading', 'Procedure retrieval', 'Handover assembly'], control: 'Operators confirm every handover.', data: ['Shift logs', 'Maintenance history', 'Approved procedures'] },
+    ];
+    const STATES = [
+      { id: 'tg', name: 'Telangana', tag: 'HYDERABAD · OAKS BASE', h: ['3.5 lakh', 'students on OAKS adaptive learning'], projects: [["Adaptive learning, TSWREIS / TTWREIS", "2.1 lakh", "active students", "Learning continued on devices through school closures in 1,000+ schools"], ["Industry 4.0 skills & Mega Hackathon", "120+", "IT internships", "10,000+ students enrolled; 4,000 in one school hackathon"], ["Hybrid JEE & NEET coaching", "574", "MBBS seats", "Secured in 5 years across AP and Telangana"], ["Singareni Collieries career programme", "2022–23", "SCCL schools", "Exam and career readiness for PSU school students"], ["Vidura Digital school platform", "Live", "since 2022", "Content, practice and teacher dashboards in one place"]] },
+      { id: 'ap', name: 'Andhra Pradesh', tag: 'COACHING · SCHOOLS', h: ['574', 'MBBS seats in 5 years (AP & Telangana)'], projects: [["Hybrid JEE & NEET coaching", "1,000+", "a year", "Students moving from JEE Main to JEE Advanced"], ["Coaching reach", "1.2 lakh", "students", "Live IIT and NIT faculty for government-school students"], ["Vidura Digital school platform", "Live", "since 2022", "Content, practice and teacher dashboards in one place"]] },
+      { id: 'jh', name: 'Jharkhand', tag: 'EARLY YEARS + MINING', h: ['+38%', 'literacy in 180 days, Project Titli'], projects: [["Project Titli: gamified FLN", "+38%", "literacy", "+26% numeracy and 97% attendance across 1,000+ Anganwadi centres"], ["BGR Mining & Infra, Kerandari", "+2", "trips per shift", "1,466 idle hours recovered and 7% efficiency gain"]] },
+      { id: 'as', name: 'Assam', tag: 'STUDENT WELL-BEING', h: ['26,688', 'students in the State Happiness Index'], projects: [["State Happiness Index, Samagra Shiksha", "34", "reports", "33 district reports and 1 state report, in English and Assamese"], ["Survey coverage", "4,364", "schools", "Class 9–12 students in all 33 districts"]] },
+      { id: 'mp', name: 'Madhya Pradesh', tag: 'FARMER OUTREACH', h: ['Weekly', 'outreach to farmers in their own language'], projects: [["Dept. of Farmer Welfare & Agriculture Development", "2025–26", "campaign", "Social media and community engagement in the local language"]] },
+    ];
+    const LAYERS = [
+      ['05','Application','What people touch',['Dashboards','Command centres','Mobile apps','APIs'],'#0795c9','#fff'],
+      ['04','Orchestration','How work gets done',['Agents','Workflows','Decision engines','Human-in-the-loop'],'#0579a8','#fff'],
+      ['03','Intelligence','Where data becomes insight',['Computer vision','LLMs & RAG','Speech','Knowledge graphs','Geospatial'],'#066089','#fff'],
+      ['02','Data','What we work from',['Satellite','GIS','Documents','Sensors','Video'],'#283c53','#fff'],
+      ['01','Infrastructure','Where it runs',['Cloud','On-premise','Edge','Secure networks'],'#0f172a','#fff'],
+    ].map(([n,t,sub,items,bg,fg]) => ({ n, t, s: sub, items, bg, fg }));
+    const env = ENVS[s.env];
+    const recovered = Math.round(s.fleet * s.months * (1466 / 1000)).toLocaleString('en-IN');
+    const bars = Array.from({ length: 40 }, (_, i) => ({ h: (20 + Math.abs(Math.sin(i * 1.7 + s.lang)) * 80).toFixed(0) + '%', c: s.playing && i < s.tick ? '#28a6d8' : 'rgba(255,255,255,0.22)' }));
+    const cred = s.cred == null ? null : CREDS[s.cred];
+    const bs = s.bgrStep || 0;
+    const BGRF = [
+      { place: 'PIT & LOADING', t: 'Extract trip records', d: 'Handwritten trip cards from every load become structured, searchable trip records.', x: '35%', y: '56%' },
+      { place: 'HAUL ROAD', t: 'Normalise vehicle identities', d: 'A truck logged under three different IDs becomes one vehicle with one history.', x: '42%', y: '71%' },
+      { place: 'WORKSHOP & FUEL', t: 'Connect maintenance and shift data', d: 'Maintenance logs and shift handovers attach to the same vehicle record.', x: '76%', y: '45%' },
+      { place: 'COAL HANDLING PLANT', t: 'Surface utilisation patterns', d: 'The operating team sees where time was lost, with the original record one tap away.', x: '82%', y: '62%' },
+    ];
+    const R = {
+      desktop, mobile: !desktop, menuOpen: !desktop && s.menuOpen, nav,
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }), closeMenu: () => this.setState({ menuOpen: false }),
+      goContact: () => this.openForm('gov', 'General enquiry'),
+      openGov: () => this.openForm('gov', 'Programme briefing'),
+      openEnt: () => this.openForm('ent', 'Talk to an architect'),
+      openProcurement: () => this.openForm('gov', 'Procurement pack'),
+      openCapGov: () => this.openForm('gov', 'Government capability statement'),
+      openCapEnt: () => this.openForm('ent', 'Enterprise capability statement'),
+      kp: Object.fromEntries(Object.entries({ gov: [['employees', '10 lakh+ users'], ['globe', '5 states'], ['analytics', 'Measured outcomes']], ent: [['sparkles', 'Vision & document AI'], ['eye', 'Traceable figures'], ['growth', 'Measured gains']], method: [['goals', 'Discover'], ['zap', '2-week prototype'], ['settings', 'Run in production']], stack: [['dashboard', 'Applications'], ['sparkles', 'AI models'], ['shield', 'Secure infrastructure']], foot: [['companyPolicies', 'Hyderabad HQ'], ['globe', '5 states'], ['calendar', 'Since 2017']], comp: [['checkCircle', 'ISO 9001 & 27001'], ['crown', '4 empanelments'], ['lock', 'DPDP Act ready']] }).map(([k, v]) => [k, v.map(([i, t]) => ({ i, t }))])),
+      formOpen: s.formOpen, formSubject: s.subject.toUpperCase(), audience: s.audience, sent: s.sent, notSent: !s.sent,
+      setAudience: e => this.setState({ audience: e.target.value }),
+      closeForm: () => this.setState({ formOpen: false }), submit: e => { const root = e && e.currentTarget && e.currentTarget.closest && e.currentTarget.closest('[data-oaks-form]'); window.oaksSend && window.oaksSend(root, { form: 'Enquiry popup', subject: s.subject, audience: s.audience }); this.setState({ sent: true }); },
+      stop: e => e.stopPropagation(),
+      proof: [
+        { n: 3.5, d: 1, pre: '', suf: ' lakh', l: 'students on our adaptive learning platform across 1,000+ Telangana residential schools' },
+        { n: 25000, d: 0, pre: '', suf: '+', l: 'children in Project Titli, with +38% literacy gains in 180 days' },
+        { n: 1.14, d: 2, pre: '', suf: 'M', l: 'handwritten answer sheets marked by SIYA, at 95.6% accuracy' },
+        { n: 1466, d: 0, pre: '', suf: '', l: 'idle vehicle hours recovered for BGR Mining & Infra' },
+      ].map(p => { const k = s.cnt == null ? 0 : s.cnt; return { v: p.pre + (p.n * k).toLocaleString('en-IN', { minimumFractionDigits: p.d, maximumFractionDigits: p.d }) + p.suf, l: p.l }; }),
+      reel: this.REEL.map((r, i) => { const on = i === (s.scene || 0); const wide = s.w >= 900; return { pre: on || i === ((s.scene || 0) + 1) % this.REEL.length ? 'auto' : 'none', srcs: r.srcs, left: wide ? '30%' : '0px', pos: wide ? '20% 50%' : '30% 50%', mask: wide ? 'linear-gradient(90deg, transparent 0%, #000 32%)' : 'none', ref: this.vRefs[i], op: on ? 1 : 0, sc: on && s.zoom ? 1.08 : 1 }; }),
+      scenes: this.REEL.map((r, i) => { const on = i === (s.scene || 0); return { n: '0' + (i + 1), label: r.label, bar: this.bRefs[i], fg: on ? '#fff' : 'rgba(255,255,255,0.5)', lo: on ? 1 : 0, lx: on ? '0px' : '8px', h: on ? '56px' : '20px', go: () => this.goScene(i) }; }),
+      heroCap: this.REEL[s.scene || 0].cap, heroPara: s.w < 900 || (s.h || 900) >= 740, heroNote: (s.h || 900) >= 840, heroFoot: (s.h || 900) >= 700, heroLabels: (s.h || 900) >= 600,
+      caseVid: this.caseVid, progVid: this.progVid,
+      galCols: s.w >= 900 ? 'repeat(4, minmax(0,1fr))' : 'repeat(2, minmax(0,1fr))',
+      titliCols: s.w >= 1100 ? 'repeat(4, minmax(0,1fr))' : s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)',
+      titliWeeks: [52, 60, 66, 74, 80, 86, 92, 97].map((h, i) => ({ h: h + '%', c: i === 7 ? 'var(--teal-500)' : 'var(--blue-200)' })),
+      flowCols: s.w >= 1000 ? 'repeat(4, minmax(0,1fr))' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)',
+      bgrFlow: BGRF.map((p, i) => { const on = i === bs; return { ...p, n: '0' + (i + 1), bg: on ? 'var(--navy-700)' : '#fff', fg: on ? '#fff' : 'var(--navy-700)', nb: on ? 'var(--blue-500)' : 'var(--slate-100)', nf: on ? '#fff' : 'var(--navy-700)', stem: on ? 'var(--blue-500)' : '#fff', halo: on ? 'rgba(7,149,201,0.28)' : 'rgba(255,255,255,0)', line: on ? 'var(--blue-500)' : 'var(--slate-200)', kc: on ? 'var(--blue-600)' : 'var(--slate-400)', tc: on ? 'var(--navy-700)' : 'var(--slate-500)', pick: () => this.setState({ bgrStep: i }) }; }),
+      bgrCur: { ...BGRF[bs], n: '0' + (bs + 1) },
+      bgrS1: bs === 0, bgrS2: bs === 1, bgrS3: bs === 2, bgrS4: bs === 3,
+      bgrPrev: () => this.setState({ bgrStep: (bs + 3) % 4 }), bgrNext: () => this.setState({ bgrStep: (bs + 1) % 4 }),
+      bgrTimeline: [
+        { t: '06:42', what: 'Trip 4 · Pit B → CHP', src: 'Trip card', c: 'var(--blue-500)' },
+        { t: '09:10', what: 'Breakdown reported', src: 'Maintenance log', c: 'var(--coral-500)' },
+        { t: '11:35', what: 'Back in service', src: 'Workshop log', c: 'var(--teal-500)' },
+        { t: '14:00', what: 'Shift handover', src: 'Handover note', c: 'var(--amber-500)' },
+      ],
+      bgrShifts: [['Shift A', 78], ['Shift B', 64], ['Shift C', 71]].map(([k, v]) => ({ k, w: (bs === 3 ? v : 0) + '%', i: (bs === 3 ? 100 - v : 0) + '%' })),
+      proofRef: this.proofRef, reelOn: !!s.reelOn, reelOff: !s.reelOn, reelLabel: s.reelOn ? 'Pause footage' : 'Play footage', toggleReel: () => this.toggleReel(),
+      gov: [
+        { n: '01 · 2020–22', title: 'Telangana residential schools (TSWREIS / TTWREIS)', ctx: 'When schools closed during COVID-19, learning moved to students’ phones.', body: 'Under a state government order, the OAKS adaptive learning platform reached 3.5 lakh students in 1,000+ residential schools across 31 districts. We mapped content to the state syllabus, trained teachers, and ran assessments and analytics remotely.', stats: [{ v: '2.1 lakh', l: 'students active on devices' }, { v: '1.12 crore', l: 'practice attempts' }, { v: '13.2 lakh', l: 'tests taken (Apr–Sep 2020)' }], note: 'Delivered by the OAKS team through sister company Sunitha Infovision Ltd.' },
+        { n: '02 · 2022', title: 'Assam State Happiness Index', ctx: 'A state-wide measure of student well-being, district by district.', body: 'For Samagra Shiksha (SSA) Assam, we designed the survey, ran it with Class 9–12 students in secondary schools across all 33 districts, and built the scoring model. We delivered one state report and 33 district reports, in English and Assamese.', stats: [{ v: '26,688', l: 'students surveyed' }, { v: '4,364', l: 'secondary schools' }, { v: '33', l: 'district reports + 1 state report' }], note: 'Delivered by the OAKS team through sister company Sunitha Infovision Ltd.' },
+        { n: '03', title: 'SIYA: AI marking for handwritten answer sheets', ctx: 'Teachers mark faster. Leaders see where reasoning breaks down.', body: 'A teacher photographs a handwritten answer sheet. SIYA reads it, places each answer on Bloom\u2019s levels against the teacher\u2019s own scheme and shows class-wide misconceptions. The teacher reviews and approves every result.', stats: [{ v: '1.14M', l: 'sheets analysed' }, { v: '95.6%', l: 'handwriting accuracy' }, { v: '92.3%', l: 'teacher agreement' }], note: 'Independent study: University of Malta pilot led by Prof. Charles Mifsud; schools enrolling from October 2026.' },
+        { n: '04 · GOVT. OF JHARKHAND', title: 'Gamified FLN in Anganwadi centres (Project Titli)', ctx: 'Foundational literacy and numeracy for children aged 3–6, measured centre by centre.', body: 'We supplied tablets with play-based literacy and numeracy games aligned to the UNICEF curriculum, level-wise lesson plans, Sevika training and a dashboard for every centre — including 165 model Anganwadi e-learning centres.', stats: [{ v: '25,000+', l: 'children reached' }, { v: '+38%', l: 'literacy gains' }, { v: '+26%', l: 'numeracy' }, { v: '97%', l: 'attendance after implementation' }], note: '180-day implementation average across 1,000+ centres and 25,000+ children, ages 3–6. Gains measured against comparable Anganwadi centres that did not implement Project Titli.' },
+        { n: '05 · AP & TELANGANA', title: 'Hybrid IIT-JEE & NEET coaching', ctx: 'Metro-quality JEE and NEET coaching for students in rural government schools — including the Singareni Collieries (SCCL) schools.', body: 'Live classes from IIT and NIT faculty, structured step by step, with fortnightly mock tests and round-the-clock AI doubt support.', stats: [{ v: '574', l: 'MBBS seats secured in 5 years' }, { v: '1,000+ a year', l: 'students from JEE Main to JEE Advanced' }, { v: '1.2 lakh', l: 'students reached' }, { v: '+36%', l: 'improvement at Singareni Collieries schools' }] },
+        { n: '06', title: 'Industry 4.0 skills and the TSWREIS Mega Hackathon', ctx: 'Future-ready skills for government-school students, showcased at a large-scale hackathon.', body: 'Hands-on tracks in cybersecurity, drones, media, renewable energy and Web3, taught through an integrated coding environment.', stats: [{ v: '10,000+', l: 'students enrolled' }, { v: '4,000', l: 'students in one school hackathon' }, { v: '120+', l: 'IT internships' }] },
+        { n: '2025–26 · MADHYA PRADESH', title: 'Farmer outreach for the MP Department of Farmer Welfare', ctx: 'A state department needed to reach farmers in their own language, every week.', body: '', stats: [{ v: '120+', l: 'posts and videos published' }, { v: '2M+', l: 'views' }, { v: '5,000+', l: 'Instagram followers' }], note: 'Figures as of 15 Sep 2026.' },
+        { n: 'CUSTOM CONTENT DEVELOPMENT', title: 'Virtual Skill Labs and curriculum-aligned content', ctx: 'High-quality educational content that blends pedagogy, technology and engagement — from foundational learning to advanced skill development, delivered across formats and platforms.', body: '', stats: [{ v: '2D & 3D', l: 'STEM virtual labs and simulations' }, { v: 'AR', l: 'cards and immersive modules' }, { v: 'Multilingual', l: 'localisation and cultural adaptation' }] },
+      ],
+      credCols: s.w >= 1000 ? 'repeat(4, minmax(0,1fr))' : s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)',
+      creds: CREDS.map((c, i) => { const n = s.w >= 1000 ? 4 : s.w >= 560 ? 2 : 1, line = '1px solid var(--slate-200)'; return { ...c, bl: i % n ? line : 'none', bt: i >= n ? line : 'none', open: () => this.setState({ cred: i }) }; }),
+      cred, closeCred: () => this.setState({ cred: null }),
+      fleet: s.fleet, months: s.months, recovered,
+      setFleet: e => this.setState({ fleet: +e.target.value }), setMonths: e => this.setState({ months: +e.target.value }),
+      cases: [
+        { n: 'CASE 2 · 2020–23', title: 'YuppTV: education content at OTT scale', ctx: 'A leading Indian OTT platform needed a school curriculum library that would stream on every screen.', body: 'We produced and delivered the library to OTT-grade encoding standards, with metadata and tagging for indexing, across smart TVs, mobile and web.', stats: [{ v: '450+ hours', l: 'curriculum video, Grades 8–10' }, { v: '1 lakh+', l: 'learners reached' }, { v: '36 months', l: 'continuous delivery' }] },
+        { n: 'CASE 3 · 2022–PRESENT', title: 'Vidura Digital: learning platform for private schools', ctx: 'Affordable private schools needed one platform for content, practice and teacher dashboards.', body: 'We built and run the learning platform: 171.9 hours of Maths and Science video, a practice bank and teacher dashboards, across AP, Telangana and CBSE curricula in English, Hindi and Telugu.', stats: [{ v: '570', l: 'schools across AP, Telangana, Karnataka, TN' }, { v: '1.5 lakh', l: 'students on the platform' }, { v: '1.25 lakh', l: 'practice questions, 3 languages' }] },
+      ],
+      refs: [
+        { k: 'LOGISTICS · REFERENCE DESIGN', title: 'Make the next handoff the right one.', lead: 'When dispatch, arrival and receiving records disagree, teams need an exception they can resolve — not another alert.', rows: [{ k: 'The evidence', v: 'Shipment events, timestamps and receiving records.' }, { k: 'What we build', v: 'An exception queue with source evidence, ownership and a dispatcher approval step.' }, { k: 'What matters', v: 'Dwell time, missed handoffs and time to resolution.' }] },
+        { k: 'ENERGY · REFERENCE DESIGN', title: 'Carry the context into the next shift.', lead: 'Equipment observations and unresolved actions must survive the handover. Operators need a reliable, traceable picture.', rows: [{ k: 'The evidence', v: 'Shift logs, maintenance history and approved procedures.' }, { k: 'What we build', v: 'A structured handover with unresolved actions, cited records and operator confirmation.' }, { k: 'What matters', v: 'Handover completeness, overdue actions and evidence retrieval time.' }] },
+      ],
+      envs: ENVS.map((e, i) => ({ name: e.name, abg: i === s.env ? '#fff' : 'transparent', afg: i === s.env ? 'var(--navy-700)' : 'var(--navy-100)', pick: () => this.setState({ env: i, fs: 0 }) })), env, archVid: this.archVid,
+      fl: (() => {
+        const n = env.agents.length, total = n + 3, fs = (s.fs || 0) % total, wide = s.w >= 960;
+        const cur = k => fs === k, on = k => fs >= k;
+        const V = { Mining: 'https://videos.pexels.com/video-files/8382430/8382430-uhd_3840_2160_30fps.mp4', Government: 'https://oaks-public.s3.ap-south-1.amazonaws.com/website/sunithainfo/videos/gamification_in_fln.mp4', Education: 'https://videos.pexels.com/video-files/5734825/5734825-hd_1920_1080_30fps.mp4', Logistics: 'https://videos.pexels.com/video-files/4778072/4778072-uhd_2562_1440_25fps.mp4' };
+        const video = V[env.name] || null, dim = 'rgba(255,255,255,0.2)';
+        return {
+          h: wide ? '660px' : 'auto', pf: wide ? '1 1 0' : '0 0 auto', sf: wide ? '1.35 1 0' : '0 0 auto', rf: wide ? '1' : '0 0 auto', dir: wide ? 'row' : 'column', cw: wide ? '52px' : '100%', ch: wide ? 'auto' : '40px', lw: wide ? 'auto' : '2px', lh: wide ? '2px' : 'auto', head: wide ? 'border-left-color' : 'border-top-color',
+          pfs: wide ? '18px' : '17px', ofs: wide ? '20px' : '18px',
+          video, noVideo: !video, slot: 'arch-bg-' + env.name.toLowerCase(), tag: (video ? 'FIELD FOOTAGE · ' : '') + env.name.toUpperCase(),
+          pb: cur(0) ? 'var(--coral-500)' : 'rgba(255,107,91,0.3)', pg: cur(0) ? '0 0 40px rgba(255,107,91,0.3)' : 'none',
+          c1: on(1) ? 'var(--blue-400)' : dim, c3: on(n + 2) ? 'var(--teal-500)' : dim,
+          sb: fs >= 1 && fs <= n + 1 ? 'var(--blue-400)' : 'rgba(7,149,201,0.35)', sg: fs >= 1 && fs <= n ? '0 0 40px rgba(7,149,201,0.3)' : 'none',
+          hbg: cur(n + 1) ? 'rgba(245,166,35,0.2)' : 'rgba(245,166,35,0.08)', hb: cur(n + 1) ? 'var(--amber-400)' : 'rgba(245,166,35,0.3)',
+          obg: cur(n + 2) ? 'rgba(13,120,110,0.55)' : 'rgba(15,23,42,0.62)', ob: cur(n + 2) ? 'var(--teal-500)' : 'rgba(20,184,166,0.3)', og: cur(n + 2) ? '0 0 48px rgba(20,184,166,0.35)' : 'none',
+          agents: env.agents.map((t, i) => { const k = i + 1, a = cur(k), done = fs > k; return { t, n: i + 1, bg: a ? 'var(--blue-500)' : done ? 'rgba(7,149,201,0.45)' : 'transparent', bd: a || done ? 'var(--blue-400)' : 'rgba(255,255,255,0.3)', glow: a ? '0 0 0 6px rgba(7,149,201,0.28)' : 'none', fg: a ? '#fff' : done ? 'var(--navy-100)' : 'var(--navy-200)', line: i === n - 1 ? 'transparent' : (done ? 'rgba(7,149,201,0.6)' : 'rgba(255,255,255,0.14)') }; }),
+          ...(() => { const F = {
+            Mining: [['HT 7 · trip card', 'Haul-07 · workshop log', 'T-007 · fuel log'], 'HT-07 · one vehicle, one history', 'Same truck under three IDs', '+2 trips per shift'],
+            Government: [['Paper registers', 'Separate survey sheets', 'Reports compiled by hand'], 'One view: state → district → school', 'Data scattered across offices', 'Each level sees its own schools'],
+            Education: [['Hours of manual marking', 'Marks, but no reasons', 'Misconceptions missed'], 'Sheet marked, errors explained', 'Teacher marks every sheet alone', '1.14M sheets · 95.6% accuracy'],
+            Logistics: [['Dispatch 09:10', 'Arrival — missing', 'Receiving 11:40'], 'One exception with one owner', 'Three records that disagree', 'Resolved with evidence attached'],
+            Energy: [['Notes on paper', 'Actions left open', 'Context lost at 6 pm'], 'Handover confirmed by operator', 'Next shift starts blind', 'Open actions carried forward'],
+          }[env.name] || [[], '', '', ''];
+            return { fails: F[0].map((t, i) => ({ t, gap: i < F[0].length - 1, dx: cur(0) ? ['-4px', '6px', '-2px'][i] : ['0px', '10px', '4px'][i], rot: cur(0) ? ['-2deg', '1.5deg', '-1deg'][i] : ['-1deg', '0.8deg', '-0.5deg'][i] })), fix: F[1], before: F[2], after: F[3], osc: cur(n + 2) ? 1.03 : 1 }; })(),
+          prog: Array.from({ length: total }, (_, k) => ({ c: k <= fs ? '#fff' : 'rgba(255,255,255,0.2)' })),
+          tl: s.flowOff ? 'Play ▶' : 'Pause ❚❚', toggle: () => this.setState({ flowOff: !s.flowOff }),
+        };
+      })(),
+      mCols: s.w >= 1100 ? 'repeat(6, minmax(0,1fr))' : s.w >= 700 ? 'repeat(3, minmax(0,1fr))' : 'minmax(0,1fr)', mTrack: s.w >= 1100,
+      steps: [
+        { n: '01', t: 'Discover', d: 'Work alongside your team to learn where decisions are made and where they stall.' },
+        { n: '02', t: 'Architect', d: 'Design the data, models and infrastructure as one system.' },
+        { n: '03', t: 'Prototype', d: 'Build a working system on your real data — not a slide deck.', tag: '2 WEEKS' },
+        { n: '04', t: 'Validate', d: 'Test it in live workflows with the people who will use it every day.' },
+        { n: '05', t: 'Scale', d: 'Roll out across users, sites and regions without rebuilding.' },
+        { n: '06', t: 'Operate', d: 'Monitor, retrain and improve the system while it runs in production.' },
+      ].map((x, i, arr) => { const OUT = ['A map of where decisions stall', 'One design across data, models and infrastructure', 'A working system on your data', 'Proof from live workflows', 'Rollout across users and sites', 'A system that stays accurate']; const ms = s.ms || 0, on = i === ms, done = i < ms, wide = s.w >= 900, run = !s.msManual;
+        return { ...x, out: OUT[i], i0: i === 0, i1: i === 1, i2: i === 2, i3: i === 3, i4: i === 4, i5: i === 5, flex: i < 5 ? '1 1 0' : '0 0 auto', link: i < 5,
+          ibg: on ? 'var(--navy-700)' : done ? 'var(--blue-50)' : '#fff', ic: on ? '#fff' : 'var(--blue-600)', ibd: on ? 'var(--navy-700)' : done ? 'var(--blue-200)' : 'var(--slate-200)', glow: on ? '0 14px 30px rgba(40,60,83,0.3), 0 0 0 6px rgba(7,149,201,0.18)' : 'none', sc: on ? 1.08 : 1,
+          nc: on ? 'var(--blue-600)' : 'var(--slate-400)', tc: on ? 'var(--navy-700)' : done ? 'var(--navy-600)' : 'var(--slate-500)',
+          fw: wide ? (done ? '100%' : on && run ? '100%' : '0%') : '100%', fh: wide ? '100%' : (done ? '100%' : on && run ? '100%' : '0%'), ft: on && run ? (wide ? 'width 3.2s linear' : 'height 3.2s linear') : 'none', hc: done ? 'var(--blue-500)' : 'var(--slate-300)',
+          pick: () => this.setState({ ms: i, msManual: true }) }; }),
+      ...(() => { const ms = s.ms || 0, wide = s.w >= 900, PH = [['UNDERSTAND', 'Weeks 0–1', [0, 1]], ['PROVE', '2-week prototype', [2, 3]], ['RUN', 'In production', [4, 5]]];
+        const cur = [['01','Discover','Work alongside your team to learn where decisions are made and where they stall.'],['02','Architect','Design the data, models and infrastructure as one system.'],['03','Prototype','Build a working system on your real data — not a slide deck.'],['04','Validate','Test it in live workflows with the people who will use it every day.'],['05','Scale','Roll out across users, sites and regions without rebuilding.'],['06','Operate','Monitor, retrain and improve the system while it runs in production.']][ms];
+        const OUT = ['A map of where decisions stall', 'One design across data, models and infrastructure', 'A working system on your data', 'Proof from live workflows', 'Rollout across users and sites', 'A system that stays accurate'];
+        return { mDir: wide ? 'row' : 'column', mAlign: wide ? 'flex-start' : 'stretch', mNodeDir: wide ? 'column' : 'row', mTa: wide ? 'center' : 'left', mLinkPad: wide ? 'padding: 30px 8px 0;' : 'padding: 0 0 0 30px; align-self: flex-start; height: 28px;', mLw: wide ? 'auto' : '2px', mLh: wide ? '2px' : 'auto', mHead: wide ? 'border-left-color' : 'border-top-color',
+          mPhaseCols: wide ? 'repeat(3, minmax(0,1fr))' : 'minmax(0,1fr)', mDetCols: s.w >= 1000 ? 'minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,0.8fr)' : 'minmax(0,1fr)',
+          mPhases: PH.map(([t, d, r]) => { const on = r.includes(ms), done = ms > r[1]; return { t, d, c: on ? 'var(--blue-600)' : 'var(--slate-500)', bar: on ? 'var(--blue-500)' : done ? 'var(--blue-200)' : 'var(--slate-200)' }; }),
+          mCur: { n: cur[0], t: cur[1], d: cur[2], out: OUT[ms], phase: PH.find(p => p[2].includes(ms))[0] }, mV0: ms === 0, mV1: ms === 1, mV2: ms === 2, mV3: ms === 3, mV4: ms === 4, mV5: ms === 5,
+          mTl: s.msManual ? 'Play the workflow ▶' : 'Pause ❚❚', mToggle: () => this.setState({ msManual: !s.msManual }) };
+      })(),
+      ...(() => {
+        const INFO = {
+          '05': ['Apps people use every day', 'We design each screen around the person on the ground — teacher, Sevika, supervisor — then roll it up for district and state leaders.', [['SIYA', 'teacher app for handwritten answer sheets'], ['Project Titli', 'tablet games and a dashboard per centre'], ['Vidura Digital', 'platform for private schools'], ['BGR operations view', 'utilisation and exceptions']]],
+          '04': ['Agents with a human checkpoint', 'We wire agents into the workflow you already run, and put a person at every consequential step. Access follows your hierarchy.', [['Teacher approval', 'every SIYA result reviewed'], ['Adaptive learning paths', 'mastery-based practice'], ['Exception queues', 'one owner per exception']]],
+          '03': ['Models tuned on your records', 'We start from proven models, tune them on your own records, and publish the accuracy we measure.', [['Handwriting recognition', '95.6% accuracy'], ["Bloom’s classification", 'against the teacher’s scheme'], ['Trip-card extraction', 'paper to structured records'], ['Multilingual voice', 'Indian languages']]],
+          '02': ['Every record, paper included', 'We build from the records you already keep, and keep the original beside every value we extract.', [['Answer sheets', '1.14M analysed'], ['Trip cards & shift logs', 'BGR Mining, Kerandari'], ['Survey responses', '26,688 students, Assam']]],
+          '01': ['Secure from the first prototype', 'We deploy to your policy — cloud or on-premise — with a separate data store, encryption and audit logs from day one.', [['Cloud or on-premise', 'deployed to fit each client'], ['Separate data store', 'for each client'], ['Audit logs', 'every retrieval and decision traceable']]],
+        };
+        const act = s.ly == null ? 4 : s.ly, wide = s.w >= 900;
+        return {
+          lyCur: LAYERS[act].n, lyTl: s.lyManual ? 'Play layer by layer ▶' : 'Pause ❚❚', lyToggle: () => this.setState({ lyManual: !s.lyManual }),
+          lyHead: wide ? 'minmax(260px, 320px) minmax(0,1fr) 40px' : 'minmax(0,1fr) 40px', lyBody: wide ? 'minmax(0,0.9fr) minmax(0,1.4fr)' : 'minmax(0,1fr)',
+          ...(() => {
+            const COL = { '05': ['#2aa9d8', '#0a86b8', '#066a93'], '04': ['#0b87bd', '#066a93', '#055275'], '03': ['#086a96', '#054f70', '#043c56'], '02': ['#34506c', '#243a52', '#1a2b3d'], '01': ['#1e2c42', '#121d2e', '#0b1320'] };
+            const actB = 4 - act, sc = Math.min(1, Math.max(0.55, ((s.w || 1280) - 48) / 520));
+            const cx = 230, HW = 160, HH = 80, T = 20, pt = (arr) => arr.map(([x, y]) => x + ',' + y).join(' ');
+            const iso = LAYERS.slice().reverse().map((l, k) => { const i = 4 - k, on = i === act, c = COL[l.n];
+              const y = 510 - k * 74 - (k > actB ? 64 : 0) - (on ? 16 : 0);
+              const ih = 0.72;
+              return { n: l.n, name: l.t, y: y + 'px',
+                top: pt([[cx, -HH], [cx + HW, 0], [cx, HH], [cx - HW, 0]]),
+                inner: pt([[cx, -HH * ih], [cx + HW * ih, 0], [cx, HH * ih], [cx - HW * ih, 0]]),
+                left: pt([[cx - HW, 0], [cx, HH], [cx, HH + T], [cx - HW, T]]),
+                right: pt([[cx, HH], [cx + HW, 0], [cx + HW, T], [cx, HH + T]]),
+                g1x1: cx - HW / 2, g1y1: -HH / 2, g1x2: cx + HW / 2, g1y2: HH / 2, g2x1: cx + HW / 2, g2y1: -HH / 2, g2x2: cx - HW / 2, g2y2: HH / 2,
+                tt: 'translate(' + cx + ',0) matrix(0.894,0.447,-0.894,0.447,0,0)',
+                tf: on ? 'url(#lyTopOn)' : c[0], lf: on ? '#1784b3' : c[1], rf: on ? '#0f6a92' : c[2], ts: on ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.18)', is: on ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.12)', gs: on ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.06)',
+                fx: on ? 'drop-shadow(0 0 24px rgba(41,169,221,0.65))' : 'none', nf: on ? '#fff' : 'rgba(255,255,255,0.55)',
+                lx1: cx + HW + 12, lx2: cx + HW + (on ? 60 : 40), dr: on ? 5 : 3.5, lc: on ? '#29a9dd' : 'rgba(255,255,255,0.3)', tx: cx + HW + (on ? 74 : 54),
+                kc: on ? '#8dd4f0' : 'rgba(170,190,210,0.8)', tc: on ? '#fff' : 'rgba(220,232,242,0.85)', fs: on ? '22px' : '16px',
+                yp: (y / 640 * 100) + '%', txp: ((cx + HW + (on ? 74 : 54)) / 640 * 100) + '%', fsq: on ? '3.6cqw' : '2.6cqw',
+                pick: () => this.setState({ ly: i, lyManual: true }) }; });
+            const C = LAYERS[act];
+            return { iso, isoScale: Math.min(1, Math.max(0.5, ((s.w || 1280) - 48) / 600)), isoPull: Math.round(-310 * (1 - Math.min(1, Math.max(0.5, ((s.w || 1280) - 48) / 600)))) + 'px ' + Math.round(-280 * (1 - Math.min(1, Math.max(0.5, ((s.w || 1280) - 48) / 600)))) + 'px', lyColH: s.w >= 1000 ? '700px' : 'auto', isoBoxH: s.w >= 1000 ? '100%' : 'auto', isoBoxW: s.w >= 1000 ? 'auto' : '100%',
+              lyC: { n: C.n, caps: C.t.toUpperCase(), s: INFO[C.n][0], items: C.items, what: INFO[C.n][1], built: INFO[C.n][2].map(([k, v]) => ({ k, v })) } };
+          })(),
+          layers: LAYERS.map((l, i) => { const on = i === act; return { ...l, nb: on ? '#29a9dd' : 'rgba(255,255,255,0.1)', fg: on ? '#fff' : 'var(--navy-100)', open: on, what: INFO[l.n][1], built: INFO[l.n][2].map(([k, v]) => ({ k, v })), sc: on ? 1 : 0.985, sh: on ? '0 24px 48px rgba(15,23,42,0.28)' : 'none', rot: on ? '45deg' : '0deg', pw: on && !s.lyManual ? '100%' : '0%', pt: on && !s.lyManual ? 'width 5s linear' : 'none',  link: i < LAYERS.length - 1, lc: i >= act ? 'var(--blue-400)' : 'var(--slate-300)', pick: () => this.setState({ ly: i, lyManual: true }) }; }),
+        };
+      })(),
+      labTabs: ['01 · Multilingual voice', '02 · Computer vision · live', '03 · Document intelligence · live'].map((label, i) => ({ label, fg: i === s.lab ? '#283c53' : '#64748b', bd: i === s.lab ? '#0795c9' : 'transparent', pick: () => this.setState({ lab: i }) })),
+      labVoice: s.lab === 0, labVision: s.lab === 1, labDoc: s.lab === 2,
+      langs: ['English', 'हिन्दी', 'తెలుగు'].map((label, i) => ({ label, bg: i === s.lang ? '#0795c9' : 'transparent', bd: i === s.lang ? '#0795c9' : 'rgba(255,255,255,0.25)', pick: () => this.setState({ lang: i }) })),
+      togglePlay: () => this.togglePlay(), playIcon: s.playing ? '❚❚' : '▶', bars,
+
+      ...(() => {
+        const st = s.st || 0, cur = STATES[st], k = s.fc == null ? 0 : s.fc, n = s.w >= 1000 ? 6 : s.w >= 600 ? 3 : 2, line = '1px solid rgba(255,255,255,0.08)';
+        const SC = [[20000, '', '+', 'schools reached through programmes'], [40000, '', '+', 'teachers reached'], [10, '', ' lakh+', 'students reached'], [1000, '', '+', 'Anganwadi centres in FLN programmes'], [5, '', '', 'states'], [9, '', '', 'years, since 2017']];
+        const ids = STATES.map(x => x.id), ctr = s.centers || {};
+        const paths = (this.india || []).map(l => { const i = ids.indexOf(l.id), prog = i >= 0, on = i === st;
+          return { d: l.path, id: l.id, name: l.name, fill: on ? '#29a9dd' : prog ? '#1a6a94' : '#15283d', stroke: on ? '#e6f6fd' : prog ? 'rgba(141,212,240,0.55)' : 'rgba(148,180,210,0.28)', sw: on ? 1.4 : 0.6, cur: prog ? 'pointer' : 'default', fx: on ? 'drop-shadow(0 0 14px rgba(41,169,221,0.75))' : 'none', pick: prog ? () => this.setState({ st: i }) : undefined, _o: on ? 2 : prog ? 1 : 0 }; }).sort((x, y) => x._o - y._o);
+        const dots = STATES.map((x, i) => ctr[x.id] ? { x: ctr[x.id].x, y: ctr[x.id].y, c: i === st ? '#fff' : '#8dd4f0', core: i === st ? 4.5 : 3, r: 8, anim: i === st ? '6;18;6' : '4;10;4', pick: () => this.setState({ st: i }) } : null).filter(Boolean);
+        if (ctr.tg) dots.push({ x: ctr.tg.hx, y: ctr.tg.hy, c: '#f5a623', core: 5, r: 10, anim: '6;20;6', pick: () => this.setState({ st: 0 }) });
+        return {
+          mapRef: this.mapRef, footRef: this.footRef, mapPaths: paths, mapDots: dots,
+          states: STATES.map((x, i) => { const on = i === st; return { name: x.name, bg: on ? '#fff' : 'transparent', fg: on ? 'var(--navy-800)' : 'var(--navy-100)', bd: on ? '#fff' : 'rgba(255,255,255,0.16)', pick: () => this.setState({ st: i, pj: 0 }) }; }),
+          stCur: { name: cur.name, tag: cur.tag, hv: cur.h[0], hl: cur.h[1], projects: cur.projects.map(([t, v, u, o], j) => { const op = j === (s.pj || 0); return { t, v, u, o, open: op, bl: op ? '#29a9dd' : 'transparent', bg: op ? 'rgba(41,169,221,0.08)' : 'transparent', fg: op ? '#fff' : 'var(--navy-100)', vc: op ? '#8dd4f0' : 'var(--navy-100)', pick: () => this.setState({ pj: j }) }; }) },
+          fpH: s.w >= 1100 ? '760px' : 'auto', fpColH: s.w >= 1100 ? '100%' : 'auto', svgH: s.w >= 1100 ? '100%' : 'auto', fpWrap: s.w >= 1100 ? 'nowrap' : 'wrap',
+          footCols: 'repeat(' + n + ', minmax(0,1fr))',
+          ...(() => { const wideM = s.w >= 760; return { mapDir: wideM ? 'row' : 'column', mapPad: wideM ? '16px 0 8px 190px' : '16px 0 8px', ctrPos: wideM ? 'absolute' : 'static', ctrTf: wideM ? 'translateY(-50%)' : 'none', ctrCols: wideM ? 'minmax(0,1fr)' : 'repeat(2, minmax(0,1fr))', ctrW: wideM ? '180px' : '100%' }; })(),
+          scale: SC.map(([v, pre, suf, l], i) => ({ v: pre + Math.round(v * k).toLocaleString('en-IN') + suf, l, bt: (s.w >= 760 ? i > 0 : i > 1) ? '1px solid rgba(255,255,255,0.1)' : 'none' })),
+        };
+      })(),
+
+      logos: ['TSWREIS', 'TTWREIS', 'Samagra Shiksha Assam', 'Govt. of Jharkhand', 'MP Farmer Welfare & Agriculture', 'Singareni Collieries', 'BGR Mining & Infra', 'YuppTV', 'Vidura Digital', 'QCI', 'BECIL', 'EdCIL', 'NCERT', 'University of Malta'],
+      ...(() => {
+        const P = 'assets/logos/partners/', lg = 'assets/logos/';
+        const it = (name, src, w, h) => ({ name, src, h: Math.round(Math.min(76, Math.sqrt(5200 / (w / h)))) + 'px' });
+        const groups = [
+          { t: 'STATE GOVERNMENTS', d: 'Departments and residential school societies', items: [it('TSWREIS', P + 'tswreis.png', 136, 173), it('TGTWREIS', P + 'tgtwreis.png', 352, 359), it('Samagra Shiksha', P + 'samagra.png', 640, 303), it('Govt. of Assam', P + 'assam.png?v=2', 440, 556), it('Govt. of Jharkhand', P + 'jharkhand.png', 404, 405), it('MP Farmer Welfare & Agriculture', P + 'mp.png', 129, 80)] },
+          { t: 'NATIONAL AGENCIES', d: 'Empanelment and content partners', items: [it('QCI', lg + 'qci.png', 379, 134), it('BECIL', lg + 'becil.png', 535, 391), it('EdCIL', lg + 'edcil.png', 397, 188), it('NCERT', lg + 'ncert.png', 189, 274)] },
+          { t: 'INDUSTRY', d: 'Enterprise and platform clients', items: [it('Singareni Collieries', P + 'sccl.png', 286, 286), it('YuppTV', P + 'yupptv.png', 613, 124), it('Vidura Digi', P + 'vidura.png', 522, 383)] },
+          { t: 'RESEARCH', d: 'Independent evaluation', items: [it('University of Malta', P + 'malta.png', 720, 233)] },
+        ];
+        const wide = s.w >= 900;
+        return { partnerGroups: groups, partnerCount: groups.reduce((n, g) => n + g.items.length, 0), pgCols: wide ? '260px minmax(0,1fr)' : 'minmax(0,1fr)', pgDiv: wide ? '1px solid var(--slate-200)' : 'none' };
+      })(),
+      why: [
+        { n: '01', t: 'Build fast', d: 'Two-week prototype cycles on real data. You see a working system before you see a proposal.' },
+        { n: '02', t: 'Think in systems', d: 'The AI model is only one part. We design data, integration and infrastructure alongside it.' },
+        { n: '03', t: 'Deploy for real', d: 'From prototype to production to operations. We measure success by what runs, not what demos well.' },
+        { n: '04', t: 'Design for scale', d: 'Secure architecture from day one, ready for many users, many sites and sensitive data.' },
+      ],
+      tiles: [
+        { k: 'EMPANELMENTS', v: 'QCI (Nov 2025) · BECIL, teaching-learning material projects up to ₹10 crore (Jul 2026) · EdCIL software empanelment (2022, extended 2024) · EdCIL OLabs rate contract (2025, renewed 2026)' },
+        { k: 'GEM', v: 'Registered seller on the Government e-Marketplace · Seller ID', tbc: '[TBC: GeM seller ID]' },
+        { k: 'CERTIFICATIONS', v: 'ISO 9001:2015 (No. 23EQMP34) and ISO/IEC 27001:2022 (No. 23EQMS35), valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+        { k: 'GOVERNMENT REFERENCES', v: 'Programmes with state departments, residential school societies and PSUs in 5 states, and national agencies (QCI, BECIL, EdCIL, NCERT), since 2017' },
+        { k: 'COMPANY', v: 'OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd) · CIN U85499TS2025PTC199477 · Sister company Sunitha Infovision Ltd: Udyam UDYAM-TS-02-0142279', tbc: '[TBC: DPIIT recognition number, if held]' },
+      ],
+      dp: [
+        { t: 'DPDP Act, 2023.', d: 'We process personal data only for the purpose you define, collect the minimum needed, and support consent, correction and erasure requests. Children\u2019s data is handled with verifiable parental consent where the law requires it.' },
+        { t: 'Data stays in India.', d: 'Government and Indian enterprise data is hosted in Indian cloud regions (AWS Mumbai) or on your own servers.' },
+        { t: 'Your data does not train our models.', d: 'Student work and operational records are used only to serve your deployment and are retained for 3 months unless your contract says otherwise.' },
+      ],
+      security: [
+        { t: 'Secure architecture', d: 'Segmented services, encrypted transport and storage, least privilege by default.', c: 'TLS 1.2+ in transit, AES-256 at rest, and an annual third-party penetration test.' },
+        { t: 'Role-based access', d: 'Access modelled on the operational hierarchy, not a flat user table.', c: 'State → district → school → teacher; mine → site → shift → supervisor.' },
+        { t: 'Auditability', d: 'Every retrieval and every decision traceable to its source record and its actor.', c: 'Audit logs kept for 3 months and exportable for your own audits.' },
+        { t: 'Data isolation', d: 'Tenant and department boundaries enforced at the storage and retrieval layer.', c: 'A separate data store for each client.' },
+        { t: 'On-premise deployment', d: 'Full stack deployable inside your own network where data cannot leave.', c: 'Delivered as containers, with no outbound calls required.' },
+        { t: 'Hybrid cloud', d: 'Sensitive processing local, elastic workloads in cloud, one control plane.', c: 'Indian cloud regions only for Indian clients.' },
+        { t: 'Human-in-the-loop', d: 'Consequential decisions route to a person. The system advises; it does not act alone.', c: 'Teachers approve every SIYA result; dispatchers approve every exception.' },
+      ],
+      team: [
+        { name: 'Suman Matcha', role: 'Founder & CEO', bio: '17 years building learning systems for Indian states and national agencies. Led programmes for residential school societies in Telangana, state-wide assessment in Assam, and national e-learning work. Founder of SIYA, now in pilots in Malta and Spain.' },
+        { name: 'Divya Bandreddy', role: 'Chief of Staff', bio: 'Runs OAKS\u2019s government and PSU relationships day to day, including EdCIL, BECIL, QCI and Madhya Pradesh state departments. Moves each opportunity from first meeting to work order, invoice and delivery, and leads programme operations and hiring across the team.' },
+        { name: 'Bhavana Musnoori', role: 'Head of Technology', bio: '5+ years in software engineering. Led the build, deployment pipelines and client handover of the BGR Trip Card Intelligence System, and runs platform delivery across OAKS products.' },
+        { name: 'Sai Gireesh Sabbu', role: 'Head of Product & AI', bio: 'Leads product design, client delivery and the AI team. Has managed relationships with 250+ schools and LMS improvements for 1 lakh+ users.' },
+        { name: 'Pavan Kumar Thota', role: 'Head of Interactives & Games', bio: '8+ years in software and product management; builds AI, VR and AR learning products. MS, University of Connecticut.' },
+        { name: 'Haritha Gadamsetty', role: 'Head of Content', bio: '10+ years developing FLN and early-years content, including OLabs and Virtual Skill Labs.' },
+      ],
+      advisors: [
+        { name: 'Maj. Gen. Sunil Chandra (Retd.), PhD', init: 'Sunil Chandra', bio: 'Former Head of the Army Educational Corps, responsible for training and human-resource development across the Indian Army and for personnel from friendly foreign countries. Former Managing Director of the Army Welfare Education Society, which oversees Army schools, professional colleges and teacher training. Technical Advisor to the Institute for Defence Orientation. PhD in International Relations (Conflict Management) from JNU; PGDBA from Symbiosis, Pune; MA, MEd, MPhil. Advises OAKS on educational administration, faculty development and curriculum at scale.' },
+        { name: 'Shri Susanta Kumar Panda, IRS (Retd.)', init: 'Susanta Panda', bio: 'Former Member, Central Board of Indirect Taxes and Customs (CBIC), 2017–19, and Special Secretary to the Government of India. Now Independent Non-Executive Chairman of Zee Media Corporation and a director on the board of the Goods and Services Tax Network (GSTN). Advises OAKS on government engagement and governance.' },
+      ],
+    };
+    const PO = [3, 6, 7, 4, 0, 2, 5, 1], NP = PO.length, pi = PO[s.prog] ?? 3;
+    R.govTabs = PO.map((gi, i) => { const g = R.gov[gi], on = i === s.prog; return { title: g.title, n: String(i + 1).padStart(2, '0'), c: on ? '#0795c9' : '#9aa7b6', fg: on ? '#1f2f42' : '#4d5b6b', bg: on ? '#e9f6fc' : 'transparent', bd: on ? '#c9eaf7' : 'transparent', pick: () => this.setState({ prog: i, simOn: false }) }; });
+    R.g = { ...R.gov[pi], img: 'gov-prog-' + (s.prog + 1) };
+    const MEDIA = [
+      { short: 'Personalised Adaptive Learning', cat: 'ADAPTIVE LEARNING', kv: '3.5 lakh', kl: 'students', where: 'TELANGANA', facts: [['Client', 'TSWREIS / TTWREIS'], ['Where', 'Telangana · 31 districts'], ['When', '2020–22'], ['Scale', '1,000+ residential schools']],
+        video: 'https://oaks-public.s3.ap-south-1.amazonaws.com/website/sunithainfo/videos/case_study_v4.mp4', poster: 'assets/optimized/export-assets_assets_tg_student-2.webp',
+        gallery: [{ src: 'assets/optimized/export-assets_assets_tg_student-2.webp', alt: 'A student studying at home with the OAKS app on a phone', cap: 'Learning from home during the school closures', pos: '50% 35%' }, { src: 'assets/optimized/export-assets_assets_tg_student-4.webp', alt: 'A student holding up a 100% practice result on the OAKS app', cap: '100% on a practice set, Line and line segment', pos: '50% 30%' }, { src: 'assets/optimized/export-assets_assets_tg_student-3.webp', alt: 'A student taking notes from the OAKS app', cap: 'Self-learning Science and Maths', pos: '50% 40%' }, { src: 'assets/optimized/export-assets_assets_tg_student-1.webp', alt: 'A student studying by phone light at night', cap: 'One phone, one lesson at a time', pos: '50% 40%' }],
+        press: [
+          { outlet: 'Newspaper', date: '2020', what: 'School students switch to self-learning app', tag: 'ENGLISH', img: 'assets/optimized/export-assets_assets_tg_press-self-learning.webp' },
+          { outlet: 'Newspaper', date: '2020', what: 'Covid lockdown engagement of state government schoolchildren', tag: 'ENGLISH', img: 'assets/optimized/export-assets_assets_tg_press-covid.webp' },
+          { outlet: 'OAKS case note', date: '2020–22', what: '3,50,000 students in 1,000+ schools across 31 districts kept learning', tag: 'CASE NOTE', img: 'assets/optimized/export-assets_assets_tg_article.webp' },
+        ] },
+      { short: 'Assam State Happiness Index', cat: 'SURVEY & INSIGHT', kv: '26,688', kl: 'students surveyed', where: 'ASSAM', facts: [['Client', 'Samagra Shiksha (SSA) Assam'], ['Where', 'Assam · all 33 districts'], ['When', '2022'], ['Scale', '4,364 secondary schools']] },
+      { short: 'SIYA handwritten assessment', cat: 'AI ASSESSMENT', kv: '1.14M', kl: 'sheets analysed', where: 'CLASSROOM', facts: [['For', 'Schools & education departments'], ['Accuracy', '95.6% handwriting'], ['Study', 'University of Malta pilot'], ['Status', 'Enrolling from Oct 2026']],
+        video: 'https://heysiya.tech/__l5e/assets-v1/7d1724a1-3a4e-4a8f-bbc6-f8d271c587a5/siya-product-video.mp4', poster: 'assets/optimized/export-assets_assets_siya_stage-wide.webp',
+        partners: [{ name: 'SuperCharger Ventures · Cohort 6, Malta 2025–26', src: 'assets/optimized/export-assets_assets_siya_supercharger.webp' }, { name: 'Lanzadera · Sept 2026 cohort, Valencia', src: 'assets/optimized/export-assets_assets_siya_lanzadera.webp' }],
+        gallery: [{ src: 'assets/optimized/export-assets_assets_siya_stage-wide.webp', alt: 'SIYA presented on stage at Marina de Empresas, Valencia', cap: 'Presenting SIYA at Marina de Empresas, Valencia', pos: '50% 40%' }, { src: 'assets/optimized/export-assets_assets_siya_edeh-committee.webp', alt: 'Programme committee at the European Digital Education Hub', cap: 'European Digital Education Hub programme committee', pos: '50% 60%' }, { src: 'assets/optimized/export-assets_assets_siya_stage-portrait.webp', alt: 'Speaking about SIYA on stage at Lanzadera', cap: 'Lanzadera, Valencia', pos: '50% 40%' }] },
+      { short: 'Project Titli: gamified FLN', cat: 'EARLY YEARS · FLN', kv: '25,000+', kl: 'children · +38% literacy gains', where: 'ANGANWADI CENTRE, JHARKHAND', facts: [['Client', 'Govt. of Jharkhand'], ['Where', '1,000+ Anganwadi centres'], ['Children', '25,000+, ages 3–6'], ['Model centres', '165 e-learning centres']], logo: 'export-assets/assets_titli_titli-logo.webp', video: 'https://oaks-public.s3.ap-south-1.amazonaws.com/website/sunithainfo/videos/gamification_in_fln.mp4', poster: 'assets/optimized/export-assets_assets_titli_centre-class.webp',
+        gallery: [{ src: 'assets/optimized/export-assets_assets_titli_centre-group.webp', alt: 'Children and Sevikas at a model Anganwadi e-learning centre', cap: 'Children and Sevikas at a model Anganwadi e-learning centre', pos: '50% 60%' }, { src: 'assets/optimized/export-assets_assets_titli_kids-tablet.webp', alt: 'Children playing a learning game on a tablet', cap: 'Small-group play on a Titli tablet', pos: '50% 45%' }, { src: 'assets/optimized/export-assets_assets_titli_sevika-tablet.webp', alt: 'A Sevika guiding children on a tablet', cap: 'A Sevika guides a level-wise activity', pos: '50% 35%' }, { src: 'assets/optimized/export-assets_assets_titli_centre-class.webp', alt: 'A Sevika leading a session', cap: 'A morning session at a model centre', pos: '50% 50%' }],
+        press: [
+          { outlet: 'The Times of India', date: '17 May 2023', what: '165 model Anganwadi centres offer e-learning, e-game in Palamu', tag: 'TNN', img: 'assets/optimized/export-assets_assets_titli_press-toi-palamu.webp' },
+          { outlet: 'Prabhat Khabar', date: '7 April 2023', what: 'A magician takes the teacher’s role during a three-day training', orig: 'शिक्षक की भूमिका में नजर आए जादूगर, बच्चियों को पढ़ाया', tag: 'HINDI', img: 'assets/optimized/export-assets_assets_titli_press-prabhat-khabar.webp' },
+        ] },
+      { short: 'Hybrid JEE & NEET coaching', cat: 'COACHING', kv: '574', kl: 'MBBS seats in 5 years', where: 'AP & TELANGANA', facts: [['For', 'Government-school students'], ['Where', 'Andhra Pradesh & Telangana'], ['Faculty', 'From IITs and NITs'], ['Reach', '1.2 lakh students'], ['Including', 'Singareni Collieries schools · 2,200 students']],
+        video: 'https://oaks-public.s3.ap-south-1.amazonaws.com/website/sunithainfo/videos/hybrid_learning_program.mp4#t=,164',
+        partners: [{ name: 'APSWREIS', src: 'export-assets/assets_hyb_apswreis.webp' }, { name: 'TSWREIS', src: 'export-assets/assets_hyb_tswreis.webp' }, { name: 'Gurukulam', src: 'export-assets/assets_hyb_gurukulam.webp' }, { name: 'Singareni Collieries (SCCL)', src: 'export-assets/assets_hyb_sccl.webp' }, { name: 'Sri Krishna Group of Schools', src: 'export-assets/assets_hyb_krishna.webp' }], note: 'Singareni Collieries: Career Oriented Programme for Class 9 at Kothagudem and Yellandu (PO 7600009171, Jul 2022) — 2,200 students, 82% average on bi-weekly tests; SCCL invited an extension to Classes 8–10.' },
+      { short: 'Industry 4.0 skills & hackathon', cat: 'FUTURE SKILLS', video: 'https://oaks-public.s3.ap-south-1.amazonaws.com/website/sunithainfo/videos/industry_4_0_skills_hackathon.mp4', poster: 'assets/optimized/export-assets_assets_i40_radar-project.webp',
+        partners: [{ name: 'Telangana Social Welfare Residential Educational Institutions Society', src: 'export-assets/assets_i40_tswreis-seal.webp' }, { name: 'Gurukulam', src: 'export-assets/assets_i40_gurukulam.webp' }, { name: 'SETWIN', src: 'export-assets/assets_i40_setwin.webp' }, { name: 'Eklavya Model Residential Schools, Ministry of Tribal Affairs', src: 'export-assets/assets_i40_emrs.webp' }],
+        gallery: [{ src: 'assets/optimized/export-assets_assets_i40_hackathon-girls.webp', alt: 'Students building and coding a smart-city model at the hackathon', cap: 'Coding and building a smart-city model at the hackathon', pos: '50% 50%' }, { src: 'assets/optimized/export-assets_assets_i40_radar-project.webp', alt: 'Students testing a radar project on a laptop', cap: 'Testing a radar build', pos: '50% 40%' }, { src: 'assets/optimized/export-assets_assets_i40_model-project.webp', alt: 'Students presenting a working model', cap: 'A working model, built by students', pos: '50% 40%' }, { src: 'assets/optimized/export-assets_assets_i40_mobile-app.webp', alt: 'A student showing an app he built', cap: 'A student-built mobile app', pos: '50% 30%' }],
+        press: [
+          { outlet: 'News report', date: 'Hackathon', what: 'Kid coders arrived: coding has become child’s play for these kids', tag: 'ENGLISH', img: 'assets/optimized/export-assets_assets_i40_press-kid-coders.webp' },
+          { outlet: 'Telugu daily', date: 'Hackathon', what: 'Hackathon under the Social Welfare schools', tag: 'TELUGU', img: 'assets/optimized/export-assets_assets_i40_press-telugu-1.webp' },
+          { outlet: 'Telugu daily', date: 'Hackathon', what: 'Hackathon: inventions by students', tag: 'TELUGU', img: 'assets/optimized/export-assets_assets_i40_press-telugu-2.webp' },
+        ], kv: '10,000+', kl: 'students enrolled', where: 'TELANGANA', facts: [['Client', 'TSWREIS'], ['Tracks', 'Cyber, drones, media, energy, Web3'], ['Hackathon', '4,000 students, one school'], ['Outcome', '120+ IT internships']] },
+      { short: 'MP Farmer Welfare', cat: 'CITIZEN OUTREACH · AGRICULTURE', where: 'MADHYA PRADESH', facts: [['Client', 'Dept. of Farmer Welfare & Agriculture Development, MP'], ['Contract', 'IT/Advertisement/2025-26/898'], ['Channels', 'Instagram, YouTube, WhatsApp'], ['Languages', 'Hindi and regional languages']], partners: [{ name: 'Govt. of Madhya Pradesh · Farmer Welfare & Agriculture Development', src: 'export-assets/assets_logos_partners_mp.webp' }] },
+      { short: 'Virtual Skill Labs', cat: 'VIRTUAL SKILL LABS · CUSTOM CONTENT', where: 'ACROSS INDIA', sim: 'https://oaks-public.s3.ap-south-1.amazonaws.com/oaks-kidz/data/WebGlBuilds/DroneAssembly2/index.html', facts: [['Formats', 'Video, interactive, print and AR'], ['Labs', 'STEM virtual labs in 2D and 3D'], ['Levels', 'Foundational to advanced skills'], ['Delivery', 'Multiple formats and platforms']], partners: [{ name: 'Maulana Azad National Urdu University', src: 'assets/optimized/assets_vsl_manuu.webp' }, { name: 'IIT Bombay', src: 'assets/optimized/assets_vsl_iitb.webp' }, { name: 'Square Panda', src: 'assets/optimized/assets_vsl_squarepanda.webp' }, { name: 'Acharya Nagarjuna University', src: 'assets/optimized/assets_vsl_anu.webp' }, { name: 'University Grants Commission', src: 'assets/optimized/assets_vsl_ugc.webp' }] },
+    ];
+    const md = MEDIA[pi] || {};
+    const press = md.press || [];
+    R.g = { ...R.g, ...md, video: md.video || null, noVideo: !md.video, logo: md.logo || null, quote: md.quote || null, noQuote: !md.quote, press, hasPress: press.length > 0, noPress: press.length === 0,
+      whereNice: (md.where || '').toLowerCase().replace(/(^|[\s,&])([a-z])/g, (m, p1, c) => p1 + c.toUpperCase()),
+      pos: String(s.prog + 1).padStart(2, '0') + ' / ' + String(MEDIA.length).padStart(2, '0'),
+      facts: (md.facts || []).map(([k, v]) => ({ k, kc: k.toUpperCase(), v })),
+      gallery: (md.gallery || []).slice(0, 4).map((p, k) => { const wide = s.w >= 900, gc = wide ? ((md.gallery || []).length === 3 ? ['span 2', 'span 2', 'span 2'] : ['span 2', 'span 2', 'span 1', 'span 1'])[k] : (k === 0 ? 'span 2' : 'span 1'), gr = wide && k === 0 ? 'span 2' : 'span 1'; return { ...p, gc, gr }; }),
+      hasGallery: (md.gallery || []).length > 0, sim: md.sim || null, hasMedia: !!(md.video || md.sim), isVsl: md.short === 'Virtual Skill Labs', isAssam: md.short === 'Assam State Happiness Index', partners: md.partners || [], hasPartners: (md.partners || []).length > 0 };
+    R.g.pts = [['Adaptive learning platform for 3.5 lakh students in 1,000+ residential schools', 'Content mapped to the Telangana state syllabus', 'Teacher training, remote assessments and analytics'], ['Survey designed for Class 9–12 students', 'Fieldwork in secondary schools across all 33 districts', 'Scoring model, plus 1 state and 33 district reports in English and Assamese'], ['The teacher photographs a handwritten answer sheet', 'SIYA marks it against the teacher\u2019s own scheme and maps each answer to Bloom\u2019s levels', 'Class-wide misconceptions are highlighted; the teacher approves every result'], ['Tablets with play-based literacy and numeracy games, aligned to the UNICEF curriculum', 'Level-wise lesson plans and Sevika training', 'A dashboard for every centre, including 165 model e-learning centres'], ['Live classes from IIT and NIT faculty', 'Fortnightly mock tests to track progress', 'Round-the-clock AI doubt support', 'Career Oriented Programme for Singareni Collieries schools, with 17 bi-weekly tests'], ['Tracks in cybersecurity, drones, media, renewable energy and Web3', 'An integrated coding environment for every student', 'A hackathon with 4,000 students in a single school'], ['Reels, explainer videos and success-story documentaries', 'WhatsApp broadcasts to farmers in Hindi and regional languages', 'Run on a workflow SOP issued by the Secretary in March 2026'], ['Curriculum design, content production and digital deployment', 'Concept videos, 2D & 3D animation and skill walkthroughs', 'STEM virtual labs, simulations and gamified assessments']][pi] || [];
+    R.simOn = !!s.simOn; R.simOff = !s.simOn; R.startSim = () => this.setState({ simOn: true });
+    R.vslCats = [['documents', 'Academic & instructional', ['Teacher manuals & student handbooks', 'Question banks (MCQ, HOTS, case-based)', 'Assignments & practice sets', 'Storyboards & learning flows']], ['dashboard', 'Video & multimedia', ['Concept explanation videos', '2D & 3D animated videos', 'Demonstration & skill walkthroughs', 'Multilingual localisation']], ['zap', 'Interactive & digital', ['Gamified quizzes & assessments', 'Educational & puzzle games', 'STEM virtual labs (2D/3D)', 'Skill-based simulations']], ['growth', 'Foundational literacy & numeracy', ['Textbooks & workbooks', 'Worksheets & lesson plans', 'Rhymes, songs & stories', 'Concept videos for early learners']], ['eye', 'Immersive experiences', ['AR cards & modules', 'Visual-first concept exploration', 'Experiential learning']], ['settings', 'Curriculum & learning management', ['Customised curriculum design', 'Progress tracking & dashboards', 'Language & cultural adaptation']]].map(([i, t, items]) => ({ i, t, items }));
+    R.g.press = press.map((n, k) => ({ ...n, img: n.img || null, noImg: !n.img, orig: n.orig || null, tag: n.tag || 'PRESS', date: n.date || '', open: () => n.img ? this.setState({ clip: { prog: pi, k } }) : (n.href && n.href !== '#' && window.open(n.href, '_blank')) }));
+    { const A = this.assam || [], sel = s.asSel || 'Baksa', hov = s.asHov; const isB = sel === 'Baksa';
+      R.asView = this.assamView || '0 0 600 406'; R.asCols = s.w >= 960 ? 'minmax(0,1.25fr) minmax(0,1fr)' : 'minmax(0,1fr)';
+      R.asPaths = A.map(d => { const on = d.name === sel, h = d.name === hov, bk = d.name === 'Baksa';
+        return { d: d.path, fill: on ? 'var(--navy-700)' : h ? 'var(--blue-300)' : bk ? 'var(--blue-500)' : 'var(--blue-100)', stroke: '#fff', sw: on ? 1.6 : 0.9, pick: () => this.setState({ asSel: d.name }), enter: () => this.setState({ asHov: d.name }) }; });
+      const bk = A.find(d => d.name === 'Baksa'); R.asPins = bk && bk.c ? [{ x: bk.c[0], y: bk.c[1] }] : [];
+      R.asLeave = () => this.setState({ asHov: null }); R.asHoverName = hov ? hov : 'Assam · 33 districts';
+      R.asD = { name: sel, sample: isB, other: !isB, kicker: isB ? 'SAMPLE DISTRICT REPORT · 2022' : 'DISTRICT REPORT DELIVERED · 2022', dimHead: isB ? 'WHERE STUDENTS NEED SUPPORT' : 'WHAT EACH REPORT MEASURES' };
+      const LV = { help: ['Needs help', 'var(--coral-100)', 'var(--coral-600)'], enc: ['Needs encouragement', 'var(--amber-100)', 'var(--navy-700)'], ok: ['Keeps them happy', 'var(--teal-100)', 'var(--teal-600)'] };
+      R.asDims = [['Academic stress', 'Hard, smart and skilful work', 'chart', 'help'], ['Youth problems', 'Encouragement, stress, anxiety', 'alert', 'help'], ['Relationships', 'Extrovert, introvert, jovial, gloomy', 'users', 'enc'], ['Happiness', 'Joyful, energetic, playful, social', 'sparkles', 'enc'], ['Health', 'Emotional, physical, social well-being', 'shield', 'ok']]
+        .map(([t, sub, icon, l]) => ({ t, sub, icon, lv: isB ? LV[l][0] : null, lbg: LV[l][1], lfg: LV[l][2] }));
+      R.asBands = [['<35%', 'var(--coral-500)'], ['36–45%', 'var(--coral-100)'], ['46–55%', 'var(--amber-400)'], ['56–60%', 'var(--teal-100)'], ['>60%', 'var(--teal-500)']].map(([r, c], i) => ({ r, c, o: i === 2 ? 1 : 0.45 }));
+      R.asMark = '50%';
+      R.asStats = [{ v: '26,688', l: 'students surveyed' }, { v: '4,364', l: 'secondary schools' }, { v: '33', l: 'district reports' }, { v: '5', l: 'well-being dimensions' }]; }
+    R.mosCols = s.w >= 900 ? 'repeat(4, minmax(0,1fr))' : 'repeat(2, minmax(0,1fr))';
+    R.mosRow = s.w >= 900 ? 'clamp(180px,17vw,230px)' : '160px';
+    R.clip = s.clip ? ((MEDIA[s.clip.prog].press || [])[s.clip.k] || null) : null;
+    R.closeClip = () => this.setState({ clip: null });
+    { const n = s.w >= 1100 ? 6 : s.w >= 700 ? 3 : 2, line = '1px solid var(--slate-200)';
+      R.solCols = 'repeat(' + n + ', minmax(0,1fr))';
+      R.solDetailCols = s.w >= 1000 ? 'minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)';
+      R.progPrev = () => this.setState({ prog: (s.prog + NP - 1) % NP, simOn: false }); R.progNext = () => this.setState({ prog: (s.prog + 1) % NP, simOn: false });
+      const toUnit = () => { const el = document.getElementById('prog-unit'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: 'smooth' }); };
+      R.progPrevB = () => { this.setState({ prog: (s.prog + NP - 1) % NP, simOn: false }); toUnit(); }; R.progNextB = () => { this.setState({ prog: (s.prog + 1) % NP, simOn: false }); toUnit(); };
+      const TABN = [['Personalised Adaptive Learning', 'Telangana · TSWREIS / TTWREIS'], ['Assam Happiness Index', 'Well-being survey'], ['SIYA', 'AI marking'], ['Project Titli', 'Early years'], ['Hybrid Learning · IIT-JEE & NEET', 'Coaching'], ['Industry 4.0 skills', 'Future skills'], ['MP Farmer Welfare', 'Citizen outreach'], ['Virtual Skill Labs', 'Custom content']];
+      R.g.prevShort = TABN[PO[(s.prog + NP - 1) % NP]][0]; R.g.nextShort = TABN[PO[(s.prog + 1) % NP]][0];
+      R.govTabs = R.govTabs.map((t, i) => { const on = i === s.prog, gi = PO[i]; return { ...t, on, short: TABN[gi][0], cat: TABN[gi][1], bg: on ? 'var(--navy-700)' : '#fff', bd: on ? 'var(--navy-700)' : 'var(--slate-200)', hbd: on ? 'var(--navy-700)' : 'var(--slate-300)', hbg: on ? 'var(--navy-700)' : 'var(--slate-50)', ish: on ? '0 10px 24px rgba(40,60,83,0.22)' : '0 1px 2px rgba(40,60,83,0.05)', ibg: on ? 'var(--blue-500)' : 'var(--blue-50)', ic: on ? '#fff' : 'var(--blue-600)', fg: on ? '#fff' : 'var(--navy-700)', i0: gi === 0, i1: gi === 1, i2: gi === 2, i3: gi === 3, i4: gi === 4, i5: gi === 5, i6: gi === 6, i7: gi === 7 }; }); }
+    R.bgrStats = [{ v: '+2', l: 'trips per shift' }, { v: '1,466', l: 'idle hours recovered' }, { v: '7%', l: 'efficiency improvement' }];
+    const short = ['YuppTV', 'Vidura Digital'];
+    const CL = [['export-assets/assets_logos_partners_yupptv.webp', '30px', 'OTT education'], ['export-assets/assets_logos_partners_vidura.webp', '44px', 'Private schools'], ['export-assets/assets_logos_partners_sccl.webp', '52px', 'Coal PSU'], ['export-assets/assets_logos_partners_mp.webp', '52px', 'State department']];
+    R.csTabCols = s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
+    R.csCols = s.w >= 900 ? 'minmax(0,1.5fr) minmax(0,1fr)' : 'minmax(0,1fr)';
+    R.caseTabs = R.cases.map((c, i) => { const on = i === s.cs; return { label: short[i], sub: CL[i][2], logo: CL[i][0], bd: on ? 'var(--navy-700)' : 'var(--slate-200)', sh: on ? 'var(--shadow-md)' : 'none', bar: on ? 'var(--blue-500)' : 'transparent', pick: () => { this.setState({ cs: i }); this.animCase(); } }; });
+    { const c = R.cases[s.cs], k = s.csK == null ? 1 : s.csK;
+      R.cz = { ...c, pts: [['450+ hours of curriculum video for Grades 8–10', 'OTT-grade encoding, with metadata and tagging for search', 'Delivered across smart TVs, mobile and web'], ['171.9 hours of Maths and Science video', 'A practice bank and teacher dashboards', 'AP, Telangana and CBSE curricula in English, Hindi and Telugu'], ['Career Oriented Programme for Class 9 at Kothagudem and Yellandu (PO 7600009171, Jul 2022)', 'Live sessions, quizzes and 17 bi-weekly tests through 2022–23', 'SCCL then invited an extension to Classes 8–10'], ['Reels, explainer videos and success-story documentaries', 'WhatsApp broadcasts in Hindi and regional languages', 'Run on a workflow SOP issued by the Secretary in March 2026 (Contract IT/Advertisement/2025-26/898)']][s.cs] || [], logo: CL[s.cs][0], lh: CL[s.cs][1], client: short[s.cs], stats: c.stats.map(x => { const m = String(x.v).match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/); if (!m) return { ...x, cur: x.v };
+        const raw = m[2], n = parseFloat(raw.replace(/,/g, '')), dec = (raw.split('.')[1] || '').length, v = n * k;
+        const txt = raw.includes(',') ? Math.round(v).toLocaleString('en-IN') : v.toFixed(dec); return { ...x, cur: m[1] + txt + m[3] }; }) }; }
+    R.csRef = this.csRef;
+    { const RF = [
+        { label: 'Logistics', title: 'Make the next handoff the right one.', lead: 'When dispatch, arrival and receiving records disagree, teams need an exception they can resolve, not another alert.', ev: 'Shipment events, timestamps and receiving records.', kpis: ['Dwell time', 'Missed handoffs', 'Time to resolution'],
+          nodes: [['SIGNAL', 'Records disagree', 'Dispatch 09:10, receiving 11:40, arrival missing'], ['AGENT · READ', 'Gather the records', 'Pulls shipment events, gate logs and receiving notes'], ['AGENT · REASON', 'Find the gap', 'Cross-checks timestamps and finds the missing arrival'], ['AGENT · ACT', 'Raise one exception', 'Attaches the evidence and assigns an owner'], ['HUMAN CHECKPOINT', 'Dispatcher approves', 'Nothing closes without a named person'], ['OUTCOME', 'Resolved with evidence', 'Time to resolution logged']],
+          log: [['signal', 'Shipment 2041: 3 records, 1 mismatch'], ['read', 'Dispatch log, gate log, receiving note loaded'], ['reason', 'Arrival event missing between 09:10 and 11:40'], ['act', 'Exception opened, owner: dispatcher, Yard 2'], ['human', 'Approved by dispatcher'], ['done', 'Closed with 3 source records attached']] },
+        { label: 'Energy', title: 'Carry the context into the next shift.', lead: 'Equipment observations and unresolved actions must survive the handover. Operators need a reliable, traceable picture.', ev: 'Shift logs, maintenance history and approved procedures.', kpis: ['Handover completeness', 'Overdue actions', 'Evidence retrieval time'],
+          nodes: [['SIGNAL', 'Shift is ending', 'Open actions still on the log'], ['AGENT · READ', 'Read the shift', 'Shift logs and maintenance history'], ['AGENT · REASON', 'Link to procedure', 'Matches each open action to an approved procedure'], ['AGENT · ACT', 'Draft the handover', 'A structured note with cited records'], ['HUMAN CHECKPOINT', 'Operator confirms', 'The incoming operator signs off'], ['OUTCOME', 'Context carried forward', 'Next shift starts with the full picture']],
+          log: [['signal', 'Shift B closing: 4 open actions'], ['read', '12 log entries, 3 maintenance records loaded'], ['reason', 'Each action linked to its approved procedure'], ['act', 'Handover drafted with 7 citations'], ['human', 'Confirmed by incoming operator'], ['done', 'Open actions carried into Shift C']] }];
+      const ri = s.rf || 0, rf = RF[ri], st = s.agS == null ? 6 : s.agS, wide = s.w >= 1000, TC = { signal: 'var(--coral-500)', read: 'var(--blue-300)', reason: 'var(--blue-300)', act: 'var(--blue-300)', human: 'var(--amber-400)', done: 'var(--teal-500)' };
+      R.rfTabs = RF.map((r, i) => ({ label: r.label, bg: i === ri ? '#fff' : 'transparent', fg: i === ri ? 'var(--navy-700)' : 'var(--slate-500)', sh: i === ri ? 'var(--shadow-sm)' : 'none', pick: () => this.setState({ rf: i, agS: 0 }) }));
+      R.rf = rf; R.agCols = wide ? 'repeat(6, minmax(0,1fr))' : 'minmax(0,1fr)'; R.agDir = wide ? 'column' : 'row'; R.agPad = wide ? '0 14px 0 0' : '0 0 18px 0';
+      R.agLinkPos = wide ? 'left: 60px; right: 8px; top: 25px; height: 2px' : 'left: 25px; top: 56px; bottom: 2px; width: 2px';
+      R.agBotCols = s.w >= 900 ? 'minmax(0,1.4fr) minmax(0,1fr)' : 'minmax(0,1fr)';
+      R.agNodes = rf.nodes.map(([k, t, d], i) => { const on = i === st, done = i < st, hum = i === 4, out = i === 5;
+        const acc = hum ? 'var(--amber-400)' : out ? 'var(--teal-500)' : i === 0 ? 'var(--coral-500)' : 'var(--blue-500)';
+        return { k, t, d, i0: i === 0, i1: i === 1, i2: i === 2, i3: i === 3, i4: i === 4, i5: i === 5, link: i < 5, lw: wide ? (done ? '100%' : '0%') : '100%', lh: wide ? '100%' : (done ? '100%' : '0%'),
+          bg: on || done ? acc : 'rgba(255,255,255,0.05)', fg: on || done ? (hum ? 'var(--navy-900)' : '#fff') : 'var(--navy-200)', bd: on || done ? acc : 'rgba(255,255,255,0.15)', glow: on ? '0 0 0 6px rgba(41,169,221,0.18), 0 0 30px rgba(41,169,221,0.45)' : 'none', sc: on ? 1.1 : 1, kc: on || done ? acc : 'var(--navy-300)' }; });
+      R.agLog = rf.log.map(([tag, t], i) => ({ tag: '[' + tag + ']', t, c: TC[tag], tc: i <= st ? '#e2e8f0' : 'transparent', o: i <= st ? 1 : 0 }));
+      R.agDot = st >= 6 ? 'var(--teal-500)' : 'var(--coral-500)';
+      { const FDD = { Logistics: { field: 'DEPOT → HIGHWAY → YARD GATE → RECEIVING DOCK', hum: 'Dispatcher approves the exception', out: 'Resolved, with 3 source records attached', sites: [['Dispatch depot', 'inbox', 'Dispatch log · 09:10'], ['Highway route', 'send', 'GPS · signal lost 09:52'], ['Yard gate', 'eye', 'Gate log · no entry'], ['Receiving dock', 'documents', 'Receiving note · 11:40']], st: ['fiif', 'rrrr', 'rggr', 'rrer', 'rrer', 'oooo', 'oooo'], fl: { f: 'MISMATCH', g: 'GAP FOUND', e: 'EXCEPTION' } },
+        Energy: { field: 'TURBINE HALL → CONTROL ROOM → WORKSHOP → PROCEDURES', hum: 'Incoming operator confirms the handover', out: 'Next shift starts with every open action', sites: [['Turbine hall', 'zap', '4 open actions'], ['Control room', 'dashboard', 'Shift log · 12 entries'], ['Maintenance workshop', 'settings', '3 work orders'], ['Procedure library', 'documents', 'Approved SOPs']], st: ['fiii', 'rrri', 'rrrg', 'rerr', 'rerr', 'oooo', 'oooo'], fl: { f: 'OPEN ACTIONS', g: 'MATCHED', e: 'HANDOVER DRAFTED' } } };
+        const fd = FDD[rf.label], sv = Math.min(st, 6), code = fd.st[sv], CO = { r: 'rgba(41,169,221,0.25)', g: 'rgba(245,166,35,0.25)', o: 'rgba(20,184,166,0.25)', f: 'rgba(255,107,91,0.25)', e: 'rgba(255,107,91,0.25)' };
+        const SV = { i: ['rgba(255,255,255,0.03)', 'rgba(255,255,255,0.1)', 'rgba(255,255,255,0.06)', 'var(--navy-200)', 'rgba(255,255,255,0.14)', 'var(--navy-300)'], r: ['rgba(7,149,201,0.12)', 'var(--blue-400)', 'var(--blue-500)', '#fff', 'var(--blue-400)', '#cfeefb'], f: ['rgba(255,107,91,0.1)', 'var(--coral-500)', 'var(--coral-500)', '#fff', 'var(--coral-500)', '#ffd9d4'], g: ['rgba(245,166,35,0.1)', 'var(--amber-400)', 'var(--amber-400)', 'var(--navy-900)', 'var(--amber-400)', '#ffe7bd'], o: ['rgba(20,184,166,0.12)', 'var(--teal-500)', 'var(--teal-500)', '#fff', 'var(--teal-500)', '#c7f5ee'] }; SV.e = SV.f;
+        R.fdSites = fd.sites.map(([name, icon, rec], i) => { const c = code[i], v = SV[c]; return { name, icon, rec, bg: v[0], bd: v[1], ibg: v[2], ic: v[3], lc: v[4], rc: v[5], glow: c === 'i' ? 'none' : '0 0 24px ' + CO[c], flag: fd.fl[c] || null, fbg: c === 'g' ? 'var(--amber-400)' : 'var(--coral-500)', ffg: c === 'g' ? 'var(--navy-900)' : '#fff' }; });
+        R.fdAgents = ['READ', 'REASON', 'ACT'].map((k, i) => { const on = sv === i + 1, done = sv > i + 1; return { k, n: done ? '✓' : String(i + 1), t: rf.nodes[i + 1][1], d: rf.nodes[i + 1][2], bg: on ? 'rgba(7,149,201,0.35)' : done ? 'rgba(7,149,201,0.14)' : 'rgba(255,255,255,0.03)', bd: on ? 'var(--blue-400)' : done ? 'rgba(41,169,221,0.4)' : 'rgba(255,255,255,0.08)', kc: on || done ? '#8dd4f0' : 'var(--navy-300)', nbg: on || done ? 'var(--blue-500)' : 'rgba(255,255,255,0.08)', nfg: on || done ? '#fff' : 'var(--navy-200)' }; });
+        { const li = rf.log[Math.min(st, rf.log.length - 1)]; R.fdLive = { tag: '[' + li[0] + ']', t: li[1], c: TC[li[0]] }; }
+        { const fw = s.w >= 1000, mk = (lit, c) => [{ w: fw ? (lit ? '100%' : '0%') : '100%', h: fw ? '100%' : (lit ? '100%' : '0%'), c }]; R.fdC1 = mk(sv >= 1, 'var(--blue-400)'); R.fdC2 = mk(sv >= 4, 'var(--amber-400)'); R.fdConnW = fw ? '100%' : '2px'; R.fdConnH = fw ? '2px' : '28px'; R.fdConnPad = fw ? '0 10px' : '10px 0'; }
+        R.fdHum = { t: fd.hum, bg: sv === 4 ? 'rgba(245,166,35,0.22)' : sv > 4 ? 'rgba(245,166,35,0.1)' : 'rgba(255,255,255,0.04)', bd: sv >= 4 ? 'var(--amber-400)' : 'rgba(255,255,255,0.12)', ibg: sv >= 4 ? 'var(--amber-400)' : 'rgba(255,255,255,0.08)', ic: sv >= 4 ? 'var(--navy-900)' : 'var(--navy-200)' };
+        R.fdOut = { t: fd.out, bg: sv >= 5 ? 'rgba(20,184,166,0.2)' : 'rgba(255,255,255,0.04)', bd: sv >= 5 ? 'var(--teal-500)' : 'rgba(255,255,255,0.12)', ibg: sv >= 5 ? 'var(--teal-500)' : 'rgba(255,255,255,0.08)', ic: sv >= 5 ? '#fff' : 'var(--navy-200)' };
+        R.fdField = fd.field; R.fdTrack = ['12.5%', '37.5%', '62.5%', '87.5%', '87.5%', '100%', '100%'][sv];
+        R.fdCols = s.w >= 1000 ? 'minmax(0,1.05fr) 48px minmax(0,1.1fr) 48px minmax(0,0.85fr)' : 'minmax(0,1fr)'; R.fdSiteCols = s.w >= 700 ? 'repeat(4, minmax(0,1fr))' : 'repeat(2, minmax(0,1fr))'; R.fdLinkH = s.w >= 700 ? '28px' : '14px'; }
+      R.agReplay = () => this.setState({ agS: 0 }); }
+    { const wide = s.w >= 900; R.labCols = wide ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)'; R.scanY = (s.tick || 0) % 2 ? '96%' : '2%';
+      R.visImg = s.visImg || null; R.visNoImg = !s.visImg; R.visBusy = !!s.visBusy; R.visMsg = s.visMsg || ''; R.visHasRes = !!s.visRes; R.visIdle = !s.visRes && !s.visBusy;
+      R.visRes = (s.visRes || []).map((r, i) => ({ label: r.label.split(',')[0].replace(/^./, c => c.toUpperCase()), pct: Math.round(r.score * 1000) / 10 + '%', c: i === 0 ? '#fff' : 'var(--navy-100)', bar: i === 0 ? 'var(--blue-400)' : 'rgba(141,212,240,0.4)' }));
+      R.visMeta = s.visMs ? 'Ran in ' + s.visMs + ' ms on this device' : '';
+      R.visSamples = [['assets/optimized/export-assets_assets_titli_kids-tablet.webp', 'Children with a tablet'], ['assets/optimized/export-assets_assets_siya_stage-wide.webp', 'A conference stage'], ['assets/optimized/export-assets_assets_tg_student-1.webp', 'A student']].map(([src, alt]) => ({ src, alt, pick: () => this.runVision(src) }));
+      R.visSamples.forEach((x, i) => { R['visPick' + i] = x.pick; });
+      R.visBg = s.visImg ? 'url("' + s.visImg + '")' : 'none'; R.docBg = s.docImg ? 'url("' + s.docImg + '")' : 'none';
+      R.visFile = e => { const fl = e.target.files && e.target.files[0]; if (fl) this.runVision(URL.createObjectURL(fl)); e.target.value = ''; };
+      R.docImg = s.docImg || null; R.docNoImg = !s.docImg; R.docBusy = !!s.docBusy; R.docMsg = s.docMsg || ''; R.docHasRes = s.docText != null && !s.docBusy; R.docIdle = s.docText == null && !s.docBusy;
+      R.docFields = s.docFields || []; R.docNoFields = R.docHasRes && !R.docFields.length; R.docText = (s.docText || '').trim();
+      R.docMeta = s.docMs ? 'Read in ' + (s.docMs / 1000).toFixed(1) + ' s on this device · OCR confidence ' + s.docConf + '%' : '';
+      R.docFile = e => { const fl = e.target.files && e.target.files[0]; if (fl) this.runDoc(URL.createObjectURL(fl)); e.target.value = ''; };
+      R.docSample = () => this.runDoc(this.sampleDoc()); }
+    const PH = { 'Suman Matcha': ['assets/optimized/export-assets_assets_team_suman.webp', '45% 20%'], 'Divya Bandreddy': ['assets/optimized/export-assets_assets_team_divya-v2.webp', '50% 12%'], 'Sai Gireesh Sabbu': ['assets/optimized/export-assets_assets_team_gireesh.webp', '50% 20%'], 'Pavan Kumar Thota': ['assets/optimized/export-assets_assets_team_pavan.webp', '50% 20%'], 'Haritha Gadamsetty': ['assets/optimized/export-assets_assets_team_haritha.webp', '50% 15%'], 'Navyatha Avula': ['assets/optimized/export-assets_assets_team_navyatha.webp', '50% 20%'] };
+    const ini = n => n.replace(/^(Maj\. Gen\.|Shri)\s+/, '').split(' ').filter(w => /^[A-Z][a-z]/.test(w)).slice(0, 2).map(w => w[0]).join('');
+    R.team = R.team.map(p => { const ph = PH[p.name]; return { ...p, src: ph ? ph[0] : null, noSrc: !ph, pos: ph ? ph[1] : '50% 50%', ini: ini(p.name) }; });
+    R.aiTeam = [['Sai Gireesh Sabbu', 'Lead · Head of Product & AI'], ['Bhavana Musnoori', 'Head of Technology'], ['Navyatha Avula', 'AI engineer']].map(([name, role]) => { const ph = PH[name]; return { name, role, src: ph ? ph[0] : null, noSrc: !ph, ini: ini(name) }; });
+    R.aiCaps = ['Handwriting & document extraction', 'Evaluation models', 'Analytics dashboards', 'Deployment'];
+    R.advisors = R.advisors.map((p, i) => ({ ...p, ini: ini(p.name), src: ['assets/optimized/export-assets_assets_team_sunil-chandra.webp', 'assets/optimized/export-assets_assets_team_susanta-panda.webp'][i], pos: ['50% 25%', '50% 30%'][i], tag: ['ADVISOR · EDUCATION AT SCALE', 'ADVISOR · GOVERNMENT & GOVERNANCE'][i],
+      now: ['Former Head, Army Educational Corps', 'Chairman, Zee Media Corporation'][i],
+      pts: [['Former MD, Army Welfare Education Society', 'PhD, International Relations, JNU', 'Advises on curriculum and faculty at scale'],
+        ['Former Member, CBIC · Special Secretary, GoI', 'Director, GSTN board', 'Advises on government engagement']][i] }));
+    { const S = R.security, by = t => S.find(x => x.t === t);
+      R.secGroups = [['PROTECT', 'Keep data safe', 'lock', ['Secure architecture', 'Data isolation']], ['CONTROL', 'Know who did what', 'users', ['Role-based access', 'Auditability', 'Human-in-the-loop']], ['DEPLOY', 'Run it where you need', 'zap', ['On-premise deployment', 'Hybrid cloud']]]
+        .map(([k, t, icon, ts]) => ({ k, t, icon, items: ts.map(by).filter(Boolean).map((x, i, arr) => ({ ...x, bd: i < arr.length - 1 ? '1px solid var(--slate-200)' : 'none' })) }));
+      R.secSpecs = [{ v: 'TLS 1.2+', l: 'Encrypted in transit' }, { v: 'AES-256', l: 'Encrypted at rest' }, { v: '3 months', l: 'Exportable audit logs' }, { v: 'India-only', l: 'Cloud regions for Indian clients' }]; }
+    R.regIds = [{ icon: 'briefcase', k: 'GeM Seller ID', v: 'ZX7T250013803032', n: 'Government e-Marketplace' }, { icon: 'sparkles', k: 'DPIIT recognition', v: 'DIPP222769', n: 'Startup India' }, { icon: 'file', k: 'CIN', v: 'U85499TS2025PTC199477', n: 'OAKS Solutions Pvt Ltd' }, { icon: 'documents', k: 'Udyam', v: 'UDYAM-TS-02-0142279', n: 'Sunitha Infovision Ltd (sister company)' }];
+    R.procCards = [
+      { icon: 'crown', k: 'EMPANELMENTS', t: 'National agencies', items: [{ a: 'QCI', b: 'Nov 2025' }, { a: 'BECIL · TLM projects up to ₹10 crore', b: 'Jul 2026' }, { a: 'EdCIL · software empanelment', b: '2022, ext. 2024' }, { a: 'EdCIL · OLabs rate contract', b: '2025, renewed 2026' }] },
+      { icon: 'shield', k: 'CERTIFICATIONS', t: 'ISO certified', items: [{ a: 'ISO 9001:2015', b: 'No. 23EQMP34' }, { a: 'ISO/IEC 27001:2022', b: 'No. 23EQMS35' }], foot: 'Valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+      { icon: 'users', k: 'GOVERNMENT REFERENCES', t: 'Since 2017', items: [{ a: 'State departments & PSUs', b: '5 states' }, { a: 'Residential school societies', b: 'TS · AP' }, { a: 'National agencies', b: 'QCI · BECIL · EdCIL · NCERT' }], foot: 'OAKS Solutions Pvt Ltd, formerly OVI Learning Pvt Ltd' },
+    ];
+    { const n = R.why.length, w4 = s.w >= 1000, w2 = s.w >= 600, cols = w4 ? n : w2 ? 2 : 1;
+      R.whyCols = 'repeat(' + cols + ', minmax(0,1fr))';
+      R.why = R.why.map((w, i) => ({ ...w, icon: ['zap', 'chart', 'users', 'shield'][i] || 'sparkles', arrow: cols > 1 && (i + 1) % cols !== 0, br: cols > 1 && (i + 1) % cols !== 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', bb: i < n - cols ? '1px solid rgba(255,255,255,0.08)' : 'none' })); }
+    { const N = R.nav || []; R.footNavA = N.slice(0, 4); R.footNavB = N.slice(4); R.footCols = s.w >= 1000 ? 'minmax(0,1.5fr) minmax(0,0.8fr) minmax(0,0.8fr) minmax(0,1.2fr)' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; }
+    R.regCols = s.w >= 1100 ? 'repeat(4, minmax(0,1fr))' : s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
+    { const w3 = s.w >= 1000, w2 = s.w >= 640; R.procCols = w3 ? 'repeat(3, minmax(0,1fr))' : w2 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; R.procCards = R.procCards.map((c, i) => ({ ...c, span: !w3 && w2 && i === 2 ? '1 / -1' : 'auto' })); }
+    R.dp = R.dp.map((d, i) => ({ ...d, t: d.t.replace(/\.$/, ''), icon: ['lock', 'globe', 'eyeOff'][i] }));
+    R.advCols = s.w >= 640 ? '220px minmax(0,1fr)' : 'minmax(0,1fr)';
+    R.teamCols = s.w >= 1000 ? 'repeat(3, minmax(0,1fr))' : s.w >= 640 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
+    const SHORT = { 'Suman Matcha': '17 years building learning systems for state governments and national agencies. Founder of SIYA.', 'Divya Bandreddy': 'Runs government and PSU relationships, from first meeting to delivery.', 'Bhavana Musnoori': 'Leads engineering and platform delivery, including the BGR Trip Card system.', 'Sai Gireesh Sabbu': 'Leads product, client delivery and the AI team across 250+ schools.', 'Pavan Kumar Thota': 'Builds AI, VR and AR learning products. MS, University of Connecticut.', 'Haritha Gadamsetty': '10+ years creating FLN and early-years content, including OLabs.' };
+    R.team = R.team.map(p => ({ ...p, short: SHORT[p.name] || p.bio, roleCaps: p.role.toUpperCase() }));
+    return R;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* ============================================================
+   OAKS — Typography tokens  (Lato)
+   ============================================================ */
+:root {
+  /* Families */
+  --font-sans: "Lato", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Lato", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Weights */
+  --fw-thin: 100;    /* @kind font */
+  --fw-light: 300;   /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-bold: 700;    /* @kind font */
+  --fw-black: 900;   /* @kind font */
+
+  /* Type scale (1.250 major-third-ish, tuned) */
+  --fs-display: 64px;   /* hero / marketing display */
+  --fs-h1: 48px;
+  --fs-h2: 36px;
+  --fs-h3: 28px;
+  --fs-h4: 22px;
+  --fs-title: 18px;     /* card titles, section labels */
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-body-sm: 14px;
+  --fs-caption: 13px;
+  --fs-overline: 12px;
+
+  /* Line heights */
+  --lh-tight: 1.1;     /* @kind font */
+  --lh-snug: 1.25;     /* @kind font */
+  --lh-normal: 1.5;    /* @kind font */
+  --lh-relaxed: 1.65;  /* @kind font */
+
+  /* Letter spacing */
+  --ls-tight: -0.02em;    /* @kind font */
+  --ls-normal: 0;         /* @kind font */
+  --ls-wide: 0.02em;      /* @kind font */
+  --ls-overline: 0.12em;  /* @kind font */
+
+  /* Semantic roles */
+  --type-display-weight: var(--fw-black);   /* @kind font */
+  --type-heading-weight: var(--fw-bold);    /* @kind font */
+  --type-body-weight: var(--fw-regular);    /* @kind font */
+}

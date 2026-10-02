@@ -1,0 +1,108 @@
+/* ============================================================
+   OAKS — Color tokens
+   Brand: cyan-blue #0795C9 + deep navy #283C53
+   ============================================================ */
+:root {
+  /* ---- Brand primary: OAKS Blue ---- */
+  --blue-50:  #e9f6fc;
+  --blue-100: #c9eaf7;
+  --blue-200: #97d7ef;
+  --blue-300: #5cbfe5;
+  --blue-400: #28a6d8;
+  --blue-500: #0795c9;   /* core brand blue (logo ring) */
+  --blue-600: #0579a8;
+  --blue-700: #066089;
+  --blue-800: #0a4d6c;
+  --blue-900: #0d3f57;
+
+  /* ---- Brand ink: OAKS Navy ---- */
+  --navy-50:  #eef1f5;
+  --navy-100: #d4dbe4;
+  --navy-200: #a6b4c4;
+  --navy-300: #7689a0;
+  --navy-400: #4f6580;
+  --navy-500: #354d68;
+  --navy-600: #283c53;   /* core brand navy (logo device) */
+  --navy-700: #1f2f42;
+  --navy-800: #16222f;
+  --navy-900: #0f172a;   /* deepest — site theme color */
+
+  /* ---- Neutral slate ramp (UI greys) ---- */
+  --slate-0:   #ffffff;
+  --slate-50:  #f7f9fb;
+  --slate-100: #eef2f6;
+  --slate-200: #e1e7ee;
+  --slate-300: #cbd4de;
+  --slate-400: #9aa7b6;
+  --slate-500: #6b7a8c;
+  --slate-600: #4d5b6b;
+  --slate-700: #374251;
+  --slate-800: #232c38;
+  --slate-900: #131a23;
+
+  /* ---- Secondary accents (gamification / FLN energy) ---- */
+  --amber-100: #fdeecb;
+  --amber-400: #f8b13c;
+  --amber-500: #f59e0b;   /* rewards, streaks, highlights */
+  --amber-600: #d97e06;
+
+  --coral-100: #fcdcd6;
+  --coral-500: #f2664b;   /* playful CTA / FLN accent */
+  --coral-600: #d84e34;
+
+  --teal-100:  #c9f1ec;
+  --teal-500:  #14b8a6;   /* progress / "learning" accent */
+  --teal-600:  #0f9384;
+
+  /* ---- Semantic status ---- */
+  --green-100: #d3f3df;
+  --green-500: #1ca65b;   /* success, correct answer */
+  --green-600: #158049;
+  --red-100:   #fcdada;
+  --red-500:   #e03b3b;   /* error, wrong answer */
+  --red-600:   #bf2a2a;
+  --yellow-100:#fdf2c4;
+  --yellow-500:#eab308;   /* warning */
+  --info-500:  var(--blue-500);
+
+  /* ============================================================
+     SEMANTIC ALIASES — reach for these in product code
+     ============================================================ */
+  /* Brand */
+  --color-brand:            var(--blue-500);
+  --color-brand-hover:      var(--blue-600);
+  --color-brand-active:     var(--blue-700);
+  --color-brand-subtle:     var(--blue-50);
+  --color-ink:              var(--navy-600);
+  --color-ink-deep:         var(--navy-900);
+
+  /* Text */
+  --text-strong:   var(--navy-700);
+  --text-body:     var(--slate-700);
+  --text-muted:    var(--slate-500);
+  --text-faint:    var(--slate-400);
+  --text-on-brand: #ffffff;
+  --text-link:     var(--blue-600);
+
+  /* Surfaces */
+  --surface-page:    var(--slate-50);
+  --surface-card:    #ffffff;
+  --surface-sunken:  var(--slate-100);
+  --surface-inverse: var(--navy-900);
+  --surface-brand:   var(--blue-500);
+  --surface-brand-soft: var(--blue-50);
+
+  /* Borders */
+  --border-subtle:  var(--slate-200);
+  --border-default: var(--slate-300);
+  --border-strong:  var(--slate-400);
+  --border-brand:   var(--blue-500);
+  --border-focus:   var(--blue-400);
+
+  /* Status semantic */
+  --color-success: var(--green-500);
+  --color-warning: var(--yellow-500);
+  --color-danger:  var(--red-500);
+  --color-info:    var(--blue-500);
+  --color-reward:  var(--amber-500);
+}
