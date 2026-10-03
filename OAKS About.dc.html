@@ -84,179 +84,72 @@ h1,h2,h3,p{overflow-wrap:break-word}
   </sc-if>
 </header>
 
-<section data-screen-label="00 About banner" style="position: relative; overflow: hidden; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%); color: #fff; padding: clamp(56px,8vw,96px) 0 clamp(48px,6vw,72px);">
+<section id="about" data-screen-label="00 About" style="scroll-margin-top: 72px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%); color: #fff; padding: clamp(48px,7vw,88px) 0 clamp(56px,7vw,88px);">
   <div style="position: absolute; right: -180px; top: -220px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(41,169,221,0.3) 0%, rgba(41,169,221,0) 65%); pointer-events: none;"></div>
-  <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px); display: flex; flex-direction: column; gap: 16px;">
+  <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
     <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy-200);"><a href="OAKS%20Home.dc.html" style="color: var(--navy-200);" style-hover="color: #fff;">Home</a><span>/</span><span style="color: #fff;">About</span></div>
-    <h1 style="margin: 0; max-width: 860px; font-size: clamp(34px,5vw,60px); font-weight: 900; line-height: 1.04; letter-spacing: -0.03em; color: #fff; text-wrap: balance;">The company behind the work.</h1>
-    <p style="margin: 0; max-width: 680px; font-size: clamp(16px,1.6vw,19px); line-height: 1.6; color: var(--navy-100); text-wrap: pretty;">Where we work, why clients choose OAKS, and the team accountable for delivery.</p>
-  </div>
-</section>
-
-<section id="about" data-screen-label="01b About" style="scroll-margin-top: 72px; background: var(--slate-50); border-bottom: 1px solid var(--slate-200); padding: clamp(64px,8vw,104px) 0;">
-  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px clamp(40px,6vw,88px); align-items: center;">
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">ABOUT OAKS SOLUTIONS</div>
-      <h2 style="margin: 0; font-size: clamp(30px,3.6vw,46px); font-weight: 900; line-height: 1.06; letter-spacing: -0.03em; color: var(--navy-700); text-wrap: balance;">An AI engineering company with a public-sector track record.</h2>
-      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty;">OAKS Solutions Pvt Ltd is a Hyderabad-based company that designs, builds and operates AI systems for governments, education departments and enterprises. Since 2017 our platforms have served 10 lakh+ users across five states — from marking handwritten answer sheets to running mining fleet intelligence.</p>
-      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty;">We take every system from a two-week prototype to secure, monitored production — and stay accountable for how it performs.</p>
-      <div style="margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr)); gap: 16px 24px;"><div style="display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--slate-200);"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">FOUNDED</span><span style="font-size: 16px; font-weight: 900; color: var(--navy-700);">2017</span></div><div style="display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--slate-200);"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">HEADQUARTERS</span><span style="font-size: 16px; font-weight: 900; color: var(--navy-700);">Hyderabad</span></div><div style="display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--slate-200);"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">FOOTPRINT</span><span style="font-size: 16px; font-weight: 900; color: var(--navy-700);">5 states</span></div><div style="display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--slate-200);"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--slate-500);">CERTIFIED</span><span style="font-size: 16px; font-weight: 900; color: var(--navy-700);">ISO 9001 · 27001</span></div></div>
+    <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 32px clamp(40px,6vw,88px); align-items: end;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-200);">ABOUT OAKS SOLUTIONS</span>
+        <h1 style="margin: 0; font-size: clamp(34px,4.8vw,58px); font-weight: 900; line-height: 1.04; letter-spacing: -0.03em; color: #fff; text-wrap: balance;">The team that builds, ships and runs the work.</h1>
+        <p style="margin: 0; max-width: 60ch; font-size: clamp(16px,1.5vw,18px); line-height: 1.65; color: var(--navy-100); text-wrap: pretty;">OAKS Solutions Pvt Ltd is a Hyderabad AI engineering company. Since 2017 we have designed, built and operated systems for governments, education departments and enterprises, now used by 10 lakh+ people across five states.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0;">
+        <sc-for list="{{ aboutStats }}" as="a" hint-placeholder-count="4">
+          <div style="padding: 18px 0 18px; border-top: 1px solid rgba(255,255,255,0.16); display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: clamp(28px,3vw,38px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: #fff;">{{ a.v }}</span>
+            <span style="font-size: 13px; line-height: 1.4; color: var(--navy-100);">{{ a.l }}</span>
+          </div>
+        </sc-for>
+      </div>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px;"><div style="position: relative; min-height: 240px; border-radius: 20px; overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); display: flex; flex-direction: column; justify-content: flex-end;"><div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-700) 100%);"></div><div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(141,212,240,0.35) 0%, rgba(141,212,240,0) 70%);"></div><span style="position: absolute; right: 18px; top: 18px; color: rgba(255,255,255,0.16);"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="eye" size="{{ 96 }}" hint-size="96px,96px"></x-import></span><div style="position: relative; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.14); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="eye" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.01em;">Computer vision</span><span style="font-size: 14px; line-height: 1.5; color: var(--navy-100); text-wrap: pretty;">Reads trip cards, answer sheets and field imagery with measured accuracy.</span></div></div><div style="position: relative; min-height: 240px; border-radius: 20px; overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); display: flex; flex-direction: column; justify-content: flex-end;"><div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--navy-800) 0%, var(--blue-500) 100%);"></div><div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(141,212,240,0.35) 0%, rgba(141,212,240,0) 70%);"></div><span style="position: absolute; right: 18px; top: 18px; color: rgba(255,255,255,0.16);"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="documents" size="{{ 96 }}" hint-size="96px,96px"></x-import></span><div style="position: relative; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.14); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="documents" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.01em;">Document intelligence</span><span style="font-size: 14px; line-height: 1.5; color: var(--navy-100); text-wrap: pretty;">Turns handwritten and paper records into structured data, traceable to the source.</span></div></div><div style="position: relative; min-height: 240px; border-radius: 20px; overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); display: flex; flex-direction: column; justify-content: flex-end;"><div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--blue-800) 0%, var(--teal-500) 100%);"></div><div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(141,212,240,0.35) 0%, rgba(141,212,240,0) 70%);"></div><span style="position: absolute; right: 18px; top: 18px; color: rgba(255,255,255,0.16);"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="growth" size="{{ 96 }}" hint-size="96px,96px"></x-import></span><div style="position: relative; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.14); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="growth" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.01em;">Adaptive learning</span><span style="font-size: 14px; line-height: 1.5; color: var(--navy-100); text-wrap: pretty;">Personalised learning paths and AI assessment, delivered at state scale.</span></div></div><div style="position: relative; min-height: 240px; border-radius: 20px; overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); display: flex; flex-direction: column; justify-content: flex-end;"><div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--navy-900) 0%, #3a4f9a 55%, var(--blue-500) 100%);"></div><div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(141,212,240,0.35) 0%, rgba(141,212,240,0) 70%);"></div><span style="position: absolute; right: 18px; top: 18px; color: rgba(255,255,255,0.16);"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="sparkles" size="{{ 96 }}" hint-size="96px,96px"></x-import></span><div style="position: relative; padding: 20px; display: flex; flex-direction: column; gap: 8px;"><span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.14); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="sparkles" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><span style="font-size: 18px; font-weight: 900; color: #fff; letter-spacing: -0.01em;">Agentic workflows</span><span style="font-size: 14px; line-height: 1.5; color: var(--navy-100); text-wrap: pretty;">Agents that gather evidence and draft actions for a person to approve.</span></div></div></div></div>
+    <figure style="margin: clamp(36px,5vw,56px) 0 0; position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 16 / 7; background: var(--navy-800); box-shadow: 0 40px 80px rgba(8,17,31,0.45), 0 0 0 1px rgba(255,255,255,0.08);">
+      <img loading="eager" decoding="async" src="assets/optimized/about_team-photo.jpg" alt="The OAKS team at the Hyderabad office" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;">
+      <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px clamp(18px,3vw,32px) clamp(16px,2.4vw,24px); background: linear-gradient(180deg, rgba(8,17,31,0) 0%, rgba(8,17,31,0.82) 100%); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 8px 24px;">
+        <span style="font-size: clamp(16px,1.6vw,20px); font-weight: 900; color: #fff;">The OAKS team, Hyderabad</span>
+        <span style="font-size: 13px; font-weight: 700; color: var(--navy-100);">ISO 9001:2015 · ISO/IEC 27001:2022 certified</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-
-<section id="footprint" data-screen-label="07 Footprint" style="scroll-margin-top: 72px; background: var(--slate-50); padding: clamp(80px,10vw,128px) 0;">
+<section id="teams" data-screen-label="01 Teams" style="scroll-margin-top: 72px; background: #fff; padding: clamp(64px,8vw,104px) 0;">
   <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
-    
-    <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 64px; align-items: flex-end;">
       <div style="flex: 1 1 440px;">
-        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">07 / WHERE WE WORK</div>
-        <h2 style="margin: 16px 0 0; font-size: clamp(34px,4.6vw,56px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.04; color: var(--navy-700); text-wrap: balance;">Programmes in five states, run from Hyderabad.</h2>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">OUR TEAMS</div>
+        <h2 style="margin: 16px 0 0; font-size: clamp(32px,4.2vw,52px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.05; color: var(--navy-700); text-wrap: balance;">50 people across five teams.</h2>
       </div>
-      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px;"><p style="margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty; max-width: 58ch;">Select a state to see what we delivered there and the results it achieved.</p><div style="display: flex; flex-wrap: wrap; gap: 10px 24px;"><sc-for list="{{ kp.foot }}" as="k" hint-placeholder-count="3"><div style="display: flex; align-items: center; gap: 10px;"><span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ k.i }}" size="{{ 18 }}" hint-size="18px,18px"></x-import></span><span style="font-size: 14px; font-weight: 700; line-height: 1.3; color: var(--navy-700);">{{ k.t }}</span></div></sc-for></div></div>
+      <p style="flex: 1 1 380px; margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty;">Every programme is staffed from the same building: product, engineering, content and operations working on one plan, with one person accountable for each team.</p>
     </div>
-    <div style="margin-top: 56px; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at 35% 45%, #0f2238 0%, #08111f 70%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 40px 80px rgba(15,23,42,0.25); color: #fff;">
-      <div style="display: flex; flex-wrap: {{ fpWrap }}; height: {{ fpH }};">
-        <div style="flex: 1.6 1 520px; min-width: 0; height: {{ fpColH }}; position: relative; padding: clamp(20px,3vw,40px); display: flex; flex-direction: column; box-sizing: border-box;">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
-            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">OAKS DELIVERY FOOTPRINT</span>
-            <span style="display: flex; gap: 16px; font-size: 12px; color: var(--navy-100);"><span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: #1a6a94;"></span>Programme state</span><span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 999px; background: var(--amber-400);"></span>Hyderabad HQ</span></span>
-          </div>
-          <div style="flex: 1; min-height: 0; position: relative; display: flex; flex-direction: {{ mapDir }}; gap: 16px; align-items: center; justify-content: center; padding: {{ mapPad }};">
-            <div ref="{{ footRef }}" style="position: {{ ctrPos }}; left: 0; top: 50%; transform: {{ ctrTf }}; z-index: 2; display: grid; grid-template-columns: {{ ctrCols }}; gap: 0 20px; width: {{ ctrW }};">
-              <sc-for list="{{ scale }}" as="s" hint-placeholder-count="6">
-                <div style="padding: 12px 0; border-top: {{ s.bt }}; display: flex; flex-direction: column; gap: 4px;">
-                  <span style="font-size: clamp(26px,2.4vw,34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; text-shadow: 0 2px 16px rgba(8,17,31,0.9);">{{ s.v }}</span>
-                  <span style="font-size: 12px; line-height: 1.35; color: var(--navy-100); text-shadow: 0 1px 8px rgba(8,17,31,0.9);">{{ s.l }}</span>
-                </div>
-              </sc-for>
-            </div>
-            <svg ref="{{ mapRef }}" viewBox="0 0 612 696" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: {{ svgH }}; max-height: 100%; display: block; overflow: visible;" role="img" aria-label="Map of India with OAKS programme states highlighted">
-              <sc-for list="{{ mapPaths }}" as="p" hint-placeholder-count="0">
-                <path d="{{ p.d }}" data-id="{{ p.id }}" onClick="{{ p.pick }}" style="fill: {{ p.fill }}; stroke: {{ p.stroke }}; stroke-width: {{ p.sw }}; stroke-linejoin: round; cursor: {{ p.cur }}; filter: {{ p.fx }}; transition: fill 350ms, stroke 350ms, filter 350ms;"><title>{{ p.name }}</title></path>
-              </sc-for>
-              <sc-for list="{{ mapDots }}" as="m" hint-placeholder-count="0">
-                <g onClick="{{ m.pick }}" style="cursor: pointer;">
-                  <circle cx="{{ m.x }}" cy="{{ m.y }}" r="{{ m.r }}" style="fill: {{ m.c }}; opacity: 0.25;"><animate attributeName="r" values="{{ m.anim }}" dur="2.4s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.35;0;0.35" dur="2.4s" repeatCount="indefinite"></animate></circle>
-                  <circle cx="{{ m.x }}" cy="{{ m.y }}" r="{{ m.core }}" style="fill: {{ m.c }}; stroke: #08111f; stroke-width: 1.5;"></circle>
-                </g>
-              </sc-for>
-            </svg>
-          </div>
-          <span style="font-size: 11px; line-height: 1.5; color: var(--navy-200);">Outline: MapSVG (@svg-maps/india), CC BY 4.0. Shows programme locations; not an administrative boundary reference.</span>
-        </div>
-        <div style="flex: 1 1 380px; min-width: 0; height: {{ fpColH }}; box-sizing: border-box; overflow: hidden; border-left: 1px solid rgba(255,255,255,0.08); background: rgba(8,17,31,0.5); padding: clamp(24px,3vw,40px); display: flex; flex-direction: column; gap: 24px;">
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <sc-for list="{{ states }}" as="s" hint-placeholder-count="5">
-              <button onClick="{{ s.pick }}" style="all: unset; cursor: pointer; height: 34px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 700; background: {{ s.bg }}; color: {{ s.fg }}; border: 1px solid {{ s.bd }}; transition: all 250ms;" style-hover="border-color: rgba(255,255,255,0.4);">{{ s.name }}</button>
-            </sc-for>
-          </div>
-          <div style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-300);">{{ stCur.tag }}</span>
-              <span style="font-size: clamp(30px,3vw,40px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; color: #fff;">{{ stCur.name }}</span>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.1);">
-              <span style="font-size: clamp(44px,4.4vw,60px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: #8dd4f0; white-space: nowrap;">{{ stCur.hv }}</span>
-              <span style="font-size: 15px; line-height: 1.4; color: var(--navy-100);">{{ stCur.hl }}</span>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--navy-200);">OUTCOMES · SELECT A PROJECT</span>
-              <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1);">
-                <sc-for list="{{ stCur.projects }}" as="p">
-                  <button onClick="{{ p.pick }}" style="all: unset; cursor: pointer; display: flex; flex-direction: column; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 14px 4px 14px 14px; border-left: 2px solid {{ p.bl }}; background: {{ p.bg }}; transition: background 250ms, border-color 250ms;" style-hover="background: rgba(255,255,255,0.04);">
-                    <span style="display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 16px; align-items: baseline;">
-                      <span style="font-size: 14px; font-weight: 700; line-height: 1.35; color: {{ p.fg }};">{{ p.t }}</span>
-                      <span style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em; color: {{ p.vc }}; white-space: nowrap;">{{ p.v }}</span>
-                    </span>
-                    <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
-                      <span style="margin-top: 8px; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 16px; align-items: baseline;">
-                        <span style="font-size: 13px; line-height: 1.5; color: var(--navy-100);">{{ p.o }}</span>
-                        <span style="font-size: 11px; color: var(--navy-200); white-space: nowrap;">{{ p.u }}</span>
-                      </span>
-                    </sc-if>
-                  </button>
-                </sc-for>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p style="margin: 20px 0 0; font-size: 12px; color: var(--slate-500);">Cumulative reach of OAKS programmes since 2017.</p>
-    <div style="margin-top: 88px; border-radius: 28px; background: #fff; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm); overflow: hidden;">
-      <div style="padding: clamp(28px,4vw,48px) clamp(24px,4vw,48px) 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px;">
-        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px;">
-          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-600);">CLIENTS AND PROGRAMME PARTNERS</span>
-          <span style="font-size: clamp(24px,2.8vw,34px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; color: var(--navy-700); text-wrap: balance;">State governments, national agencies and industry.</span>
-        </div>
-        <span style="font-size: 14px; color: var(--slate-500);">{{ partnerCount }} organisations since 2017</span>
-      </div>
-      <sc-for list="{{ partnerGroups }}" as="grp" hint-placeholder-count="4">
-        <div style="display: grid; grid-template-columns: {{ pgCols }}; gap: 0; border-top: 1px solid var(--slate-200); margin-top: 32px;">
-          <div style="padding: 28px clamp(24px,4vw,48px); display: flex; flex-direction: column; gap: 6px; border-right: {{ pgDiv }};">
-            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--navy-700);">{{ grp.t }}</span>
-            <span style="font-size: 13px; line-height: 1.5; color: var(--slate-500);">{{ grp.d }}</span>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
-            <sc-for list="{{ grp.items }}" as="p">
-              <div title="{{ p.name }}" style="height: 148px; box-sizing: border-box; padding: 20px 16px 16px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 10px; border-right: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); transition: background 200ms;" style-hover="background: var(--slate-50);">
-                <span style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%;"><img loading="lazy" decoding="async" sc-camel-src="{{ p.src }}" alt="{{ p.name }}" style="height: {{ p.h }}; width: auto; max-width: 132px; object-fit: contain; display: block;"></span>
-                <span style="font-size: 11px; font-weight: 700; line-height: 1.3; letter-spacing: 0.02em; color: var(--slate-500); text-align: center;">{{ p.name }}</span>
-              </div>
-            </sc-for>
-          </div>
-        </div>
-      </sc-for>
-      <p style="margin: 0; padding: 18px clamp(24px,4vw,48px); border-top: 1px solid var(--slate-200); background: var(--slate-50); font-size: 12px; color: var(--slate-500);">All logos and emblems are used with the written permission of each organisation.</p>
-    </div>
-  </div>
-</section>
-
-
-<section id="why" data-screen-label="08 Why OAKS" style="scroll-margin-top: 72px; background: #fff; padding: clamp(56px,6vw,80px) 0;">
-  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
-    
-    <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end;">
-      <div style="flex: 1 1 440px;">
-        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">08 / WHY OAKS</div>
-        <h2 style="margin: 16px 0 0; font-size: clamp(34px,4.6vw,56px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.04; color: var(--navy-700); text-wrap: balance;">Fast to prototype. Engineered to scale.</h2>
-      </div>
-      <p style="flex: 1 1 380px; margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty;">We start with your operation, not the technology — then build quickly and stay with you through production.</p>
-    </div>
-    <div style="margin-top: 40px; display: grid; grid-template-columns: {{ whyCols }}; gap: 0; border-radius: 24px; overflow: hidden; background: var(--navy-900); color: #fff;">
-      <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
-        <div style="position: relative; padding: 28px 28px 30px; display: flex; flex-direction: column; gap: 14px; border-right: {{ w.br }}; border-bottom: {{ w.bb }};">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(141,212,240,0.14); border: 1px solid rgba(141,212,240,0.35); color: #8dd4f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ w.icon }}" size="{{ 24 }}" hint-size="24px,24px"></x-import></span>
-            <span style="flex: 1; height: 2px; background: linear-gradient(90deg, rgba(141,212,240,0.6), rgba(141,212,240,0));"></span>
-            <span style="font-size: 12px; font-weight: 900; letter-spacing: 0.12em; color: var(--blue-200);">{{ w.n }}</span>
-          </div>
-          <h3 style="margin: 0; font-size: 21px; font-weight: 900; color: #fff;">{{ w.t }}</h3>
-          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--navy-100); text-wrap: pretty;">{{ w.d }}</p>
-          <sc-if value="{{ w.arrow }}"><span style="position: absolute; right: -13px; top: 40px; z-index: 1; width: 26px; height: 26px; border-radius: 999px; background: var(--blue-500); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; box-shadow: 0 0 0 4px var(--navy-900);">→</span></sc-if>
+    <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 212px), 1fr)); gap: 16px;">
+      <sc-for list="{{ teams }}" as="t" hint-placeholder-count="5">
+        <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px 22px 22px; border-radius: 20px; background: var(--slate-50); border: 1px solid var(--border-subtle); transition: border-color 200ms, background 200ms;" style-hover="background: #fff; border-color: var(--blue-200);">
+          <span style="width: 44px; height: 44px; border-radius: 12px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ t.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import></span>
+          <span style="font-size: 18px; font-weight: 900; letter-spacing: -0.01em; line-height: 1.2; color: var(--navy-700);">{{ t.t }}</span>
+          <span style="flex: 1; font-size: 14px; line-height: 1.55; color: var(--slate-600); text-wrap: pretty;">{{ t.d }}</span>
+          <span style="display: flex; align-items: center; gap: 10px; padding-top: 14px; border-top: 1px solid var(--slate-200);">
+            <span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 999px; overflow: hidden; background: var(--navy-600); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: #fff;"><sc-if value="{{ t.src }}"><img loading="lazy" decoding="async" sc-camel-src="{{ t.src }}" alt="{{ t.lead }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ t.pos }}; display: block;"></sc-if><sc-if value="{{ t.noSrc }}">{{ t.ini }}</sc-if></span>
+            <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--slate-500);">LED BY</span><span style="font-size: 14px; font-weight: 700; color: var(--navy-700);">{{ t.lead }}</span></span>
+          </span>
         </div>
       </sc-for>
     </div>
   </div>
 </section>
 
-
-<section id="team" data-screen-label="11 Team" style="scroll-margin-top: 72px; background: var(--slate-50); padding: clamp(80px,10vw,128px) 0;">
+<section id="team" data-screen-label="02 Leadership" style="scroll-margin-top: 72px; background: var(--slate-50); padding: clamp(64px,8vw,104px) 0;">
   <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px,4vw,40px);">
-    <div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end;">
-      <div style="flex: 1 1 440px;"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">11 / WHO WE ARE</div>
-      <h2 style="margin: 16px 0 0; font-size: clamp(34px,4.6vw,56px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.04; color: var(--navy-700); text-wrap: balance; margin: 0;">The people behind OAKS.</h2></div>
-      <p style="flex: 1 1 380px; margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600);">OAKS builds on Sunitha Academy, founded in 1994 by M. P. R. Vittal, which prepared more than 7,800 students for the defence services.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 64px; align-items: flex-end;">
+      <div style="flex: 1 1 440px;"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-500);">LEADERSHIP</div>
+      <h2 style="margin: 16px 0 0; font-size: clamp(32px,4.2vw,52px); font-weight: 900; letter-spacing: -0.025em; line-height: 1.05; color: var(--navy-700); text-wrap: balance;">Some of the people behind OAKS.</h2></div>
+      <p style="flex: 1 1 380px; margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty;">OAKS builds on Sunitha Academy, founded in 1994 by M. P. R. Vittal, which prepared more than 7,800 students for the defence services.</p>
     </div>
-    <div style="margin-top: 56px; display: flex; align-items: center; gap: 16px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--slate-500);">LEADERSHIP</span><span style="flex: 1; height: 1px; background: var(--slate-200);"></span></div>
-    <div style="margin-top: 24px; display: grid; grid-template-columns: {{ teamCols }}; gap: 24px;">
+    <div style="margin-top: 48px; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
       <sc-for list="{{ team }}" as="p" hint-placeholder-count="3">
-        <article style="height: 100%; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; background: #fff; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-          <div style="position: relative; aspect-ratio: 4 / 3.4; overflow: hidden; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%);">
-            <sc-if value="{{ p.src }}" hint-placeholder-val="{{ true }}"><img loading="lazy" decoding="async" sc-camel-src="{{ p.src }}" alt="{{ p.name }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; display: block;"></sc-if>
+        <article style="flex: 0 0 {{ teamBasis }}; min-width: 0; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; background: #fff; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+          <div style="position: relative; aspect-ratio: 4 / 3.4; overflow: hidden; background: {{ p.bg }};">
+            <sc-if value="{{ p.src }}" hint-placeholder-val="{{ true }}"><img loading="lazy" decoding="async" sc-camel-src="{{ p.src }}" alt="{{ p.name }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{ p.pos }}; transform: {{ p.tf }}; transform-origin: {{ p.zo }}; display: block;"></sc-if>
             <sc-if value="{{ p.noSrc }}" hint-placeholder-val="{{ false }}"><div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"><span style="width: 112px; height: 112px; border-radius: 999px; border: 1.5px solid rgba(141,212,240,0.5); display: flex; align-items: center; justify-content: center; font-size: 38px; font-weight: 900; color: #fff;">{{ p.ini }}</span></div></sc-if>
           </div>
           <div style="flex: 1; padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px;">
@@ -266,27 +159,6 @@ h1,h2,h3,p{overflow-wrap:break-word}
           </div>
         </article>
       </sc-for>
-    </div>
-    <div style="margin-top: 72px; border-radius: 28px; overflow: hidden; position: relative; background: linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%); color: #fff; padding: clamp(28px,4vw,48px);">
-      <div style="position: absolute; right: -160px; top: -200px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(7,149,201,0.35) 0%, rgba(7,149,201,0) 65%); pointer-events: none;"></div>
-      <div style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: center;">
-        <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 14px;">
-          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">AI TEAM</span>
-          <h3 style="margin: 0; font-size: clamp(26px,3vw,36px); font-weight: 900; letter-spacing: -0.02em; line-height: 1.12; color: #fff; text-wrap: balance;">The applied-AI team behind SIYA and the BGR Trip Card Intelligence System.</h3>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px;"><sc-for list="{{ aiCaps }}" as="c"><span style="padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); font-size: 13px; font-weight: 700; color: #e6f6fd;">{{ c }}</span></sc-for></div>
-        </div>
-        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 10px;">
-          <sc-for list="{{ aiTeam }}" as="m" hint-placeholder-count="3">
-            <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
-              <span style="width: 56px; height: 56px; flex-shrink: 0; border-radius: 999px; overflow: hidden; background: var(--navy-600); border: 2px solid rgba(141,212,240,0.5); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: #fff;">
-                <sc-if value="{{ m.src }}"><img loading="lazy" decoding="async" sc-camel-src="{{ m.src }}" alt="{{ m.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; display: block;"></sc-if>
-                <sc-if value="{{ m.noSrc }}">{{ m.ini }}</sc-if>
-              </span>
-              <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0;"><span style="font-size: 16px; font-weight: 900; color: #fff;">{{ m.name }}</span><span style="font-size: 13px; color: var(--navy-100);">{{ m.role }}</span></span>
-            </div>
-          </sc-for>
-        </div>
-      </div>
     </div>
     <div style="margin-top: 72px; display: flex; align-items: center; gap: 16px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--slate-500);">ADVISORS</span><span style="flex: 1; height: 1px; background: var(--slate-200);"></span></div>
     <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 24px;">
@@ -366,7 +238,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
       <span><strong style="color: var(--navy-100);">CIN</strong> U85499TS2025PTC199477</span>
       <span><strong style="color: var(--navy-100);">ISO</strong> 9001:2015 · 27001:2022</span>
     </div>
-    <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners. All logos and emblems are used with the written permission of each organisation.</p>
+    <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners.</p>
     <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;">
       <span>© 2026 OAKS Solutions Pvt Ltd · Hyderabad, India</span>
       <div style="display: flex; gap: 20px;"><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids' privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms</a></div>
@@ -651,7 +523,7 @@ class Component extends DCLogic {
       openProcurement: () => this.openForm('gov', 'Procurement pack'),
       openCapGov: () => this.openForm('gov', 'Government capability statement'),
       openCapEnt: () => this.openForm('ent', 'Enterprise capability statement'),
-      kp: Object.fromEntries(Object.entries({ gov: [['employees', '10 lakh+ users'], ['globe', '5 states'], ['analytics', 'Measured outcomes']], ent: [['sparkles', 'Vision & document AI'], ['eye', 'Traceable figures'], ['growth', 'Measured gains']], method: [['goals', 'Discover'], ['zap', '2-week prototype'], ['settings', 'Run in production']], stack: [['dashboard', 'Applications'], ['sparkles', 'AI models'], ['shield', 'Secure infrastructure']], foot: [['companyPolicies', 'Hyderabad HQ'], ['globe', '5 states'], ['calendar', 'Since 2017']], comp: [['checkCircle', 'ISO 9001 & 27001'], ['crown', '4 empanelments'], ['lock', 'DPDP Act ready']] }).map(([k, v]) => [k, v.map(([i, t]) => ({ i, t }))])),
+      kp: Object.fromEntries(Object.entries({ gov: [['employees', '10 lakh+ users'], ['globe', '5 states'], ['analytics', 'Measured outcomes']], ent: [['sparkles', 'Vision & document AI'], ['eye', 'Traceable figures'], ['growth', 'Measured gains']], method: [['goals', 'Discover'], ['zap', '2-week prototype'], ['settings', 'Run in production']], stack: [['dashboard', 'Applications'], ['sparkles', 'AI models'], ['shield', 'Secure infrastructure']], foot: [['companyPolicies', 'Hyderabad HQ'], ['globe', '5 states'], ['calendar', 'Since 2017']], comp: [['checkCircle', 'ISO 9001:2015 & 27001:2022'], ['crown', '4 empanelments'], ['lock', 'DPDP Act ready']] }).map(([k, v]) => [k, v.map(([i, t]) => ({ i, t }))])),
       formOpen: s.formOpen, formSubject: s.subject.toUpperCase(), audience: s.audience, sent: s.sent, notSent: !s.sent,
       setAudience: e => this.setState({ audience: e.target.value }),
       closeForm: () => this.setState({ formOpen: false }), submit: e => { const root = e && e.currentTarget && e.currentTarget.closest && e.currentTarget.closest('[data-oaks-form]'); window.oaksSend && window.oaksSend(root, { form: 'Enquiry popup', subject: s.subject, audience: s.audience }); this.setState({ sent: true }); },
@@ -841,7 +713,7 @@ class Component extends DCLogic {
       tiles: [
         { k: 'EMPANELMENTS', v: 'QCI (Nov 2025) · BECIL, teaching-learning material projects up to ₹10 crore (Jul 2026) · EdCIL software empanelment (2022, extended 2024) · EdCIL OLabs rate contract (2025, renewed 2026)' },
         { k: 'GEM', v: 'Registered seller on the Government e-Marketplace · Seller ID', tbc: '[TBC: GeM seller ID]' },
-        { k: 'CERTIFICATIONS', v: 'ISO 9001:2015 (No. 23EQMP34) and ISO/IEC 27001:2022 (No. 23EQMS35), valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+        { k: 'CERTIFICATIONS', v: 'ISO 9001:2015 quality management (No. 26EQRG27) and ISO/IEC 27001:2022 information security (No. 26EQRA18), held by OAKS Solutions Pvt Ltd · scope: education technology including digital learning, assessment and analytics · issued 26 Jun 2026, valid to 25 Jun 2029 · certified by Assurance Quality Certification LLC (IAF MLA member)' },
         { k: 'GOVERNMENT REFERENCES', v: 'Programmes with state departments, residential school societies and PSUs in 5 states, and national agencies (QCI, BECIL, EdCIL, NCERT), since 2017' },
         { k: 'COMPANY', v: 'OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd) · CIN U85499TS2025PTC199477 · Sister company Sunitha Infovision Ltd: Udyam UDYAM-TS-02-0142279', tbc: '[TBC: DPIIT recognition number, if held]' },
       ],
@@ -860,12 +732,14 @@ class Component extends DCLogic {
         { t: 'Human-in-the-loop', d: 'Consequential decisions route to a person. The system advises; it does not act alone.', c: 'Teachers approve every SIYA result; dispatchers approve every exception.' },
       ],
       team: [
-        { name: 'Suman Matcha', role: 'Founder & CEO', bio: '17 years building learning systems for Indian states and national agencies. Led programmes for residential school societies in Telangana, state-wide assessment in Assam, and national e-learning work. Founder of SIYA, now in pilots in Malta and Spain.' },
+        { name: 'Suman Matcha', role: 'CEO', bio: '17 years building learning systems for Indian states and national agencies. Led programmes for residential school societies in Telangana, state-wide assessment in Assam, and national e-learning work. Founder of SIYA, now in pilots in Malta and Spain.' },
         { name: 'Divya Bandreddy', role: 'Chief of Staff', bio: 'Runs OAKS\u2019s government and PSU relationships day to day, including EdCIL, BECIL, QCI and Madhya Pradesh state departments. Moves each opportunity from first meeting to work order, invoice and delivery, and leads programme operations and hiring across the team.' },
         { name: 'Bhavana Musnoori', role: 'Head of Technology', bio: '5+ years in software engineering. Led the build, deployment pipelines and client handover of the BGR Trip Card Intelligence System, and runs platform delivery across OAKS products.' },
         { name: 'Sai Gireesh Sabbu', role: 'Head of Product & AI', bio: 'Leads product design, client delivery and the AI team. Has managed relationships with 250+ schools and LMS improvements for 1 lakh+ users.' },
         { name: 'Pavan Kumar Thota', role: 'Head of Interactives & Games', bio: '8+ years in software and product management; builds AI, VR and AR learning products. MS, University of Connecticut.' },
         { name: 'Haritha Gadamsetty', role: 'Head of Content', bio: '10+ years developing FLN and early-years content, including OLabs and Virtual Skill Labs.' },
+        { name: 'Gaddam Sampath Reddy', role: 'Head of IT & Network Operations', bio: '16+ years in network administration and management across education and IT. Oversees network operations and administration at sister company Sunitha Infovision. Previously Administration Manager at Digiclass for five years, supervising IT operations.' },
+        { name: 'Sachin Menon', role: 'Creative Head', bio: '12 years in education media. Creative Head since 2019 at sister company Sunitha Infovision, leading visual design, motion graphics and video production. Previously Senior Compositor at Next Education India (2014–18).' },
       ],
       advisors: [
         { name: 'Maj. Gen. Sunil Chandra (Retd.), PhD', init: 'Sunil Chandra', bio: 'Former Head of the Army Educational Corps, responsible for training and human-resource development across the Indian Army and for personnel from friendly foreign countries. Former Managing Director of the Army Welfare Education Society, which oversees Army schools, professional colleges and teacher training. Technical Advisor to the Institute for Defence Orientation. PhD in International Relations (Conflict Management) from JNU; PGDBA from Symbiosis, Pune; MA, MEd, MPhil. Advises OAKS on educational administration, faculty development and curriculum at scale.' },
@@ -1002,9 +876,19 @@ class Component extends DCLogic {
       R.docMeta = s.docMs ? 'Read in ' + (s.docMs / 1000).toFixed(1) + ' s on this device · OCR confidence ' + s.docConf + '%' : '';
       R.docFile = e => { const fl = e.target.files && e.target.files[0]; if (fl) this.runDoc(URL.createObjectURL(fl)); e.target.value = ''; };
       R.docSample = () => this.runDoc(this.sampleDoc()); }
-    const PH = { 'Suman Matcha': ['assets/optimized/export-assets_assets_team_suman.webp', '45% 20%'], 'Divya Bandreddy': ['assets/optimized/export-assets_assets_team_divya-v2.webp', '50% 12%'], 'Sai Gireesh Sabbu': ['assets/optimized/export-assets_assets_team_gireesh.webp', '50% 20%'], 'Pavan Kumar Thota': ['assets/optimized/export-assets_assets_team_pavan.webp', '50% 20%'], 'Haritha Gadamsetty': ['assets/optimized/export-assets_assets_team_haritha.webp', '50% 15%'], 'Navyatha Avula': ['assets/optimized/export-assets_assets_team_navyatha.webp', '50% 20%'] };
+    const PH = { 'Suman Matcha': ['assets/optimized/export-assets_assets_team_suman.webp', '45% 20%'], 'Divya Bandreddy': ['assets/optimized/export-assets_assets_team_divya-v2.webp', '50% 0%'], 'Sai Gireesh Sabbu': ['assets/optimized/export-assets_assets_team_gireesh.webp', '50% 20%'], 'Pavan Kumar Thota': ['assets/optimized/export-assets_assets_team_pavan.webp', '50% 20%'], 'Haritha Gadamsetty': ['assets/optimized/export-assets_assets_team_haritha.webp', '50% 15%'], 'Navyatha Avula': ['assets/optimized/export-assets_assets_team_navyatha.webp', '50% 20%'], 'Sachin Menon': ['assets/optimized/about_team_sachin.jpg', '50% 18%'], 'Gaddam Sampath Reddy': ['assets/optimized/about_team_sampath.png', '50% 0%', 'radial-gradient(ellipse 70% 80% at 50% 30%, #ffffff 0%, #eaf3f9 45%, #cfe1ee 100%)'] };
     const ini = n => n.replace(/^(Maj\. Gen\.|Shri)\s+/, '').split(' ').filter(w => /^[A-Z][a-z]/.test(w)).slice(0, 2).map(w => w[0]).join('');
-    R.team = R.team.map(p => { const ph = PH[p.name]; return { ...p, src: ph ? ph[0] : null, noSrc: !ph, pos: ph ? ph[1] : '50% 50%', ini: ini(p.name) }; });
+    // bust framing per portrait: [transform, transform-origin], tuned so each card runs from just above the head to mid-chest
+    const BUST = { 'Suman Matcha': ['scale(1.5)', '53% 3%'], 'Divya Bandreddy': ['scale(1.34)', '50% 13%'], 'Sai Gireesh Sabbu': ['scale(1.32)', '50% 16.5%'], 'Pavan Kumar Thota': ['scale(1.52)', '50% 23%'], 'Haritha Gadamsetty': ['scale(1.89)', '50% 10.6%'], 'Sachin Menon': ['scale(2.04)', '51% 11.8%'], 'Gaddam Sampath Reddy': ['translateY(6%)', '50% 0%'] };
+    R.team = R.team.map(p => { const ph = PH[p.name]; return { ...p, src: ph ? ph[0] : null, noSrc: !ph, pos: ph ? ph[1] : '50% 50%', bg: (ph && ph[2]) || 'linear-gradient(135deg, var(--navy-900) 0%, var(--blue-800) 100%)', tf: BUST[p.name] ? BUST[p.name][0] : 'none', zo: BUST[p.name] ? BUST[p.name][1] : '50% 50%', ini: ini(p.name) }; });
+    R.aboutStats = [{ v: '50+', l: 'people across five teams' }, { v: '10 lakh+', l: 'users on our platforms' }, { v: '5 states', l: 'with live programmes' }, { v: '2017', l: 'founded in Hyderabad' }];
+    R.teams = [
+      ['sparkles', 'Product & AI', 'Product design, applied-AI models and client delivery for SIYA and Trip Card Intelligence.', 'Sai Gireesh Sabbu'],
+      ['settings', 'Engineering & platform', 'Builds, deploys and runs our platforms in production, with monitoring and handover.', 'Bhavana Musnoori'],
+      ['zap', 'Interactives & games', 'Learning games, AR and VR experiences, and 3D virtual labs.', 'Pavan Kumar Thota'],
+      ['documents', 'Content & learning design', 'Curriculum, FLN and early-years content, concept videos and assessments.', 'Haritha Gadamsetty'],
+      ['globe', 'Programmes & operations', 'Government and PSU relationships, programme operations and field delivery.', 'Divya Bandreddy'],
+    ].map(([icon, t, d, lead]) => { const ph = PH[lead]; return { icon, t, d, lead, src: ph ? ph[0] : null, noSrc: !ph, pos: ph ? ph[1] : '50% 50%', ini: ini(lead) }; });
     R.aiTeam = [['Sai Gireesh Sabbu', 'Lead · Head of Product & AI'], ['Bhavana Musnoori', 'Head of Technology'], ['Navyatha Avula', 'AI engineer']].map(([name, role]) => { const ph = PH[name]; return { name, role, src: ph ? ph[0] : null, noSrc: !ph, ini: ini(name) }; });
     R.aiCaps = ['Handwriting & document extraction', 'Evaluation models', 'Analytics dashboards', 'Deployment'];
     R.advisors = R.advisors.map((p, i) => ({ ...p, ini: ini(p.name), src: ['assets/optimized/export-assets_assets_team_sunil-chandra.webp', 'assets/optimized/export-assets_assets_team_susanta-panda.webp'][i], pos: ['50% 25%', '50% 30%'][i], tag: ['ADVISOR · EDUCATION AT SCALE', 'ADVISOR · GOVERNMENT & GOVERNANCE'][i],
@@ -1018,7 +902,7 @@ class Component extends DCLogic {
     R.regIds = [{ icon: 'briefcase', k: 'GeM Seller ID', v: 'ZX7T250013803032', n: 'Government e-Marketplace' }, { icon: 'sparkles', k: 'DPIIT recognition', v: 'DIPP222769', n: 'Startup India' }, { icon: 'file', k: 'CIN', v: 'U85499TS2025PTC199477', n: 'OAKS Solutions Pvt Ltd' }, { icon: 'documents', k: 'Udyam', v: 'UDYAM-TS-02-0142279', n: 'Sunitha Infovision Ltd (sister company)' }];
     R.procCards = [
       { icon: 'crown', k: 'EMPANELMENTS', t: 'National agencies', items: [{ a: 'QCI', b: 'Nov 2025' }, { a: 'BECIL · TLM projects up to ₹10 crore', b: 'Jul 2026' }, { a: 'EdCIL · software empanelment', b: '2022, ext. 2024' }, { a: 'EdCIL · OLabs rate contract', b: '2025, renewed 2026' }] },
-      { icon: 'shield', k: 'CERTIFICATIONS', t: 'ISO certified', items: [{ a: 'ISO 9001:2015', b: 'No. 23EQMP34' }, { a: 'ISO/IEC 27001:2022', b: 'No. 23EQMS35' }], foot: 'Valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+      { icon: 'shield', k: 'CERTIFICATIONS', t: 'ISO certified', items: [{ a: 'ISO 9001:2015 · Quality management', b: 'No. 26EQRG27' }, { a: 'ISO/IEC 27001:2022 · Information security', b: 'No. 26EQRA18' }], foot: 'Held by OAKS Solutions Pvt Ltd · valid 26 Jun 2026 to 25 Jun 2029 · Assurance Quality Certification LLC (IAF MLA)' },
       { icon: 'users', k: 'GOVERNMENT REFERENCES', t: 'Since 2017', items: [{ a: 'State departments & PSUs', b: '5 states' }, { a: 'Residential school societies', b: 'TS · AP' }, { a: 'National agencies', b: 'QCI · BECIL · EdCIL · NCERT' }], foot: 'OAKS Solutions Pvt Ltd, formerly OVI Learning Pvt Ltd' },
     ];
     { const n = R.why.length, w4 = s.w >= 1000, w2 = s.w >= 600, cols = w4 ? n : w2 ? 2 : 1;
@@ -1029,8 +913,8 @@ class Component extends DCLogic {
     { const w3 = s.w >= 1000, w2 = s.w >= 640; R.procCols = w3 ? 'repeat(3, minmax(0,1fr))' : w2 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; R.procCards = R.procCards.map((c, i) => ({ ...c, span: !w3 && w2 && i === 2 ? '1 / -1' : 'auto' })); }
     R.dp = R.dp.map((d, i) => ({ ...d, t: d.t.replace(/\.$/, ''), icon: ['lock', 'globe', 'eyeOff'][i] }));
     R.advCols = s.w >= 640 ? '220px minmax(0,1fr)' : 'minmax(0,1fr)';
-    R.teamCols = s.w >= 1000 ? 'repeat(3, minmax(0,1fr))' : s.w >= 640 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
-    const SHORT = { 'Suman Matcha': '17 years building learning systems for state governments and national agencies. Founder of SIYA.', 'Divya Bandreddy': 'Runs government and PSU relationships, from first meeting to delivery.', 'Bhavana Musnoori': 'Leads engineering and platform delivery, including the BGR Trip Card system.', 'Sai Gireesh Sabbu': 'Leads product, client delivery and the AI team across 250+ schools.', 'Pavan Kumar Thota': 'Builds AI, VR and AR learning products. MS, University of Connecticut.', 'Haritha Gadamsetty': '10+ years creating FLN and early-years content, including OLabs.' };
+    R.teamBasis = s.w >= 1000 ? 'calc((100% - 48px) / 3)' : s.w >= 640 ? 'calc((100% - 24px) / 2)' : '100%';
+    const SHORT = { 'Suman Matcha': '17 years building learning systems for state governments and national agencies. Founder of SIYA.', 'Divya Bandreddy': 'Runs government and PSU relationships, from first meeting to delivery.', 'Bhavana Musnoori': 'Leads engineering and platform delivery, including the BGR Trip Card system.', 'Sai Gireesh Sabbu': 'Leads product, client delivery and the AI team across 250+ schools.', 'Pavan Kumar Thota': 'Builds AI, VR and AR learning products. MS, University of Connecticut.', 'Haritha Gadamsetty': '10+ years creating FLN and early-years content, including OLabs.', 'Sachin Menon': 'Leads visual design, motion graphics and video. 12 years in education media, formerly at Next Education.', 'Gaddam Sampath Reddy': 'Runs network operations and IT administration. 16+ years across education and IT, including five at Digiclass.' };
     R.team = R.team.map(p => ({ ...p, short: SHORT[p.name] || p.bio, roleCaps: p.role.toUpperCase() }));
     return R;
   }

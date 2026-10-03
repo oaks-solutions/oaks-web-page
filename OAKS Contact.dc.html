@@ -164,7 +164,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
       <span><strong style="color: var(--navy-100);">CIN</strong> U85499TS2025PTC199477</span>
       <span><strong style="color: var(--navy-100);">ISO</strong> 9001:2015 · 27001:2022</span>
     </div>
-    <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners. All logos and emblems are used with the written permission of each organisation.</p>
+    <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners.</p>
     <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;">
       <span>© 2026 OAKS Solutions Pvt Ltd · Hyderabad, India</span>
       <div style="display: flex; gap: 20px;"><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids' privacy</a><a href="#" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms</a></div>
@@ -449,7 +449,7 @@ class Component extends DCLogic {
       openProcurement: () => this.openForm('gov', 'Procurement pack'),
       openCapGov: () => this.openForm('gov', 'Government capability statement'),
       openCapEnt: () => this.openForm('ent', 'Enterprise capability statement'),
-      kp: Object.fromEntries(Object.entries({ gov: [['employees', '10 lakh+ users'], ['globe', '5 states'], ['analytics', 'Measured outcomes']], ent: [['sparkles', 'Vision & document AI'], ['eye', 'Traceable figures'], ['growth', 'Measured gains']], method: [['goals', 'Discover'], ['zap', '2-week prototype'], ['settings', 'Run in production']], stack: [['dashboard', 'Applications'], ['sparkles', 'AI models'], ['shield', 'Secure infrastructure']], foot: [['companyPolicies', 'Hyderabad HQ'], ['globe', '5 states'], ['calendar', 'Since 2017']], comp: [['checkCircle', 'ISO 9001 & 27001'], ['crown', '4 empanelments'], ['lock', 'DPDP Act ready']] }).map(([k, v]) => [k, v.map(([i, t]) => ({ i, t }))])),
+      kp: Object.fromEntries(Object.entries({ gov: [['employees', '10 lakh+ users'], ['globe', '5 states'], ['analytics', 'Measured outcomes']], ent: [['sparkles', 'Vision & document AI'], ['eye', 'Traceable figures'], ['growth', 'Measured gains']], method: [['goals', 'Discover'], ['zap', '2-week prototype'], ['settings', 'Run in production']], stack: [['dashboard', 'Applications'], ['sparkles', 'AI models'], ['shield', 'Secure infrastructure']], foot: [['companyPolicies', 'Hyderabad HQ'], ['globe', '5 states'], ['calendar', 'Since 2017']], comp: [['checkCircle', 'ISO 9001:2015 & 27001:2022'], ['crown', '4 empanelments'], ['lock', 'DPDP Act ready']] }).map(([k, v]) => [k, v.map(([i, t]) => ({ i, t }))])),
       formOpen: s.formOpen, formSubject: s.subject.toUpperCase(), audience: s.audience, sent: s.sent, notSent: !s.sent,
       setAudience: e => this.setState({ audience: e.target.value }),
       closeForm: () => this.setState({ formOpen: false }), submit: e => { const root = e && e.currentTarget && e.currentTarget.closest && e.currentTarget.closest('[data-oaks-form]'); window.oaksSend && window.oaksSend(root, { form: 'Enquiry popup', subject: s.subject, audience: s.audience }); this.setState({ sent: true }); },
@@ -639,7 +639,7 @@ class Component extends DCLogic {
       tiles: [
         { k: 'EMPANELMENTS', v: 'QCI (Nov 2025) · BECIL, teaching-learning material projects up to ₹10 crore (Jul 2026) · EdCIL software empanelment (2022, extended 2024) · EdCIL OLabs rate contract (2025, renewed 2026)' },
         { k: 'GEM', v: 'Registered seller on the Government e-Marketplace · Seller ID', tbc: '[TBC: GeM seller ID]' },
-        { k: 'CERTIFICATIONS', v: 'ISO 9001:2015 (No. 23EQMP34) and ISO/IEC 27001:2022 (No. 23EQMS35), valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+        { k: 'CERTIFICATIONS', v: 'ISO 9001:2015 quality management (No. 26EQRG27) and ISO/IEC 27001:2022 information security (No. 26EQRA18), held by OAKS Solutions Pvt Ltd · scope: education technology including digital learning, assessment and analytics · issued 26 Jun 2026, valid to 25 Jun 2029 · certified by Assurance Quality Certification LLC (IAF MLA member)' },
         { k: 'GOVERNMENT REFERENCES', v: 'Programmes with state departments, residential school societies and PSUs in 5 states, and national agencies (QCI, BECIL, EdCIL, NCERT), since 2017' },
         { k: 'COMPANY', v: 'OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd) · CIN U85499TS2025PTC199477 · Sister company Sunitha Infovision Ltd: Udyam UDYAM-TS-02-0142279', tbc: '[TBC: DPIIT recognition number, if held]' },
       ],
@@ -658,7 +658,7 @@ class Component extends DCLogic {
         { t: 'Human-in-the-loop', d: 'Consequential decisions route to a person. The system advises; it does not act alone.', c: 'Teachers approve every SIYA result; dispatchers approve every exception.' },
       ],
       team: [
-        { name: 'Suman Matcha', role: 'Founder & CEO', bio: '17 years building learning systems for Indian states and national agencies. Led programmes for residential school societies in Telangana, state-wide assessment in Assam, and national e-learning work. Founder of SIYA, now in pilots in Malta and Spain.' },
+        { name: 'Suman Matcha', role: 'CEO', bio: '17 years building learning systems for Indian states and national agencies. Led programmes for residential school societies in Telangana, state-wide assessment in Assam, and national e-learning work. Founder of SIYA, now in pilots in Malta and Spain.' },
         { name: 'Divya Bandreddy', role: 'Chief of Staff', bio: 'Runs OAKS\u2019s government and PSU relationships day to day, including EdCIL, BECIL, QCI and Madhya Pradesh state departments. Moves each opportunity from first meeting to work order, invoice and delivery, and leads programme operations and hiring across the team.' },
         { name: 'Bhavana Musnoori', role: 'Head of Technology', bio: '5+ years in software engineering. Led the build, deployment pipelines and client handover of the BGR Trip Card Intelligence System, and runs platform delivery across OAKS products.' },
         { name: 'Sai Gireesh Sabbu', role: 'Head of Product & AI', bio: 'Leads product design, client delivery and the AI team. Has managed relationships with 250+ schools and LMS improvements for 1 lakh+ users.' },
@@ -816,7 +816,7 @@ class Component extends DCLogic {
     R.regIds = [{ icon: 'briefcase', k: 'GeM Seller ID', v: 'ZX7T250013803032', n: 'Government e-Marketplace' }, { icon: 'sparkles', k: 'DPIIT recognition', v: 'DIPP222769', n: 'Startup India' }, { icon: 'file', k: 'CIN', v: 'U85499TS2025PTC199477', n: 'OAKS Solutions Pvt Ltd' }, { icon: 'documents', k: 'Udyam', v: 'UDYAM-TS-02-0142279', n: 'Sunitha Infovision Ltd (sister company)' }];
     R.procCards = [
       { icon: 'crown', k: 'EMPANELMENTS', t: 'National agencies', items: [{ a: 'QCI', b: 'Nov 2025' }, { a: 'BECIL · TLM projects up to ₹10 crore', b: 'Jul 2026' }, { a: 'EdCIL · software empanelment', b: '2022, ext. 2024' }, { a: 'EdCIL · OLabs rate contract', b: '2025, renewed 2026' }] },
-      { icon: 'shield', k: 'CERTIFICATIONS', t: 'ISO certified', items: [{ a: 'ISO 9001:2015', b: 'No. 23EQMP34' }, { a: 'ISO/IEC 27001:2022', b: 'No. 23EQMS35' }], foot: 'Valid to 3 Jan 2027 · held by sister company Sunitha Infovision Ltd' },
+      { icon: 'shield', k: 'CERTIFICATIONS', t: 'ISO certified', items: [{ a: 'ISO 9001:2015 · Quality management', b: 'No. 26EQRG27' }, { a: 'ISO/IEC 27001:2022 · Information security', b: 'No. 26EQRA18' }], foot: 'Held by OAKS Solutions Pvt Ltd · valid 26 Jun 2026 to 25 Jun 2029 · Assurance Quality Certification LLC (IAF MLA)' },
       { icon: 'users', k: 'GOVERNMENT REFERENCES', t: 'Since 2017', items: [{ a: 'State departments & PSUs', b: '5 states' }, { a: 'Residential school societies', b: 'TS · AP' }, { a: 'National agencies', b: 'QCI · BECIL · EdCIL · NCERT' }], foot: 'OAKS Solutions Pvt Ltd, formerly OVI Learning Pvt Ltd' },
     ];
     { const n = R.why.length, w4 = s.w >= 1000, w2 = s.w >= 600, cols = w4 ? n : w2 ? 2 : 1;
