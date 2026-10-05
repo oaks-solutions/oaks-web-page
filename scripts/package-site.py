@@ -16,7 +16,7 @@ with tempfile.TemporaryDirectory(prefix='oaks-package-') as scratch:
     package=work/'package';output=package/'dist';output.mkdir(parents=True)
     shutil.copytree(source/'.openai',package/'.openai')
     for path in source.iterdir():
-        if path.is_file() and path.suffix in ('.html','.js','.png','.ico','.webmanifest'):
+        if path.is_file() and path.suffix in ('.html','.js','.png','.ico','.webmanifest','.txt','.xml'):
             shutil.copy2(path,output/path.name)
     for name in ('assets','export-assets'):
         shutil.copytree(source/name,output/name)

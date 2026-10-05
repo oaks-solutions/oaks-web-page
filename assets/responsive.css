@@ -1,0 +1,53 @@
+/* Shared layout rules for the public site and policy pages. */
+*,*::before,*::after{box-sizing:border-box}
+img,video,canvas{max-width:100%}
+input,select,textarea{min-width:0;max-width:100%}
+h1,h2,h3,h4,p,li,label,a{overflow-wrap:break-word}
+.oaks-dialog-overlay{overflow-y:auto;overscroll-behavior:contain}
+.oaks-dialog{min-width:0;max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:1199px){
+ .oaks-mobile-menu{max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain}
+}
+@media(max-width:899px){
+ /* Hero slide counter: a compact row at the bottom right instead of a column over the text */
+ #hero .oaks-hero-scenes{top:auto!important;bottom:22px!important;right:12px!important;transform:none!important;flex-direction:row!important;align-items:center!important;gap:2px!important}
+ #hero .oaks-hero-scenes .oaks-scene-label,#hero .oaks-hero-scenes .oaks-scene-bar{display:none!important}
+ #hero .oaks-hero-scenes>button{padding:10px 6px!important}
+ #hero .oaks-hero-scenes>button:last-child{margin:0 0 0 6px!important}
+ #hero .oaks-hero-content{padding-bottom:72px!important}
+}
+@media(max-width:639px){
+ /* Mine map: numbered pins only; the step card names each place */
+ .oaks-pin{padding:4px!important}
+ .oaks-pin-label{display:none!important}
+}
+@media(max-width:767px){
+ x-dc div,x-dc article,x-dc section,x-dc span{min-width:0}
+ x-dc p,x-dc li,x-dc label,x-dc span{overflow-wrap:anywhere}
+ x-dc input,x-dc select,x-dc textarea{font-size:16px!important}
+ .oaks-row{flex-wrap:wrap!important;row-gap:10px!important}
+ .oaks-row>*{max-width:100%}
+ .oaks-header-row{gap:16px!important}
+ .oaks-card{padding:20px!important}
+ .oaks-dialog-overlay{padding:12px!important;align-items:flex-start!important}
+ .oaks-dialog{max-height:calc(100dvh - 24px);padding:22px!important;margin:auto!important}
+ .oaks-dialog button[aria-label="Close"]{flex-shrink:0}
+ .oaks-hero-content{padding:36px 20px 32px 20px!important}
+ #hero h1{font-size:clamp(32px,8vw,48px)!important;max-width:18ch!important}
+ #hero .oaks-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px 16px!important}
+ #hero .oaks-stat-label{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important}
+ .oaks-caption{flex-wrap:wrap!important}
+ .oaks-caption>button{margin-left:17px}
+ .oaks-map-stat{white-space:normal!important}
+ .oaks-small-grid{grid-template-columns:minmax(0,1fr)!important}
+ footer a[href^="mailto:"]{overflow-wrap:anywhere}
+ button,a[role="button"]{touch-action:manipulation}
+}
+@media(max-width:374px){
+ .oaks-card{padding:16px!important}
+ .oaks-dialog{padding:18px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ #hero [style*="opacity"]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+}

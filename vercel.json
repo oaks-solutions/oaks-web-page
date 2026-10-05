@@ -1,0 +1,169 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Home.dc.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Solutions.dc.html",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Case(%20| )Studies.dc.html",
+      "destination": "/case-studies",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Technology.dc.html",
+      "destination": "/technology",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )About.dc.html",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Trust.dc.html",
+      "destination": "/trust",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Contact.dc.html",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Privacy(%20| )Policy.dc.html",
+      "destination": "/privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Kids(%20| )Privacy(%20| )and(%20| )Safety.dc.html",
+      "destination": "/kids-privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Terms(%20| )and(%20| )Conditions.dc.html",
+      "destination": "/terms",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/gamified-fln",
+      "destination": "/solutions#titli",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/ai-assessment",
+      "destination": "/solutions#siya",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/hybrid-learning",
+      "destination": "/solutions#jee-neet",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/personalized-learning",
+      "destination": "/solutions#adaptive-learning",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/skills-training",
+      "destination": "/solutions#industry-4",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/custom-tech",
+      "destination": "/solutions#virtual-skill-labs",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions/:path+",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/:path+",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers",
+      "destination": "/about#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers/:path+",
+      "destination": "/about#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-builders",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-builders/:path+",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/solutions",
+      "destination": "/OAKS%20Solutions.dc.html"
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/OAKS%20Case%20Studies.dc.html"
+    },
+    {
+      "source": "/technology",
+      "destination": "/OAKS%20Technology.dc.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/OAKS%20About.dc.html"
+    },
+    {
+      "source": "/trust",
+      "destination": "/OAKS%20Trust.dc.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/OAKS%20Contact.dc.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/OAKS%20Privacy%20Policy.dc.html"
+    },
+    {
+      "source": "/kids-privacy",
+      "destination": "/OAKS%20Kids%20Privacy%20and%20Safety.dc.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/OAKS%20Terms%20and%20Conditions.dc.html"
+    }
+  ]
+}

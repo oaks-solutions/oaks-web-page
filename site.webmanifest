@@ -15,5 +15,9 @@
   ],
   "theme_color": "#0795C9",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "description": "OAKS Solutions is a Hyderabad AI engineering company building and operating systems for governments, education departments and enterprises since 2017.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./"
 }

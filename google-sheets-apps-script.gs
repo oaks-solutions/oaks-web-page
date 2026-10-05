@@ -5,6 +5,8 @@
  * 3. Deploy → New deployment → type "Web app"
  *      Execute as: Me   ·   Who has access: Anyone
  * 4. Copy the Web App URL and paste it into forms.js (OAKS_SHEETS_URL).
+ *    After editing this file, use Deploy → Manage deployments → Edit → Version: New version,
+ *    so the same URL serves the new code. Open the URL in a browser: it must show {"ok":true}.
  * New columns are added automatically when a form sends a new field.
  * Columns Status / Owner / Notes are added for your team to track follow-up.
  */
@@ -14,10 +16,16 @@ const NOTIFY = 'info@oaks.guru';
 const RESEND_FROM = 'OAKS Website <website@oaks.guru>'; // must be on a domain verified in Resend
 
 function doPost(e) {
+  let data;
+  try { data = JSON.parse((e && e.postData && e.postData.contents) || '{}'); }
+  catch (err) { return json({ ok: false, error: 'Invalid request' }); }
+  if (data.website) return json({ ok: true }); // honeypot field, only bots fill it in
+  if (!String(data.name || '').trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(data.email || '').trim())) {
+    return json({ ok: false, error: 'Name and a valid email are required' });
+  }
   const lock = LockService.getScriptLock();
-  lock.tryLock(10000);
+  if (!lock.tryLock(10000)) return json({ ok: false, error: 'Busy, please try again' });
   try {
-    const data = JSON.parse(e.postData.contents || '{}');
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const sh = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
     let headers = sh.getLastColumn() ? sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0] : [];
@@ -30,15 +38,25 @@ function doPost(e) {
       if (headers.indexOf(k) < 0) { headers.push(k); sh.getRange(1, headers.length).setValue(k).setFontWeight('bold'); }
     });
     data.Status = data.Status || 'New';
-    sh.appendRow(headers.map(function (h) { return data[h] != null ? data[h] : ''; }));
-    if (NOTIFY) sendLeadEmail(data);
-    return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
+    sh.appendRow(headers.map(function (h) { return cell(data[h]); }));
   } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ ok: false, error: String(err) })).setMimeType(ContentService.MimeType.JSON);
+    return json({ ok: false, error: String(err) });
   } finally {
     lock.releaseLock();
   }
+  // The lead is saved in the sheet even if the email fails; the failure is logged in Executions.
+  let emailed = false;
+  try { if (NOTIFY) { sendLeadEmail(data); emailed = true; } } catch (err) { console.error('Lead email failed', err); }
+  return json({ ok: true, emailed: emailed });
 }
+
+// Health check: opening the Web App URL in a browser should show {"ok":true,...}.
+function doGet() { return json({ ok: true, service: 'OAKS website forms' }); }
+
+function json(obj) { return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON); }
+
+// Stop submitted text being run as a spreadsheet formula (=, +, -, @ at the start).
+function cell(v) { v = v == null ? '' : String(v); return /^[=+\-@\t\r]/.test(v) ? "'" + v : v; }
 
 function sendLeadEmail(data) {
   const subject = 'New website enquiry — ' + (data.subject || data.form || 'OAKS');
