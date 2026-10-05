@@ -1,0 +1,63 @@
+/* Film player and background-video toggle, driven by media.js */
+.oaks-player{position:absolute;inset:0;background:#000;overflow:hidden;color:#fff;font-family:inherit;-webkit-tap-highlight-color:transparent}
+.oaks-player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000;cursor:pointer}
+.oaks-player[data-state="playing"] video,.oaks-player[data-state="paused"] video,.oaks-player[data-state="loading"] video,.oaks-player[data-state="ended"] video{object-fit:contain}
+.oaks-player:fullscreen,.oaks-player:-webkit-full-screen{width:100%;height:100%}
+
+/* Poster overlay with the big play button */
+.oaks-player-start{all:unset;box-sizing:border-box;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:linear-gradient(180deg,rgba(11,22,39,.05) 30%,rgba(11,22,39,.55) 100%);transition:opacity .25s ease,visibility .25s}
+.oaks-player-big{position:relative;width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.95);color:#066089;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,0,0,.35);transition:transform .2s ease,background .2s}
+.oaks-player-big svg{width:28px;height:28px}
+.oaks-player-big .i-play{margin-left:4px}
+.oaks-player-big .i-replay{display:none}
+.oaks-player-start:hover .oaks-player-big{transform:scale(1.07);background:#fff}
+.oaks-player-start:focus-visible .oaks-player-big{outline:3px solid #8dd4f0;outline-offset:4px}
+.oaks-player-hint{position:absolute;left:18px;right:18px;bottom:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);pointer-events:none}
+.oaks-player[data-state="playing"] .oaks-player-start,.oaks-player[data-state="paused"] .oaks-player-start,.oaks-player[data-state="loading"] .oaks-player-start{opacity:0;visibility:hidden}
+.oaks-player[data-state="ended"] .oaks-player-big .i-play{display:none}
+.oaks-player[data-state="ended"] .oaks-player-big .i-replay{display:block}
+
+/* Buffering spinner */
+.oaks-player-spin{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;opacity:0;pointer-events:none;transition:opacity .2s}
+.oaks-player[data-state="loading"] .oaks-player-spin{opacity:1;animation:oaks-spin .8s linear infinite}
+@keyframes oaks-spin{to{transform:rotate(360deg)}}
+
+/* Control bar */
+.oaks-player-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:6px;padding:28px 10px 8px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.72) 100%);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.oaks-player:not([data-state="idle"]):not([data-state="ended"])[data-active="1"] .oaks-player-bar,
+.oaks-player[data-state="paused"] .oaks-player-bar,
+.oaks-player:not([data-state="idle"]):not([data-state="ended"]):focus-within .oaks-player-bar,
+.oaks-player[data-seeking="1"] .oaks-player-bar{opacity:1;visibility:visible;transform:none}
+.oaks-player:not([data-state="idle"])[data-state="playing"]:not([data-active="1"]):not(:focus-within) video{cursor:none}
+.oaks-pb-btn{all:unset;box-sizing:border-box;flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff}
+.oaks-pb-btn:hover{background:rgba(255,255,255,.14)}
+.oaks-pb-btn:focus-visible{outline:2px solid #8dd4f0;outline-offset:1px}
+.oaks-pb-btn svg{width:20px;height:20px}
+.oaks-pb-btn .i-pause,.oaks-pb-btn .i-muted{display:none}
+.oaks-player[data-state="playing"] .oaks-pb-btn .i-play,.oaks-player[data-state="loading"] .oaks-pb-btn .i-play{display:none}
+.oaks-player[data-state="playing"] .oaks-pb-btn .i-pause,.oaks-player[data-state="loading"] .oaks-pb-btn .i-pause{display:block}
+.oaks-player[data-muted="1"] .oaks-pb-btn .i-vol{display:none}
+.oaks-player[data-muted="1"] .oaks-pb-btn .i-muted{display:block}
+.oaks-pb-seek{position:relative;flex:1;min-width:40px;height:40px;display:flex;align-items:center;cursor:pointer;touch-action:none}
+.oaks-pb-seek:focus-visible{outline:2px solid #8dd4f0;outline-offset:-6px;border-radius:6px}
+.oaks-pb-track{position:relative;width:100%;height:4px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden;transition:height .15s}
+.oaks-pb-seek:hover .oaks-pb-track,.oaks-player[data-seeking="1"] .oaks-pb-track{height:6px}
+.oaks-pb-buf,.oaks-pb-fill{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(0)}
+.oaks-pb-buf{background:rgba(255,255,255,.35)}
+.oaks-pb-fill{background:#29a9dd}
+.oaks-pb-knob{position:absolute;top:50%;left:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.4);transform:scale(0);transition:transform .15s;pointer-events:none}
+.oaks-pb-seek:hover .oaks-pb-knob,.oaks-pb-seek:focus-visible .oaks-pb-knob,.oaks-player[data-seeking="1"] .oaks-pb-knob{transform:scale(1)}
+.oaks-pb-time{flex-shrink:0;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff;padding:0 4px;white-space:nowrap}
+@media(max-width:480px){.oaks-pb-time{font-size:11px}.oaks-pb-btn{width:36px;height:36px}.oaks-player-big{width:64px;height:64px}}
+@media(hover:none){.oaks-pb-knob{transform:scale(1)}}
+
+/* Pause/play toggle for silent background clips */
+.oaks-bg-toggle{all:unset;box-sizing:border-box;width:36px;height:36px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;background:rgba(15,23,42,.6);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s}
+.oaks-bg-toggle:hover{background:rgba(15,23,42,.85)}
+.oaks-bg-toggle:focus-visible{outline:2px solid #8dd4f0;outline-offset:2px}
+.oaks-bg-toggle svg{width:14px;height:14px}
+.oaks-bg-toggle .i-play{display:none;margin-left:2px}
+.oaks-bg-toggle[data-state="paused"] .i-play{display:block}
+.oaks-bg-toggle[data-state="paused"] .i-pause{display:none}
+
+@media(prefers-reduced-motion:reduce){.oaks-player-start,.oaks-player-bar,.oaks-player-big,.oaks-pb-knob{transition:none}}
