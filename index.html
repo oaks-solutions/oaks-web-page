@@ -113,7 +113,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
       <video ref="{{ r.ref }}" playsInline="{{ true }}" preload="none" sc-camel-poster="{{ r.poster }}" style="position: absolute; top: 0; bottom: 0; right: 0; left: {{ r.left }}; width: auto; height: 100%; object-fit: cover; object-position: {{ r.pos }}; -webkit-mask-image: {{ r.mask }}; mask-image: {{ r.mask }}; transform-origin: 60% 50%; opacity: {{ r.op }}; transform: scale({{ r.sc }}); transition: opacity 1.8s cubic-bezier(0.4,0,0.2,1), transform 10s linear; will-change: opacity, transform;"></video>
     </sc-for>
     <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 12% 40%, rgba(7,149,201,0.28) 0%, rgba(7,149,201,0) 70%), radial-gradient(ellipse 40% 50% at 30% 95%, rgba(20,184,166,0.12) 0%, rgba(20,184,166,0) 70%), linear-gradient(135deg, #0F172A 0%, #10294a 100%); z-index: -1;"></div>
-    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.3) 38%, rgba(15,23,42,0.04) 68%, rgba(15,23,42,0.18) 100%);"></div>
+    <div class="oaks-hero-shade" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.3) 38%, rgba(15,23,42,0.04) 68%, rgba(15,23,42,0.18) 100%);"></div>
     <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0) 25%, rgba(15,23,42,0) 58%, rgba(15,23,42,0.95) 100%);"></div>
   </div>
   <div style="position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1;"><div style="position: absolute; top: -20%; bottom: -20%; width: 40%; left: 0; background: linear-gradient(100deg, rgba(141,212,240,0) 0%, rgba(141,212,240,0.16) 50%, rgba(141,212,240,0) 100%); transform: translateX({{ hiSweep }}) skewX(-12deg); opacity: {{ hiSweepO }}; transition: transform 2.4s cubic-bezier(0.65,0,0.35,1) 500ms, opacity 0.6s ease 2.6s;"></div></div>
@@ -435,7 +435,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
         <video ref="{{ caseVid }}" playsInline="{{ true }}" loop="{{ true }}" preload="none" data-src="assets/video/mining-preview.mp4" sc-camel-poster="assets/video/mining-preview.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
         <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.1) 35%, rgba(15,23,42,0.92) 100%);"></div>
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0) 65%);"></div>
-        <div style="position: absolute; top: clamp(20px,3vw,36px); left: clamp(24px,4vw,56px); right: clamp(24px,4vw,56px); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;">
+        <div class="oaks-case-top" style="position: absolute; top: clamp(20px,3vw,36px); left: clamp(24px,4vw,56px); right: clamp(24px,4vw,56px); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;">
           <span style="color: #fff;">CASE STUDY · ENTERPRISE</span>
           <span style="color: var(--navy-100);">KERANDARI, JHARKHAND · 200 VEHICLES</span>
         </div>
@@ -625,6 +625,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
       <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 22px;"><p style="margin: 0; font-size: 18px; line-height: 1.65; color: var(--slate-600); text-wrap: pretty; max-width: 58ch;">One team, from discovery to deployment and day-to-day operation.</p><div style="display: flex; flex-wrap: wrap; gap: 10px 24px;"><sc-for list="{{ kp.method }}" as="k" hint-placeholder-count="3"><div style="display: flex; align-items: center; gap: 10px;"><span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; background: var(--blue-50); color: var(--blue-600); display: flex; align-items: center; justify-content: center;"><x-import component-from-global-scope="OAKSDesignSystem_54b38e.Icon" name="{{ k.i }}" size="{{ 18 }}" hint-size="18px,18px"></x-import></span><span style="font-size: 14px; font-weight: 700; line-height: 1.3; color: var(--navy-700);">{{ k.t }}</span></div></sc-for></div></div>
     </div>
     <div style="margin-top: 64px; border-radius: 28px; background: var(--slate-50); border: 1px solid var(--border-subtle); padding: clamp(24px,4vw,48px);">
+      <sc-if value="{{ mWide }}" hint-placeholder-val="{{ true }}">
       <div style="display: grid; grid-template-columns: {{ mPhaseCols }}; gap: 16px; margin-bottom: 20px;">
         <sc-for list="{{ mPhases }}" as="ph" hint-placeholder-count="3">
           <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -651,9 +652,31 @@ h1,h2,h3,p{overflow-wrap:break-word}
           </div>
         </sc-for>
       </div>
+      </sc-if>
+      <sc-if value="{{ mNarrow }}" hint-placeholder-val="{{ false }}">
+        <div class="oaks-method-tl" role="list" aria-label="How we work, step by step">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+            <div role="listitem">
+              <sc-if value="{{ s.phHead }}"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: {{ s.phM }}; padding-bottom: 12px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: {{ s.phC }}; transition: color 300ms;">{{ s.phT }}</span><span style="font-size: 12px; color: var(--slate-500);">{{ s.phD }}</span></div></sc-if>
+              <div style="display: grid; grid-template-columns: 48px minmax(0,1fr); column-gap: 16px;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <button onClick="{{ s.pick }}" aria-label="Step {{ s.n }}: {{ s.t }}" style="all: unset; cursor: pointer; box-sizing: border-box; flex-shrink: 0; width: 48px; height: 48px; border-radius: 16px; background: {{ s.ibg }}; color: {{ s.ic }}; border: 1.5px solid {{ s.ibd }}; display: flex; align-items: center; justify-content: center; box-shadow: {{ s.glow }}; transition: all 400ms cubic-bezier(0.2,0.8,0.2,1);"><sc-if value="{{ s.i0 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="currentColor" fill-opacity="0.18" stroke="none"></circle><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21"></path><path d="M8 10.5h5M10.5 8v5"></path></svg></sc-if><sc-if value="{{ s.i1 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 4.5-9 4.5-9-4.5z" fill="currentColor" fill-opacity="0.18" stroke="none"></path><path d="M12 3l9 4.5-9 4.5-9-4.5z"></path><path d="M3 12l9 4.5 9-4.5"></path><path d="M3 16.5L12 21l9-4.5"></path></svg></sc-if><sc-if value="{{ s.i2 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="currentColor" fill-opacity="0.18" stroke="none"></rect><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 8.5h18"></path><path d="M9.5 12.5l-2 2 2 2M14.5 12.5l2 2-2 2"></path></svg></sc-if><sc-if value="{{ s.i3 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.3-3 7.8-7 9.5-4-1.7-7-5.2-7-9.5V6z" fill="currentColor" fill-opacity="0.18" stroke="none"></path><path d="M12 3l7 3v5.5c0 4.3-3 7.8-7 9.5-4-1.7-7-5.2-7-9.5V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></sc-if><sc-if value="{{ s.i4 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5" fill="currentColor" fill-opacity="0.18" stroke="none"></circle><circle cx="12" cy="5" r="2.5"></circle><circle cx="5" cy="18" r="2.5"></circle><circle cx="19" cy="18" r="2.5"></circle><circle cx="12" cy="13" r="1.5" fill="currentColor"></circle><path d="M12 7.5V11.5M10.8 13.8l-4 2.6M13.2 13.8l4 2.6"></path></svg></sc-if><sc-if value="{{ s.i5 }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="currentColor" fill-opacity="0.18" stroke="none"></circle><path d="M20 12a8 8 0 01-13.7 5.7M4 12a8 8 0 0113.7-5.7"></path><path d="M17.7 3v3.3h-3.3M6.3 21v-3.3h3.3"></path><path d="M12 8.5V12l2.5 1.5"></path></svg></sc-if></button>
+                  <sc-if value="{{ s.link }}"><span aria-hidden="true" style="flex: 1; position: relative; width: 2px; min-height: 16px; margin: 6px 0; border-radius: 2px; background: var(--slate-200); overflow: hidden;"><span style="position: absolute; left: 0; top: 0; width: 100%; height: {{ s.fh }}; background: var(--blue-500); transition: {{ s.ft }};"></span></span></sc-if>
+                </div>
+                <button onClick="{{ s.pick }}" style="all: unset; cursor: pointer; min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 2px 0 {{ s.padB }};">
+                  <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: {{ s.nc }};">{{ s.n }}</span><span style="font-size: 18px; font-weight: 900; color: {{ s.tc }}; transition: color 300ms;">{{ s.t }}</span><sc-if value="{{ s.tag }}"><span style="font-size: 9px; font-weight: 900; letter-spacing: 0.08em; padding: 3px 7px; border-radius: 999px; background: var(--amber-400); color: var(--navy-900); white-space: nowrap;">{{ s.tag }}</span></sc-if></span>
+                  <span style="font-size: 14px; line-height: 1.55; color: var(--slate-600); text-wrap: pretty;">{{ s.d }}</span>
+                  <sc-if value="{{ s.on }}" hint-placeholder-val="{{ false }}"><span style="margin-top: 6px; display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 12px; background: var(--navy-700);"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--amber-400);">YOU GET</span><span style="font-size: 14px; font-weight: 700; line-height: 1.4; color: #fff;">{{ s.out }}</span></span></sc-if>
+                </button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
       <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 12px; font-weight: 700; color: var(--slate-500);">
         <span style="flex: 1; max-width: 220px; height: 0; border-top: 1.5px dashed var(--slate-300);"></span>↺ What we learn in operation feeds the next round of discovery<span style="flex: 1; max-width: 220px; height: 0; border-top: 1.5px dashed var(--slate-300);"></span>
       </div>
+      <sc-if value="{{ mWide }}" hint-placeholder-val="{{ true }}">
       <div class="oaks-card" style="margin-top: 28px; display: grid; grid-template-columns: {{ mDetCols }}; gap: 24px 40px; align-items: center; padding: 28px; border-radius: 20px; background: var(--navy-700); color: #fff; min-height: 150px; box-sizing: border-box;">
         <div style="display: flex; flex-direction: column; gap: 8px;">
           <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">STEP {{ mCur.n }} · {{ mCur.phase }}</span>
@@ -666,6 +689,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
           <span style="font-size: 15px; font-weight: 700; line-height: 1.4; color: #fff;">{{ mCur.out }}</span>
         </div>
       </div>
+      </sc-if>
       <div style="margin-top: 14px; display: flex; justify-content: flex-end;"><button onClick="{{ mToggle }}" style="all: unset; cursor: pointer; font-size: 13px; font-weight: 700; color: var(--blue-600);" style-hover="color: var(--navy-700);">{{ mTl }}</button></div>
     </div>
   </div>
@@ -875,6 +899,10 @@ h1,h2,h3,p{overflow-wrap:break-word}
         <sc-for list="{{ footNavB }}" as="l"><a href="{{ l.href }}" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">{{ l.label }}</a></sc-for>
       </div>
       <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">LEGAL</span>
+        <a href="/privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy Policy</a><a href="/kids-privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids&#x27; Privacy Policy</a><a href="/terms" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms and Conditions</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
         <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">CONTACT</span>
         <span style="font-size: 14px; line-height: 1.6;">F2, Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, Telangana</span>
         <a href="mailto:info@oaks.guru" style="font-size: 15px; font-weight: 700; color: #fff;" style-hover="color: var(--blue-200);">info@oaks.guru</a>
@@ -890,7 +918,6 @@ h1,h2,h3,p{overflow-wrap:break-word}
     <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners.</p>
     <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;">
       <span>© 2026 OAKS Solutions Pvt Ltd · Hyderabad, India</span>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 20px;"><a href="/privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy</a><a href="/kids-privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids' privacy</a><a href="/terms" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms</a></div>
     </div>
   </div>
 </footer>
@@ -1273,7 +1300,8 @@ class Component extends DCLogic {
         { n: '05', t: 'Scale', d: 'Roll out across users, sites and regions without rebuilding.' },
         { n: '06', t: 'Operate', d: 'Monitor, retrain and improve the system while it runs in production.' },
       ].map((x, i, arr) => { const OUT = ['A map of where decisions stall', 'One design across data, models and infrastructure', 'A working system on your data', 'Proof from live workflows', 'Rollout across users and sites', 'A system that stays accurate']; const ms = s.ms || 0, on = i === ms, done = i < ms, wide = s.w >= 900, run = !s.msManual;
-        return { ...x, out: OUT[i], i0: i === 0, i1: i === 1, i2: i === 2, i3: i === 3, i4: i === 4, i5: i === 5, flex: i < 5 ? '1 1 0' : '0 0 auto', link: i < 5,
+        const PH = [['UNDERSTAND', 'Weeks 0–1'], ['PROVE', '2-week prototype'], ['RUN', 'In production']][i >> 1];
+        return { ...x, out: OUT[i], on, phHead: i % 2 === 0, phT: PH[0], phD: PH[1], phC: (ms >> 1) === (i >> 1) ? 'var(--blue-600)' : 'var(--slate-500)', phM: i === 0 ? '0' : '8px 0 0', padB: i < 5 ? '24px' : '4px', i0: i === 0, i1: i === 1, i2: i === 2, i3: i === 3, i4: i === 4, i5: i === 5, flex: i < 5 ? '1 1 0' : '0 0 auto', link: i < 5,
           ibg: on ? 'var(--navy-700)' : done ? 'var(--blue-50)' : '#fff', ic: on ? '#fff' : 'var(--blue-600)', ibd: on ? 'var(--navy-700)' : done ? 'var(--blue-200)' : 'var(--slate-200)', glow: on ? '0 14px 30px rgba(40,60,83,0.3), 0 0 0 6px rgba(7,149,201,0.18)' : 'none', sc: on ? 1.08 : 1,
           nc: on ? 'var(--blue-600)' : 'var(--slate-400)', tc: on ? 'var(--navy-700)' : done ? 'var(--navy-600)' : 'var(--slate-500)',
           fw: wide ? (done ? '100%' : on && run ? '100%' : '0%') : '100%', fh: wide ? '100%' : (done ? '100%' : on && run ? '100%' : '0%'), ft: on && run ? (wide ? 'width 3.2s linear' : 'height 3.2s linear') : 'none', hc: done ? 'var(--blue-500)' : 'var(--slate-300)',
@@ -1281,7 +1309,7 @@ class Component extends DCLogic {
       ...(() => { const ms = s.ms || 0, wide = s.w >= 900, PH = [['UNDERSTAND', 'Weeks 0–1', [0, 1]], ['PROVE', '2-week prototype', [2, 3]], ['RUN', 'In production', [4, 5]]];
         const cur = [['01','Discover','Work alongside your team to learn where decisions are made and where they stall.'],['02','Architect','Design the data, models and infrastructure as one system.'],['03','Prototype','Build a working system on your real data — not a slide deck.'],['04','Validate','Test it in live workflows with the people who will use it every day.'],['05','Scale','Roll out across users, sites and regions without rebuilding.'],['06','Operate','Monitor, retrain and improve the system while it runs in production.']][ms];
         const OUT = ['A map of where decisions stall', 'One design across data, models and infrastructure', 'A working system on your data', 'Proof from live workflows', 'Rollout across users and sites', 'A system that stays accurate'];
-        return { mDir: wide ? 'row' : 'column', mAlign: wide ? 'flex-start' : 'stretch', mNodeDir: wide ? 'column' : 'row', mTa: wide ? 'center' : 'left', mStepAlign: wide ? 'flex-start' : 'center', mNodeW: wide ? '112px' : 'auto', mLinkPad: wide ? 'padding: 30px 6px 0;' : 'padding: 0 0 0 30px; align-self: flex-start; height: 28px;', mLw: wide ? 'auto' : '2px', mLh: wide ? '2px' : 'auto', mHead: wide ? 'border-left-color' : 'border-top-color',
+        return { mWide: wide, mNarrow: !wide, mDir: wide ? 'row' : 'column', mAlign: wide ? 'flex-start' : 'stretch', mNodeDir: wide ? 'column' : 'row', mTa: wide ? 'center' : 'left', mStepAlign: wide ? 'flex-start' : 'center', mNodeW: wide ? '112px' : 'auto', mLinkPad: wide ? 'padding: 30px 6px 0;' : 'padding: 0 0 0 30px; align-self: flex-start; height: 28px;', mLw: wide ? 'auto' : '2px', mLh: wide ? '2px' : 'auto', mHead: wide ? 'border-left-color' : 'border-top-color',
           mPhaseCols: wide ? 'repeat(3, minmax(0,1fr))' : 'minmax(0,1fr)', mDetCols: s.w >= 1000 ? 'minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,0.8fr)' : 'minmax(0,1fr)',
           mPhases: PH.map(([t, d, r]) => { const on = r.includes(ms), done = ms > r[1]; return { t, d, c: on ? 'var(--blue-600)' : 'var(--slate-500)', bar: on ? 'var(--blue-500)' : done ? 'var(--blue-200)' : 'var(--slate-200)' }; }),
           mCur: { n: cur[0], t: cur[1], d: cur[2], out: OUT[ms], phase: PH.find(p => p[2].includes(ms))[0] }, mV0: ms === 0, mV1: ms === 1, mV2: ms === 2, mV3: ms === 3, mV4: ms === 4, mV5: ms === 5,
@@ -1569,7 +1597,7 @@ class Component extends DCLogic {
     { const n = R.why.length, w4 = s.w >= 1000, w2 = s.w >= 600, cols = w4 ? n : w2 ? 2 : 1;
       R.whyCols = 'repeat(' + cols + ', minmax(0,1fr))';
       R.why = R.why.map((w, i) => ({ ...w, icon: ['zap', 'chart', 'users', 'shield'][i] || 'sparkles', arrow: cols > 1 && (i + 1) % cols !== 0, br: cols > 1 && (i + 1) % cols !== 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', bb: i < n - cols ? '1px solid rgba(255,255,255,0.08)' : 'none' })); }
-    { const N = R.nav || []; R.footNavA = N.slice(0, 4); R.footNavB = N.slice(4); R.footCols = s.w >= 1000 ? 'minmax(0,1.5fr) minmax(0,0.8fr) minmax(0,0.8fr) minmax(0,1.2fr)' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; }
+    { const N = R.nav || []; R.footNavA = N.slice(0, 4); R.footNavB = N.slice(4); R.footCols = s.w >= 1000 ? 'minmax(0,1.4fr) minmax(0,0.75fr) minmax(0,0.75fr) minmax(0,0.95fr) minmax(0,1.2fr)' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; }
     R.regCols = s.w >= 1100 ? 'repeat(4, minmax(0,1fr))' : s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
     { const w3 = s.w >= 1000, w2 = s.w >= 640; R.procCols = w3 ? 'repeat(3, minmax(0,1fr))' : w2 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; R.procCards = R.procCards.map((c, i) => ({ ...c, span: !w3 && w2 && i === 2 ? '1 / -1' : 'auto' })); }
     R.dp = R.dp.map((d, i) => ({ ...d, t: d.t.replace(/\.$/, ''), icon: ['lock', 'globe', 'eyeOff'][i] }));

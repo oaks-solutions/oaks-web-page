@@ -15,6 +15,13 @@ h1,h2,h3,h4,p,li,label,a{overflow-wrap:break-word}
  #hero .oaks-hero-scenes>button{padding:10px 6px!important}
  #hero .oaks-hero-scenes>button:last-child{margin:0 0 0 6px!important}
  #hero .oaks-hero-content{padding-bottom:72px!important}
+ /* Text spans the full width here, so darken the whole video evenly */
+ #hero .oaks-hero-shade{background:linear-gradient(180deg,rgba(15,23,42,.78) 0%,rgba(15,23,42,.62) 40%,rgba(15,23,42,.7) 70%,rgba(15,23,42,.9) 100%)!important}
+ #hero .oaks-hero-content{text-shadow:0 1px 12px rgba(15,23,42,.45)}
+}
+@media(max-width:767px){
+ /* BGR case card: label row flows above the content instead of floating over it */
+ .oaks-case-top{position:relative!important;top:auto!important;left:auto!important;right:auto!important;padding:24px 24px 0;row-gap:6px!important}
 }
 @media(max-width:639px){
  /* Mine map: numbered pins only; the step card names each place */

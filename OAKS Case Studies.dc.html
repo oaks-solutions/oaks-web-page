@@ -129,7 +129,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
         <video ref="{{ caseVid }}" playsInline="{{ true }}" loop="{{ true }}" preload="none" data-src="assets/video/mining-preview.mp4" sc-camel-poster="assets/video/mining-preview.webp" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
         <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.1) 35%, rgba(15,23,42,0.92) 100%);"></div>
         <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0) 65%);"></div>
-        <div style="position: absolute; top: clamp(20px,3vw,36px); left: clamp(24px,4vw,56px); right: clamp(24px,4vw,56px); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;">
+        <div class="oaks-case-top" style="position: absolute; top: clamp(20px,3vw,36px); left: clamp(24px,4vw,56px); right: clamp(24px,4vw,56px); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;">
           <span style="color: #fff;">CASE STUDY · ENTERPRISE</span>
           <span style="color: var(--navy-100);">KERANDARI, JHARKHAND · 200 VEHICLES</span>
         </div>
@@ -390,6 +390,10 @@ h1,h2,h3,p{overflow-wrap:break-word}
         <sc-for list="{{ footNavB }}" as="l"><a href="{{ l.href }}" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">{{ l.label }}</a></sc-for>
       </div>
       <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">LEGAL</span>
+        <a href="/privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy Policy</a><a href="/kids-privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids&#x27; Privacy Policy</a><a href="/terms" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms and Conditions</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
         <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-200);">CONTACT</span>
         <span style="font-size: 14px; line-height: 1.6;">F2, Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, Telangana</span>
         <a href="mailto:info@oaks.guru" style="font-size: 15px; font-weight: 700; color: #fff;" style-hover="color: var(--blue-200);">info@oaks.guru</a>
@@ -405,7 +409,6 @@ h1,h2,h3,p{overflow-wrap:break-word}
     <p style="margin: 18px 0 0; font-size: 12px; line-height: 1.6; color: var(--navy-300); max-width: 90ch;">Organisations named are OAKS clients or programme partners.</p>
     <div style="margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px;">
       <span>© 2026 OAKS Solutions Pvt Ltd · Hyderabad, India</span>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 20px;"><a href="/privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Privacy</a><a href="/kids-privacy" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Kids' privacy</a><a href="/terms" style="font-size: 14px; color: var(--navy-100);" style-hover="color: #fff;">Terms</a></div>
     </div>
   </div>
 </footer>
@@ -1065,7 +1068,7 @@ class Component extends DCLogic {
     { const n = R.why.length, w4 = s.w >= 1000, w2 = s.w >= 600, cols = w4 ? n : w2 ? 2 : 1;
       R.whyCols = 'repeat(' + cols + ', minmax(0,1fr))';
       R.why = R.why.map((w, i) => ({ ...w, icon: ['zap', 'chart', 'users', 'shield'][i] || 'sparkles', arrow: cols > 1 && (i + 1) % cols !== 0, br: cols > 1 && (i + 1) % cols !== 0 ? '1px solid rgba(255,255,255,0.08)' : 'none', bb: i < n - cols ? '1px solid rgba(255,255,255,0.08)' : 'none' })); }
-    { const N = R.nav || []; R.footNavA = N.slice(0, 4); R.footNavB = N.slice(4); R.footCols = s.w >= 1000 ? 'minmax(0,1.5fr) minmax(0,0.8fr) minmax(0,0.8fr) minmax(0,1.2fr)' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; }
+    { const N = R.nav || []; R.footNavA = N.slice(0, 4); R.footNavB = N.slice(4); R.footCols = s.w >= 1000 ? 'minmax(0,1.4fr) minmax(0,0.75fr) minmax(0,0.75fr) minmax(0,0.95fr) minmax(0,1.2fr)' : s.w >= 600 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; }
     R.regCols = s.w >= 1100 ? 'repeat(4, minmax(0,1fr))' : s.w >= 560 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)';
     { const w3 = s.w >= 1000, w2 = s.w >= 640; R.procCols = w3 ? 'repeat(3, minmax(0,1fr))' : w2 ? 'repeat(2, minmax(0,1fr))' : 'minmax(0,1fr)'; R.procCards = R.procCards.map((c, i) => ({ ...c, span: !w3 && w2 && i === 2 ? '1 / -1' : 'auto' })); }
     R.dp = R.dp.map((d, i) => ({ ...d, t: d.t.replace(/\.$/, ''), icon: ['lock', 'globe', 'eyeOff'][i] }));

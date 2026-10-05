@@ -1,6 +1,6 @@
 Legal pages
 
-The public website now has Privacy Policy, Kids' Privacy and Safety, and Terms and Conditions pages. They use assets/legal.css and contain ordinary HTML so their content is available without JavaScript. All website footers link to them. Source HTML and dist copies must be kept in sync.
+The public website now has Privacy Policy, Kids' Privacy Policy, and Terms and Conditions pages. They use assets/legal.css and contain ordinary HTML so their content is available without JavaScript. All website footers link to them. Source HTML and dist copies must be kept in sync.
 
 The text is scoped to the public website and its enquiry forms. It does not replace notices for school accounts, learning products or contracted deployments. Confirm retention schedules, provider locations, product-specific child consent processes and the privacy request contact against actual operations before publication. The terms also need the company’s legal review before adoption.
 
