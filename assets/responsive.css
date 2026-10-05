@@ -58,3 +58,12 @@ h1,h2,h3,h4,p,li,label,a{overflow-wrap:break-word}
  html{scroll-behavior:auto!important}
  #hero [style*="opacity"]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
 }
+@media(max-width:639px){
+ /* What we are building next: four tabs as an even 2×2 grid */
+ .oaks-rf-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+ /* Empanelment cards two-up on phones */
+ .oaks-cred{padding:24px 16px 22px!important}
+ .oaks-cred img{max-width:100%!important}
+ .oaks-cred>span:first-child{height:60px!important}
+ .oaks-cred>span:nth-child(2){margin-top:18px!important}
+}
