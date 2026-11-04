@@ -152,16 +152,16 @@
       <span class="eyebrow">Trusted by</span><h2 class="h-lg">20+ government and institutional clients<span class="dot">.</span></h2>
       <p class="lede">{{ cp.clientsP }}</p>
     </div>
-    <div class="cgroup rv">
-      <div class="cgroup__head"><span class="kicker kicker--cyan">Empanelled with</span><p>National agencies</p></div>
-      <div class="empanel">
-        <sc-for list="{{ empanel }}" as="e"><div class="empanel__card"><span class="empanel__logo"><img sc-camel-src="{{ e.img }}" alt="{{ e.full }}" loading="lazy" decoding="async"></span><b>{{ e.name }}</b><span>{{ e.line }}</span></div></sc-for>
-      </div>
-    </div>
-    <sc-for list="{{ cgroups }}" as="g"><div class="cgroup rv">
-      <div class="cgroup__head"><span class="kicker kicker--cyan">{{ g.t }}</span><p>{{ g.d }}</p></div>
-      <ul class="logos"><sc-for list="{{ g.items }}" as="c"><li><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" loading="lazy" decoding="async"><span>{{ c.name }}</span></li></sc-for></ul>
-    </div></sc-for>
+    <div class="lboard rv">
+  <div class="lboard__tier lboard__tier--emp">
+    <div class="lboard__label"><span class="kicker kicker--cyan">Empanelled with</span><span>India’s national education and quality agencies</span></div>
+    <ul class="lboard__emp"><sc-for list="{{ empanel }}" as="e"><li><span class="lboard__mark"><img sc-camel-src="{{ e.img }}" alt="{{ e.full }}" style="height: {{ e.h }}" loading="lazy" decoding="async"></span><b>{{ e.name }}</b><span>{{ e.line }}</span></li></sc-for></ul>
+  </div>
+  <div class="lboard__tier">
+    <div class="lboard__label"><span class="kicker kicker--cyan">Clients</span><span>Governments, universities and industry</span></div>
+    <div class="lboard__groups"><sc-for list="{{ cgroups }}" as="g"><div class="lboard__group"><span class="lboard__gt">{{ g.t }}</span><ul class="lboard__logos"><sc-for list="{{ g.items }}" as="c"><li><span class="lboard__img"><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" style="height: {{ c.h }}" loading="lazy" decoding="async"></span><span class="lboard__name">{{ c.name }}</span></li></sc-for></ul></div></sc-for></div>
+  </div>
+</div>
   </div>
 </section>
 
@@ -586,25 +586,29 @@ class Component extends DCLogic {
       "name": "QCI",
       "full": "Quality Council of India",
       "img": "assets/optimized/client-qci.webp",
-      "line": "Empanelled agency for e-learning module development"
+      "line": "Empanelled agency for e-learning module development",
+      "h": "35px"
     },
     {
       "name": "EdCIL",
       "full": "EdCIL (India) Ltd",
       "img": "assets/optimized/client-edcil.webp",
-      "line": "Software solutions in education · OLabs rate contract"
+      "line": "Software solutions in education · OLabs rate contract",
+      "h": "40px"
     },
     {
       "name": "NCERT",
       "full": "National Council of Educational Research and Training",
       "img": "assets/optimized/client-ncert.webp",
-      "line": "Digital content producer; PSSCIVE skill labs"
+      "line": "Digital content producer; PSSCIVE skill labs",
+      "h": "60px"
     },
     {
       "name": "BECIL",
       "full": "Broadcast Engineering Consultants India",
       "img": "assets/optimized/client-becil.webp",
-      "line": "Empanelled back-end partner for digital learning material"
+      "line": "Empanelled back-end partner for digital learning material",
+      "h": "50px"
     }
   ],
   "cgroups": [
@@ -614,31 +618,38 @@ class Component extends DCLogic {
       "items": [
         {
           "name": "Samagra Shiksha",
-          "img": "assets/optimized/client-samagra.webp"
+          "img": "assets/optimized/client-samagra.webp",
+          "h": "33px"
         },
         {
           "name": "Government of Assam",
-          "img": "assets/optimized/client-assam.webp"
+          "img": "assets/optimized/client-assam.webp",
+          "h": "50px"
         },
         {
           "name": "Government of Telangana",
-          "img": "assets/optimized/client-telangana.webp"
+          "img": "assets/optimized/client-telangana.webp",
+          "h": "48px"
         },
         {
           "name": "Government of Jharkhand",
-          "img": "assets/optimized/client-jharkhand.webp"
+          "img": "assets/optimized/client-jharkhand.webp",
+          "h": "48px"
         },
         {
           "name": "TSWREIS",
-          "img": "assets/optimized/client-tswreis.webp"
+          "img": "assets/optimized/client-tswreis.webp",
+          "h": "50px"
         },
         {
           "name": "TGTWREIS",
-          "img": "assets/optimized/client-tgtwreis.webp"
+          "img": "assets/optimized/client-tgtwreis.webp",
+          "h": "49px"
         },
         {
           "name": "MP Farmer Welfare & Agriculture",
-          "img": "assets/optimized/client-mp.webp"
+          "img": "assets/optimized/client-mp.webp",
+          "h": "38px"
         }
       ]
     },
@@ -648,15 +659,18 @@ class Component extends DCLogic {
       "items": [
         {
           "name": "University of Malta",
-          "img": "assets/optimized/client-malta.webp"
+          "img": "assets/optimized/client-malta.webp",
+          "h": "27px"
         },
         {
           "name": "IIT Bombay",
-          "img": "assets/optimized/client-iitb.webp"
+          "img": "assets/optimized/client-iitb.webp",
+          "h": "48px"
         },
         {
           "name": "UGC",
-          "img": "assets/optimized/client-ugc.webp"
+          "img": "assets/optimized/client-ugc.webp",
+          "h": "50px"
         }
       ]
     },
@@ -666,19 +680,23 @@ class Component extends DCLogic {
       "items": [
         {
           "name": "Singareni Collieries",
-          "img": "assets/optimized/client-sccl.webp"
+          "img": "assets/optimized/client-sccl.webp",
+          "h": "48px"
         },
         {
           "name": "BGR Mining & Infra",
-          "img": "assets/optimized/client-bgr.webp"
+          "img": "assets/optimized/client-bgr.webp",
+          "h": "29px"
         },
         {
           "name": "YuppTV",
-          "img": "assets/optimized/client-yupptv.webp"
+          "img": "assets/optimized/client-yupptv.webp",
+          "h": "22px"
         },
         {
           "name": "Vidura Digital",
-          "img": "assets/optimized/client-vidura.webp"
+          "img": "assets/optimized/client-vidura.webp",
+          "h": "41px"
         }
       ]
     }

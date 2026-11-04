@@ -87,7 +87,16 @@
     <div class="statement-row rv"><span class="kicker">Our story</span><p class="statement">Since 2017, OAKS has built AI for governments, national agencies and industry — for handwritten records, many languages and first-time users. <span class="hl">Today we bring it to partners across Europe.</span></p></div>
     <div class="stats stats--rule mt-m rv"><sc-for list="{{ stats }}" as="k"><div class="stat"><b class="count">{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
     <span class="kicker mt-l" style="display:block">Trusted by</span>
-    <ul class="logos logos--wall mt-s rv"><sc-for list="{{ logos }}" as="c"><li><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" loading="lazy" decoding="async"></li></sc-for></ul>
+    <div class="mt-s"><div class="lboard rv">
+  <div class="lboard__tier lboard__tier--emp">
+    <div class="lboard__label"><span class="kicker kicker--cyan">Empanelled with</span><span>India’s national education and quality agencies</span></div>
+    <ul class="lboard__emp"><sc-for list="{{ empanel }}" as="e"><li><span class="lboard__mark"><img sc-camel-src="{{ e.img }}" alt="{{ e.full }}" style="height: {{ e.h }}" loading="lazy" decoding="async"></span><b>{{ e.name }}</b><span>{{ e.line }}</span></li></sc-for></ul>
+  </div>
+  <div class="lboard__tier">
+    <div class="lboard__label"><span class="kicker kicker--cyan">Clients</span><span>Governments, universities and industry</span></div>
+    <div class="lboard__groups"><sc-for list="{{ cgroups }}" as="g"><div class="lboard__group"><span class="lboard__gt">{{ g.t }}</span><ul class="lboard__logos"><sc-for list="{{ g.items }}" as="c"><li><span class="lboard__img"><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" style="height: {{ c.h }}" loading="lazy" decoding="async"></span><span class="lboard__name">{{ c.name }}</span></li></sc-for></ul></div></sc-for></div>
+  </div>
+</div></div>
     <div class="split split--top mt-l">
       <div class="rv"><span class="kicker">Where we work</span>
         <div class="where mt-s">
@@ -197,58 +206,124 @@ class Component extends DCLogic {
       "l": "government & institutional clients"
     }
   ],
-  "logos": [
+  "empanel": [
     {
-      "name": "Samagra Shiksha",
-      "img": "assets/optimized/client-samagra.webp"
+      "name": "QCI",
+      "full": "Quality Council of India",
+      "img": "assets/optimized/client-qci.webp",
+      "line": "Empanelled agency for e-learning module development",
+      "h": "35px"
     },
     {
-      "name": "Government of Assam",
-      "img": "assets/optimized/client-assam.webp"
+      "name": "EdCIL",
+      "full": "EdCIL (India) Ltd",
+      "img": "assets/optimized/client-edcil.webp",
+      "line": "Software solutions in education · OLabs rate contract",
+      "h": "40px"
     },
     {
-      "name": "Government of Telangana",
-      "img": "assets/optimized/client-telangana.webp"
+      "name": "NCERT",
+      "full": "National Council of Educational Research and Training",
+      "img": "assets/optimized/client-ncert.webp",
+      "line": "Digital content producer; PSSCIVE skill labs",
+      "h": "60px"
     },
     {
-      "name": "Government of Jharkhand",
-      "img": "assets/optimized/client-jharkhand.webp"
+      "name": "BECIL",
+      "full": "Broadcast Engineering Consultants India",
+      "img": "assets/optimized/client-becil.webp",
+      "line": "Empanelled back-end partner for digital learning material",
+      "h": "50px"
+    }
+  ],
+  "cgroups": [
+    {
+      "t": "Governments & public programmes",
+      "d": "State departments, school societies and national programmes",
+      "items": [
+        {
+          "name": "Samagra Shiksha",
+          "img": "assets/optimized/client-samagra.webp",
+          "h": "33px"
+        },
+        {
+          "name": "Government of Assam",
+          "img": "assets/optimized/client-assam.webp",
+          "h": "50px"
+        },
+        {
+          "name": "Government of Telangana",
+          "img": "assets/optimized/client-telangana.webp",
+          "h": "48px"
+        },
+        {
+          "name": "Government of Jharkhand",
+          "img": "assets/optimized/client-jharkhand.webp",
+          "h": "48px"
+        },
+        {
+          "name": "TSWREIS",
+          "img": "assets/optimized/client-tswreis.webp",
+          "h": "50px"
+        },
+        {
+          "name": "TGTWREIS",
+          "img": "assets/optimized/client-tgtwreis.webp",
+          "h": "49px"
+        },
+        {
+          "name": "MP Farmer Welfare & Agriculture",
+          "img": "assets/optimized/client-mp.webp",
+          "h": "38px"
+        }
+      ]
     },
     {
-      "name": "TSWREIS",
-      "img": "assets/optimized/client-tswreis.webp"
+      "t": "Universities & national bodies",
+      "d": "Research, evaluation and higher education",
+      "items": [
+        {
+          "name": "University of Malta",
+          "img": "assets/optimized/client-malta.webp",
+          "h": "27px"
+        },
+        {
+          "name": "IIT Bombay",
+          "img": "assets/optimized/client-iitb.webp",
+          "h": "48px"
+        },
+        {
+          "name": "UGC",
+          "img": "assets/optimized/client-ugc.webp",
+          "h": "50px"
+        }
+      ]
     },
     {
-      "name": "University of Malta",
-      "img": "assets/optimized/client-malta.webp"
-    },
-    {
-      "name": "IIT Bombay",
-      "img": "assets/optimized/client-iitb.webp"
-    },
-    {
-      "name": "UGC",
-      "img": "assets/optimized/client-ugc.webp"
-    },
-    {
-      "name": "Singareni Collieries",
-      "img": "assets/optimized/client-sccl.webp"
-    },
-    {
-      "name": "YuppTV",
-      "img": "assets/optimized/client-yupptv.webp"
-    },
-    {
-      "name": "Quality Council of India",
-      "img": "assets/optimized/client-qci.webp"
-    },
-    {
-      "name": "EdCIL (India) Ltd",
-      "img": "assets/optimized/client-edcil.webp"
-    },
-    {
-      "name": "National Council of Educational Research and Training",
-      "img": "assets/optimized/client-ncert.webp"
+      "t": "Industry",
+      "d": "Enterprise, mining and platform clients",
+      "items": [
+        {
+          "name": "Singareni Collieries",
+          "img": "assets/optimized/client-sccl.webp",
+          "h": "48px"
+        },
+        {
+          "name": "BGR Mining & Infra",
+          "img": "assets/optimized/client-bgr.webp",
+          "h": "29px"
+        },
+        {
+          "name": "YuppTV",
+          "img": "assets/optimized/client-yupptv.webp",
+          "h": "22px"
+        },
+        {
+          "name": "Vidura Digital",
+          "img": "assets/optimized/client-vidura.webp",
+          "h": "41px"
+        }
+      ]
     }
   ],
   "sectors": [
