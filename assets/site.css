@@ -1393,3 +1393,18 @@ p.statement::after { content: none; }
 .vizmap__svg { min-height: 220px; }
 .vizland__stats > div:last-child b { color: var(--cyan); }
 @media (max-width: 599px) { .vizland__a { top: 82px; bottom: auto; left: 18px; right: 18px; width: auto; transform: none; } }
+
+/* footer legal strip: companies, notes, copyright */
+.foot-bottom { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 18px 48px; align-items: start; font-size: 12.5px; color: rgba(255, 255, 255, 0.55); }
+.foot-bottom p { margin: 0; line-height: 1.6; }
+.foot-entities, .foot-notes { display: grid; gap: 8px; }
+.foot-entities b { color: rgba(255, 255, 255, 0.88); font-weight: 600; }
+.foot-tag { display: inline-block; min-width: 104px; margin-right: 10px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-300); }
+.foot-muted { color: rgba(255, 255, 255, 0.42); }
+.foot-notes { padding-left: 24px; border-left: 1px solid rgba(255, 255, 255, 0.1); }
+.foot-copy { grid-column: 1 / -1; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.42); }
+@media (max-width: 767px) {
+  .foot-bottom { grid-template-columns: minmax(0, 1fr); }
+  .foot-notes { padding-left: 0; border-left: 0; }
+  .foot-tag { display: block; margin: 0 0 2px; }
+}
