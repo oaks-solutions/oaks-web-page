@@ -23,16 +23,6 @@
       "statusCode": 301
     },
     {
-      "source": "/OAKS(%20| )Case(%20| )Studies.dc.html",
-      "destination": "/case-studies",
-      "statusCode": 301
-    },
-    {
-      "source": "/OAKS(%20| )Technology.dc.html",
-      "destination": "/technology",
-      "statusCode": 301
-    },
-    {
       "source": "/OAKS(%20| )About.dc.html",
       "destination": "/about",
       "statusCode": 301
@@ -45,6 +35,26 @@
     {
       "source": "/OAKS(%20| )Contact.dc.html",
       "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Partners.dc.html",
+      "destination": "/partners",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Team.dc.html",
+      "destination": "/team",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Case(%20| )Studies.dc.html",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/OAKS(%20| )Technology.dc.html",
+      "destination": "/solutions",
       "statusCode": 301
     },
     {
@@ -63,33 +73,28 @@
       "statusCode": 301
     },
     {
-      "source": "/solutions/gamified-fln",
-      "destination": "/solutions#titli",
+      "source": "/case-studies",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/technology",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/partner-model",
+      "destination": "/partners",
       "statusCode": 301
     },
     {
       "source": "/solutions/ai-assessment",
-      "destination": "/solutions#siya",
-      "statusCode": 301
-    },
-    {
-      "source": "/solutions/hybrid-learning",
-      "destination": "/solutions#jee-neet",
-      "statusCode": 301
-    },
-    {
-      "source": "/solutions/personalized-learning",
-      "destination": "/solutions#adaptive-learning",
-      "statusCode": 301
-    },
-    {
-      "source": "/solutions/skills-training",
-      "destination": "/solutions#industry-4",
+      "destination": "/solutions#assessments",
       "statusCode": 301
     },
     {
       "source": "/solutions/custom-tech",
-      "destination": "/solutions#virtual-skill-labs",
+      "destination": "/solutions#custom-ai",
       "statusCode": 301
     },
     {
@@ -108,16 +113,6 @@
       "statusCode": 301
     },
     {
-      "source": "/careers",
-      "destination": "/about#team",
-      "statusCode": 301
-    },
-    {
-      "source": "/careers/:path+",
-      "destination": "/about#team",
-      "statusCode": 301
-    },
-    {
       "source": "/ai-builders",
       "destination": "/",
       "statusCode": 301
@@ -125,6 +120,16 @@
     {
       "source": "/ai-builders/:path+",
       "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers",
+      "destination": "/team",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers/:path+",
+      "destination": "/team",
       "statusCode": 301
     }
   ],
@@ -134,16 +139,16 @@
       "destination": "/OAKS%20Solutions.dc.html"
     },
     {
-      "source": "/case-studies",
-      "destination": "/OAKS%20Case%20Studies.dc.html"
-    },
-    {
-      "source": "/technology",
-      "destination": "/OAKS%20Technology.dc.html"
+      "source": "/partners",
+      "destination": "/OAKS%20Partners.dc.html"
     },
     {
       "source": "/about",
       "destination": "/OAKS%20About.dc.html"
+    },
+    {
+      "source": "/team",
+      "destination": "/OAKS%20Team.dc.html"
     },
     {
       "source": "/trust",

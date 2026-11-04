@@ -67,3 +67,80 @@ h1,h2,h3,h4,p,li,label,a{overflow-wrap:break-word}
  .oaks-cred>span:first-child{height:60px!important}
  .oaks-cred>span:nth-child(2){margin-top:18px!important}
 }
+
+/* Programme unit: stats as an even two-column grid; badges keep white text on the light panel */
+.oaks-prog-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px 20px!important}
+.oaks-media-badge{color:#fff}
+
+/* Programme films and testimonials on phones: keep the play button clear of the labels */
+@media(max-width:639px){
+ .oaks-player-hint,.oaks-media-badge{display:none!important}
+ .oaks-player-big{width:56px!important;height:56px!important}
+ .oaks-player-big svg{width:22px!important;height:22px!important}
+ .oaks-yt-play{width:48px!important;height:48px!important;font-size:16px!important;top:38%!important}
+ .oaks-stickbar button{padding:0 11px!important;font-size:11px!important}
+ .oaks-stick-scroll{padding-right:48px!important;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent 100%)}
+}
+/* BGR case card on phones: footage on top, story underneath instead of over the video */
+@media(max-width:767px){
+ .oaks-case-hero{min-height:0!important}
+ .oaks-case-hero>video{position:relative!important;inset:auto!important;height:auto!important;aspect-ratio:16/9;order:-1}
+ .oaks-case-hero>div[style*="gradient"]{display:none!important}
+}
+
+.oaks-hero-mlabel{display:none}
+/* Home hero on phones: a swipeable strip of programme videos, one per screen width, with the copy and figures underneath */
+@media(max-width:767px){
+ #hero{min-height:0!important}
+ #hero .oaks-hero-media{position:relative!important;inset:auto!important;width:100%;aspect-ratio:4/3;display:flex!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;pointer-events:auto!important;opacity:1!important;transform:none!important;will-change:auto!important;background:#0b1527}
+ #hero .oaks-hero-media::-webkit-scrollbar{display:none}
+ #hero .oaks-hero-media>video{position:relative!important;inset:auto!important;left:auto!important;flex:0 0 100%;width:100%!important;height:100%!important;object-fit:cover;object-position:50% 50%!important;opacity:1!important;transform:none!important;scroll-snap-align:start;scroll-snap-stop:always}
+ #hero .oaks-hero-media>div{display:none!important}
+ #hero .oaks-hero-sweep{display:none!important}
+ .oaks-hero-mlabel{position:absolute;left:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(15,23,42,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:11px;font-weight:700;letter-spacing:.12em;color:#fff;pointer-events:none}
+ #hero .oaks-hero-scenes{top:calc(75vw - 58px)!important;bottom:auto!important;right:12px!important;padding:2px 8px!important;border-radius:999px;background:rgba(15,23,42,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+ #hero .oaks-hero-content{padding:24px 20px 28px!important;text-shadow:none!important}
+ #hero h1{font-size:clamp(30px,8.4vw,40px)!important}
+}
+
+/* Sticky solutions bar: all eight chips fit on one row on wide screens */
+@media(min-width:1000px){
+ .oaks-stickbar button{padding:0 9px!important;font-size:11.5px!important;letter-spacing:.03em!important}
+ .oaks-stick-scroll{gap:4px!important}
+}
+
+/* Phone summaries: step cards as compact two-up title tiles */
+@media(max-width:767px){
+ .oaks-steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ .oaks-steps-grid>div{padding:14px 14px 16px!important;gap:6px!important}
+ .oaks-steps-grid>div>span:nth-child(2){font-size:13px!important}
+ .oaks-steps-grid>div>span:nth-child(3):empty{display:none}
+}
+
+/* ===== Brochure components: crisp buttons everywhere ===== */
+.sc-host button[style*="var(--radius-pill)"]{border-radius:4px!important;font-weight:800!important;letter-spacing:.01em}
+
+/* ===== Phone layouts ===== */
+@media(max-width:767px){
+ /* type: nothing below 12px for labels, tighter display sizes */
+ .sc-host [style*="font-size: 11px"],.sc-host [style*="font-size: 11.5px"]{font-size:12px!important}
+ .sc-host [style*="font-size: 10px"],.sc-host [style*="font-size: 9px"],.sc-host [style*="font-size: 10.5px"]{font-size:11px!important}
+ .sc-host h2[style*="clamp(34px,4.6vw,56px)"]{font-size:clamp(28px,8vw,34px)!important;line-height:1.08!important}
+ .sc-host h1[style*="clamp(34px,5vw,60px)"],.sc-host h1[style*="clamp(34px,4.8vw,58px)"]{font-size:clamp(30px,8.6vw,38px)!important}
+ /* tap targets */
+ .oaks-tap,.oaks-pn{min-height:44px!important;display:inline-flex!important;align-items:center!important}
+ .sc-host a[href^="tel:"],.sc-host a[href^="mailto:"]{display:inline-flex;align-items:center;min-height:44px}
+ .sc-host section a[href="/"]{display:inline-flex;align-items:center;min-height:40px}
+ #hero .oaks-hero-scenes>button{padding:12px 7px!important}
+ /* calls to action: full width, one per row */
+ #hero .oaks-hero-content a[style*="height: 48px"]{width:100%;justify-content:center}
+ .sc-host section#contact button[style*="var(--radius-pill)"]{width:100%}
+ .sc-host section#contact a[style*="height: 4"]{width:100%;justify-content:center}
+ /* programme unit runs edge to edge */
+ #prog-unit{margin-left:calc(-1 * clamp(20px,4vw,40px))!important;margin-right:calc(-1 * clamp(20px,4vw,40px))!important;border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
+ /* building next: no footage behind the workflow text */
+ .oaks-next-bg{display:none!important}
+ /* Technology layers: description on its own line */
+ .oaks-layer-row{grid-template-columns:36px minmax(0,1fr)!important;row-gap:2px!important}
+ .oaks-layer-row .oaks-layer-sub{grid-column:2;white-space:normal}
+}
