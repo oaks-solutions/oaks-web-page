@@ -16,7 +16,8 @@ python3 scripts/check-site.py      # Playwright smoke test: every page loads wit
 python3 scripts/optimize-assets.py # WebP copies of referenced PNG/JPGs into assets/optimized/, rewrites page refs,
                                    # syncs index.html, converts fonts to WOFF2 (needs Pillow, fonttools, brotli)
 python3 scripts/optimize-videos.py # 8s silent background clips + WebP posters into assets/video/ (needs imageio-ffmpeg)
-python3 scripts/build-sites.py     # builds dist/ (gitignored) for ChatGPT Sites hosting (.openai/hosting.json)
+python3 scripts/version-assets.py  # adds ?v=<hash> to every CSS/JS link; run after any CSS/JS edit, before deploying
+python3 scripts/build-sites.py     # builds dist/ (gitignored) for ChatGPT Sites / Netlify Drop hosting
 ```
 
 There is no linter or unit test suite; `check-site.py` is the only automated check.
