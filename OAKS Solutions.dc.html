@@ -34,6 +34,7 @@
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/video/stock-pexels-7255101.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/player.css">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
 <script defer src="media.js"></script>
@@ -100,6 +101,7 @@
       <span class="eyebrow">{{ s1.eyebrow }}</span>
       <h2 class="h-lg">{{ s1.h1 }} <br>{{ s1.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s1.lede }}</p>
+      <ol class="bflow" aria-label="How it works"><sc-for list="{{ s1.flow }}" as="f"><li><span class="bflow__n">{{ f.n }}</span><span class="bflow__t">{{ f.t }}</span></li></sc-for></ol>
     </div></div>
     <sc-if value="{{ s1.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
@@ -121,13 +123,9 @@
         </div>
       </div></sc-if>
       <span class="kicker mt-l" style="display:block">{{ s1.proofK }}</span>
-      <div class="casecard mt-s rv">
-        <div class="casecard__visual">
-          <sc-if value="{{ s1.img }}"><img sc-camel-src="{{ s1.img }}" alt="{{ s1.imgAlt }}" loading="lazy" decoding="async"></sc-if>
-          <sc-if value="{{ s1.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
-            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
-              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
-        </div>
+      <div class="casecard casecard--rich mt-s rv">
+        <div class="casecard__band"><div class="viz viz--film"><div class="oaks-player" data-oaks-player=""><video data-film="https://heysiya.tech/__l5e/assets-v1/7d1724a1-3a4e-4a8f-bbc6-f8d271c587a5/siya-product-video.mp4" sc-camel-poster="assets/optimized/export-assets_assets_siya_stage-wide.webp" playsInline="{{ true }}" preload="none"></video><button type="button" class="oaks-player-start" data-oaks-act="toggle" data-label="SIYA product film" aria-label="Play SIYA product film"><span class="oaks-player-big"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg><svg class="i-replay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"></path><path d="M4 4v4.5h4.5"></path></svg></span><span class="oaks-player-hint"><span>Watch the SIYA product film</span></span></button><span class="oaks-player-spin" aria-hidden="true"></span><div class="oaks-player-bar"><button type="button" class="oaks-pb-btn" data-oaks-act="toggle" data-label="SIYA product film" aria-label="Play SIYA product film"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></button><div class="oaks-pb-seek" role="slider" tabIndex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="oaks-pb-track"><span class="oaks-pb-buf"></span><span class="oaks-pb-fill"></span></div><span class="oaks-pb-knob"></span></div><span class="oaks-pb-time">0:00 / 0:00</span><button type="button" class="oaks-pb-btn" data-oaks-act="mute" aria-label="Mute"><svg class="i-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg><svg class="i-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"></path><path d="M16 9.5l5 5M21 9.5l-5 5"></path></svg></button><button type="button" class="oaks-pb-btn" data-oaks-act="full" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button></div></div></div><div class="viz viz--photos"><figure><img sc-camel-src="assets/optimized/export-assets_assets_siya_stage-wide.webp" alt="SIYA presented on stage" loading="lazy" decoding="async"><figcaption>SIYA on stage</figcaption></figure><figure><img sc-camel-src="assets/optimized/export-assets_assets_siya_edeh-committee.webp" alt="SIYA team with the programme committee in Europe" loading="lazy" decoding="async"><figcaption>With the programme committee, Europe</figcaption></figure></div></div>
+        <sc-if value="{{ s1.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s1.img }}" alt="{{ s1.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s1.caseK }}</span>
           <h3>{{ s1.caseT }}<span class="dot">.</span></h3>
@@ -155,6 +153,7 @@
       <span class="eyebrow">{{ s2.eyebrow }}</span>
       <h2 class="h-lg">{{ s2.h1 }} <br>{{ s2.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s2.lede }}</p>
+      <ol class="bflow" aria-label="How it works"><sc-for list="{{ s2.flow }}" as="f"><li><span class="bflow__n">{{ f.n }}</span><span class="bflow__t">{{ f.t }}</span></li></sc-for></ol>
     </div></div>
     <sc-if value="{{ s2.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
@@ -176,13 +175,9 @@
         </div>
       </div></sc-if>
       <span class="kicker mt-l" style="display:block">{{ s2.proofK }}</span>
-      <div class="casecard mt-s rv">
-        <div class="casecard__visual">
-          <sc-if value="{{ s2.img }}"><img sc-camel-src="{{ s2.img }}" alt="{{ s2.imgAlt }}" loading="lazy" decoding="async"></sc-if>
-          <sc-if value="{{ s2.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
-            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
-              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
-        </div>
+      <div class="casecard casecard--rich mt-s rv">
+        <div class="casecard__band"><div class="viz viz--map"><div class="vizmap"><div class="vizmap__head"><span class="kicker kicker--cyan">State Happiness Index · Assam</span><span class="chip chip--solid">33 / 33 districts</span></div><svg class="vizmap__svg" viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts surveyed"><defs><linearGradient id="asg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29a9dd"/><stop offset="1" stop-color="#0383b0"/></linearGradient></defs><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><div class="vizmap__foot"><div class="vizmap__dial"><svg class="dial" viewBox="0 0 140 78" aria-hidden="true"><path d="M18.0 66.0A52 52 0 0 1 122.0 66.0" fill="none" stroke="#dfe6ee" stroke-width="9" stroke-linecap="round"/><path d="M66.7 14.1A52 52 0 0 1 79.7 14.9" fill="none" stroke="#0494c7" stroke-width="9"/><line x1="70" y1="66" x2="71.3" y2="24.0" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="70" cy="66" r="5" fill="#0f1840"/><text x="18" y="77" font-size="8" fill="#6b7591" text-anchor="middle">0</text><text x="122" y="77" font-size="8" fill="#6b7591" text-anchor="middle">100</text></svg><div><span class="kicker">Happiness index</span><b>51%</b><span>statewide · districts 48–56%</span></div></div><ul class="vizmap__legend"><li><b>4,364</b><span>schools, Classes 9–12</span></li><li><b>34</b><span>reports: 1 state + 33 district</span></li><li><b>2</b><span>languages: English, Assamese</span></li></ul></div></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-32082738.mp4" sc-camel-poster="assets/video/stock-pexels-32082738.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Voice and text responses, captured on any channel</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
+        <sc-if value="{{ s2.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s2.img }}" alt="{{ s2.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s2.caseK }}</span>
           <h3>{{ s2.caseT }}<span class="dot">.</span></h3>
@@ -210,6 +205,7 @@
       <span class="eyebrow">{{ s3.eyebrow }}</span>
       <h2 class="h-lg">{{ s3.h1 }} <br>{{ s3.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s3.lede }}</p>
+      <ol class="bflow" aria-label="How it works"><sc-for list="{{ s3.flow }}" as="f"><li><span class="bflow__n">{{ f.n }}</span><span class="bflow__t">{{ f.t }}</span></li></sc-for></ol>
     </div></div>
     <sc-if value="{{ s3.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
@@ -231,13 +227,9 @@
         </div>
       </div></sc-if>
       <span class="kicker mt-l" style="display:block">{{ s3.proofK }}</span>
-      <div class="casecard mt-s rv">
-        <div class="casecard__visual">
-          <sc-if value="{{ s3.img }}"><img sc-camel-src="{{ s3.img }}" alt="{{ s3.imgAlt }}" loading="lazy" decoding="async"></sc-if>
-          <sc-if value="{{ s3.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
-            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
-              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
-        </div>
+      <div class="casecard casecard--rich mt-s rv">
+        <div class="casecard__band"><div class="viz viz--land"><div class="vizland"><svg class="vizland__svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="360" fill="#e7eef6"/><polygon class="p0" points="1,-1 49,-2 47,35 -2,37"/><polygon class="p1" points="47,2 92,-2 96,41 48,34"/><polygon class="p2" points="105,8 148,2 153,32 107,34"/><polygon class="p0" points="149,-2 195,7 193,38 155,35"/><polygon class="p1" points="204,-2 242,-1 249,36 201,38"/><polygon class="p2" points="252,1 301,5 294,38 253,42"/><polygon class="p0" points="306,0 353,-2 346,40 299,37"/><polygon class="p1" points="347,5 400,4 402,35 355,38"/><polygon class="p2" points="404,2 451,8 447,39 398,39"/><polygon class="p0" points="455,9 501,0 496,39 447,37"/><polygon class="p1" points="499,-2 542,6 543,34 502,41"/><polygon class="p2" points="548,2 598,8 601,41 550,36"/><polygon class="p0" points="1,48 52,39 43,74 -0,77"/><polygon class="p1" points="54,40 91,42 95,78 58,79"/><polygon class="p2" points="103,44 149,38 152,80 107,81"/><polygon class="p0" points="152,42 192,45 192,72 150,73"/><polygon class="p1" points="201,38 241,39 242,75 197,81"/><polygon class="p2" points="254,39 294,41 295,72 257,83"/><polygon class="p0" points="303,43 342,38 345,74 307,73"/><polygon class="p1" points="347,48 397,39 398,71 353,83"/><polygon class="p2" points="407,45 444,41 443,80 403,80"/><polygon class="p0" points="451,40 501,49 501,81 457,80"/><polygon class="p1" points="500,43 545,37 541,74 500,79"/><polygon class="p2" points="558,42 602,49 602,75 550,74"/><polygon class="p0" points="-1,79 48,88 51,117 5,121"/><polygon class="p1" points="48,85 102,86 100,117 49,120"/><polygon class="p2" points="101,87 153,82 146,122 106,113"/><polygon class="p0" points="149,79 202,87 193,121 159,119"/><polygon class="p1" points="201,84 243,77 253,119 203,122"/><polygon class="p2" points="252,87 301,80 294,115 250,118"/><polygon class="p0" points="300,82 343,88 345,116 304,122"/><polygon class="p1" points="352,88 397,83 397,111 352,113"/><polygon class="p2" points="397,87 443,83 450,118 401,117"/><polygon class="p0" points="454,86 492,84 494,114 456,117"/><polygon class="p1" points="504,86 552,82 548,117 503,119"/><polygon class="p2" points="552,83 597,88 599,122 558,114"/><polygon class="p0" points="4,128 51,119 42,156 -2,154"/><polygon class="p1" points="48,125 100,128 93,160 55,153"/><polygon class="p2" points="108,129 144,128 146,157 109,161"/><polygon class="p0" points="149,122 197,121 193,155 156,151"/><polygon class="p1" points="204,122 241,121 248,157 198,163"/><polygon class="p2" points="256,129 292,120 291,160 250,153"/><polygon class="p0" points="302,128 351,120 343,162 304,159"/><polygon class="p1" points="348,118 399,122 392,162 355,161"/><polygon class="p2" points="398,127 442,127 446,155 404,162"/><polygon class="p0" points="450,119 497,120 492,153 448,153"/><polygon class="p1" points="501,121 550,120 547,153 501,151"/><polygon class="p2" points="550,117 600,124 593,157 558,152"/><polygon class="p0" points="7,162 47,167 46,197 5,203"/><polygon class="p1" points="51,167 99,165 96,195 48,193"/><polygon class="p2" points="98,166 144,159 142,201 107,199"/><polygon class="p0" points="150,160 195,163 193,196 150,203"/><polygon class="p1" points="209,164 244,169 245,195 197,196"/><polygon class="p2" points="253,163 293,163 291,194 248,196"/><polygon class="p0" points="298,157 345,160 348,197 306,199"/><polygon class="p1" points="356,168 396,161 403,193 356,199"/><polygon class="p2" points="398,167 452,165 450,201 399,197"/><polygon class="p0" points="453,167 501,167 498,202 455,199"/><polygon class="p1" points="500,157 543,161 542,201 504,199"/><polygon class="p2" points="555,165 597,157 601,200 553,197"/><polygon class="p0" points="5,198 50,200 42,234 6,233"/><polygon class="p1" points="56,209 97,202 97,239 56,238"/><polygon class="p2" points="105,198 143,200 150,235 104,231"/><polygon class="p0" points="148,200 199,205 199,234 153,237"/><polygon class="p1" points="203,198 252,199 253,242 197,237"/><polygon class="p2" points="257,209 296,200 294,242 250,238"/><polygon class="p0" points="299,203 352,199 351,237 308,239"/><polygon class="p1" points="350,208 397,197 391,237 352,235"/><polygon class="p2" points="399,201 445,207 441,240 407,232"/><polygon class="p0" points="458,206 502,200 495,236 459,238"/><polygon class="p1" points="501,202 544,198 542,241 500,242"/><polygon class="p2" points="550,200 597,199 595,242 558,241"/><polygon class="p0" points="5,248 52,244 50,272 6,276"/><polygon class="p1" points="56,245 94,238 102,273 53,275"/><polygon class="p2" points="101,246 153,240 149,275 104,276"/><polygon class="p0" points="149,239 193,248 197,274 158,283"/><polygon class="p1" points="202,239 243,238 245,272 200,274"/><polygon class="p2" points="254,248 300,242 296,277 252,275"/><polygon class="p0" points="298,240 353,239 347,279 307,274"/><polygon class="p1" points="350,240 396,242 402,281 357,271"/><polygon class="p2" points="397,246 452,243 448,271 402,282"/><polygon class="p0" points="457,247 503,240 492,273 453,279"/><polygon class="p1" points="508,246 549,246 546,278 497,280"/><polygon class="p2" points="550,248 599,241 593,274 555,279"/><polygon class="p0" points="-2,278 47,284 46,314 4,311"/><polygon class="p1" points="51,283 103,285 102,317 50,314"/><polygon class="p2" points="109,285 145,277 147,319 102,314"/><polygon class="p0" points="155,288 194,277 195,316 155,313"/><polygon class="p1" points="207,286 247,279 253,315 207,314"/><polygon class="p2" points="250,286 295,288 297,313 250,316"/><polygon class="p0" points="305,288 343,282 344,323 299,312"/><polygon class="p1" points="348,282 402,288 400,323 358,315"/><polygon class="p2" points="399,288 450,277 449,316 401,315"/><polygon class="p0" points="449,277 494,281 502,312 459,313"/><polygon class="p1" points="501,287 551,282 542,317 501,322"/><polygon class="p2" points="549,281 602,277 596,321 556,311"/><polygon class="p0" points="-3,318 52,320 50,362 1,354"/><polygon class="p1" points="58,324 94,326 95,354 47,360"/><polygon class="p2" points="108,325 152,317 144,357 108,362"/><polygon class="p0" points="152,320 196,323 202,353 157,360"/><polygon class="p1" points="207,326 248,321 245,355 206,352"/><polygon class="p2" points="249,326 294,318 291,358 251,363"/><polygon class="p0" points="308,329 344,318 342,357 306,356"/><polygon class="p1" points="350,322 398,325 400,361 355,352"/><polygon class="p2" points="407,321 448,321 450,353 400,354"/><polygon class="p0" points="449,328 498,321 496,363 453,354"/><polygon class="p1" points="507,325 553,318 547,361 507,362"/><polygon class="p2" points="547,321 592,319 603,358 558,355"/><path d="M0 150 C160 140 300 190 600 170" stroke="#fff" stroke-width="10" fill="none"/><path d="M215 0 C230 120 200 240 240 360" stroke="#fff" stroke-width="8" fill="none"/><polygon class="hot" points="298,240 353,239 347,279 307,274"/><circle cx="326" cy="258" r="7" fill="#fff" stroke="#0494c7" stroke-width="3"/></svg><div class="vizland__q"><i class="ic ic-search"></i>Who owns Survey No. 142?</div><div class="vizland__a"><span class="kicker kicker--cyan">Answer · source cited</span><b>Deed found · page 3</b><span class="vizland__chips"><span>Deed</span><span>Register</span><span>Map</span><span>Survey record</span></span></div><div class="vizland__stats"><div><b>100,000+</b><span>parcels linked to one ID</span></div></div><span class="vizland__tag">Illustrative interface</span></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-6549976.mp4" sc-camel-poster="assets/video/stock-pexels-6549976.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Paper archives, scanned at volume</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
+        <sc-if value="{{ s3.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s3.img }}" alt="{{ s3.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s3.caseK }}</span>
           <h3>{{ s3.caseT }}<span class="dot">.</span></h3>
@@ -265,6 +257,7 @@
       <span class="eyebrow">{{ s4.eyebrow }}</span>
       <h2 class="h-lg">{{ s4.h1 }} <br>{{ s4.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s4.lede }}</p>
+      <ol class="bflow" aria-label="How it works"><sc-for list="{{ s4.flow }}" as="f"><li><span class="bflow__n">{{ f.n }}</span><span class="bflow__t">{{ f.t }}</span></li></sc-for></ol>
     </div></div>
     <sc-if value="{{ s4.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
@@ -286,13 +279,9 @@
         </div>
       </div></sc-if>
       <span class="kicker mt-l" style="display:block">{{ s4.proofK }}</span>
-      <div class="casecard mt-s rv">
-        <div class="casecard__visual">
-          <sc-if value="{{ s4.img }}"><img sc-camel-src="{{ s4.img }}" alt="{{ s4.imgAlt }}" loading="lazy" decoding="async"></sc-if>
-          <sc-if value="{{ s4.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
-            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
-              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
-        </div>
+      <div class="casecard  mt-s rv">
+        
+        <sc-if value="{{ s4.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s4.img }}" alt="{{ s4.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s4.caseK }}</span>
           <h3>{{ s4.caseT }}<span class="dot">.</span></h3>
@@ -312,7 +301,7 @@
 
 <section class="sec sec--mist">
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">05 · 06</span><h2 class="h-lg">Your extended team, and anything new<span class="dot">.</span></h2></div>
+    <div class="sec-head rv"><span class="eyebrow">Also from OAKS</span><h2 class="h-lg">Dedicated pods and custom builds<span class="dot">.</span></h2></div>
     <div class="sol-cards sol-cards--2">
       <sc-for list="{{ more }}" as="m"><div id="{{ m.id }}" class="sol-card sol rv">
         <span class="sol-card__img"><img sc-camel-src="{{ m.img }}" alt="" loading="lazy" decoding="async"><span class="sol-card__n">{{ m.n }}</span><span class="sol-card__k">{{ m.k }}</span></span>
@@ -477,8 +466,21 @@ class Component extends DCLogic {
       }
     ],
     "proofK": "Proven in India, deployed in Europe",
-    "img": "assets/optimized/brochure-siya-stage.webp",
-    "imgAlt": "SIYA presented on stage",
+    "img": "",
+    "flow": [
+      {
+        "n": "1",
+        "t": "Upload the worksheets"
+      },
+      {
+        "n": "2",
+        "t": "AI marks and explains"
+      },
+      {
+        "n": "3",
+        "t": "Teacher approves"
+      }
+    ],
     "caseK": "Case study · SIYA",
     "caseT": "Built on the OAKS AI assessment engine",
     "caseD": "Operational and scaling across India · Live in Malta and Spain.",
@@ -577,7 +579,20 @@ class Component extends DCLogic {
       }
     ],
     "proofK": "Proven at state scale",
-    "map": true,
+    "flow": [
+      {
+        "n": "1",
+        "t": "Respondents speak or type"
+      },
+      {
+        "n": "2",
+        "t": "AI themes every answer"
+      },
+      {
+        "n": "3",
+        "t": "Reports by region"
+      }
+    ],
     "caseK": "Case study · Samagra Shiksha, Assam",
     "caseT": "A statewide Happiness Index for Classes 9–12",
     "caseD": "Run as a voice conversation, so students spoke to it like a person.",
@@ -686,8 +701,21 @@ class Component extends DCLogic {
       }
     ],
     "proofK": "Proven in government",
-    "img": "assets/optimized/brochure-land-records.webp",
-    "imgAlt": "Parcel map answering “Who owns Survey No. 142?” with the source deed",
+    "img": "",
+    "flow": [
+      {
+        "n": "1",
+        "t": "Scan the archive"
+      },
+      {
+        "n": "2",
+        "t": "Ask in plain language"
+      },
+      {
+        "n": "3",
+        "t": "Answer + source page"
+      }
+    ],
     "caseK": "Case study · Land records, Hyderabad",
     "caseT": "Land deeds digitised and made answerable",
     "caseD": "Deeds, registers and maps — one parcel ID, every answer cited.",
@@ -771,6 +799,20 @@ class Component extends DCLogic {
           "Missions, levels, challenges",
           "Skill-gap analytics"
         ]
+      }
+    ],
+    "flow": [
+      {
+        "n": "1",
+        "t": "Hire on real tasks"
+      },
+      {
+        "n": "2",
+        "t": "Onboard at their pace"
+      },
+      {
+        "n": "3",
+        "t": "Upskill continuously"
       }
     ],
     "proofK": "Proven in enterprise & government",

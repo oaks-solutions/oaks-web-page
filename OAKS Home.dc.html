@@ -34,6 +34,7 @@
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/video/stock-pexels-7597819.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/player.css">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
 <script defer src="media.js"></script>
@@ -142,10 +143,6 @@
       <span class="kicker">Sectors we serve</span>
       <div class="sectors__row"><sc-for list="{{ sectors }}" as="x"><div class="sectors__item"><span class="ic-tile"><i class="ic {{ x.icon }}"></i></span><div><b>{{ x.t }}</b><span>{{ x.d }}</span></div></div></sc-for></div>
     </div>
-    <div class="callout mt-m rv">
-      <div class="callout__head"><span class="kicker kicker--cyan">Why OAKS</span><h3>Proven at national scale. <br>Built for your brand<span class="dot">.</span></h3></div>
-      <ul class="ticks"><sc-for list="{{ why }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
-    </div>
   </div>
 </section>
 
@@ -169,10 +166,9 @@
 </section>
 
 <section id="impact" class="sec impact">
-  <div class="decor" aria-hidden="true"><span class="decor__rings"></span><span class="decor__arc"></span><span class="decor__ticks"></span><span class="decor__coords">17.3850° N · 78.4867° E · HYDERABAD</span></div>
   <div class="wrap">
     <div class="sec-head sec-head--split rv">
-      <div class="grid" style="gap:18px"><span class="eyebrow">Delivered since 2017</span><h2 class="h-lg">Proof at national scale<span class="dot">.</span></h2></div>
+      <div class="grid" style="gap:18px"><span class="eyebrow">Delivered since 2017</span><h2 class="h-lg">Nine years, in numbers<span class="dot">.</span></h2></div>
       <p class="lede">{{ cp.impactP }}</p>
     </div>
     <div class="counters rv">
@@ -185,15 +181,14 @@
 <section id="how" class="sec how dots-bg">
   <div class="wrap">
     <div class="sec-head sec-head--split rv">
-      <div class="grid" style="gap:18px"><span class="eyebrow">How we partner</span><h2 class="h-lg">Two ways to start. Five ways to work with us<span class="dot">.</span></h2></div>
+      <div class="grid" style="gap:18px"><span class="eyebrow">How we partner</span><h2 class="h-lg">Your brand in front. <br>Our team behind it<span class="dot">.</span></h2></div>
       <p class="lede">{{ cp.howP }}</p>
     </div>
-    <div class="start rv">
+    <div class="start mt-s rv">
       <div class="start__card"><span class="start__icon"><i class="ic ic-rocket"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Deploy</span><span class="pill">Live in weeks</span></span><h3>A proven OAKS solution<span class="dot">.</span></h3><p>Under your brand, or plugged in by API.</p></div></div>
       <span class="start__or">OR</span>
       <div class="start__card start__card--build"><span class="start__icon start__icon--solid"><i class="ic ic-code"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Build</span><span class="pill">Fixed price · 2 weeks</span></span><h3>Something new, with us<span class="dot">.</span></h3><p>A 2-week prototype in your repository.</p></div></div>
     </div>
-    <div class="ways mt-m rv"><sc-for list="{{ models }}" as="m"><a class="way" href="/partners"><span class="way__n">{{ m.n }}</span><b>{{ m.t }}</b><span class="way__d">{{ m.d }}</span><span class="way__best"><span class="kicker">Best for</span><span>{{ m.best }}</span></span></a></sc-for></div>
     <div class="own3 mt-m rv">
       <div><span class="kicker">Partnering?</span><h3>You own <br>the client<span class="dot">.</span></h3></div>
       <div><span class="kicker">Buying direct?</span><h3>You own <br>the outcome<span class="dot">.</span></h3></div>
