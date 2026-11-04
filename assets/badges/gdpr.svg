@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="GDPR-ready"><title>GDPR-ready</title>
+<path d="M60 6 104 20v36c0 28-19 48-44 58C35 104 16 84 16 56V20L60 6Z" fill="#1b295c" stroke="#ffffff" stroke-width="3"/>
+<path d="M60 14 97 26v30c0 24-16 41-37 50C39 97 23 80 23 56V26L60 14Z" fill="none" stroke="#68bedd" stroke-opacity=".55" stroke-width="1.5"/>
+<text x="60" y="56" text-anchor="middle" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" fill="#fff" letter-spacing=".5">GDPR</text>
+<g transform="translate(60 76)"><rect x="-10" y="-3" width="20" height="16" rx="3" fill="#0494c7"/><path d="M-6 -3v-4a6 6 0 0 1 12 0v4" fill="none" stroke="#0494c7" stroke-width="3"/><circle cy="5" r="2.2" fill="#1b295c"/></g>
+</svg>

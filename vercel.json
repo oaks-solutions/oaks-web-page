@@ -103,6 +103,21 @@
       "statusCode": 301
     },
     {
+      "source": "/book",
+      "destination": "/contact#book",
+      "statusCode": 301
+    },
+    {
+      "source": "/pricing",
+      "destination": "/partners#pricing",
+      "statusCode": 301
+    },
+    {
+      "source": "/procurement",
+      "destination": "/trust#procurement",
+      "statusCode": 301
+    },
+    {
       "source": "/blog",
       "destination": "/",
       "statusCode": 301

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="EU entity, Malta"><title>EU entity · Malta</title>
+<circle cx="60" cy="60" r="57" fill="#ffffff"/><circle cx="60" cy="60" r="52" fill="none" stroke="#1b295c" stroke-opacity=".12" stroke-width="2"/>
+<g fill="#1b295c"><path d="M60 30 88 44H32L60 30Z"/><rect x="32" y="47" width="56" height="5" rx="1"/><rect x="37" y="55" width="6" height="22" rx="1"/><rect x="50" y="55" width="6" height="22" rx="1"/><rect x="64" y="55" width="6" height="22" rx="1"/><rect x="77" y="55" width="6" height="22" rx="1"/><rect x="30" y="80" width="60" height="6" rx="1.5"/></g>
+<text x="60" y="101" text-anchor="middle" font-family="Inter, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" fill="#0494c7" letter-spacing="1.4">EU · MALTA</text>
+</svg>

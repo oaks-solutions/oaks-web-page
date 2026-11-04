@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Work with us | OAKS Solutions</title>
-<meta name="description" content="You lead the client relationship; we build and customise the technology. Share your requirements and get a working prototype in two weeks, at an agreed price.">
+<title>Book a call | OAKS Solutions</title>
+<meta name="description" content="Book a 30-minute call, at no cost. Scope one workflow, get a fixed-price prototype on your data in two weeks, then decide on a pod. EU desk in Malta, 09:00–17:00 CET.">
 <link rel="canonical" href="https://www.oaks.guru/contact">
 <meta name="application-name" content="OAKS Solutions">
 <meta name="apple-mobile-web-app-title" content="OAKS Solutions">
@@ -11,16 +11,16 @@
 <meta property="og:site_name" content="OAKS Solutions">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://www.oaks.guru/contact">
-<meta property="og:title" content="Work with us | OAKS Solutions">
-<meta property="og:description" content="You lead the client relationship; we build and customise the technology. Share your requirements and get a working prototype in two weeks, at an agreed price.">
+<meta property="og:title" content="Book a call | OAKS Solutions">
+<meta property="og:description" content="Book a 30-minute call, at no cost. Scope one workflow, get a fixed-price prototype on your data in two weeks, then decide on a pod. EU desk in Malta, 09:00–17:00 CET.">
 <meta property="og:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Work with us | OAKS Solutions">
-<meta name="twitter:description" content="You lead the client relationship; we build and customise the technology. Share your requirements and get a working prototype in two weeks, at an agreed price.">
+<meta name="twitter:title" content="Book a call | OAKS Solutions">
+<meta name="twitter:description" content="Book a 30-minute call, at no cost. Scope one workflow, get a fixed-price prototype on your data in two weeks, then decide on a pod. EU desk in Malta, 09:00–17:00 CET.">
 <meta name="twitter:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta name="twitter:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -56,16 +56,15 @@
       <nav class="nav" aria-label="Main">
         <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
       </nav>
-      <a class="btn btn--sm header-cta" href="/contact">Work with us <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn--sm header-cta" href="/contact#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <a class="m-link" href="/" onClick="{{ closeMenu }}">Home</a>
       <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
-      <a class="btn" href="/contact" onClick="{{ closeMenu }}">Work with us <span class="arr" aria-hidden="true">→</span></a>
-      <div class="m-contact"><a href="mailto:info@oaks.guru">info@oaks.guru</a><a href="tel:+917207633633">+91 72076 33633</a><span>Valletta · Hyderabad</span></div>
+      <a class="btn" href="/contact#book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
+      <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
   </sc-if>
 </header>
@@ -75,10 +74,11 @@
 <section id="hero" class="hero" data-oaks-bg-scope="">
   <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-5311422.mp4" sc-camel-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
+  <div class="decor" aria-hidden="true"><span class="decor__rings"></span><span class="decor__arc"></span><span class="decor__coords">17.3850° N · 78.4867° E · HYDERABAD</span></div>
   <div class="edition" aria-hidden="true"><span>INTERNATIONAL EDITION</span><b>2026</b></div>
   <div class="wrap"><div class="hero__inner">
     <span class="eyebrow">Work with us</span>
-    <h1 class="h-xl">You lead the client relationship. We build and customise the technology<span class="dot">.</span></h1>
+    <h1 class="h-xl">You lead the client. <br>We build the technology<span class="dot">.</span></h1>
     <p class="lede">{{ cp.ctaP }}</p>
   </div></div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
@@ -86,47 +86,45 @@
 
 <section class="sec sec--navy sec--tight">
   <div class="wrap">
-    <div class="grid g3 rv">
-      <sc-for list="{{ steps }}" as="x"><div class="num num--rule"><span class="num__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for>
-    </div>
-    <span class="kicker kicker--cyan mt-l" style="display:block">Partner models</span>
-    <div class="models-chips mt-s rv"><sc-for list="{{ models }}" as="m"><span>{{ m.t }}</span></sc-for></div>
-    <div class="compliance-line mt-m"><span class="ic-badge"><i class="ic ic-lock"></i></span><span class="ic-badge"><i class="ic ic-usercheck"></i></span><span>GDPR-ready processing · EU AI Act-aware delivery</span></div>
+    <span class="kicker kicker--cyan">Your next step</span>
+    <h2 class="h-lg mt-s" style="color:#fff">Book a 30-minute call<span class="dot">.</span></h2>
+    <ol class="nextsteps mt-m rv"><sc-for list="{{ steps }}" as="x"><li><span class="kicker kicker--cyan">{{ x.n }}</span><b>{{ x.t }}</b><span>{{ x.d }}</span></li></sc-for></ol>
+    <div class="compliance-line mt-m"><span class="ic-badge"><i class="ic ic-lock"></i></span><span class="ic-badge"><i class="ic ic-usercheck"></i></span><span>GDPR-ready processing · EU AI Act-aware delivery · EUR contracts under Malta law</span></div>
   </div>
 </section>
 
-<section id="enquiry" class="sec">
+<section id="book" class="sec" style="scroll-margin-top: 60px">
   <div class="wrap contact-grid">
     <div class="rv">
-      <span class="eyebrow">Start a conversation</span>
+      <span class="eyebrow">Book a call</span>
       <h2 class="h-md mt-s">Tell us about your project<span class="dot">.</span></h2>
       <p class="mt-s">{{ cp.formP }}</p>
-      <sc-if value="{{ sent }}"><div class="alert alert--ok mt-m" role="status"><b>Thank you — your enquiry has been sent.</b><span>A member of our team will reply within one working day.</span><button type="button" onClick="{{ reset }}">Send another enquiry</button></div></sc-if>
+      <sc-if value="{{ sent }}"><div class="alert alert--ok mt-m" role="status"><b>Thank you — your request has been sent.</b><span>Our EU desk will reply within one working day to arrange your call.</span><button type="button" onClick="{{ reset }}">Send another request</button></div></sc-if>
       <sc-if value="{{ open }}">
       <form class="form mt-m" onSubmit="{{ submit }}" noValidate="{{ true }}">
         <label class="field"><span>Full name <i>*</i></span><input name="name" type="text" autoComplete="name" required="{{ true }}" placeholder="Your name"></label>
         <label class="field"><span>Work email <i>*</i></span><input name="email" type="email" autoComplete="email" required="{{ true }}" placeholder="you@company.com"></label>
         <label class="field"><span>Company</span><input name="org" type="text" autoComplete="organization" placeholder="Company or institution"></label>
         <label class="field"><span>Country</span><input name="country" type="text" autoComplete="country-name" placeholder="e.g. Malta, Spain, Germany"></label>
-        <label class="field"><span>Partner model</span><select name="model" defaultValue=""><option value="">Not sure yet</option><option>Custom development</option><option>White-label solutions</option><option>APIs &amp; integrations</option><option>Revenue share</option><option>Dedicated monthly pods</option></select></label>
-        <label class="field"><span>Solution of interest</span><select name="solution" defaultValue=""><option value="">Something else</option><option>AI Assessment Platform</option><option>AI Survey Analytics</option><option>Document Intelligence</option><option>Gamified Hiring &amp; L&amp;D</option><option>Content as a Service</option><option>Custom AI &amp; Software</option></select></label>
-        <label class="field full"><span>Your requirements <i>*</i></span><textarea name="message" rows="5" required="{{ true }}" placeholder="Users, languages, systems, timeline — or the OAKS solution you’d like to adapt."></textarea></label>
+        <label class="field"><span>How would you like to start?</span><select name="start" defaultValue=""><option value="">Not sure yet</option><option>Deploy a proven OAKS solution</option><option>Build something new (fixed-price prototype)</option><option>Dedicated delivery pod</option></select></label>
+        <label class="field"><span>Solution of interest</span><select name="solution" defaultValue=""><option value="">Something else</option><option>AI Assessment Platform</option><option>AI Survey Analytics</option><option>Document Intelligence</option><option>Gamified Hiring &amp; L&amp;D</option><option>Dedicated delivery pods</option><option>Custom AI &amp; Software</option></select></label>
+        <label class="field full"><span>Preferred time for a 30-minute call (CET)</span><input name="time" type="text" placeholder="e.g. Tuesday morning, 10:00–12:00 CET"></label>
+        <label class="field full"><span>Your requirements <i>*</i></span><textarea name="message" rows="5" required="{{ true }}" placeholder="The workflow, users, languages and scale — or the OAKS solution you’d like adapted for your market."></textarea></label>
         <div class="hp" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabIndex="-1" autoComplete="off"></label></div>
         <sc-if value="{{ err }}"><div class="alert alert--err full" role="alert">{{ err }}</div></sc-if>
-        <sc-if value="{{ fail }}"><div class="alert alert--err full" role="alert">Sorry, your enquiry could not be sent. Please try again, or email <a href="mailto:info@oaks.guru">info@oaks.guru</a> or call <a href="tel:+917207633633">+91 72076 33633</a>.</div></sc-if>
+        <sc-if value="{{ fail }}"><div class="alert alert--err full" role="alert">Sorry, your request could not be sent. Please try again, email <a href="mailto:info@oaks.guru">info@oaks.guru</a> or call the EU desk on <a href="tel:+35699786876">+356 9978 6876</a>.</div></sc-if>
         <div class="form-foot full"><span class="fine">Fields marked * are required. We use your details only to reply — see our <a href="/privacy">Privacy Policy</a>.</span><button class="btn" type="submit">{{ sendLabel }} <span class="arr" aria-hidden="true">→</span></button></div>
       </form>
       </sc-if>
     </div>
     <aside class="cinfo panel panel--mist rv" aria-label="Contact details">
-      <div><span class="kicker">Email</span><a class="big" href="mailto:info@oaks.guru">info@oaks.guru</a></div>
-      <div><span class="kicker">Phone · WhatsApp</span><a class="big" href="tel:+917207633633">+91 72076 33633</a></div>
-      <div><span class="kicker">Web</span><span class="big"><a href="https://www.oaks.guru">oaks.guru</a> · <a href="https://heysiya.tech" rel="noopener">heysiya.tech</a></span></div>
+      <div><span class="kicker">Europe</span><a class="big" href="tel:+35699786876">+356 9978 6876</a><span class="small">Mani Sankar Nakkala, Malta Operations</span></div>
+      <div><span class="kicker">India</span><a class="big" href="tel:+917207633633">+91 72076 33633</a><span class="small">Divya Bandreddy, Chief of Staff</span></div>
+      <div><span class="kicker">CEO</span><a class="big" href="mailto:smatcha@oaks.guru">smatcha@oaks.guru</a><span class="small">Suman Matcha</span></div>
+      <div><span class="kicker">General</span><a class="big" href="mailto:info@oaks.guru">info@oaks.guru</a></div>
       <hr class="rule">
-      <div><span class="kicker">Europe · OAKS SIYA Europe Ltd</span><address>Trident Park, Notabile Gardens, Level 4, Office 2, Mdina Road, Central Business District, Birkirkara CBD 2010, Malta</address></div>
+      <div><span class="kicker">Malta · OAKS SIYA Europe Limited</span><address>Registered office: Level 3A, Centris Business Gateway II, Triq is-Salib tal-Imriehel, Central Business District, Birkirkara CBD 3020, Malta<br>Reg. no. C 117377 · VAT MT33213010</address></div>
       <div><span class="kicker">India · OAKS Solutions Pvt Ltd</span><address>F2 Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, India</address></div>
-      <hr class="rule">
-      <p class="small"><b style="color:var(--ink)">Suman Matcha</b>, Founder &amp; CEO · <a href="mailto:smatcha@oaks.guru">smatcha@oaks.guru</a></p>
     </aside>
   </div>
 </section>
@@ -138,22 +136,29 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="112" height="40" loading="lazy">
-        <p>Your delivery partner for AI at scale. AI and digital solutions, proven since 2017, now delivered for European partners under your brand.</p>
-        <p class="mt-s">GDPR-ready · EU AI Act-aware · ISO 9001 · ISO 27001</p>
+        <p>Your delivery partner for AI at scale. EU contract and accountability. India-scale engineering.</p>
+        <p class="foot-desk"><b>EU desk</b> Malta · 09:00–17:00 CET<br><a href="tel:+35699786876">+356 9978 6876</a></p>
       </div>
-      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#content-as-a-service">Content as a Service</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
-      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/trust">Trust</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
+      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods">Dedicated delivery pods</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
+      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/partners#pricing">Pricing</a><a href="/trust">Trust</a><a href="/trust#procurement">Procurement</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
       <div><h2>Legal</h2><nav aria-label="Legal"><a href="/privacy">Privacy Policy</a><a href="/kids-privacy">Kids&#x27; Privacy Policy</a><a href="/terms">Terms and Conditions</a></nav></div>
       <div class="foot-office">
         <h2>Offices</h2>
-        <div><b>EUROPE · OAKS SIYA EUROPE LTD</b><address>Trident Park, Notabile Gardens, Level 4, Office 2, Mdina Road, Central Business District, Birkirkara CBD 2010, Malta</address></div>
+        <div><b>MALTA · OAKS SIYA EUROPE LIMITED</b><address>Level 3A, Centris Business Gateway II, Triq is-Salib tal-Imriehel, Central Business District, Birkirkara CBD 3020, Malta<br>Reg. C 117377 · VAT MT33213010</address></div>
         <div><b>INDIA · OAKS SOLUTIONS PVT LTD</b><address>F2 Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, India</address></div>
-        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a></div>
+        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a> (India)</div>
       </div>
     </div>
+    <ul class="foot-seals" aria-label="Compliance and certifications">
+      <li><img sc-camel-src="assets/badges/gdpr.svg" alt="" width="48" height="48" loading="lazy"><span><b>GDPR-ready</b>DPA signed before any personal data</span></li>
+      <li><img sc-camel-src="assets/badges/eu-ai-act.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU AI Act-aware</b>Risk-classified per use case</span></li>
+      <li><img sc-camel-src="assets/badges/iso-9001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO 9001:2015</b>Quality management</span></li>
+      <li><img sc-camel-src="assets/badges/iso-27001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO/IEC 27001:2022</b>Information security</span></li>
+      <li><img sc-camel-src="assets/badges/eu-entity.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU entity · Malta</b>EUR contracts, Malta law</span></li>
+    </ul>
     <div class="foot-bottom">
-      <span>OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), founded 2017, and OAKS SIYA Europe Ltd (Malta), 2026. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act badges indicate our approach, not certification.</span>
-      <span>© 2026 OAKS Solutions Pvt Ltd · OAKS SIYA Europe Ltd</span>
+      <span>OAKS SIYA Europe Limited, Malta · Reg. C 117377 · VAT MT33213010. OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), Hyderabad, founded 2017. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act marks show how we prepare, not a certification.</span>
+      <span>© 2026 OAKS Solutions Pvt Ltd and OAKS SIYA Europe Limited, Malta. All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -163,80 +168,46 @@
 class Component extends DCLogic {
   state = { w: window.innerWidth, menuOpen: false, sending: false, sent: false, fail: false, err: "" };
   PAGE = "/contact";
-  NAV = [["Solutions", "/solutions"], ["Partner model", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
+  NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
   D = {
-  "models": [
-    {
-      "n": "01",
-      "t": "Custom development",
-      "d": "From prototype to production, built to your specification.",
-      "best": "New products and bespoke workflows."
-    },
-    {
-      "n": "02",
-      "t": "White-label solutions",
-      "d": "Proven OAKS platforms, launched under your name in weeks.",
-      "best": "Fast market entry."
-    },
-    {
-      "n": "03",
-      "t": "APIs & integrations",
-      "d": "Our AI, inside your platform and your clients’ systems.",
-      "best": "Software firms and integrators."
-    },
-    {
-      "n": "04",
-      "t": "Revenue share",
-      "d": "Win together, share the upside — terms set per opportunity.",
-      "best": "Multi-client programmes."
-    },
-    {
-      "n": "05",
-      "t": "Dedicated monthly pods",
-      "d": "A named OAKS team that works as an extension of yours.",
-      "best": "Continuous build and support."
-    }
-  ],
   "steps": [
     {
-      "n": "01",
-      "t": "Share",
-      "d": "Your requirements, users, languages and systems."
+      "n": "Step 1",
+      "t": "Book a call",
+      "d": "30 minutes, no cost"
     },
     {
-      "n": "02",
-      "t": "Prototype",
-      "d": "A working version in two weeks, at an agreed price."
+      "n": "Step 2",
+      "t": "Scope one workflow",
+      "d": "Goals, data, success measures"
     },
     {
-      "n": "03",
-      "t": "Deliver",
-      "d": "Under your brand or ours, on the agreed model."
+      "n": "Step 3",
+      "t": "Fixed-price prototype",
+      "d": "Fixed price, on your data, in two weeks"
+    },
+    {
+      "n": "Step 4",
+      "t": "Decide on a pod",
+      "d": "After weekly demos, then scale"
     }
-  ],
-  "sols": [
-    "AI Assessment Platform",
-    "AI Survey Analytics",
-    "Document Intelligence",
-    "Gamified Hiring & L&D",
-    "Content as a Service",
-    "Custom AI & Software"
   ]
 };
   CP = {
   "formP": [
-    "Bring us your project requirements — or an existing OAKS solution you’d like adapted for your market. We reply within one working day.",
-    "Share your requirements. We reply within one working day."
+    "Tell us the workflow, users, languages and scale — or the OAKS solution you’d like adapted for your market. Our EU desk replies within one working day.",
+    "Tell us the workflow and scale. We reply within one working day."
   ],
   "ctaP": [
-    "Bring us your project requirements — or explore an existing OAKS solution that we can adapt for your market.",
-    "Bring us your requirements, or adapt an existing OAKS solution for your market."
+    "Bring us your requirements — or an existing OAKS solution we adapt for your market. 30 minutes, no cost; then a fixed-price prototype on your data in two weeks.",
+    "A 30-minute call, then a fixed-price prototype in two weeks."
   ]
 };
   componentDidMount() {
     this.onR = () => this.setState({ w: window.innerWidth }, () => { if (this.state.menuOpen && this.state.w >= 1024) this.setMenu(false); });
     this.onR(); window.addEventListener('resize', this.onR);
+    if (location.hash === '#book') setTimeout(() => { const el = document.getElementById('book'); if (el) el.scrollIntoView(); }, 300);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onR); document.body.style.overflow = ''; }
   setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menuOpen: open }); }
@@ -249,7 +220,7 @@ class Component extends DCLogic {
       toggleMenu: () => this.setMenu(!s.menuOpen), closeMenu: () => this.setMenu(false),
       cp: Object.fromEntries(Object.entries(this.CP).map(([k, v]) => [k, mob ? v[1] : v[0]])),
     };
-    R.open = !s.sent; R.sent = s.sent; R.fail = s.fail; R.err = s.err; R.sendLabel = s.sending ? 'Sending…' : 'Send enquiry';
+    R.open = !s.sent; R.sent = s.sent; R.fail = s.fail; R.err = s.err; R.sendLabel = s.sending ? 'Sending…' : 'Request a call';
     R.reset = () => this.setState({ sent: false, fail: false, err: '' });
     R.submit = e => {
       e.preventDefault(); if (s.sending) return;
@@ -257,7 +228,7 @@ class Component extends DCLogic {
       const err = (window.oaksCheck ? window.oaksCheck(form) : '') || (msg && !msg.value.trim() ? 'Please tell us a little about your requirements.' : '');
       if (err) { this.setState({ err }); return; }
       this.setState({ sending: true, fail: false, err: '' });
-      Promise.resolve(window.oaksSend ? window.oaksSend(form, { form: 'Contact page', subject: 'Partner enquiry', audience: 'international' }) : { ok: false })
+      Promise.resolve(window.oaksSend ? window.oaksSend(form, { form: 'Contact page', subject: 'Book a 30-minute call', audience: 'international' }) : { ok: false })
         .then(r => this.setState(r && r.ok ? { sending: false, sent: true } : { sending: false, fail: true }));
     };
     return R;

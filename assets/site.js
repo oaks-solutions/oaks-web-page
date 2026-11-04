@@ -18,6 +18,28 @@
   new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; scan(); }); } })
     .observe(root, { childList: true, subtree: true });
   scan();
+
+  // Count .count figures up from zero the first time they scroll into view ("1.14M", "40K+", "95.6%").
+  const counted = new WeakSet();
+  const countUp = el => {
+    const final = el.textContent.trim(), m = final.match(/^([^\d]*)([\d,]*\.?\d+)(.*)$/);
+    if (!m) return;
+    const target = parseFloat(m[2].replace(/,/g, '')), dec = (m[2].split('.')[1] || '').length, t0 = performance.now(), D = 1600;
+    const node = el.querySelector('.sc-interp') || el;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / D), v = target * (1 - Math.pow(1 - k, 3));
+      node.textContent = k < 1 ? m[1] + (m[2].includes(',') ? Math.round(v).toLocaleString('en-GB') : v.toFixed(dec)) + m[3] : final;
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const cio = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { cio.unobserve(e.target); countUp(e.target); }
+  }), { threshold: 0.6 });
+  const scanCounts = () => document.querySelectorAll('.count').forEach(el => { if (!counted.has(el)) { counted.add(el); cio.observe(el); } });
+  new MutationObserver(() => requestAnimationFrame(scanCounts)).observe(root, { childList: true, subtree: true });
+  scanCounts();
+
   // Never leave content hidden if an element is missed (e.g. printed or already above the fold).
   setTimeout(() => document.querySelectorAll('.rv:not(.in)').forEach(el => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }), 1200);
 })();

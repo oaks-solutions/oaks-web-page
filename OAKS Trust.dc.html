@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Trust: GDPR &amp; EU AI Act | OAKS Solutions</title>
-<meta name="description" content="Compliance built in, not bolted on: a DPA before any personal data, EU hosting in Frankfurt, named human reviewers, traceable outputs and audit logs. ISO 9001 and ISO 27001.">
+<title>Trust, GDPR, EU AI Act and procurement | OAKS Solutions</title>
+<meta name="description" content="Your clients stay the data controller: DPA signed first, EU hosting in AWS Frankfurt, human decisions and logging under the EU AI Act, ISO 9001:2015 and ISO/IEC 27001:2022. Procurement answers and supplier fact sheet.">
 <link rel="canonical" href="https://www.oaks.guru/trust">
 <meta name="application-name" content="OAKS Solutions">
 <meta name="apple-mobile-web-app-title" content="OAKS Solutions">
@@ -11,16 +11,16 @@
 <meta property="og:site_name" content="OAKS Solutions">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://www.oaks.guru/trust">
-<meta property="og:title" content="Trust: GDPR &amp; EU AI Act | OAKS Solutions">
-<meta property="og:description" content="Compliance built in, not bolted on: a DPA before any personal data, EU hosting in Frankfurt, named human reviewers, traceable outputs and audit logs. ISO 9001 and ISO 27001.">
+<meta property="og:title" content="Trust, GDPR, EU AI Act and procurement | OAKS Solutions">
+<meta property="og:description" content="Your clients stay the data controller: DPA signed first, EU hosting in AWS Frankfurt, human decisions and logging under the EU AI Act, ISO 9001:2015 and ISO/IEC 27001:2022. Procurement answers and supplier fact sheet.">
 <meta property="og:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Trust: GDPR &amp; EU AI Act | OAKS Solutions">
-<meta name="twitter:description" content="Compliance built in, not bolted on: a DPA before any personal data, EU hosting in Frankfurt, named human reviewers, traceable outputs and audit logs. ISO 9001 and ISO 27001.">
+<meta name="twitter:title" content="Trust, GDPR, EU AI Act and procurement | OAKS Solutions">
+<meta name="twitter:description" content="Your clients stay the data controller: DPA signed first, EU hosting in AWS Frankfurt, human decisions and logging under the EU AI Act, ISO 9001:2015 and ISO/IEC 27001:2022. Procurement answers and supplier fact sheet.">
 <meta name="twitter:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta name="twitter:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -56,16 +56,15 @@
       <nav class="nav" aria-label="Main">
         <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
       </nav>
-      <a class="btn btn--sm header-cta" href="/contact">Work with us <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn--sm header-cta" href="/contact#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <a class="m-link" href="/" onClick="{{ closeMenu }}">Home</a>
       <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
-      <a class="btn" href="/contact" onClick="{{ closeMenu }}">Work with us <span class="arr" aria-hidden="true">→</span></a>
-      <div class="m-contact"><a href="mailto:info@oaks.guru">info@oaks.guru</a><a href="tel:+917207633633">+91 72076 33633</a><span>Valletta · Hyderabad</span></div>
+      <a class="btn" href="/contact#book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
+      <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
   </sc-if>
 </header>
@@ -77,27 +76,62 @@
   <div class="hero__shade"></div>
   <div class="wrap"><div class="hero__inner">
     <span class="eyebrow">Trust · GDPR &amp; EU AI Act</span>
-    <h1 class="h-xl">Compliance built in, not bolted on<span class="dot">.</span></h1>
+    <h1 class="h-xl">Compliance built in, <br>not bolted on<span class="dot">.</span></h1>
     <p class="lede">{{ cp.heroP }}</p>
   </div></div>
 </section>
 
-<section class="sec">
+<section class="seal-strip">
+  <div class="wrap"><ul class="seals seals--strip" aria-label="Compliance and certifications"><sc-for list="{{ seals }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="64" height="64"><span><b>{{ b.t }}</b><i>{{ b.d }}</i></span></li></sc-for></ul></div>
+</section>
+
+<section class="sec dots-bg">
   <div class="wrap">
-    <div class="grid g2" style="gap: clamp(40px, 6vw, 96px)">
+    <span class="kicker">GDPR &amp; EU AI Act · how we are prepared</span>
+    <div class="grid g2 mt-m" style="gap: clamp(40px, 6vw, 96px)">
       <sc-for list="{{ laws }}" as="g"><div class="law rv">
-        <div class="law__head"><span class="ic-badge"><i class="ic {{ g.icon }}"></i></span><h3>{{ g.t }}</h3></div>
-        <sc-for list="{{ g.items }}" as="x"><div class="law__item"><b>{{ x.t }}</b><span>{{ x.d }}</span></div></sc-for>
+        <div class="law__head"><img sc-camel-src="{{ g.img }}" alt="" width="60" height="60"><div><h3>{{ g.t }}</h3><span class="kicker kicker--cyan">{{ g.sub }}</span></div></div>
+        <p class="law__intro"><b>{{ g.lead }}</b> {{ g.intro }}</p>
+        <sc-for list="{{ g.items }}" as="x"><div class="law__item law__item--n"><span class="row__n">{{ x.n }}</span><div><b>{{ x.t }}</b><span>{{ x.d }}</span></div></div></sc-for>
       </div></sc-for>
     </div>
-    <div class="cert mt-l rv">
-      <sc-for list="{{ certs }}" as="k"><div><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for>
+    <span class="kicker mt-l" style="display:block">Who accesses your data, from where</span>
+    <ol class="flowline mt-s rv"><sc-for list="{{ access }}" as="x"><li><span class="flowline__dot"></span><span class="kicker kicker--cyan">{{ x.k }}</span><b>{{ x.t }}</b><span>{{ x.d }}</span></li></sc-for></ol>
+    <span class="kicker mt-l" style="display:block">Who is responsible for what</span>
+    <div class="never never--panel mt-s rv"><sc-for list="{{ roles }}" as="x"><div><span class="kicker kicker--cyan">{{ x.k }}</span><b>{{ x.t }}</b><span>{{ x.d }}</span></div></sc-for></div>
+    <span class="kicker mt-l" style="display:block">Certified &amp; verified</span>
+    <div class="cert cert--line mt-s rv"><sc-for list="{{ certs }}" as="k"><div><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
+    <div class="promise mt-l rv">
+      <div><span class="kicker kicker--cyan">Our promise</span><h3>Your clients’ data. <br>Their control. Always<span class="dot">.</span></h3></div>
+      <div><span class="kicker kicker--cyan">Data protection officer</span><b>Navyatha Avula</b><a href="mailto:navyatha@oaks.guru">navyatha@oaks.guru</a><span>Head of Technology &amp; AI</span></div>
+      <div><span class="kicker kicker--cyan">Sub-processors</span><b>Hosting · AWS</b><span>Frankfurt (eu-central-1), named in every DPA. Any LLM providers are named per project in your DPA.</span></div>
     </div>
-    <div class="statement mt-l rv">
-      <h2>Your clients’ data. Their control. Always<span class="dot">.</span></h2>
-      <p>Data roles, hosting and AI Act obligations are confirmed in each contract and DPA.</p>
+  </div>
+</section>
+
+<section class="sec sec--mist">
+  <div class="wrap">
+    <div class="sec-head sec-head--split rv">
+      <div class="grid" style="gap:18px"><span class="eyebrow">Trusted by</span><h2 class="h-lg">Every logo, one track record<span class="dot">.</span></h2></div>
+      <p class="lede">Empanelled with India’s national agencies and trusted by governments, universities and industry. References from government and EU clients on request.</p>
     </div>
-    <p class="fine mt-m">GDPR and EU AI Act badges indicate our approach, not certification. Read our <a href="/privacy">Privacy Policy</a> and <a href="/kids-privacy">Kids’ Privacy Policy</a>.</p>
+    <ul class="logos logos--wall rv"><sc-for list="{{ allLogos }}" as="c"><li><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" loading="lazy" decoding="async"><span>{{ c.name }}</span></li></sc-for></ul>
+  </div>
+</section>
+
+<section id="procurement" class="sec dots-bg" style="scroll-margin-top: 60px">
+  <div class="wrap">
+    <div class="sec-head sec-head--split rv">
+      <div class="grid" style="gap:18px"><span class="eyebrow">For your procurement team</span><h2 class="h-lg">What your procurement team will want to know<span class="dot">.</span></h2></div>
+      <p class="lede">Ownership, data, exit, insurance, support and contract terms — set out simply.</p>
+    </div>
+    <div class="qa rv"><sc-for list="{{ qa }}" as="q"><div class="qa__card"><span class="ic-tile"><i class="ic {{ q.icon }}"></i></span><div><span class="kicker kicker--cyan">{{ q.k }}</span><h3>{{ q.t }}</h3><p>{{ q.d }}</p></div></div></sc-for></div>
+    <span class="kicker mt-l" style="display:block">OAKS at a glance · supplier fact sheet</span>
+    <dl class="facts mt-s rv"><sc-for list="{{ facts }}" as="f"><div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div></sc-for></dl>
+    <div class="callout mt-l rv">
+      <div class="callout__head"><span class="kicker kicker--cyan">Ready when you are</span><h3>Your due-diligence pack, <br>on request<span class="dot">.</span></h3></div>
+      <div class="grid" style="gap:18px"><ul class="ticks ticks--cols"><sc-for list="{{ pack }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul><a class="btn" href="/contact#book" style="justify-self:start">Request the pack <span class="arr" aria-hidden="true">→</span></a></div>
+    </div>
   </div>
 </section>
 
@@ -106,10 +140,10 @@
   <div class="hero__shade"></div>
   <div class="wrap">
     <div class="inner rv">
-      <span class="eyebrow">Work with us</span>
-      <h2 class="h-lg">You lead the client relationship. We build and customise the technology<span class="dot">.</span></h2>
+      <span class="eyebrow">Your next step</span>
+      <h2 class="h-lg">You lead the client. <br>We build the technology<span class="dot">.</span></h2>
       <p class="lede">{{ cp.ctaP }}</p>
-      <div class="hero__ctas"><a class="btn" href="/contact">Start a conversation <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="mailto:info@oaks.guru">info@oaks.guru</a></div>
+      <div class="hero__ctas"><a class="btn" href="/contact#book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="tel:+35699786876">EU desk +356 9978 6876</a></div>
     </div>
   </div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
@@ -122,22 +156,29 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="112" height="40" loading="lazy">
-        <p>Your delivery partner for AI at scale. AI and digital solutions, proven since 2017, now delivered for European partners under your brand.</p>
-        <p class="mt-s">GDPR-ready · EU AI Act-aware · ISO 9001 · ISO 27001</p>
+        <p>Your delivery partner for AI at scale. EU contract and accountability. India-scale engineering.</p>
+        <p class="foot-desk"><b>EU desk</b> Malta · 09:00–17:00 CET<br><a href="tel:+35699786876">+356 9978 6876</a></p>
       </div>
-      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#content-as-a-service">Content as a Service</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
-      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/trust">Trust</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
+      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods">Dedicated delivery pods</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
+      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/partners#pricing">Pricing</a><a href="/trust">Trust</a><a href="/trust#procurement">Procurement</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
       <div><h2>Legal</h2><nav aria-label="Legal"><a href="/privacy">Privacy Policy</a><a href="/kids-privacy">Kids&#x27; Privacy Policy</a><a href="/terms">Terms and Conditions</a></nav></div>
       <div class="foot-office">
         <h2>Offices</h2>
-        <div><b>EUROPE · OAKS SIYA EUROPE LTD</b><address>Trident Park, Notabile Gardens, Level 4, Office 2, Mdina Road, Central Business District, Birkirkara CBD 2010, Malta</address></div>
+        <div><b>MALTA · OAKS SIYA EUROPE LIMITED</b><address>Level 3A, Centris Business Gateway II, Triq is-Salib tal-Imriehel, Central Business District, Birkirkara CBD 3020, Malta<br>Reg. C 117377 · VAT MT33213010</address></div>
         <div><b>INDIA · OAKS SOLUTIONS PVT LTD</b><address>F2 Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, India</address></div>
-        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a></div>
+        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a> (India)</div>
       </div>
     </div>
+    <ul class="foot-seals" aria-label="Compliance and certifications">
+      <li><img sc-camel-src="assets/badges/gdpr.svg" alt="" width="48" height="48" loading="lazy"><span><b>GDPR-ready</b>DPA signed before any personal data</span></li>
+      <li><img sc-camel-src="assets/badges/eu-ai-act.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU AI Act-aware</b>Risk-classified per use case</span></li>
+      <li><img sc-camel-src="assets/badges/iso-9001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO 9001:2015</b>Quality management</span></li>
+      <li><img sc-camel-src="assets/badges/iso-27001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO/IEC 27001:2022</b>Information security</span></li>
+      <li><img sc-camel-src="assets/badges/eu-entity.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU entity · Malta</b>EUR contracts, Malta law</span></li>
+    </ul>
     <div class="foot-bottom">
-      <span>OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), founded 2017, and OAKS SIYA Europe Ltd (Malta), 2026. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act badges indicate our approach, not certification.</span>
-      <span>© 2026 OAKS Solutions Pvt Ltd · OAKS SIYA Europe Ltd</span>
+      <span>OAKS SIYA Europe Limited, Malta · Reg. C 117377 · VAT MT33213010. OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), Hyderabad, founded 2017. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act marks show how we prepare, not a certification.</span>
+      <span>© 2026 OAKS Solutions Pvt Ltd and OAKS SIYA Europe Limited, Malta. All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -147,82 +188,317 @@
 class Component extends DCLogic {
   state = { w: window.innerWidth, menuOpen: false };
   PAGE = "/trust";
-  NAV = [["Solutions", "/solutions"], ["Partner model", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
+  NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
   D = {
-  "certs": [
+  "seals": [
     {
-      "v": "ISO 9001",
-      "l": "Quality management"
+      "img": "assets/badges/gdpr.svg",
+      "t": "GDPR-ready",
+      "d": "DPA signed before any personal data"
     },
     {
-      "v": "ISO 27001",
-      "l": "Information security"
+      "img": "assets/badges/eu-ai-act.svg",
+      "t": "EU AI Act-aware",
+      "d": "Risk-classified per use case"
     },
     {
-      "v": "EU",
-      "l": "Hosting in Frankfurt"
+      "img": "assets/badges/iso-9001.svg",
+      "t": "ISO 9001:2015",
+      "d": "Quality management"
     },
     {
-      "v": "0",
-      "l": "Client data used to train models"
+      "img": "assets/badges/iso-27001.svg",
+      "t": "ISO/IEC 27001:2022",
+      "d": "Information security"
+    },
+    {
+      "img": "assets/badges/eu-entity.svg",
+      "t": "EU entity",
+      "d": "OAKS SIYA Europe Limited, Malta"
+    }
+  ],
+  "allLogos": [
+    {
+      "name": "Samagra Shiksha",
+      "img": "assets/optimized/client-samagra.webp"
+    },
+    {
+      "name": "Government of Assam",
+      "img": "assets/optimized/client-assam.webp"
+    },
+    {
+      "name": "Government of Telangana",
+      "img": "assets/optimized/client-telangana.webp"
+    },
+    {
+      "name": "Government of Jharkhand",
+      "img": "assets/optimized/client-jharkhand.webp"
+    },
+    {
+      "name": "TSWREIS",
+      "img": "assets/optimized/client-tswreis.webp"
+    },
+    {
+      "name": "TGTWREIS",
+      "img": "assets/optimized/client-tgtwreis.webp"
+    },
+    {
+      "name": "MP Farmer Welfare & Agriculture",
+      "img": "assets/optimized/client-mp.webp"
+    },
+    {
+      "name": "University of Malta",
+      "img": "assets/optimized/client-malta.webp"
+    },
+    {
+      "name": "IIT Bombay",
+      "img": "assets/optimized/client-iitb.webp"
+    },
+    {
+      "name": "UGC",
+      "img": "assets/optimized/client-ugc.webp"
+    },
+    {
+      "name": "Singareni Collieries",
+      "img": "assets/optimized/client-sccl.webp"
+    },
+    {
+      "name": "BGR Mining & Infra",
+      "img": "assets/optimized/client-bgr.webp"
+    },
+    {
+      "name": "YuppTV",
+      "img": "assets/optimized/client-yupptv.webp"
+    },
+    {
+      "name": "Vidura Digital",
+      "img": "assets/optimized/client-vidura.webp"
+    },
+    {
+      "name": "Quality Council of India",
+      "img": "assets/optimized/client-qci.webp"
+    },
+    {
+      "name": "EdCIL (India) Ltd",
+      "img": "assets/optimized/client-edcil.webp"
+    },
+    {
+      "name": "National Council of Educational Research and Training",
+      "img": "assets/optimized/client-ncert.webp"
+    },
+    {
+      "name": "Broadcast Engineering Consultants India",
+      "img": "assets/optimized/client-becil.webp"
     }
   ],
   "laws": [
     {
       "t": "GDPR",
-      "icon": "ic-lock",
+      "sub": "Ready before kickoff",
+      "img": "assets/badges/gdpr.svg",
+      "lead": "",
+      "intro": "Your clients stay the data controller. We act only on their written instructions.",
       "items": [
         {
-          "t": "DPA first",
-          "d": "Signed before any personal data is processed."
+          "n": "01",
+          "t": "DPA signed first",
+          "d": "Before any personal data is processed."
         },
         {
-          "t": "Hosting by choice",
-          "d": "EU (AWS Frankfurt), India or on-premise."
+          "n": "02",
+          "t": "EU hosting by default",
+          "d": "AWS Frankfurt; India or on-premise on request."
         },
         {
+          "n": "03",
           "t": "Role-based access",
-          "d": "Limited to named users."
+          "d": "Named users only, every access logged."
         },
         {
+          "n": "04",
           "t": "Retention & deletion",
-          "d": "Set for files, outputs, backups and logs."
+          "d": "Agreed for files, outputs, backups and logs."
         }
       ]
     },
     {
       "t": "EU AI Act",
-      "icon": "ic-usercheck",
+      "sub": "Risk-classified per use case",
+      "img": "assets/badges/eu-ai-act.svg",
+      "lead": "Education assessment and HR screening are high-risk.",
+      "intro": "We support those obligations with:",
       "items": [
         {
-          "t": "Human oversight",
-          "d": "Named reviewers approve every output."
+          "n": "01",
+          "t": "Human decisions",
+          "d": "People make every final call."
         },
         {
-          "t": "Traceability",
-          "d": "Outputs link back to source records."
+          "n": "02",
+          "t": "Logging",
+          "d": "Every output and approval recorded."
         },
         {
-          "t": "Audit logs",
-          "d": "Reviews and approvals recorded."
+          "n": "03",
+          "t": "Transparency notices",
+          "d": "People are told when AI is used."
         },
         {
-          "t": "Use-case review",
-          "d": "Per deployment; education and hiring get extra care."
+          "n": "04",
+          "t": "Bias testing",
+          "d": "Checked before go-live and over time."
         }
       ]
     }
+  ],
+  "access": [
+    {
+      "k": "Data",
+      "t": "Hosted in the EU",
+      "d": "AWS Frankfurt, by default"
+    },
+    {
+      "k": "Support access",
+      "t": "From India, under SCCs",
+      "d": "Plus a transfer impact assessment"
+    },
+    {
+      "k": "On request",
+      "t": "EU-only access",
+      "d": "No access from outside the EU"
+    }
+  ],
+  "roles": [
+    {
+      "k": "Data controller",
+      "t": "Your client",
+      "d": "Owns the data and every decision."
+    },
+    {
+      "k": "Data processor",
+      "t": "OAKS",
+      "d": "Acts only on your client’s instructions."
+    },
+    {
+      "k": "Sub-processor",
+      "t": "Hosting · AWS",
+      "d": "Frankfurt; named in every DPA."
+    }
+  ],
+  "certs": [
+    {
+      "v": "ISO 9001:2015",
+      "l": "Quality management"
+    },
+    {
+      "v": "ISO/IEC 27001:2022",
+      "l": "Information security"
+    },
+    {
+      "v": "EU entity",
+      "l": "OAKS SIYA Europe Limited, Malta"
+    },
+    {
+      "v": "Zero training",
+      "l": "Your data never trains our models or any third party’s."
+    }
+  ],
+  "qa": [
+    {
+      "icon": "ic-key",
+      "k": "IP ownership",
+      "t": "Who owns the IP?",
+      "d": "The IP is assigned to you on payment, together with the full source code."
+    },
+    {
+      "icon": "ic-cloud",
+      "k": "Data location & access",
+      "t": "Where is the data held?",
+      "d": "In AWS Frankfurt. Support from India runs under SCCs; EU-only access is available."
+    },
+    {
+      "icon": "ic-exit",
+      "k": "Exit & handover",
+      "t": "What happens if we exit?",
+      "d": "Every engagement includes a handover plan and source code, with 30 days’ notice on pods."
+    },
+    {
+      "icon": "ic-shield",
+      "k": "Insurance",
+      "t": "What insurance do you carry?",
+      "d": "We hold professional indemnity and cyber insurance; certificates are available on request."
+    },
+    {
+      "icon": "ic-clock",
+      "k": "Support & SLAs",
+      "t": "What are the SLAs and support hours?",
+      "d": "Our EU desk in Malta works 09:00–17:00 CET, with response times agreed in your SLA."
+    },
+    {
+      "icon": "ic-euro",
+      "k": "Contract, law & currency",
+      "t": "Which law and currency apply?",
+      "d": "Contracts are with OAKS SIYA Europe Ltd under Malta law, invoiced monthly in EUR."
+    }
+  ],
+  "facts": [
+    {
+      "k": "Legal entity",
+      "v": "OAKS SIYA Europe Ltd, Malta"
+    },
+    {
+      "k": "Registration",
+      "v": "C 117377 · VAT MT33213010"
+    },
+    {
+      "k": "Delivery centre",
+      "v": "Hyderabad, India · since 2017"
+    },
+    {
+      "k": "Certifications",
+      "v": "ISO 9001 · ISO 27001"
+    },
+    {
+      "k": "Hosting",
+      "v": "AWS Frankfurt (eu-central-1)"
+    },
+    {
+      "k": "DPO",
+      "v": "Navyatha Avula · navyatha@oaks.guru"
+    },
+    {
+      "k": "EU AI Act",
+      "v": "Risk-classified per use case"
+    },
+    {
+      "k": "Model training",
+      "v": "Never on your data"
+    },
+    {
+      "k": "Breach notification",
+      "v": "Without undue delay, per GDPR"
+    },
+    {
+      "k": "References",
+      "v": "Government and EU clients, on request"
+    }
+  ],
+  "pack": [
+    "Draft DPA",
+    "ISO certificates",
+    "Insurance certificates",
+    "Security questionnaire"
   ]
 };
   CP = {
   "heroP": [
-    "Your clients ask about data and AI first. We answer before kickoff — in writing, for every deployment.",
-    "We answer data and AI questions before kickoff, in writing."
+    "Your clients ask about data and AI first. We answer in writing, before kickoff.",
+    "Data and AI questions answered in writing, before kickoff."
   ],
   "ctaP": [
-    "Bring us your project requirements — or explore an existing OAKS solution that we can adapt for your market.",
-    "Bring us your requirements, or adapt an existing OAKS solution for your market."
+    "Bring us your requirements — or an existing OAKS solution we adapt for your market. 30 minutes, no cost; then a fixed-price prototype on your data in two weeks.",
+    "A 30-minute call, then a fixed-price prototype in two weeks."
   ]
 };
   componentDidMount() {

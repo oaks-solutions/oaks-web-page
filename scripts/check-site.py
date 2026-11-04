@@ -41,7 +41,7 @@ with sync_playwright() as p:
     page.close()
     page=browser.new_page(viewport={'width':1440,'height':900})
     page.goto(base+'solutions',wait_until='domcontentloaded')
-    page.wait_for_selector('#surveys .frame--map path')
+    page.wait_for_selector('#surveys .mapviz path')
     assert page.locator('#hero video').evaluate_all('(vs)=>vs.filter(v=>v.hasAttribute("src")).length')==1
     assert not page.locator('#upskilling video').get_attribute('src'), 'offscreen clip loaded early'
     browser.close()

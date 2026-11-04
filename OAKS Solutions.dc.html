@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Solutions | OAKS Solutions</title>
-<meta name="description" content="AI Assessment Platform, AI Survey Analytics, Document Intelligence, Gamified Hiring &amp; L&amp;D, Content as a Service and Custom AI &amp; Software, each proven in live programmes.">
+<title>AI solutions proven at scale | OAKS Solutions</title>
+<meta name="description" content="AI assessment, voice and text surveys, document intelligence with RAG, gamified hiring and upskilling, dedicated pods at €25/hr and custom AI. Each one live in programmes, with figures on record.">
 <link rel="canonical" href="https://www.oaks.guru/solutions">
 <meta name="application-name" content="OAKS Solutions">
 <meta name="apple-mobile-web-app-title" content="OAKS Solutions">
@@ -11,16 +11,16 @@
 <meta property="og:site_name" content="OAKS Solutions">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://www.oaks.guru/solutions">
-<meta property="og:title" content="Solutions | OAKS Solutions">
-<meta property="og:description" content="AI Assessment Platform, AI Survey Analytics, Document Intelligence, Gamified Hiring &amp; L&amp;D, Content as a Service and Custom AI &amp; Software, each proven in live programmes.">
+<meta property="og:title" content="AI solutions proven at scale | OAKS Solutions">
+<meta property="og:description" content="AI assessment, voice and text surveys, document intelligence with RAG, gamified hiring and upskilling, dedicated pods at €25/hr and custom AI. Each one live in programmes, with figures on record.">
 <meta property="og:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solutions | OAKS Solutions">
-<meta name="twitter:description" content="AI Assessment Platform, AI Survey Analytics, Document Intelligence, Gamified Hiring &amp; L&amp;D, Content as a Service and Custom AI &amp; Software, each proven in live programmes.">
+<meta name="twitter:title" content="AI solutions proven at scale | OAKS Solutions">
+<meta name="twitter:description" content="AI assessment, voice and text surveys, document intelligence with RAG, gamified hiring and upskilling, dedicated pods at €25/hr and custom AI. Each one live in programmes, with figures on record.">
 <meta name="twitter:image" content="https://www.oaks.guru/assets/og-image.png">
 <meta name="twitter:image:alt" content="OAKS Solutions: your delivery partner for AI at scale">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -56,16 +56,15 @@
       <nav class="nav" aria-label="Main">
         <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
       </nav>
-      <a class="btn btn--sm header-cta" href="/contact">Work with us <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn--sm header-cta" href="/contact#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <a class="m-link" href="/" onClick="{{ closeMenu }}">Home</a>
       <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
-      <a class="btn" href="/contact" onClick="{{ closeMenu }}">Work with us <span class="arr" aria-hidden="true">→</span></a>
-      <div class="m-contact"><a href="mailto:info@oaks.guru">info@oaks.guru</a><a href="tel:+917207633633">+91 72076 33633</a><span>Valletta · Hyderabad</span></div>
+      <a class="btn" href="/contact#book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
+      <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
   </sc-if>
 </header>
@@ -77,7 +76,7 @@
   <div class="hero__shade"></div>
   <div class="wrap"><div class="hero__inner">
     <span class="eyebrow">What we deliver</span>
-    <h1 class="h-xl">Proven technology, for you or your clients<span class="dot">.</span></h1>
+    <h1 class="h-xl">Six solutions. <br>Proven at scale<span class="dot">.</span></h1>
     <p class="lede">{{ cp.heroP }}</p>
   </div></div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
@@ -93,7 +92,8 @@
 
 <section id="{{ s1.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <div class="hero__media"><video data-src="{{ s1.video }}" sc-camel-poster="{{ s1.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+    <sc-if value="{{ s1.video }}"><div class="hero__media"><video data-src="{{ s1.video }}" sc-camel-poster="{{ s1.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s1.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s1.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s1.n }}</span>
     <div class="wrap"><div class="inner rv">
@@ -101,34 +101,54 @@
       <h2 class="h-lg">{{ s1.h1 }} <br>{{ s1.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s1.lede }}</p>
     </div></div>
-    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+    <sc-if value="{{ s1.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
-  <div class="sec">
+  <div class="sec dots-bg">
     <div class="wrap">
-      <span class="kicker rv">What we build</span>
-      <div class="grid g4 mt-m rv">
-        <sc-for list="{{ s1.build }}" as="b"><div class="num num--rule"><span class="num__n">{{ b.n }}</span><h3>{{ b.t }}</h3><p>{{ b.d }}</p></div></sc-for>
-      </div>
-      <div class="avail mt-m rv"><span class="lbl">AVAILABLE AS</span><sc-for list="{{ s1.avail }}" as="a"><span class="chip">{{ a }}</span></sc-for></div>
-      <div class="case {{ s1.caseCls }} mt-l rv">
-        <sc-if value="{{ s1.img }}"><div class="frame"><img sc-camel-src="{{ s1.img }}" alt="{{ s1.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
-        <sc-if value="{{ s1.map }}"><div class="frame frame--map"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts highlighted"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><span class="map-cap">All 33 districts of Assam, surveyed.</span></div></sc-if>
-        <div class="case__body">
-          <span class="kicker kicker--cyan">Case study</span>
-          <h3>{{ s1.caseT }}</h3>
+      <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s1.st }} <span class="hl">{{ s1.sth }}</span>{{ s1.ste }}</p></div>
+      <sc-if value="{{ s1.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s1.stages }}" as="g"><div class="stage">
+        <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
+        <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
+        <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div></sc-for></div></sc-if>
+      <sc-if value="{{ s1.does }}"><div class="split split--top does mt-m">
+        <div class="rv"><span class="kicker">What it does</span>
+          <div class="rows mt-s"><sc-for list="{{ s1.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
+        </div>
+        <div class="darkbox rv"><span class="darkbox__head"><span class="kicker kicker--cyan">{{ s1.boxT }}</span><sc-if value="{{ s1.boxTag }}"><span class="kicker">{{ s1.boxTag }}</span></sc-if></span>
+          <sc-if value="{{ s1.pipeline }}"><ol class="pipeline"><sc-for list="{{ s1.box }}" as="x"><li><span class="pipeline__n">{{ x.n }}</span><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ol></sc-if>
+          <sc-if value="{{ s1.offer }}"><ul class="offer"><sc-for list="{{ s1.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
+        </div>
+      </div></sc-if>
+      <span class="kicker mt-l" style="display:block">{{ s1.proofK }}</span>
+      <div class="casecard mt-s rv">
+        <div class="casecard__visual">
+          <sc-if value="{{ s1.img }}"><img sc-camel-src="{{ s1.img }}" alt="{{ s1.imgAlt }}" loading="lazy" decoding="async"></sc-if>
+          <sc-if value="{{ s1.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
+            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
+              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
+        </div>
+        <div class="casecard__body">
+          <span class="kicker kicker--cyan">{{ s1.caseK }}</span>
+          <h3>{{ s1.caseT }}<span class="dot">.</span></h3>
           <p>{{ s1.caseD }}</p>
-          <div class="stats {{ s1.statCls }}"><sc-for list="{{ s1.stats }}" as="k"><div class="stat"><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
-          <sc-if value="{{ s1.note }}"><p class="note">{{ s1.note }}</p></sc-if>
+          <div class="casestats"><sc-for list="{{ s1.stats }}" as="s"><div><b>{{ s.v }}</b><span>{{ s.l }}</span></div></sc-for></div>
+          <div class="caselogos"><span class="kicker">{{ s1.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s1.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s1.logosT }}</span></div>
         </div>
       </div>
-      <div class="why mt-l rv"><span class="kicker">Why it matters</span><h3>{{ s1.whyT }}<span class="dot">.</span></h3><p>{{ s1.whyD }}</p></div>
+      <div class="callout mt-m rv">
+        <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s1.whyT }}<span class="dot">.</span></h3></div>
+        <ul class="ticks ticks--cols"><sc-for list="{{ s1.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div>
+      <div class="solfoot rv"><sc-if value="{{ s1.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s1.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s1.availT }}</b></span></div>
     </div>
   </div>
 </section>
 
 <section id="{{ s2.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <div class="hero__media"><video data-src="{{ s2.video }}" sc-camel-poster="{{ s2.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+    <sc-if value="{{ s2.video }}"><div class="hero__media"><video data-src="{{ s2.video }}" sc-camel-poster="{{ s2.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s2.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s2.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s2.n }}</span>
     <div class="wrap"><div class="inner rv">
@@ -136,34 +156,54 @@
       <h2 class="h-lg">{{ s2.h1 }} <br>{{ s2.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s2.lede }}</p>
     </div></div>
-    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+    <sc-if value="{{ s2.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
-  <div class="sec">
+  <div class="sec dots-bg">
     <div class="wrap">
-      <span class="kicker rv">What we build</span>
-      <div class="grid g4 mt-m rv">
-        <sc-for list="{{ s2.build }}" as="b"><div class="num num--rule"><span class="num__n">{{ b.n }}</span><h3>{{ b.t }}</h3><p>{{ b.d }}</p></div></sc-for>
-      </div>
-      <div class="avail mt-m rv"><span class="lbl">AVAILABLE AS</span><sc-for list="{{ s2.avail }}" as="a"><span class="chip">{{ a }}</span></sc-for></div>
-      <div class="case {{ s2.caseCls }} mt-l rv">
-        <sc-if value="{{ s2.img }}"><div class="frame"><img sc-camel-src="{{ s2.img }}" alt="{{ s2.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
-        <sc-if value="{{ s2.map }}"><div class="frame frame--map"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts highlighted"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><span class="map-cap">All 33 districts of Assam, surveyed.</span></div></sc-if>
-        <div class="case__body">
-          <span class="kicker kicker--cyan">Case study</span>
-          <h3>{{ s2.caseT }}</h3>
+      <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s2.st }} <span class="hl">{{ s2.sth }}</span>{{ s2.ste }}</p></div>
+      <sc-if value="{{ s2.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s2.stages }}" as="g"><div class="stage">
+        <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
+        <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
+        <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div></sc-for></div></sc-if>
+      <sc-if value="{{ s2.does }}"><div class="split split--top does mt-m">
+        <div class="rv"><span class="kicker">What it does</span>
+          <div class="rows mt-s"><sc-for list="{{ s2.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
+        </div>
+        <div class="darkbox rv"><span class="darkbox__head"><span class="kicker kicker--cyan">{{ s2.boxT }}</span><sc-if value="{{ s2.boxTag }}"><span class="kicker">{{ s2.boxTag }}</span></sc-if></span>
+          <sc-if value="{{ s2.pipeline }}"><ol class="pipeline"><sc-for list="{{ s2.box }}" as="x"><li><span class="pipeline__n">{{ x.n }}</span><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ol></sc-if>
+          <sc-if value="{{ s2.offer }}"><ul class="offer"><sc-for list="{{ s2.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
+        </div>
+      </div></sc-if>
+      <span class="kicker mt-l" style="display:block">{{ s2.proofK }}</span>
+      <div class="casecard mt-s rv">
+        <div class="casecard__visual">
+          <sc-if value="{{ s2.img }}"><img sc-camel-src="{{ s2.img }}" alt="{{ s2.imgAlt }}" loading="lazy" decoding="async"></sc-if>
+          <sc-if value="{{ s2.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
+            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
+              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
+        </div>
+        <div class="casecard__body">
+          <span class="kicker kicker--cyan">{{ s2.caseK }}</span>
+          <h3>{{ s2.caseT }}<span class="dot">.</span></h3>
           <p>{{ s2.caseD }}</p>
-          <div class="stats {{ s2.statCls }}"><sc-for list="{{ s2.stats }}" as="k"><div class="stat"><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
-          <sc-if value="{{ s2.note }}"><p class="note">{{ s2.note }}</p></sc-if>
+          <div class="casestats"><sc-for list="{{ s2.stats }}" as="s"><div><b>{{ s.v }}</b><span>{{ s.l }}</span></div></sc-for></div>
+          <div class="caselogos"><span class="kicker">{{ s2.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s2.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s2.logosT }}</span></div>
         </div>
       </div>
-      <div class="why mt-l rv"><span class="kicker">Why it matters</span><h3>{{ s2.whyT }}<span class="dot">.</span></h3><p>{{ s2.whyD }}</p></div>
+      <div class="callout mt-m rv">
+        <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s2.whyT }}<span class="dot">.</span></h3></div>
+        <ul class="ticks ticks--cols"><sc-for list="{{ s2.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div>
+      <div class="solfoot rv"><sc-if value="{{ s2.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s2.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s2.availT }}</b></span></div>
     </div>
   </div>
 </section>
 
 <section id="{{ s3.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <div class="hero__media"><video data-src="{{ s3.video }}" sc-camel-poster="{{ s3.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+    <sc-if value="{{ s3.video }}"><div class="hero__media"><video data-src="{{ s3.video }}" sc-camel-poster="{{ s3.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s3.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s3.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s3.n }}</span>
     <div class="wrap"><div class="inner rv">
@@ -171,34 +211,54 @@
       <h2 class="h-lg">{{ s3.h1 }} <br>{{ s3.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s3.lede }}</p>
     </div></div>
-    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+    <sc-if value="{{ s3.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
-  <div class="sec">
+  <div class="sec dots-bg">
     <div class="wrap">
-      <span class="kicker rv">What we build</span>
-      <div class="grid g4 mt-m rv">
-        <sc-for list="{{ s3.build }}" as="b"><div class="num num--rule"><span class="num__n">{{ b.n }}</span><h3>{{ b.t }}</h3><p>{{ b.d }}</p></div></sc-for>
-      </div>
-      <div class="avail mt-m rv"><span class="lbl">AVAILABLE AS</span><sc-for list="{{ s3.avail }}" as="a"><span class="chip">{{ a }}</span></sc-for></div>
-      <div class="case {{ s3.caseCls }} mt-l rv">
-        <sc-if value="{{ s3.img }}"><div class="frame"><img sc-camel-src="{{ s3.img }}" alt="{{ s3.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
-        <sc-if value="{{ s3.map }}"><div class="frame frame--map"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts highlighted"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><span class="map-cap">All 33 districts of Assam, surveyed.</span></div></sc-if>
-        <div class="case__body">
-          <span class="kicker kicker--cyan">Case study</span>
-          <h3>{{ s3.caseT }}</h3>
+      <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s3.st }} <span class="hl">{{ s3.sth }}</span>{{ s3.ste }}</p></div>
+      <sc-if value="{{ s3.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s3.stages }}" as="g"><div class="stage">
+        <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
+        <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
+        <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div></sc-for></div></sc-if>
+      <sc-if value="{{ s3.does }}"><div class="split split--top does mt-m">
+        <div class="rv"><span class="kicker">What it does</span>
+          <div class="rows mt-s"><sc-for list="{{ s3.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
+        </div>
+        <div class="darkbox rv"><span class="darkbox__head"><span class="kicker kicker--cyan">{{ s3.boxT }}</span><sc-if value="{{ s3.boxTag }}"><span class="kicker">{{ s3.boxTag }}</span></sc-if></span>
+          <sc-if value="{{ s3.pipeline }}"><ol class="pipeline"><sc-for list="{{ s3.box }}" as="x"><li><span class="pipeline__n">{{ x.n }}</span><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ol></sc-if>
+          <sc-if value="{{ s3.offer }}"><ul class="offer"><sc-for list="{{ s3.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
+        </div>
+      </div></sc-if>
+      <span class="kicker mt-l" style="display:block">{{ s3.proofK }}</span>
+      <div class="casecard mt-s rv">
+        <div class="casecard__visual">
+          <sc-if value="{{ s3.img }}"><img sc-camel-src="{{ s3.img }}" alt="{{ s3.imgAlt }}" loading="lazy" decoding="async"></sc-if>
+          <sc-if value="{{ s3.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
+            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
+              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
+        </div>
+        <div class="casecard__body">
+          <span class="kicker kicker--cyan">{{ s3.caseK }}</span>
+          <h3>{{ s3.caseT }}<span class="dot">.</span></h3>
           <p>{{ s3.caseD }}</p>
-          <div class="stats {{ s3.statCls }}"><sc-for list="{{ s3.stats }}" as="k"><div class="stat"><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
-          <sc-if value="{{ s3.note }}"><p class="note">{{ s3.note }}</p></sc-if>
+          <div class="casestats"><sc-for list="{{ s3.stats }}" as="s"><div><b>{{ s.v }}</b><span>{{ s.l }}</span></div></sc-for></div>
+          <div class="caselogos"><span class="kicker">{{ s3.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s3.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s3.logosT }}</span></div>
         </div>
       </div>
-      <div class="why mt-l rv"><span class="kicker">Why it matters</span><h3>{{ s3.whyT }}<span class="dot">.</span></h3><p>{{ s3.whyD }}</p></div>
+      <div class="callout mt-m rv">
+        <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s3.whyT }}<span class="dot">.</span></h3></div>
+        <ul class="ticks ticks--cols"><sc-for list="{{ s3.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div>
+      <div class="solfoot rv"><sc-if value="{{ s3.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s3.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s3.availT }}</b></span></div>
     </div>
   </div>
 </section>
 
 <section id="{{ s4.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <div class="hero__media"><video data-src="{{ s4.video }}" sc-camel-poster="{{ s4.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+    <sc-if value="{{ s4.video }}"><div class="hero__media"><video data-src="{{ s4.video }}" sc-camel-poster="{{ s4.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s4.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s4.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s4.n }}</span>
     <div class="wrap"><div class="inner rv">
@@ -206,39 +266,63 @@
       <h2 class="h-lg">{{ s4.h1 }} <br>{{ s4.h2 }}<span class="dot">.</span></h2>
       <p class="lede">{{ s4.lede }}</p>
     </div></div>
-    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+    <sc-if value="{{ s4.video }}"><div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div></sc-if>
   </div>
-  <div class="sec">
+  <div class="sec dots-bg">
     <div class="wrap">
-      <span class="kicker rv">What we build</span>
-      <div class="grid g4 mt-m rv">
-        <sc-for list="{{ s4.build }}" as="b"><div class="num num--rule"><span class="num__n">{{ b.n }}</span><h3>{{ b.t }}</h3><p>{{ b.d }}</p></div></sc-for>
-      </div>
-      <div class="avail mt-m rv"><span class="lbl">AVAILABLE AS</span><sc-for list="{{ s4.avail }}" as="a"><span class="chip">{{ a }}</span></sc-for></div>
-      <div class="case {{ s4.caseCls }} mt-l rv">
-        <sc-if value="{{ s4.img }}"><div class="frame"><img sc-camel-src="{{ s4.img }}" alt="{{ s4.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
-        <sc-if value="{{ s4.map }}"><div class="frame frame--map"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts highlighted"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><span class="map-cap">All 33 districts of Assam, surveyed.</span></div></sc-if>
-        <div class="case__body">
-          <span class="kicker kicker--cyan">Case study</span>
-          <h3>{{ s4.caseT }}</h3>
+      <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s4.st }} <span class="hl">{{ s4.sth }}</span>{{ s4.ste }}</p></div>
+      <sc-if value="{{ s4.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s4.stages }}" as="g"><div class="stage">
+        <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
+        <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
+        <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div></sc-for></div></sc-if>
+      <sc-if value="{{ s4.does }}"><div class="split split--top does mt-m">
+        <div class="rv"><span class="kicker">What it does</span>
+          <div class="rows mt-s"><sc-for list="{{ s4.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
+        </div>
+        <div class="darkbox rv"><span class="darkbox__head"><span class="kicker kicker--cyan">{{ s4.boxT }}</span><sc-if value="{{ s4.boxTag }}"><span class="kicker">{{ s4.boxTag }}</span></sc-if></span>
+          <sc-if value="{{ s4.pipeline }}"><ol class="pipeline"><sc-for list="{{ s4.box }}" as="x"><li><span class="pipeline__n">{{ x.n }}</span><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ol></sc-if>
+          <sc-if value="{{ s4.offer }}"><ul class="offer"><sc-for list="{{ s4.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
+        </div>
+      </div></sc-if>
+      <span class="kicker mt-l" style="display:block">{{ s4.proofK }}</span>
+      <div class="casecard mt-s rv">
+        <div class="casecard__visual">
+          <sc-if value="{{ s4.img }}"><img sc-camel-src="{{ s4.img }}" alt="{{ s4.imgAlt }}" loading="lazy" decoding="async"></sc-if>
+          <sc-if value="{{ s4.map }}"><div class="mapviz"><svg viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts"><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg>
+            <div class="gauge"><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="#e3e8ee" stroke-width="10" stroke-linecap="round"/><path d="M10 62a50 50 0 0 1 30-46" fill="none" stroke="#f08a5d" stroke-width="10" stroke-linecap="round"/><path d="M44 14a50 50 0 0 1 34 0" fill="none" stroke="#f4c542" stroke-width="10"/><path d="M82 16a50 50 0 0 1 28 46" fill="none" stroke="#4cb782" stroke-width="10" stroke-linecap="round"/><line x1="60" y1="62" x2="61" y2="20" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="62" r="5" fill="#0f1840"/></svg>
+              <div><span class="kicker">Happiness index</span><b>51%<small> statewide</small></b><span>Districts 48–56%</span></div></div></div></sc-if>
+        </div>
+        <div class="casecard__body">
+          <span class="kicker kicker--cyan">{{ s4.caseK }}</span>
+          <h3>{{ s4.caseT }}<span class="dot">.</span></h3>
           <p>{{ s4.caseD }}</p>
-          <div class="stats {{ s4.statCls }}"><sc-for list="{{ s4.stats }}" as="k"><div class="stat"><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
-          <sc-if value="{{ s4.note }}"><p class="note">{{ s4.note }}</p></sc-if>
+          <div class="casestats"><sc-for list="{{ s4.stats }}" as="s"><div><b>{{ s.v }}</b><span>{{ s.l }}</span></div></sc-for></div>
+          <div class="caselogos"><span class="kicker">{{ s4.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s4.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s4.logosT }}</span></div>
         </div>
       </div>
-      <div class="why mt-l rv"><span class="kicker">Why it matters</span><h3>{{ s4.whyT }}<span class="dot">.</span></h3><p>{{ s4.whyD }}</p></div>
+      <div class="callout mt-m rv">
+        <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s4.whyT }}<span class="dot">.</span></h3></div>
+        <ul class="ticks ticks--cols"><sc-for list="{{ s4.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div>
+      <div class="solfoot rv"><sc-if value="{{ s4.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s4.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s4.availT }}</b></span></div>
     </div>
   </div>
 </section>
 
 <section class="sec sec--mist">
   <div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">Also from OAKS</span><h2 class="h-lg">Content and software, built by the same team<span class="dot">.</span></h2></div>
-    <div class="grid g2">
-      <sc-for list="{{ more }}" as="m"><div id="{{ m.id }}" class="panel panel--line sol rv"><div class="grid" style="gap:14px">
-        <span class="num__n">{{ m.n }}</span><h3 class="h-md">{{ m.t }}<span class="dot">.</span></h3><span class="kicker kicker--cyan">{{ m.sub }}</span><p>{{ m.d }}</p>
-        <div class="avail mt-s"><span class="lbl">AVAILABLE AS</span><sc-for list="{{ m.avail }}" as="a"><span class="chip">{{ a }}</span></sc-for></div>
-      </div></div></sc-for>
+    <div class="sec-head rv"><span class="eyebrow">05 · 06</span><h2 class="h-lg">Your extended team, and anything new<span class="dot">.</span></h2></div>
+    <div class="sol-cards sol-cards--2">
+      <sc-for list="{{ more }}" as="m"><div id="{{ m.id }}" class="sol-card sol rv">
+        <span class="sol-card__img"><img sc-camel-src="{{ m.img }}" alt="" loading="lazy" decoding="async"><span class="sol-card__n">{{ m.n }}</span><span class="sol-card__k">{{ m.k }}</span></span>
+        <span class="sol-card__body">
+          <h3>{{ m.t }}</h3>
+          <span class="sol-card__h">{{ m.h }}</span>
+          <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ m.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+          <span class="sol-card__foot"><span class="sol-card__avail"><sc-for list="{{ m.avail }}" as="a"><span>{{ a }}</span></sc-for></span><a class="sol-card__go" href="{{ m.go }}">{{ m.goT }} <span class="arr" aria-hidden="true">→</span></a></span>
+        </span>
+      </div></sc-for>
     </div>
     <div class="mt-m rv"><a class="link-arrow" href="/partners#launch">What you can launch, and how <span class="arr" aria-hidden="true">→</span></a></div>
   </div>
@@ -249,10 +333,10 @@
   <div class="hero__shade"></div>
   <div class="wrap">
     <div class="inner rv">
-      <span class="eyebrow">Work with us</span>
-      <h2 class="h-lg">You lead the client relationship. We build and customise the technology<span class="dot">.</span></h2>
+      <span class="eyebrow">Your next step</span>
+      <h2 class="h-lg">You lead the client. <br>We build the technology<span class="dot">.</span></h2>
       <p class="lede">{{ cp.ctaP }}</p>
-      <div class="hero__ctas"><a class="btn" href="/contact">Start a conversation <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="mailto:info@oaks.guru">info@oaks.guru</a></div>
+      <div class="hero__ctas"><a class="btn" href="/contact#book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="tel:+35699786876">EU desk +356 9978 6876</a></div>
     </div>
   </div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
@@ -265,22 +349,29 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="112" height="40" loading="lazy">
-        <p>Your delivery partner for AI at scale. AI and digital solutions, proven since 2017, now delivered for European partners under your brand.</p>
-        <p class="mt-s">GDPR-ready · EU AI Act-aware · ISO 9001 · ISO 27001</p>
+        <p>Your delivery partner for AI at scale. EU contract and accountability. India-scale engineering.</p>
+        <p class="foot-desk"><b>EU desk</b> Malta · 09:00–17:00 CET<br><a href="tel:+35699786876">+356 9978 6876</a></p>
       </div>
-      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#content-as-a-service">Content as a Service</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
-      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/trust">Trust</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
+      <div><h2>Solutions</h2><nav aria-label="Solutions"><a href="/solutions#assessments">AI Assessment Platform</a><a href="/solutions#surveys">AI Survey Analytics</a><a href="/solutions#document-intelligence">Document Intelligence</a><a href="/solutions#upskilling">Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods">Dedicated delivery pods</a><a href="/solutions#custom-ai">Custom AI &amp; Software</a></nav></div>
+      <div><h2>Company</h2><nav aria-label="Company"><a href="/partners">Partner model</a><a href="/partners#pricing">Pricing</a><a href="/trust">Trust</a><a href="/trust#procurement">Procurement</a><a href="/about">About</a><a href="/team">Team</a><a href="/contact">Contact</a></nav></div>
       <div><h2>Legal</h2><nav aria-label="Legal"><a href="/privacy">Privacy Policy</a><a href="/kids-privacy">Kids&#x27; Privacy Policy</a><a href="/terms">Terms and Conditions</a></nav></div>
       <div class="foot-office">
         <h2>Offices</h2>
-        <div><b>EUROPE · OAKS SIYA EUROPE LTD</b><address>Trident Park, Notabile Gardens, Level 4, Office 2, Mdina Road, Central Business District, Birkirkara CBD 2010, Malta</address></div>
+        <div><b>MALTA · OAKS SIYA EUROPE LIMITED</b><address>Level 3A, Centris Business Gateway II, Triq is-Salib tal-Imriehel, Central Business District, Birkirkara CBD 3020, Malta<br>Reg. C 117377 · VAT MT33213010</address></div>
         <div><b>INDIA · OAKS SOLUTIONS PVT LTD</b><address>F2 Empire Square, Road No. 36, Jubilee Hills, Hyderabad 500033, India</address></div>
-        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a></div>
+        <div><a href="mailto:info@oaks.guru">info@oaks.guru</a> · <a href="tel:+917207633633">+91 72076 33633</a> (India)</div>
       </div>
     </div>
+    <ul class="foot-seals" aria-label="Compliance and certifications">
+      <li><img sc-camel-src="assets/badges/gdpr.svg" alt="" width="48" height="48" loading="lazy"><span><b>GDPR-ready</b>DPA signed before any personal data</span></li>
+      <li><img sc-camel-src="assets/badges/eu-ai-act.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU AI Act-aware</b>Risk-classified per use case</span></li>
+      <li><img sc-camel-src="assets/badges/iso-9001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO 9001:2015</b>Quality management</span></li>
+      <li><img sc-camel-src="assets/badges/iso-27001.svg" alt="" width="48" height="48" loading="lazy"><span><b>ISO/IEC 27001:2022</b>Information security</span></li>
+      <li><img sc-camel-src="assets/badges/eu-entity.svg" alt="" width="48" height="48" loading="lazy"><span><b>EU entity · Malta</b>EUR contracts, Malta law</span></li>
+    </ul>
     <div class="foot-bottom">
-      <span>OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), founded 2017, and OAKS SIYA Europe Ltd (Malta), 2026. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act badges indicate our approach, not certification.</span>
-      <span>© 2026 OAKS Solutions Pvt Ltd · OAKS SIYA Europe Ltd</span>
+      <span>OAKS SIYA Europe Limited, Malta · Reg. C 117377 · VAT MT33213010. OAKS Solutions Pvt Ltd (formerly OVI Learning Pvt Ltd), Hyderabad, founded 2017. Figures from programme records and client confirmations; sources on request. GDPR and EU AI Act marks show how we prepare, not a certification.</span>
+      <span>© 2026 OAKS Solutions Pvt Ltd and OAKS SIYA Europe Limited, Malta. All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -290,7 +381,7 @@
 class Component extends DCLogic {
   state = { w: window.innerWidth, menuOpen: false, assam: [] };
   PAGE = "/solutions";
-  NAV = [["Solutions", "/solutions"], ["Partner model", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
+  NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
   D = {
   "deliver": [
@@ -320,9 +411,9 @@ class Component extends DCLogic {
     },
     {
       "n": "05",
-      "t": "Content as a Service",
-      "sub": "On demand",
-      "href": "/solutions#content-as-a-service"
+      "t": "Dedicated delivery pods",
+      "sub": "Your extended team",
+      "href": "/solutions#dedicated-pods"
     },
     {
       "n": "06",
@@ -334,283 +425,474 @@ class Component extends DCLogic {
   "s1": {
     "id": "assessments",
     "n": "01",
-    "eyebrow": "AI-powered school assessments",
-    "h1": "Every answer sheet marked.",
+    "eyebrow": "Solution 01 · AI assessment platform",
+    "h1": "Every worksheet marked.",
     "h2": "Every teacher in control",
-    "lede": "Handwritten exams read, scored and explained by AI — then reviewed and approved by teachers. Weeks of marking become days.",
+    "lede": "Upload the worksheets. Our AI marks them. Teachers approve.",
     "video": "assets/video/stock-pexels-6672502.mp4",
     "poster": "assets/video/stock-pexels-6672502.webp",
-    "build": [
+    "st": "Our AI reads pupils’ handwritten work, marks it and maps every gap to the curriculum — saving each teacher",
+    "sth": "10+ hours a week",
+    "ste": ", with the teacher approving every result.",
+    "does": [
       {
         "n": "01",
-        "t": "Handwriting evaluation",
-        "d": "Scanned answer sheets read in any hand and scored against your marking scheme."
+        "t": "Rubric scoring",
+        "d": "A clear reason for every mark."
       },
       {
         "n": "02",
-        "t": "Rubric-based scoring",
-        "d": "Consistent marks for short and long answers, with reasons shown for every score."
+        "t": "Pupil feedback",
+        "d": "Personalised comments, ready to edit."
       },
       {
         "n": "03",
-        "t": "Draft feedback",
-        "d": "Per-student comments, ready for the teacher to edit and send."
+        "t": "Teacher dashboards",
+        "d": "Gaps by class and pupil, ready for review."
       },
       {
         "n": "04",
-        "t": "Learning insights",
-        "d": "Gaps and misconceptions mapped by class, school and skill."
+        "t": "Classroom & Teams",
+        "d": "Works inside the tools schools already use."
       }
     ],
-    "avail": [
-      "White-label",
-      "Custom build",
-      "API"
+    "boxT": "For your rollout",
+    "offer": true,
+    "box": [
+      {
+        "t": "Your curriculum",
+        "d": "every subject, STEM and languages"
+      },
+      {
+        "t": "Training & onboarding",
+        "d": "for every teacher"
+      },
+      {
+        "t": "Support with clear SLAs",
+        "d": "and a named account manager"
+      },
+      {
+        "t": "Secure EU deployment",
+        "d": "GDPR-ready, hosted in Frankfurt"
+      }
     ],
+    "proofK": "Proven in India, deployed in Europe",
     "img": "assets/optimized/brochure-siya-stage.webp",
     "imgAlt": "SIYA presented on stage",
-    "caseCls": "",
-    "caseT": "SIYA — assessment at national scale",
-    "caseD": "Our assessment product, deployed for school systems in India and Malta.",
+    "caseK": "Case study · SIYA",
+    "caseT": "Built on the OAKS AI assessment engine",
+    "caseD": "Operational and scaling across India · Live in Malta and Spain.",
     "stats": [
       {
-        "v": "1.14M",
-        "l": "answer sheets analysed"
+        "v": "1.14M+",
+        "l": "pupil works analysed"
       },
       {
         "v": "95.6%",
-        "l": "handwriting read correctly"
+        "l": "handwriting accuracy"
       },
       {
-        "v": "2",
-        "l": "countries in live use"
+        "v": "3,000+",
+        "l": "teachers on the engine"
+      },
+      {
+        "v": "600+",
+        "l": "schools reached in India"
       }
     ],
-    "statCls": "stats--3",
+    "logosK": "Backed by",
+    "logos": [
+      {
+        "name": "SuperCharger Ventures",
+        "img": "assets/optimized/backer-supercharger.webp"
+      },
+      {
+        "name": "Lanzadera",
+        "img": "assets/optimized/backer-lanzadera.webp"
+      }
+    ],
+    "logosT": "India · Malta · Spain",
     "whyT": "Teachers get their evenings back",
-    "whyD": "Students get feedback while the lesson still matters — and schools see where learning is breaking down."
+    "whyPts": [
+      "10+ hours saved per teacher, every week",
+      "Earlier insight into every learning gap",
+      "Teachers always decide"
+    ],
+    "note": "teacher makes every final decision; every mark logged.",
+    "availT": "White-label · Custom build · API"
   },
   "s2": {
     "id": "surveys",
     "n": "02",
-    "eyebrow": "AI-enabled surveys at scale",
+    "eyebrow": "Solution 02 · AI surveys at scale",
     "h1": "From thousands of voices",
     "h2": "to one clear picture",
-    "lede": "Paper and digital responses captured, open answers understood, and reports delivered to the people who decide.",
-    "video": "assets/video/stock-pexels-32082738.mp4",
-    "poster": "assets/video/stock-pexels-32082738.webp",
-    "build": [
+    "lede": "Every voice heard — in any language, on any channel.",
+    "video": "",
+    "poster": "",
+    "bgImg": "assets/optimized/stock-pexels-20870800-surveys-voice.webp",
+    "st": "Our proprietary voice and text AI runs surveys at scale — understanding every open answer and its sentiment, and turning them into",
+    "sth": "decision-ready reports",
+    "ste": ".",
+    "does": [
       {
         "n": "01",
-        "t": "Capture on any channel",
-        "d": "Paper forms, mobile and web responses brought into one clean dataset."
+        "t": "Voice & text, any language",
+        "d": "Respondents answer as they speak."
       },
       {
         "n": "02",
-        "t": "Open-text analysis",
-        "d": "Themes and sentiment drawn from free-text answers in local languages."
+        "t": "Answers & sentiment",
+        "d": "Every open response understood and themed."
       },
       {
         "n": "03",
-        "t": "Automated reporting",
-        "d": "Reports generated for every region, site or group — consistently."
+        "t": "Automated reports",
+        "d": "By region, team or site, ready for leadership."
       },
       {
         "n": "04",
-        "t": "Decision dashboards",
-        "d": "Live views for programme leaders, with drill-down to the source."
+        "t": "Real-time dashboards",
+        "d": "Monitor progress as responses arrive."
       }
     ],
-    "avail": [
-      "Custom build",
-      "White-label",
-      "API"
-    ],
-    "img": "",
-    "map": true,
-    "caseCls": "",
-    "caseT": "Samagra Shiksha Assam, India",
-    "caseD": "A statewide student wellbeing survey, analysed and reported district by district.",
-    "stats": [
+    "boxT": "What we offer",
+    "offer": true,
+    "box": [
       {
-        "v": "33",
-        "l": "districts covered"
+        "t": "Every language",
+        "d": "respondents speak or type as they naturally would"
       },
       {
-        "v": "1",
-        "l": "statewide dataset, compared district by district"
+        "t": "Every channel",
+        "d": "phone, mobile, web and paper — one dataset"
+      },
+      {
+        "t": "Your survey, your way",
+        "d": "questions, indices and reports designed with you"
+      },
+      {
+        "t": "Trusted data",
+        "d": "quality checks, GDPR-ready, hosted in the EU"
       }
     ],
-    "statCls": "stats--2",
-    "note": "Reports used by state and district education teams.",
-    "whyT": "Hear what people actually said",
-    "whyD": "Leaders act on the reasons behind the numbers, not just the averages — region by region."
+    "proofK": "Proven at state scale",
+    "map": true,
+    "caseK": "Case study · Samagra Shiksha, Assam",
+    "caseT": "A statewide Happiness Index for Classes 9–12",
+    "caseD": "Run as a voice conversation, so students spoke to it like a person.",
+    "stats": [
+      {
+        "v": "26,500+",
+        "l": "students in 5 days"
+      },
+      {
+        "v": "33",
+        "l": "districts, one dataset"
+      },
+      {
+        "v": "5",
+        "l": "index dimensions"
+      },
+      {
+        "v": "Policy",
+        "l": "actions per district"
+      }
+    ],
+    "logosK": "Client",
+    "logos": [
+      {
+        "name": "Samagra Shiksha",
+        "img": "assets/optimized/client-samagra.webp"
+      },
+      {
+        "name": "Government of Assam",
+        "img": "assets/optimized/client-assam.webp"
+      }
+    ],
+    "logosT": "Samagra Shiksha · Govt. of Assam",
+    "whyT": "Scale without the overhead",
+    "whyPts": [
+      "Days, not months",
+      "Reports by region or team",
+      "Any language, by voice or text",
+      "Live dashboards"
+    ],
+    "note": "",
+    "availT": "White-label · Custom build · API"
   },
   "s3": {
     "id": "document-intelligence",
     "n": "03",
-    "eyebrow": "Land records & document intelligence",
+    "eyebrow": "Solution 03 · Document intelligence",
     "h1": "Every record searchable.",
     "h2": "Every value traceable",
-    "lede": "Decades of scanned and handwritten files turned into structured data — each value one click from the original page.",
+    "lede": "Scan the archive. Ask a question. Get the answer — and the page it came from.",
     "video": "assets/video/stock-pexels-6549976.mp4",
     "poster": "assets/video/stock-pexels-6549976.webp",
-    "build": [
+    "st": "Our document AI digitises scanned and handwritten records at volume and answers questions in plain language — with",
+    "sth": "every answer linked to its source page",
+    "ste": ".",
+    "does": [
       {
         "n": "01",
         "t": "Digitise at volume",
-        "d": "Scanned, photographed and handwritten pages captured in bulk."
+        "d": "Scanned, photographed and handwritten pages in bulk."
       },
       {
         "n": "02",
         "t": "Extract & match",
-        "d": "Names, parcels, dates and amounts extracted and linked to one ID."
+        "d": "Names, parcels, dates and amounts linked to one ID."
       },
       {
         "n": "03",
-        "t": "Search & trace",
-        "d": "Whole archives searchable in seconds, with a link back to every source page."
+        "t": "Ask & trace",
+        "d": "Plain-language answers, each citing its source page."
       },
       {
         "n": "04",
         "t": "Fit your registry",
-        "d": "Record types, languages and rules adapted; connected to existing systems."
+        "d": "Your record types, languages and rules."
       }
     ],
-    "avail": [
-      "Custom build",
-      "White-label",
-      "API & integrations"
-    ],
-    "img": "assets/optimized/brochure-mining-fleet.webp",
-    "imgAlt": "Haul trucks in an open-cast mine, seen from above",
-    "caseCls": "case--rev",
-    "caseT": "Mining fleet operations, India",
-    "caseD": "Handwritten trip cards for a 200-vehicle operation linked into one history per vehicle.",
-    "stats": [
+    "boxT": "From paper to answers",
+    "boxTag": "AI pipeline",
+    "pipeline": true,
+    "box": [
       {
-        "v": "200",
-        "l": "vehicles, one record each"
+        "n": "1",
+        "t": "Scan & OCR",
+        "d": "Handwritten, multi-language records to text"
       },
       {
-        "v": "1,466",
-        "l": "idle hours recovered"
+        "n": "2",
+        "t": "Extract",
+        "d": "Owner, survey no., area, dates"
+      },
+      {
+        "n": "3",
+        "t": "Link",
+        "d": "One parcel ID across deeds and maps"
+      },
+      {
+        "n": "4",
+        "t": "Embed & index",
+        "d": "Every page searchable by meaning"
+      },
+      {
+        "n": "5",
+        "t": "Ask with RAG",
+        "d": "Plain-language answers, source cited"
       }
     ],
-    "statCls": "stats--2",
-    "note": "Figures confirmed in writing by the client.",
+    "proofK": "Proven in government",
+    "img": "assets/optimized/brochure-land-records.webp",
+    "imgAlt": "Parcel map answering “Who owns Survey No. 142?” with the source deed",
+    "caseK": "Case study · Land records, Hyderabad",
+    "caseT": "Land deeds digitised and made answerable",
+    "caseD": "Deeds, registers and maps — one parcel ID, every answer cited.",
+    "stats": [
+      {
+        "v": "200,000+",
+        "l": "deeds digitised"
+      },
+      {
+        "v": "4",
+        "l": "record types linked"
+      },
+      {
+        "v": "Every",
+        "l": "answer cites its source"
+      },
+      {
+        "v": "Seconds",
+        "l": "to trace any parcel"
+      }
+    ],
+    "logosK": "Client",
+    "logos": [
+      {
+        "name": "Government of Telangana",
+        "img": "assets/optimized/client-telangana.webp"
+      }
+    ],
+    "logosT": "Govt. of Telangana · Land records",
     "whyT": "Archives become assets",
-    "whyD": "Records that were locked in paper become searchable, auditable and ready for the systems that need them."
+    "whyPts": [
+      "Any record found in seconds",
+      "Every answer traced to source",
+      "Faster, auditable decisions"
+    ],
+    "note": "",
+    "availT": "White-label · Custom build · API"
   },
   "s4": {
     "id": "upskilling",
     "n": "04",
-    "eyebrow": "Gamified upskilling & onboarding",
-    "h1": "Learning people finish —",
-    "h2": "and use the next day",
-    "lede": "AI upskilling and onboarding built like a game: short missions, real tasks, visible progress — under your brand or ours.",
+    "eyebrow": "Solution 04 · Hiring, onboarding & upskilling",
+    "h1": "Hire, onboard and upskill —",
+    "h2": "reimagined for the AI era",
+    "lede": "Test real skills. Onboard at every joiner’s pace. Keep every team AI-ready.",
     "video": "assets/video/stock-pexels-38855173.mp4",
     "poster": "assets/video/stock-pexels-38855173.webp",
-    "build": [
+    "st": "One platform for the whole employee journey — real-task hiring, self-paced onboarding and ongoing upskilling,",
+    "sth": "with people making every decision",
+    "ste": ".",
+    "stages": [
       {
-        "n": "01",
-        "t": "AI upskilling programmes",
-        "d": "Practical AI for every role — prompting, checking outputs, protecting data."
+        "n": "01 · Hire",
+        "icon": "ic-check",
+        "t": "Gamified hiring",
+        "d": "Candidates solve real situations and tasks — not just CVs.",
+        "pts": [
+          "Role-based task simulations",
+          "Skills evidence for every candidate",
+          "AI shows the evidence, recruiters decide"
+        ]
       },
       {
-        "n": "02",
-        "t": "Gamified learning paths",
-        "d": "Missions, levels and challenges that keep teams moving to completion."
+        "n": "02 · Onboard",
+        "icon": "ic-useradd",
+        "t": "Self-paced onboarding",
+        "d": "Custom content and interactions that adapt to each joiner’s pace.",
+        "pts": [
+          "Tailored to each department",
+          "An AI guide for every joiner",
+          "Progress visible to managers"
+        ]
       },
       {
-        "n": "03",
-        "t": "Gamified onboarding",
-        "d": "New joiners learn policies, tools and culture through guided quests."
-      },
-      {
-        "n": "04",
-        "t": "Simulations & skill labs",
-        "d": "Interactive, AR and VR practice — with progress analytics for managers."
+        "n": "03 · Upskill",
+        "icon": "ic-trend",
+        "t": "Continuous upskilling",
+        "d": "Ongoing AI learning that keeps every team ready.",
+        "pts": [
+          "Practical AI for every role",
+          "Missions, levels, challenges",
+          "Skill-gap analytics"
+        ]
       }
     ],
-    "avail": [
-      "White-label",
-      "Custom build",
-      "Monthly content pod"
-    ],
-    "img": "",
-    "caseCls": "case--solo",
-    "caseT": "Learning at programme scale",
-    "caseD": "Gamified content and training delivered across Indian state programmes and a national vocational institute.",
+    "proofK": "Proven in enterprise & government",
+    "img": "assets/optimized/brochure-upskilling.webp",
+    "imgAlt": "Colleagues working through a learning mission on a tablet",
+    "caseK": "Case study · Enterprise & government",
+    "caseT": "Training at national scale",
+    "caseD": "Gamified onboarding, skill labs and training content, live at scale.",
     "stats": [
       {
         "v": "40K+",
-        "l": "teachers trained and supported"
+        "l": "employees trained"
       },
       {
         "v": "+38%",
-        "l": "literacy gain, 25K+ children"
+        "l": "literacy gain"
       },
       {
         "v": "2M+",
         "l": "views of produced content"
       }
     ],
-    "statCls": "stats--3",
-    "whyT": "Completion, not attendance",
-    "whyD": "Teams finish what they start, and managers see progress and skill gaps in one view."
+    "logosK": "Operational at",
+    "logos": [
+      {
+        "name": "NCERT",
+        "img": "assets/optimized/client-ncert.webp"
+      },
+      {
+        "name": "EdCIL",
+        "img": "assets/optimized/client-edcil.webp"
+      }
+    ],
+    "logosT": "PSSCIVE (NCERT) · EdCIL · State programmes",
+    "whyT": "AI-ready from day one",
+    "whyPts": [
+      "Hire on proven skills",
+      "Joiners productive sooner",
+      "Teams that keep learning",
+      "Candidate notice and human review built in"
+    ],
+    "note": "",
+    "availT": "White-label · Custom build · Dedicated pod"
   },
   "more": [
     {
-      "id": "content-as-a-service",
       "n": "05",
-      "t": "Content as a Service",
-      "sub": "On demand",
-      "d": "Courses, assessments, video, 3D, AR and games, produced on demand by our in-house learning design, creative and content teams — writing and localisation included.",
+      "t": "Dedicated delivery pods",
+      "k": "Your extended team",
+      "h": "Senior expertise at €25 an hour, on one monthly invoice in euros.",
+      "img": "assets/video/stock-pexels-8033300.webp",
+      "href": "/solutions#dedicated-pods",
       "avail": [
-        "White-label",
-        "Custom build"
-      ]
+        "Dedicated pod"
+      ],
+      "pts": [
+        "Engineers, AI specialists, designers and leads",
+        "New people within two weeks — no hiring on your side",
+        "About €4,000 per full-time person a month",
+        "30-day notice; IP and source code are yours"
+      ],
+      "id": "dedicated-pods",
+      "go": "/partners#pricing",
+      "goT": "See pricing"
     },
     {
-      "id": "custom-ai",
       "n": "06",
       "t": "Custom AI & Software",
-      "sub": "Under your brand",
-      "d": "From prototype to production, built to your specification: AI and vision, web, mobile and dashboards, connected to your APIs, LMS, HRMS and ERP.",
+      "k": "Under your brand",
+      "h": "Something new, built with us — always under your brand.",
+      "img": "assets/optimized/stock-pexels-6424583-custom-code.webp",
+      "href": "/solutions#custom-ai",
       "avail": [
         "Custom build",
         "API"
-      ]
+      ],
+      "pts": [
+        "A fixed-price prototype in two weeks, in your repository",
+        "A working demo every week",
+        "Integrated with your APIs, LMS, HRMS and ERP",
+        "IP and full source code assigned to you"
+      ],
+      "id": "custom-ai",
+      "go": "/contact#book",
+      "goT": "Book a call"
     }
   ],
   "MB": {
     "s1": {
-      "lede": "Handwritten exams scored by AI, approved by teachers. Weeks of marking become days.",
-      "whyD": "Feedback while the lesson still matters."
+      "whyPts": [
+        "10+ hours saved per teacher, every week",
+        "Teachers always decide"
+      ]
     },
     "s2": {
-      "lede": "Paper and digital responses, understood and reported to the people who decide.",
-      "whyD": "The reasons behind the numbers, region by region."
+      "whyPts": [
+        "Days, not months",
+        "Any language, by voice or text"
+      ]
     },
     "s3": {
-      "lede": "Scanned and handwritten files turned into structured, traceable data.",
-      "whyD": "Paper records become searchable and auditable."
+      "whyPts": [
+        "Any record found in seconds",
+        "Every answer traced to source"
+      ]
     },
     "s4": {
-      "lede": "AI upskilling and onboarding built like a game, under your brand or ours.",
-      "whyD": "Managers see progress and skill gaps in one view."
+      "whyPts": [
+        "Hire on proven skills",
+        "Joiners productive sooner"
+      ]
     }
   }
 };
   CP = {
   "heroP": [
-    "AI and digital solutions, proven since 2017 — now delivered for European partners, under your brand. Launch them white-label, as a custom build, or by API.",
-    "Proven since 2017. White-label, custom build or API."
+    "Deploy a proven OAKS solution under your brand, plug it in by API, or have us build something new. Each one already runs in live programmes, with figures on record.",
+    "Live in programmes today. White-label, custom build or API."
   ],
   "ctaP": [
-    "Bring us your project requirements — or explore an existing OAKS solution that we can adapt for your market.",
-    "Bring us your requirements, or adapt an existing OAKS solution for your market."
+    "Bring us your requirements — or an existing OAKS solution we adapt for your market. 30 minutes, no cost; then a fixed-price prototype on your data in two weeks.",
+    "A 30-minute call, then a fixed-price prototype in two weeks."
   ]
 };
   componentDidMount() {
