@@ -7,3 +7,6 @@ __pycache__/
 !.env.example
 
 dist/
+
+# Netlify Drop upload (built from dist/)
+oaks-site-netlify.zip

@@ -71,27 +71,21 @@
 
 <main id="main">
 
-<section id="hero" class="hero hero--full hero--home" data-oaks-bg-scope="">
+<section id="hero" class="hero hero--full hero--home hero--clean" data-oaks-bg-scope="">
   <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-7597819.mp4" sc-camel-poster="assets/video/stock-pexels-7597819.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
-  <div class="decor" aria-hidden="true"><span class="decor__rings"></span><span class="decor__arc"></span><span class="decor__ticks"></span><span class="decor__coords">35.8989° N · 14.5146° E · VALLETTA</span></div>
   <div class="wrap hero__body">
     <div class="hero__inner">
       <span class="eyebrow">{{ cp.heroK }}</span>
       <h1 class="h-xl">Your delivery partner <br>for AI at scale<span class="dot">.</span></h1>
       <p class="lede">{{ cp.heroP }}</p>
       <div class="hero__ctas"><a class="btn" href="/contact#book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="#solutions">Explore solutions</a></div>
-      <ul class="seals seals--hero" aria-label="Compliance">
-        <sc-for list="{{ seals }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="52" height="52"><span><b>{{ b.t }}</b><i>{{ b.d }}</i></span></li></sc-for>
-      </ul>
     </div>
   </div>
-  <nav class="hero__index" aria-label="What we deliver">
-    <div class="wrap"><div class="hero__index-row">
-      <sc-for list="{{ deliver }}" as="x"><a href="{{ x.href }}"><span class="n">{{ x.n }}</span><span class="t">{{ x.t }}</span><span class="s">{{ x.sub }}</span></a></sc-for>
-    </div></div>
-  </nav>
-  <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+  <div class="wrap hero__foot">
+    <ul class="trustline" aria-label="Compliance"><sc-for list="{{ seals }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="28" height="28"><span>{{ b.t }}</span></li></sc-for></ul>
+    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+  </div>
 </section>
 
 <section id="glance" class="glance">
