@@ -1453,3 +1453,28 @@ p.statement::after { content: none; }
   .lboard__mark { height: 48px; margin-bottom: 10px; }
   .lboard__mark img { max-height: 46px; }
 }
+
+/* book page (brochure QR: oaks.guru/book) */
+.hero--book { min-height: min(62svh, 600px); }
+.book-links { display: grid; gap: 10px; }
+
+/* trust: in-page jump links and the sub-processor register (brochure QR: oaks.guru/trust) */
+.jumps { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.jumps a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.28); color: #fff; font-size: 14px; font-weight: 600; background: rgba(255, 255, 255, 0.06); transition: background 0.25s var(--ease), border-color 0.25s var(--ease); }
+.jumps a:hover { background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.5); }
+.promise__link { margin-top: 6px; color: var(--cyan); font-size: 14px; font-weight: 600; }
+.promise__link:hover { color: #fff; }
+.subproc { margin-top: clamp(28px, 4vw, 44px); border-top: 3px solid var(--navy-950); }
+.subproc__row { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.3fr); gap: 24px; align-items: center; padding: 22px 4px; border-bottom: 1px solid var(--line, #e3e8ee); color: var(--body); font-size: 15px; line-height: 1.5; }
+.subproc__row--head { padding: 14px 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.subproc__row b { color: var(--ink); font-weight: 600; }
+.subproc__who { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; }
+.subproc__who > div { display: grid; gap: 2px; }
+.subproc__who b { font-size: 17px; letter-spacing: -0.015em; }
+.subproc__who > div > span { color: var(--cyan-600); font-size: 13.5px; font-weight: 600; }
+@media (max-width: 899px) {
+  .subproc__row--head { display: none; }
+  .subproc__row { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 22px 0; }
+  .subproc__row [data-k]::before { content: attr(data-k); display: block; margin-bottom: 2px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .subproc__row [data-k] { padding-left: 62px; }
+}

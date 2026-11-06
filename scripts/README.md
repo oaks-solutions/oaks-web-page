@@ -17,7 +17,7 @@ Local React/React DOM are the unmodified 18.3.1 production UMD files, including 
 
 Hosting and addresses
 
-The live site (www.oaks.guru) is deployed by Vercel from this repository. `vercel.json` gives every page a clean address (/solutions, /partners, /trust, /about, /team, /contact, /privacy, /kids-privacy, /terms) and sends 301 redirects from old addresses (/index.html, the `OAKS%20….dc.html` files, the old /solutions/… pages, /case-studies and /technology, /blog, /careers, /ai-builders). Internal links use the clean addresses. `.vercelignore` keeps scripts, notes and the Apps Script source off the public site. `robots.txt` and `sitemap.xml` sit at the root; update `lastmod` in the sitemap after significant content changes. `404.html` is served for unknown addresses.
+The live site (www.oaks.guru) is deployed by Vercel from this repository. `vercel.json` gives every page a clean address (/solutions, /partners, /trust, /about, /team, /contact, /book, /privacy, /kids-privacy, /terms) and sends 301 redirects from old addresses (/index.html, the `OAKS%20….dc.html` files, the old /solutions/… pages, /case-studies and /technology, /blog, /careers, /ai-builders). Internal links use the clean addresses. `.vercelignore` keeps scripts, notes and the Apps Script source off the public site. `robots.txt` and `sitemap.xml` sit at the root; update `lastmod` in the sitemap after significant content changes. `404.html` is served for unknown addresses.
 
 Solutions can be linked directly: /solutions#assessments, #surveys, #document-intelligence, #upskilling, #content-as-a-service, #custom-ai. /partners#launch is the launch matrix.
 

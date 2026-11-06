@@ -33,7 +33,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/video/stock-pexels-5311422.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/site.css?v=94c81606">
+<link rel="stylesheet" href="assets/site.css?v=6fd3229a">
 <link rel="stylesheet" href="assets/player.css?v=92ebb20c">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
@@ -57,14 +57,14 @@
       <nav class="nav" aria-label="Main">
         <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
       </nav>
-      <a class="btn btn--sm header-cta" href="/contact#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn--sm header-cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
       <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
-      <a class="btn" href="/contact#book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn" href="/book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
       <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
   </sc-if>
@@ -214,7 +214,8 @@ class Component extends DCLogic {
   componentDidMount() {
     this.onR = () => this.setState({ w: window.innerWidth }, () => { if (this.state.menuOpen && this.state.w >= 1024) this.setMenu(false); });
     this.onR(); window.addEventListener('resize', this.onR);
-    if (location.hash === '#book') setTimeout(() => { const el = document.getElementById('book'); if (el) el.scrollIntoView(); }, 300);
+    // Pages render client-side, so a #fragment from a link or redirect is scrolled to once the section exists.
+    if (location.hash.length > 1) setTimeout(() => { const el = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (!el) return; const h = document.documentElement; h.style.scrollBehavior = 'auto'; el.scrollIntoView(); h.style.scrollBehavior = ''; }, 300);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onR); document.body.style.overflow = ''; }
   setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menuOpen: open }); }

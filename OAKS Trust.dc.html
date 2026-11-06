@@ -33,7 +33,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/optimized/brochure-trust-datacentre.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/site.css?v=94c81606">
+<link rel="stylesheet" href="assets/site.css?v=6fd3229a">
 <link rel="stylesheet" href="assets/player.css?v=92ebb20c">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
@@ -57,14 +57,14 @@
       <nav class="nav" aria-label="Main">
         <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
       </nav>
-      <a class="btn btn--sm header-cta" href="/contact#book">Book a call <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn--sm header-cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
       <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
-      <a class="btn" href="/contact#book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn" href="/book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
       <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
   </sc-if>
@@ -79,6 +79,7 @@
     <span class="eyebrow">Trust · GDPR &amp; EU AI Act</span>
     <h1 class="h-xl">Compliance built in, <br>not bolted on<span class="dot">.</span></h1>
     <p class="lede">{{ cp.heroP }}</p>
+    <nav class="jumps" aria-label="On this page"><a href="#sub-processors">Sub-processors</a><a href="#dpo">Data protection officer</a><a href="#procurement">Procurement</a></nav>
   </div></div>
 </section>
 
@@ -104,9 +105,24 @@
     <div class="cert cert--line mt-s rv"><sc-for list="{{ certs }}" as="k"><div><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for></div>
     <div class="promise mt-l rv">
       <div><span class="kicker kicker--cyan">Our promise</span><h3>Your clients’ data. <br>Their control. Always<span class="dot">.</span></h3></div>
-      <div><span class="kicker kicker--cyan">Data protection officer</span><b>Navyatha Avula</b><a href="mailto:navyatha@oaks.guru">navyatha@oaks.guru</a><span>Head of Technology &amp; AI</span></div>
-      <div><span class="kicker kicker--cyan">Sub-processors</span><b>Hosting · AWS</b><span>Frankfurt (eu-central-1), named in every DPA. Any LLM providers are named per project in your DPA.</span></div>
+      <div id="dpo" style="scroll-margin-top: 90px"><span class="kicker kicker--cyan">Data protection officer</span><b>Navyatha Avula</b><a href="mailto:navyatha@oaks.guru">navyatha@oaks.guru</a><span>Head of Technology &amp; AI</span></div>
+      <div><span class="kicker kicker--cyan">Sub-processors</span><b>Hosting · AWS</b><span>Frankfurt (eu-central-1), named in every DPA.</span><a class="promise__link" href="#sub-processors">See every sub-processor <span class="arr" aria-hidden="true">→</span></a></div>
     </div>
+  </div>
+</section>
+
+<section id="sub-processors" class="sec" style="scroll-margin-top: 60px">
+  <div class="wrap">
+    <div class="sec-head sec-head--split rv">
+      <div class="grid" style="gap:18px"><span class="eyebrow">Sub-processors</span><h2 class="h-lg">Everyone who touches your data, named<span class="dot">.</span></h2></div>
+      <p class="lede">{{ cp.subP }}</p>
+    </div>
+    <div class="subproc rv" role="table" aria-label="OAKS sub-processors">
+      <div class="subproc__row subproc__row--head" role="row"><span role="columnheader">Sub-processor</span><span role="columnheader">What it does</span><span role="columnheader">Where</span><span role="columnheader">When it applies</span></div>
+      <sc-for list="{{ subproc }}" as="x"><div class="subproc__row" role="row"><div class="subproc__who" role="cell"><span class="ic-tile"><i class="ic {{ x.icon }}"></i></span><div><b>{{ x.t }}</b><span>{{ x.k }}</span></div></div><div role="cell" data-k="What it does">{{ x.what }}</div><div role="cell" data-k="Where"><b>{{ x.where }}</b></div><div role="cell" data-k="When it applies">{{ x.when }}</div></div></sc-for>
+    </div>
+    <div class="never never--panel mt-m rv"><sc-for list="{{ subNotes }}" as="x"><div><span class="kicker kicker--cyan">{{ x.k }}</span><b>{{ x.t }}</b><span>{{ x.d }}</span></div></sc-for></div>
+    <p class="fine mt-s rv">Questions about a sub-processor, or a copy of the current list for your DPA: <a href="mailto:navyatha@oaks.guru">navyatha@oaks.guru</a> (Data Protection Officer).</p>
   </div>
 </section>
 
@@ -140,7 +156,7 @@
     <dl class="facts mt-s rv"><sc-for list="{{ facts }}" as="f"><div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div></sc-for></dl>
     <div class="callout mt-l rv">
       <div class="callout__head"><span class="kicker kicker--cyan">Ready when you are</span><h3>Your due-diligence pack, <br>on request<span class="dot">.</span></h3></div>
-      <div class="grid" style="gap:18px"><ul class="ticks ticks--cols"><sc-for list="{{ pack }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul><a class="btn" href="/contact#book" style="justify-self:start">Request the pack <span class="arr" aria-hidden="true">→</span></a></div>
+      <div class="grid" style="gap:18px"><ul class="ticks ticks--cols"><sc-for list="{{ pack }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul><a class="btn" href="/book" style="justify-self:start">Request the pack <span class="arr" aria-hidden="true">→</span></a></div>
     </div>
   </div>
 </section>
@@ -153,7 +169,7 @@
       <span class="eyebrow">Your next step</span>
       <h2 class="h-lg">You lead the client. <br>We build the technology<span class="dot">.</span></h2>
       <p class="lede">{{ cp.ctaP }}</p>
-      <div class="hero__ctas"><a class="btn" href="/contact#book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="tel:+35699786876">EU desk +356 9978 6876</a></div>
+      <div class="hero__ctas"><a class="btn" href="/book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="tel:+35699786876">EU desk +356 9978 6876</a></div>
     </div>
   </div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
@@ -552,12 +568,59 @@ class Component extends DCLogic {
     "ISO certificates",
     "Insurance certificates",
     "Security questionnaire"
+  ],
+  "subproc": [
+    {
+      "icon": "ic-cloud",
+      "t": "Amazon Web Services",
+      "k": "Hosting",
+      "what": "Hosting, storage and backups for your project",
+      "where": "Frankfurt, Germany · eu-central-1",
+      "when": "Every project, by default"
+    },
+    {
+      "icon": "ic-users",
+      "t": "OAKS Solutions Pvt Ltd",
+      "k": "Our delivery centre",
+      "what": "Engineering and support by our in-house team",
+      "where": "Hyderabad, India",
+      "when": "Under SCCs and a transfer impact assessment · EU-only access on request"
+    },
+    {
+      "icon": "ic-layers",
+      "t": "LLM providers",
+      "k": "Only if your project uses one",
+      "what": "Model inference for AI features",
+      "where": "Named per project in your DPA",
+      "when": "Only when named in your DPA · never trained on your data"
+    }
+  ],
+  "subNotes": [
+    {
+      "k": "Named in writing",
+      "t": "In every DPA",
+      "d": "Signed before any personal data is processed."
+    },
+    {
+      "k": "Zero training",
+      "t": "Never on your data",
+      "d": "Not by our models, nor any third party’s."
+    },
+    {
+      "k": "Your choice",
+      "t": "EU, India or on-premise",
+      "d": "EU hosting by default; India or on-premise on request."
+    }
   ]
 };
   CP = {
   "heroP": [
     "Your clients ask about data and AI first. We answer in writing, before kickoff.",
     "Data and AI questions answered in writing, before kickoff."
+  ],
+  "subP": [
+    "Hosting and any LLM providers are listed here and named in every DPA, so your clients know exactly who processes their data, and where.",
+    "Hosting and any LLM providers, named in every DPA."
   ],
   "ctaP": [
     "Bring us your requirements — or an existing OAKS solution we adapt for your market. 30 minutes, no cost; then a fixed-price prototype on your data in two weeks.",
@@ -567,6 +630,8 @@ class Component extends DCLogic {
   componentDidMount() {
     this.onR = () => this.setState({ w: window.innerWidth }, () => { if (this.state.menuOpen && this.state.w >= 1024) this.setMenu(false); });
     this.onR(); window.addEventListener('resize', this.onR);
+    // Pages render client-side, so a #fragment from a link or redirect is scrolled to once the section exists.
+    if (location.hash.length > 1) setTimeout(() => { const el = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (!el) return; const h = document.documentElement; h.style.scrollBehavior = 'auto'; el.scrollIntoView(); h.style.scrollBehavior = ''; }, 300);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onR); document.body.style.overflow = ''; }
   setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menuOpen: open }); }

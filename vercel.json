@@ -38,6 +38,11 @@
       "statusCode": 301
     },
     {
+      "source": "/OAKS(%20| )Book.dc.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
       "source": "/OAKS(%20| )Partners.dc.html",
       "destination": "/partners",
       "statusCode": 301
@@ -103,11 +108,6 @@
       "statusCode": 301
     },
     {
-      "source": "/book",
-      "destination": "/contact#book",
-      "statusCode": 301
-    },
-    {
       "source": "/pricing",
       "destination": "/partners#pricing",
       "statusCode": 301
@@ -115,6 +115,16 @@
     {
       "source": "/procurement",
       "destination": "/trust#procurement",
+      "statusCode": 301
+    },
+    {
+      "source": "/sub-processors",
+      "destination": "/trust#sub-processors",
+      "statusCode": 301
+    },
+    {
+      "source": "/subprocessors",
+      "destination": "/trust#sub-processors",
       "statusCode": 301
     },
     {
@@ -172,6 +182,10 @@
     {
       "source": "/contact",
       "destination": "/OAKS%20Contact.dc.html"
+    },
+    {
+      "source": "/book",
+      "destination": "/OAKS%20Book.dc.html"
     },
     {
       "source": "/privacy",
