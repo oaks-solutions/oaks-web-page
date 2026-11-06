@@ -1229,7 +1229,7 @@ a.way:hover { color: inherit; transform: translateY(-3px); box-shadow: 0 24px 48
 }
 
 /* team grid */
-.leads { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 18px; }
+.leads { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 18px; }
 .lead { display: grid; gap: 3px; align-content: start; }
 .lead__ph, .lead__card { position: relative; aspect-ratio: 8 / 7; border-radius: 16px; overflow: hidden; background: linear-gradient(180deg, #eaf3fa, #d7e8f4); margin-bottom: 12px; }
 .lead__ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transition: transform 0.8s var(--ease); }
@@ -1243,7 +1243,8 @@ a.way:hover { color: inherit; transform: translateY(-3px); box-shadow: 0 24px 48
 .lead--team .lead__card b { font-size: 46px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-top: auto; }
 .lead--team .lead__card > span:last-child { color: var(--on-dark); font-size: 14px; }
 .lead--team .lead__card .kicker { align-self: start; margin-bottom: auto; }
-.lead--desk .lead__card { color: var(--ink); align-content: space-between; }
+.lead--desk { grid-column: span 2; }
+.lead--desk .lead__card { color: var(--ink); align-content: space-between; aspect-ratio: 16 / 7; }
 .lead--desk .lead__card b { font-size: 19px; font-weight: 700; color: var(--ink); }
 .lead__icon { width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--cyan); display: inline-flex; align-items: center; justify-content: center; }
 .lead__icon .ic { width: 20px; height: 20px; }
