@@ -2,7 +2,9 @@
  *
  * Background clips (video[data-src]): silent loops that play while on screen,
  * unless reduced motion / data saving is on or the visitor paused them with a
- * [data-oaks-bg] button.
+ * [data-oaks-bg] button. Clips start downloading only after the page has
+ * loaded; a clip marked data-sm gets its 960px "-sm.mp4" cut on phones and slow
+ * connections. video[data-poster] loads its poster only when near the viewport.
  *
  * Films ([data-oaks-player] > video[data-film]): show the poster and a play
  * button, load only when played, and get play/pause, seek, time, mute and
@@ -20,14 +22,21 @@
   const automatic = !matchMedia('(prefers-reduced-motion: reduce)').matches &&
     !(connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType)));
   let current = null; // the film, video or YouTube iframe currently playing
+  let pageLoaded = document.readyState === 'complete';
+  if (!pageLoaded) addEventListener('load', () => { pageLoaded = true; setTimeout(() => backgrounds.forEach(sync), 0); }, { once: true });
+  const small = () => innerWidth < 768 || !!(connection && /(^|-)3g$/.test(connection.effectiveType));
 
   /* ---------- background clips ---------- */
   function sync(video) {
     const want = pref.get(video) || (automatic ? 'play' : 'pause');
     if (!visible.has(video) || document.hidden || current || want === 'pause') { video.pause(); return; }
     const src = video.dataset.src;
-    if (!src || src.includes('{{')) return;
-    if (video.getAttribute('src') !== src) { video.src = src; video.load(); }
+    if (!src || src.includes('{{') || !pageLoaded) return;
+    if (video.dataset.loaded !== src) {
+      video.dataset.loaded = src;
+      video.src = video.hasAttribute('data-sm') && small() ? src.replace(/\.mp4$/, '-sm.mp4') : src;
+      video.load();
+    }
     video.muted = true;
     const play = video.play();
     if (play) play.catch(() => {});
@@ -249,6 +258,12 @@
   });
 
   /* ---------- discovery ---------- */
+  const posters = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
+    if (!isIntersecting) return;
+    posters.unobserve(target);
+    const poster = target.dataset.poster;
+    if (poster && !poster.includes('{{')) target.poster = target.hasAttribute('data-sm') && small() ? poster.replace(/\.webp$/, '-sm.webp') : poster;
+  }), { rootMargin: '1000px 0px' });
   const observer = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
       if (isIntersecting) visible.add(target); else visible.delete(target);
@@ -266,6 +281,7 @@
     }
     if (current && !current.isConnected) release(current);
     document.querySelectorAll('video[data-src]').forEach(observe);
+    document.querySelectorAll('video[data-poster]:not([poster])').forEach(v => posters.observe(v));
     document.querySelectorAll('[data-oaks-player]').forEach(initPlayer);
     document.querySelectorAll('iframe[src*="youtube"]').forEach(initYouTube);
     bgButtons();

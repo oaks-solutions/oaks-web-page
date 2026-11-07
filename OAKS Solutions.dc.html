@@ -32,13 +32,15 @@
 <meta name="theme-color" content="#0f1840">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/video/stock-pexels-7255101.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/video/stock-pexels-7255101-sm.webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/video/stock-pexels-7255101.webp" media="(min-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css?v=6fd3229a">
 <link rel="stylesheet" href="assets/player.css?v=92ebb20c">
+<link rel="stylesheet" href="assets/ui.css?v=0583c1e7">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
-<script defer src="media.js?v=89ef59f3"></script>
-<script defer src="assets/site.js?v=39e84a23"></script>
+<script defer src="media.js?v=828f5394"></script>
+<script defer src="assets/site.js?v=53dd3908"></script>
 <script defer src="./support.js?v=951ae391"></script>
 </head>
 <body>
@@ -55,15 +57,38 @@
     <div class="header-row">
       <a class="brand" href="/" aria-label="OAKS Solutions home"><img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="107" height="38" decoding="async"></a>
       <nav class="nav" aria-label="Main">
-        <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
+        <div class="nav__item">
+          <a class="nav__top" href="/solutions" aria-current="{{ cur.solutions }}" aria-haspopup="true">Solutions<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega">
+            <div class="mega__grid"><a class="mega__link" href="/solutions#assessments"><span class="ic-tile ic-tile--sm"><i class="ic ic-cap"></i></span><span><b>AI Assessment Platform</b><span>Handwritten work marked and mapped to the curriculum</span></span></a><a class="mega__link" href="/solutions#surveys"><span class="ic-tile ic-tile--sm"><i class="ic ic-mic"></i></span><span><b>AI Survey Analytics</b><span>Voice and text surveys, understood in any language</span></span></a><a class="mega__link" href="/solutions#document-intelligence"><span class="ic-tile ic-tile--sm"><i class="ic ic-doc"></i></span><span><b>Document Intelligence</b><span>Scanned records made searchable, every answer sourced</span></span></a><a class="mega__link" href="/solutions#upskilling"><span class="ic-tile ic-tile--sm"><i class="ic ic-useradd"></i></span><span><b>Gamified Hiring &amp; L&amp;D</b><span>Hire, onboard and upskill on real tasks</span></span></a><a class="mega__link" href="/solutions#dedicated-pods"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Dedicated delivery pods</b><span>A senior team at €25/hr, scaled within two weeks</span></span></a><a class="mega__link" href="/solutions#custom-ai"><span class="ic-tile ic-tile--sm"><i class="ic ic-code"></i></span><span><b>Custom AI &amp; Software</b><span>A fixed-price prototype in two weeks</span></span></a></div>
+            <div class="mega__side"><span class="kicker kicker--cyan">Not sure where to start?</span><b>Talk it through with our EU desk in 30 minutes.</b><a class="link-arrow" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/solutions">All solutions <span class="arr" aria-hidden="true">→</span></a></div>
+          </div>
+        </div>
+        <a class="nav__top" href="/partners" aria-current="{{ cur.partners }}">Pricing</a>
+        <a class="nav__top" href="/trust" aria-current="{{ cur.trust }}">Trust</a>
+        <div class="nav__item">
+          <a class="nav__top" href="/about" aria-current="{{ cur.company }}" aria-haspopup="true">Company<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega mega--sm">
+            <a class="mega__link" href="/about"><span class="ic-tile ic-tile--sm"><i class="ic ic-globe"></i></span><span><b>About OAKS</b><span>Malta contract, Hyderabad delivery, since 2017</span></span></a>
+            <a class="mega__link" href="/team"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Team</b><span>The people who lead your delivery</span></span></a>
+            <a class="mega__link" href="/contact"><span class="ic-tile ic-tile--sm"><i class="ic ic-mail"></i></span><span><b>Contact</b><span>EU desk, offices and enquiries</span></span></a>
+          </div>
+        </div>
       </nav>
+      <a class="nav__desk" href="tel:+35699786876"><i class="ic ic-phone" aria-hidden="true"></i>EU desk</a>
       <a class="btn btn--sm header-cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
+      <span class="m-group">Solutions</span>
+      <div class="m-sols"><a href="/solutions#assessments" onClick="{{ closeMenu }}"><i class="ic ic-cap"></i>AI Assessment Platform</a><a href="/solutions#surveys" onClick="{{ closeMenu }}"><i class="ic ic-mic"></i>AI Survey Analytics</a><a href="/solutions#document-intelligence" onClick="{{ closeMenu }}"><i class="ic ic-doc"></i>Document Intelligence</a><a href="/solutions#upskilling" onClick="{{ closeMenu }}"><i class="ic ic-useradd"></i>Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods" onClick="{{ closeMenu }}"><i class="ic ic-users"></i>Dedicated delivery pods</a><a href="/solutions#custom-ai" onClick="{{ closeMenu }}"><i class="ic ic-code"></i>Custom AI &amp; Software</a></div>
+      <a class="m-link" href="/partners" aria-current="{{ cur.partners }}" onClick="{{ closeMenu }}">Pricing</a>
+      <a class="m-link" href="/trust" aria-current="{{ cur.trust }}" onClick="{{ closeMenu }}">Trust</a>
+      <a class="m-link" href="/about" aria-current="{{ cur.about }}" onClick="{{ closeMenu }}">About</a>
+      <a class="m-link" href="/team" aria-current="{{ cur.team }}" onClick="{{ closeMenu }}">Team</a>
+      <a class="m-link" href="/contact" aria-current="{{ cur.contact }}" onClick="{{ closeMenu }}">Contact</a>
       <a class="btn" href="/book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
       <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
@@ -73,7 +98,7 @@
 <main id="main">
 
 <section id="hero" class="hero hero--rule" data-oaks-bg-scope="">
-  <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-7255101.mp4" sc-camel-poster="assets/video/stock-pexels-7255101.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+  <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-7255101.mp4" data-sm="" sc-camel-poster="{{ vp.p7255101 }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
   <div class="wrap"><div class="hero__inner">
     <span class="eyebrow">What we deliver</span>
@@ -83,17 +108,11 @@
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
 </section>
 
-<section class="sec sec--tight">
-  <div class="wrap">
-    <div class="deliver rv">
-      <sc-for list="{{ deliver }}" as="x"><a href="{{ x.href }}"><span class="n">{{ x.n }}</span><h3>{{ x.t }}</h3><span class="arr" aria-hidden="true">↓</span><span class="sub">{{ x.sub }}</span></a></sc-for>
-    </div>
-  </div>
-</section>
+<nav class="subnav" aria-label="On this page"><div class="wrap subnav__row"><a href="#assessments"><i class="ic ic-cap" aria-hidden="true"></i>Assessment</a><a href="#surveys"><i class="ic ic-mic" aria-hidden="true"></i>Surveys</a><a href="#document-intelligence"><i class="ic ic-doc" aria-hidden="true"></i>Documents</a><a href="#upskilling"><i class="ic ic-useradd" aria-hidden="true"></i>Hiring &amp; L&amp;D</a><a href="#dedicated-pods"><i class="ic ic-users" aria-hidden="true"></i>Delivery pods</a><a href="#custom-ai"><i class="ic ic-code" aria-hidden="true"></i>Custom AI</a><a class="subnav__cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a></div></nav>
 
 <section id="{{ s1.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <sc-if value="{{ s1.video }}"><div class="hero__media"><video data-src="{{ s1.video }}" sc-camel-poster="{{ s1.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s1.video }}"><div class="hero__media"><video data-src="{{ s1.video }}" data-sm="" data-poster="{{ s1.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
     <sc-if value="{{ s1.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s1.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s1.n }}</span>
@@ -108,12 +127,14 @@
   <div class="sec dots-bg">
     <div class="wrap">
       <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s1.st }} <span class="hl">{{ s1.sth }}</span>{{ s1.ste }}</p></div>
-      <sc-if value="{{ s1.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s1.stages }}" as="g"><div class="stage">
+      <div class="soltabs mt-m" role="tablist" aria-label="{{ s1.eyebrow }}"><sc-for list="{{ s1Tabs }}" as="t"><button type="button" role="tab" class="soltabs__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}"><i class="ic {{ t.icon }}" aria-hidden="true"></i>{{ t.t }}</button></sc-for></div>
+      <sc-if value="{{ s1T1 }}"><div class="solpanel" role="tabpanel">
+      <sc-if value="{{ s1.stages }}"><div class="stages"><sc-for list="{{ s1.stages }}" as="g"><div class="stage">
         <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
         <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
         <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div></sc-for></div></sc-if>
-      <sc-if value="{{ s1.does }}"><div class="split split--top does mt-m">
+      <sc-if value="{{ s1.does }}"><div class="split split--top does">
         <div class="rv"><span class="kicker">What it does</span>
           <div class="rows mt-s"><sc-for list="{{ s1.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
         </div>
@@ -122,8 +143,10 @@
           <sc-if value="{{ s1.offer }}"><ul class="offer"><sc-for list="{{ s1.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
         </div>
       </div></sc-if>
-      <span class="kicker mt-l" style="display:block">{{ s1.proofK }}</span>
-      <div class="casecard casecard--rich mt-s rv">
+      </div></sc-if>
+      <sc-if value="{{ s1T0 }}"><div class="solpanel" role="tabpanel">
+      <span class="kicker" style="display:block">{{ s1.proofK }}</span>
+      <div class="casecard casecard--rich mt-s">
         <div class="casecard__band"><div class="viz viz--film"><div class="oaks-player" data-oaks-player=""><video data-film="https://heysiya.tech/__l5e/assets-v1/7d1724a1-3a4e-4a8f-bbc6-f8d271c587a5/siya-product-video.mp4" sc-camel-poster="assets/optimized/export-assets_assets_siya_stage-wide.webp" playsInline="{{ true }}" preload="none"></video><button type="button" class="oaks-player-start" data-oaks-act="toggle" data-label="SIYA product film" aria-label="Play SIYA product film"><span class="oaks-player-big"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg><svg class="i-replay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"></path><path d="M4 4v4.5h4.5"></path></svg></span><span class="oaks-player-hint"><span>Watch the SIYA product film</span></span></button><span class="oaks-player-spin" aria-hidden="true"></span><div class="oaks-player-bar"><button type="button" class="oaks-pb-btn" data-oaks-act="toggle" data-label="SIYA product film" aria-label="Play SIYA product film"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></button><div class="oaks-pb-seek" role="slider" tabIndex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="oaks-pb-track"><span class="oaks-pb-buf"></span><span class="oaks-pb-fill"></span></div><span class="oaks-pb-knob"></span></div><span class="oaks-pb-time">0:00 / 0:00</span><button type="button" class="oaks-pb-btn" data-oaks-act="mute" aria-label="Mute"><svg class="i-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg><svg class="i-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"></path><path d="M16 9.5l5 5M21 9.5l-5 5"></path></svg></button><button type="button" class="oaks-pb-btn" data-oaks-act="full" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button></div></div></div><div class="viz viz--photos"><figure><img sc-camel-src="assets/optimized/export-assets_assets_siya_stage-wide.webp" alt="SIYA presented on stage" loading="lazy" decoding="async"><figcaption>SIYA on stage</figcaption></figure><figure><img sc-camel-src="assets/optimized/export-assets_assets_siya_edeh-committee.webp" alt="SIYA team with the programme committee in Europe" loading="lazy" decoding="async"><figcaption>With the programme committee, Europe</figcaption></figure></div></div>
         <sc-if value="{{ s1.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s1.img }}" alt="{{ s1.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
@@ -134,18 +157,21 @@
           <div class="caselogos"><span class="kicker">{{ s1.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s1.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s1.logosT }}</span></div>
         </div>
       </div>
-      <div class="callout mt-m rv">
+      </div></sc-if>
+      <sc-if value="{{ s1T2 }}"><div class="solpanel" role="tabpanel">
+      <div class="callout">
         <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s1.whyT }}<span class="dot">.</span></h3></div>
         <ul class="ticks ticks--cols"><sc-for list="{{ s1.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div>
       <div class="solfoot rv"><sc-if value="{{ s1.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s1.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s1.availT }}</b></span></div>
+      </div></sc-if>
     </div>
   </div>
 </section>
 
 <section id="{{ s2.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <sc-if value="{{ s2.video }}"><div class="hero__media"><video data-src="{{ s2.video }}" sc-camel-poster="{{ s2.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s2.video }}"><div class="hero__media"><video data-src="{{ s2.video }}" data-sm="" data-poster="{{ s2.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
     <sc-if value="{{ s2.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s2.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s2.n }}</span>
@@ -160,12 +186,14 @@
   <div class="sec dots-bg">
     <div class="wrap">
       <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s2.st }} <span class="hl">{{ s2.sth }}</span>{{ s2.ste }}</p></div>
-      <sc-if value="{{ s2.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s2.stages }}" as="g"><div class="stage">
+      <div class="soltabs mt-m" role="tablist" aria-label="{{ s2.eyebrow }}"><sc-for list="{{ s2Tabs }}" as="t"><button type="button" role="tab" class="soltabs__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}"><i class="ic {{ t.icon }}" aria-hidden="true"></i>{{ t.t }}</button></sc-for></div>
+      <sc-if value="{{ s2T1 }}"><div class="solpanel" role="tabpanel">
+      <sc-if value="{{ s2.stages }}"><div class="stages"><sc-for list="{{ s2.stages }}" as="g"><div class="stage">
         <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
         <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
         <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div></sc-for></div></sc-if>
-      <sc-if value="{{ s2.does }}"><div class="split split--top does mt-m">
+      <sc-if value="{{ s2.does }}"><div class="split split--top does">
         <div class="rv"><span class="kicker">What it does</span>
           <div class="rows mt-s"><sc-for list="{{ s2.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
         </div>
@@ -174,9 +202,11 @@
           <sc-if value="{{ s2.offer }}"><ul class="offer"><sc-for list="{{ s2.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
         </div>
       </div></sc-if>
-      <span class="kicker mt-l" style="display:block">{{ s2.proofK }}</span>
-      <div class="casecard casecard--rich mt-s rv">
-        <div class="casecard__band"><div class="viz viz--map"><div class="vizmap"><div class="vizmap__head"><span class="kicker kicker--cyan">State Happiness Index · Assam</span><span class="chip chip--solid">33 / 33 districts</span></div><svg class="vizmap__svg" viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts surveyed"><defs><linearGradient id="asg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29a9dd"/><stop offset="1" stop-color="#0383b0"/></linearGradient></defs><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><div class="vizmap__foot"><div class="vizmap__dial"><svg class="dial" viewBox="0 0 140 78" aria-hidden="true"><path d="M18.0 66.0A52 52 0 0 1 122.0 66.0" fill="none" stroke="#dfe6ee" stroke-width="9" stroke-linecap="round"/><path d="M66.7 14.1A52 52 0 0 1 79.7 14.9" fill="none" stroke="#0494c7" stroke-width="9"/><line x1="70" y1="66" x2="71.3" y2="24.0" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="70" cy="66" r="5" fill="#0f1840"/><text x="18" y="77" font-size="8" fill="#6b7591" text-anchor="middle">0</text><text x="122" y="77" font-size="8" fill="#6b7591" text-anchor="middle">100</text></svg><div><span class="kicker">Happiness index</span><b>51%</b><span>statewide · districts 48–56%</span></div></div><ul class="vizmap__legend"><li><b>4,364</b><span>schools, Classes 9–12</span></li><li><b>34</b><span>reports: 1 state + 33 district</span></li><li><b>2</b><span>languages: English, Assamese</span></li></ul></div></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-32082738.mp4" sc-camel-poster="assets/video/stock-pexels-32082738.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Voice and text responses, captured on any channel</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
+      </div></sc-if>
+      <sc-if value="{{ s2T0 }}"><div class="solpanel" role="tabpanel">
+      <span class="kicker" style="display:block">{{ s2.proofK }}</span>
+      <div class="casecard casecard--rich mt-s">
+        <div class="casecard__band"><div class="viz viz--map"><div class="vizmap"><div class="vizmap__head"><span class="kicker kicker--cyan">State Happiness Index · Assam</span><span class="chip chip--solid">33 / 33 districts</span></div><svg class="vizmap__svg" viewBox="{{ assamVB }}" role="img" aria-label="Map of Assam with all 33 districts surveyed"><defs><linearGradient id="asg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29a9dd"/><stop offset="1" stop-color="#0383b0"/></linearGradient></defs><sc-for list="{{ assam }}" as="d"><path d="{{ d.path }}"></path></sc-for></svg><div class="vizmap__foot"><div class="vizmap__dial"><svg class="dial" viewBox="0 0 140 78" aria-hidden="true"><path d="M18.0 66.0A52 52 0 0 1 122.0 66.0" fill="none" stroke="#dfe6ee" stroke-width="9" stroke-linecap="round"/><path d="M66.7 14.1A52 52 0 0 1 79.7 14.9" fill="none" stroke="#0494c7" stroke-width="9"/><line x1="70" y1="66" x2="71.3" y2="24.0" stroke="#0f1840" stroke-width="3" stroke-linecap="round"/><circle cx="70" cy="66" r="5" fill="#0f1840"/><text x="18" y="77" font-size="8" fill="#6b7591" text-anchor="middle">0</text><text x="122" y="77" font-size="8" fill="#6b7591" text-anchor="middle">100</text></svg><div><span class="kicker">Happiness index</span><b>51%</b><span>statewide · districts 48–56%</span></div></div><ul class="vizmap__legend"><li><b>4,364</b><span>schools, Classes 9–12</span></li><li><b>34</b><span>reports: 1 state + 33 district</span></li><li><b>2</b><span>languages: English, Assamese</span></li></ul></div></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-32082738.mp4" data-sm="" data-poster="assets/video/stock-pexels-32082738.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Voice and text responses, captured on any channel</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
         <sc-if value="{{ s2.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s2.img }}" alt="{{ s2.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s2.caseK }}</span>
@@ -186,18 +216,21 @@
           <div class="caselogos"><span class="kicker">{{ s2.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s2.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s2.logosT }}</span></div>
         </div>
       </div>
-      <div class="callout mt-m rv">
+      </div></sc-if>
+      <sc-if value="{{ s2T2 }}"><div class="solpanel" role="tabpanel">
+      <div class="callout">
         <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s2.whyT }}<span class="dot">.</span></h3></div>
         <ul class="ticks ticks--cols"><sc-for list="{{ s2.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div>
       <div class="solfoot rv"><sc-if value="{{ s2.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s2.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s2.availT }}</b></span></div>
+      </div></sc-if>
     </div>
   </div>
 </section>
 
 <section id="{{ s3.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <sc-if value="{{ s3.video }}"><div class="hero__media"><video data-src="{{ s3.video }}" sc-camel-poster="{{ s3.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s3.video }}"><div class="hero__media"><video data-src="{{ s3.video }}" data-sm="" data-poster="{{ s3.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
     <sc-if value="{{ s3.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s3.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s3.n }}</span>
@@ -212,12 +245,14 @@
   <div class="sec dots-bg">
     <div class="wrap">
       <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s3.st }} <span class="hl">{{ s3.sth }}</span>{{ s3.ste }}</p></div>
-      <sc-if value="{{ s3.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s3.stages }}" as="g"><div class="stage">
+      <div class="soltabs mt-m" role="tablist" aria-label="{{ s3.eyebrow }}"><sc-for list="{{ s3Tabs }}" as="t"><button type="button" role="tab" class="soltabs__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}"><i class="ic {{ t.icon }}" aria-hidden="true"></i>{{ t.t }}</button></sc-for></div>
+      <sc-if value="{{ s3T1 }}"><div class="solpanel" role="tabpanel">
+      <sc-if value="{{ s3.stages }}"><div class="stages"><sc-for list="{{ s3.stages }}" as="g"><div class="stage">
         <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
         <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
         <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div></sc-for></div></sc-if>
-      <sc-if value="{{ s3.does }}"><div class="split split--top does mt-m">
+      <sc-if value="{{ s3.does }}"><div class="split split--top does">
         <div class="rv"><span class="kicker">What it does</span>
           <div class="rows mt-s"><sc-for list="{{ s3.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
         </div>
@@ -226,9 +261,11 @@
           <sc-if value="{{ s3.offer }}"><ul class="offer"><sc-for list="{{ s3.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
         </div>
       </div></sc-if>
-      <span class="kicker mt-l" style="display:block">{{ s3.proofK }}</span>
-      <div class="casecard casecard--rich mt-s rv">
-        <div class="casecard__band"><div class="viz viz--land"><div class="vizland"><svg class="vizland__svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="360" fill="#e7eef6"/><polygon class="p0" points="1,-1 49,-2 47,35 -2,37"/><polygon class="p1" points="47,2 92,-2 96,41 48,34"/><polygon class="p2" points="105,8 148,2 153,32 107,34"/><polygon class="p0" points="149,-2 195,7 193,38 155,35"/><polygon class="p1" points="204,-2 242,-1 249,36 201,38"/><polygon class="p2" points="252,1 301,5 294,38 253,42"/><polygon class="p0" points="306,0 353,-2 346,40 299,37"/><polygon class="p1" points="347,5 400,4 402,35 355,38"/><polygon class="p2" points="404,2 451,8 447,39 398,39"/><polygon class="p0" points="455,9 501,0 496,39 447,37"/><polygon class="p1" points="499,-2 542,6 543,34 502,41"/><polygon class="p2" points="548,2 598,8 601,41 550,36"/><polygon class="p0" points="1,48 52,39 43,74 -0,77"/><polygon class="p1" points="54,40 91,42 95,78 58,79"/><polygon class="p2" points="103,44 149,38 152,80 107,81"/><polygon class="p0" points="152,42 192,45 192,72 150,73"/><polygon class="p1" points="201,38 241,39 242,75 197,81"/><polygon class="p2" points="254,39 294,41 295,72 257,83"/><polygon class="p0" points="303,43 342,38 345,74 307,73"/><polygon class="p1" points="347,48 397,39 398,71 353,83"/><polygon class="p2" points="407,45 444,41 443,80 403,80"/><polygon class="p0" points="451,40 501,49 501,81 457,80"/><polygon class="p1" points="500,43 545,37 541,74 500,79"/><polygon class="p2" points="558,42 602,49 602,75 550,74"/><polygon class="p0" points="-1,79 48,88 51,117 5,121"/><polygon class="p1" points="48,85 102,86 100,117 49,120"/><polygon class="p2" points="101,87 153,82 146,122 106,113"/><polygon class="p0" points="149,79 202,87 193,121 159,119"/><polygon class="p1" points="201,84 243,77 253,119 203,122"/><polygon class="p2" points="252,87 301,80 294,115 250,118"/><polygon class="p0" points="300,82 343,88 345,116 304,122"/><polygon class="p1" points="352,88 397,83 397,111 352,113"/><polygon class="p2" points="397,87 443,83 450,118 401,117"/><polygon class="p0" points="454,86 492,84 494,114 456,117"/><polygon class="p1" points="504,86 552,82 548,117 503,119"/><polygon class="p2" points="552,83 597,88 599,122 558,114"/><polygon class="p0" points="4,128 51,119 42,156 -2,154"/><polygon class="p1" points="48,125 100,128 93,160 55,153"/><polygon class="p2" points="108,129 144,128 146,157 109,161"/><polygon class="p0" points="149,122 197,121 193,155 156,151"/><polygon class="p1" points="204,122 241,121 248,157 198,163"/><polygon class="p2" points="256,129 292,120 291,160 250,153"/><polygon class="p0" points="302,128 351,120 343,162 304,159"/><polygon class="p1" points="348,118 399,122 392,162 355,161"/><polygon class="p2" points="398,127 442,127 446,155 404,162"/><polygon class="p0" points="450,119 497,120 492,153 448,153"/><polygon class="p1" points="501,121 550,120 547,153 501,151"/><polygon class="p2" points="550,117 600,124 593,157 558,152"/><polygon class="p0" points="7,162 47,167 46,197 5,203"/><polygon class="p1" points="51,167 99,165 96,195 48,193"/><polygon class="p2" points="98,166 144,159 142,201 107,199"/><polygon class="p0" points="150,160 195,163 193,196 150,203"/><polygon class="p1" points="209,164 244,169 245,195 197,196"/><polygon class="p2" points="253,163 293,163 291,194 248,196"/><polygon class="p0" points="298,157 345,160 348,197 306,199"/><polygon class="p1" points="356,168 396,161 403,193 356,199"/><polygon class="p2" points="398,167 452,165 450,201 399,197"/><polygon class="p0" points="453,167 501,167 498,202 455,199"/><polygon class="p1" points="500,157 543,161 542,201 504,199"/><polygon class="p2" points="555,165 597,157 601,200 553,197"/><polygon class="p0" points="5,198 50,200 42,234 6,233"/><polygon class="p1" points="56,209 97,202 97,239 56,238"/><polygon class="p2" points="105,198 143,200 150,235 104,231"/><polygon class="p0" points="148,200 199,205 199,234 153,237"/><polygon class="p1" points="203,198 252,199 253,242 197,237"/><polygon class="p2" points="257,209 296,200 294,242 250,238"/><polygon class="p0" points="299,203 352,199 351,237 308,239"/><polygon class="p1" points="350,208 397,197 391,237 352,235"/><polygon class="p2" points="399,201 445,207 441,240 407,232"/><polygon class="p0" points="458,206 502,200 495,236 459,238"/><polygon class="p1" points="501,202 544,198 542,241 500,242"/><polygon class="p2" points="550,200 597,199 595,242 558,241"/><polygon class="p0" points="5,248 52,244 50,272 6,276"/><polygon class="p1" points="56,245 94,238 102,273 53,275"/><polygon class="p2" points="101,246 153,240 149,275 104,276"/><polygon class="p0" points="149,239 193,248 197,274 158,283"/><polygon class="p1" points="202,239 243,238 245,272 200,274"/><polygon class="p2" points="254,248 300,242 296,277 252,275"/><polygon class="p0" points="298,240 353,239 347,279 307,274"/><polygon class="p1" points="350,240 396,242 402,281 357,271"/><polygon class="p2" points="397,246 452,243 448,271 402,282"/><polygon class="p0" points="457,247 503,240 492,273 453,279"/><polygon class="p1" points="508,246 549,246 546,278 497,280"/><polygon class="p2" points="550,248 599,241 593,274 555,279"/><polygon class="p0" points="-2,278 47,284 46,314 4,311"/><polygon class="p1" points="51,283 103,285 102,317 50,314"/><polygon class="p2" points="109,285 145,277 147,319 102,314"/><polygon class="p0" points="155,288 194,277 195,316 155,313"/><polygon class="p1" points="207,286 247,279 253,315 207,314"/><polygon class="p2" points="250,286 295,288 297,313 250,316"/><polygon class="p0" points="305,288 343,282 344,323 299,312"/><polygon class="p1" points="348,282 402,288 400,323 358,315"/><polygon class="p2" points="399,288 450,277 449,316 401,315"/><polygon class="p0" points="449,277 494,281 502,312 459,313"/><polygon class="p1" points="501,287 551,282 542,317 501,322"/><polygon class="p2" points="549,281 602,277 596,321 556,311"/><polygon class="p0" points="-3,318 52,320 50,362 1,354"/><polygon class="p1" points="58,324 94,326 95,354 47,360"/><polygon class="p2" points="108,325 152,317 144,357 108,362"/><polygon class="p0" points="152,320 196,323 202,353 157,360"/><polygon class="p1" points="207,326 248,321 245,355 206,352"/><polygon class="p2" points="249,326 294,318 291,358 251,363"/><polygon class="p0" points="308,329 344,318 342,357 306,356"/><polygon class="p1" points="350,322 398,325 400,361 355,352"/><polygon class="p2" points="407,321 448,321 450,353 400,354"/><polygon class="p0" points="449,328 498,321 496,363 453,354"/><polygon class="p1" points="507,325 553,318 547,361 507,362"/><polygon class="p2" points="547,321 592,319 603,358 558,355"/><path d="M0 150 C160 140 300 190 600 170" stroke="#fff" stroke-width="10" fill="none"/><path d="M215 0 C230 120 200 240 240 360" stroke="#fff" stroke-width="8" fill="none"/><polygon class="hot" points="298,240 353,239 347,279 307,274"/><circle cx="326" cy="258" r="7" fill="#fff" stroke="#0494c7" stroke-width="3"/></svg><div class="vizland__q"><i class="ic ic-search"></i>Who owns Survey No. 142?</div><div class="vizland__a"><span class="kicker kicker--cyan">Answer · source cited</span><b>Deed found · page 3</b><span class="vizland__chips"><span>Deed</span><span>Register</span><span>Map</span><span>Survey record</span></span></div><div class="vizland__stats"><div><b>100,000+</b><span>parcels linked to one ID</span></div></div><span class="vizland__tag">Illustrative interface</span></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-6549976.mp4" sc-camel-poster="assets/video/stock-pexels-6549976.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Paper archives, scanned at volume</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
+      </div></sc-if>
+      <sc-if value="{{ s3T0 }}"><div class="solpanel" role="tabpanel">
+      <span class="kicker" style="display:block">{{ s3.proofK }}</span>
+      <div class="casecard casecard--rich mt-s">
+        <div class="casecard__band"><div class="viz viz--land"><div class="vizland"><svg class="vizland__svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="360" fill="#e7eef6"/><polygon class="p0" points="1,-1 49,-2 47,35 -2,37"/><polygon class="p1" points="47,2 92,-2 96,41 48,34"/><polygon class="p2" points="105,8 148,2 153,32 107,34"/><polygon class="p0" points="149,-2 195,7 193,38 155,35"/><polygon class="p1" points="204,-2 242,-1 249,36 201,38"/><polygon class="p2" points="252,1 301,5 294,38 253,42"/><polygon class="p0" points="306,0 353,-2 346,40 299,37"/><polygon class="p1" points="347,5 400,4 402,35 355,38"/><polygon class="p2" points="404,2 451,8 447,39 398,39"/><polygon class="p0" points="455,9 501,0 496,39 447,37"/><polygon class="p1" points="499,-2 542,6 543,34 502,41"/><polygon class="p2" points="548,2 598,8 601,41 550,36"/><polygon class="p0" points="1,48 52,39 43,74 -0,77"/><polygon class="p1" points="54,40 91,42 95,78 58,79"/><polygon class="p2" points="103,44 149,38 152,80 107,81"/><polygon class="p0" points="152,42 192,45 192,72 150,73"/><polygon class="p1" points="201,38 241,39 242,75 197,81"/><polygon class="p2" points="254,39 294,41 295,72 257,83"/><polygon class="p0" points="303,43 342,38 345,74 307,73"/><polygon class="p1" points="347,48 397,39 398,71 353,83"/><polygon class="p2" points="407,45 444,41 443,80 403,80"/><polygon class="p0" points="451,40 501,49 501,81 457,80"/><polygon class="p1" points="500,43 545,37 541,74 500,79"/><polygon class="p2" points="558,42 602,49 602,75 550,74"/><polygon class="p0" points="-1,79 48,88 51,117 5,121"/><polygon class="p1" points="48,85 102,86 100,117 49,120"/><polygon class="p2" points="101,87 153,82 146,122 106,113"/><polygon class="p0" points="149,79 202,87 193,121 159,119"/><polygon class="p1" points="201,84 243,77 253,119 203,122"/><polygon class="p2" points="252,87 301,80 294,115 250,118"/><polygon class="p0" points="300,82 343,88 345,116 304,122"/><polygon class="p1" points="352,88 397,83 397,111 352,113"/><polygon class="p2" points="397,87 443,83 450,118 401,117"/><polygon class="p0" points="454,86 492,84 494,114 456,117"/><polygon class="p1" points="504,86 552,82 548,117 503,119"/><polygon class="p2" points="552,83 597,88 599,122 558,114"/><polygon class="p0" points="4,128 51,119 42,156 -2,154"/><polygon class="p1" points="48,125 100,128 93,160 55,153"/><polygon class="p2" points="108,129 144,128 146,157 109,161"/><polygon class="p0" points="149,122 197,121 193,155 156,151"/><polygon class="p1" points="204,122 241,121 248,157 198,163"/><polygon class="p2" points="256,129 292,120 291,160 250,153"/><polygon class="p0" points="302,128 351,120 343,162 304,159"/><polygon class="p1" points="348,118 399,122 392,162 355,161"/><polygon class="p2" points="398,127 442,127 446,155 404,162"/><polygon class="p0" points="450,119 497,120 492,153 448,153"/><polygon class="p1" points="501,121 550,120 547,153 501,151"/><polygon class="p2" points="550,117 600,124 593,157 558,152"/><polygon class="p0" points="7,162 47,167 46,197 5,203"/><polygon class="p1" points="51,167 99,165 96,195 48,193"/><polygon class="p2" points="98,166 144,159 142,201 107,199"/><polygon class="p0" points="150,160 195,163 193,196 150,203"/><polygon class="p1" points="209,164 244,169 245,195 197,196"/><polygon class="p2" points="253,163 293,163 291,194 248,196"/><polygon class="p0" points="298,157 345,160 348,197 306,199"/><polygon class="p1" points="356,168 396,161 403,193 356,199"/><polygon class="p2" points="398,167 452,165 450,201 399,197"/><polygon class="p0" points="453,167 501,167 498,202 455,199"/><polygon class="p1" points="500,157 543,161 542,201 504,199"/><polygon class="p2" points="555,165 597,157 601,200 553,197"/><polygon class="p0" points="5,198 50,200 42,234 6,233"/><polygon class="p1" points="56,209 97,202 97,239 56,238"/><polygon class="p2" points="105,198 143,200 150,235 104,231"/><polygon class="p0" points="148,200 199,205 199,234 153,237"/><polygon class="p1" points="203,198 252,199 253,242 197,237"/><polygon class="p2" points="257,209 296,200 294,242 250,238"/><polygon class="p0" points="299,203 352,199 351,237 308,239"/><polygon class="p1" points="350,208 397,197 391,237 352,235"/><polygon class="p2" points="399,201 445,207 441,240 407,232"/><polygon class="p0" points="458,206 502,200 495,236 459,238"/><polygon class="p1" points="501,202 544,198 542,241 500,242"/><polygon class="p2" points="550,200 597,199 595,242 558,241"/><polygon class="p0" points="5,248 52,244 50,272 6,276"/><polygon class="p1" points="56,245 94,238 102,273 53,275"/><polygon class="p2" points="101,246 153,240 149,275 104,276"/><polygon class="p0" points="149,239 193,248 197,274 158,283"/><polygon class="p1" points="202,239 243,238 245,272 200,274"/><polygon class="p2" points="254,248 300,242 296,277 252,275"/><polygon class="p0" points="298,240 353,239 347,279 307,274"/><polygon class="p1" points="350,240 396,242 402,281 357,271"/><polygon class="p2" points="397,246 452,243 448,271 402,282"/><polygon class="p0" points="457,247 503,240 492,273 453,279"/><polygon class="p1" points="508,246 549,246 546,278 497,280"/><polygon class="p2" points="550,248 599,241 593,274 555,279"/><polygon class="p0" points="-2,278 47,284 46,314 4,311"/><polygon class="p1" points="51,283 103,285 102,317 50,314"/><polygon class="p2" points="109,285 145,277 147,319 102,314"/><polygon class="p0" points="155,288 194,277 195,316 155,313"/><polygon class="p1" points="207,286 247,279 253,315 207,314"/><polygon class="p2" points="250,286 295,288 297,313 250,316"/><polygon class="p0" points="305,288 343,282 344,323 299,312"/><polygon class="p1" points="348,282 402,288 400,323 358,315"/><polygon class="p2" points="399,288 450,277 449,316 401,315"/><polygon class="p0" points="449,277 494,281 502,312 459,313"/><polygon class="p1" points="501,287 551,282 542,317 501,322"/><polygon class="p2" points="549,281 602,277 596,321 556,311"/><polygon class="p0" points="-3,318 52,320 50,362 1,354"/><polygon class="p1" points="58,324 94,326 95,354 47,360"/><polygon class="p2" points="108,325 152,317 144,357 108,362"/><polygon class="p0" points="152,320 196,323 202,353 157,360"/><polygon class="p1" points="207,326 248,321 245,355 206,352"/><polygon class="p2" points="249,326 294,318 291,358 251,363"/><polygon class="p0" points="308,329 344,318 342,357 306,356"/><polygon class="p1" points="350,322 398,325 400,361 355,352"/><polygon class="p2" points="407,321 448,321 450,353 400,354"/><polygon class="p0" points="449,328 498,321 496,363 453,354"/><polygon class="p1" points="507,325 553,318 547,361 507,362"/><polygon class="p2" points="547,321 592,319 603,358 558,355"/><path d="M0 150 C160 140 300 190 600 170" stroke="#fff" stroke-width="10" fill="none"/><path d="M215 0 C230 120 200 240 240 360" stroke="#fff" stroke-width="8" fill="none"/><polygon class="hot" points="298,240 353,239 347,279 307,274"/><circle cx="326" cy="258" r="7" fill="#fff" stroke="#0494c7" stroke-width="3"/></svg><div class="vizland__q"><i class="ic ic-search"></i>Who owns Survey No. 142?</div><div class="vizland__a"><span class="kicker kicker--cyan">Answer · source cited</span><b>Deed found · page 3</b><span class="vizland__chips"><span>Deed</span><span>Register</span><span>Map</span><span>Survey record</span></span></div><div class="vizland__stats"><div><b>100,000+</b><span>parcels linked to one ID</span></div></div><span class="vizland__tag">Illustrative interface</span></div></div><figure class="vizfilm" data-oaks-bg-scope=""><video data-src="assets/video/stock-pexels-6549976.mp4" data-sm="" data-poster="assets/video/stock-pexels-6549976.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video><figcaption><span>Paper archives, scanned at volume</span><span class="vizfilm__tag">Illustrative footage</span></figcaption><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></figure></div>
         <sc-if value="{{ s3.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s3.img }}" alt="{{ s3.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
           <span class="kicker kicker--cyan">{{ s3.caseK }}</span>
@@ -238,18 +275,21 @@
           <div class="caselogos"><span class="kicker">{{ s3.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s3.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s3.logosT }}</span></div>
         </div>
       </div>
-      <div class="callout mt-m rv">
+      </div></sc-if>
+      <sc-if value="{{ s3T2 }}"><div class="solpanel" role="tabpanel">
+      <div class="callout">
         <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s3.whyT }}<span class="dot">.</span></h3></div>
         <ul class="ticks ticks--cols"><sc-for list="{{ s3.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div>
       <div class="solfoot rv"><sc-if value="{{ s3.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s3.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s3.availT }}</b></span></div>
+      </div></sc-if>
     </div>
   </div>
 </section>
 
 <section id="{{ s4.id }}" class="sol">
   <div class="sol-banner" data-oaks-bg-scope="">
-    <sc-if value="{{ s4.video }}"><div class="hero__media"><video data-src="{{ s4.video }}" sc-camel-poster="{{ s4.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
+    <sc-if value="{{ s4.video }}"><div class="hero__media"><video data-src="{{ s4.video }}" data-sm="" data-poster="{{ s4.poster }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div></sc-if>
     <sc-if value="{{ s4.bgImg }}"><div class="hero__media hero__media--kb"><img sc-camel-src="{{ s4.bgImg }}" alt="" loading="lazy" decoding="async"></div></sc-if>
     <div class="hero__shade"></div>
     <span class="idx" aria-hidden="true">{{ s4.n }}</span>
@@ -264,12 +304,14 @@
   <div class="sec dots-bg">
     <div class="wrap">
       <div class="statement-row rv"><span class="kicker">The platform</span><p class="statement">{{ s4.st }} <span class="hl">{{ s4.sth }}</span>{{ s4.ste }}</p></div>
-      <sc-if value="{{ s4.stages }}"><div class="stages mt-m rv"><sc-for list="{{ s4.stages }}" as="g"><div class="stage">
+      <div class="soltabs mt-m" role="tablist" aria-label="{{ s4.eyebrow }}"><sc-for list="{{ s4Tabs }}" as="t"><button type="button" role="tab" class="soltabs__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}"><i class="ic {{ t.icon }}" aria-hidden="true"></i>{{ t.t }}</button></sc-for></div>
+      <sc-if value="{{ s4T1 }}"><div class="solpanel" role="tabpanel">
+      <sc-if value="{{ s4.stages }}"><div class="stages"><sc-for list="{{ s4.stages }}" as="g"><div class="stage">
         <span class="stage__top"><span class="ic-tile"><i class="ic {{ g.icon }}"></i></span><span class="kicker kicker--cyan">{{ g.n }}</span></span>
         <h3>{{ g.t }}</h3><p>{{ g.d }}</p>
         <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ g.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div></sc-for></div></sc-if>
-      <sc-if value="{{ s4.does }}"><div class="split split--top does mt-m">
+      <sc-if value="{{ s4.does }}"><div class="split split--top does">
         <div class="rv"><span class="kicker">What it does</span>
           <div class="rows mt-s"><sc-for list="{{ s4.does }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
         </div>
@@ -278,8 +320,10 @@
           <sc-if value="{{ s4.offer }}"><ul class="offer"><sc-for list="{{ s4.box }}" as="x"><li><i class="ic ic-check"></i><span><b>{{ x.t }}</b><i>{{ x.d }}</i></span></li></sc-for></ul></sc-if>
         </div>
       </div></sc-if>
-      <span class="kicker mt-l" style="display:block">{{ s4.proofK }}</span>
-      <div class="casecard  mt-s rv">
+      </div></sc-if>
+      <sc-if value="{{ s4T0 }}"><div class="solpanel" role="tabpanel">
+      <span class="kicker" style="display:block">{{ s4.proofK }}</span>
+      <div class="casecard  mt-s">
         
         <sc-if value="{{ s4.img }}"><div class="casecard__visual"><img sc-camel-src="{{ s4.img }}" alt="{{ s4.imgAlt }}" loading="lazy" decoding="async"></div></sc-if>
         <div class="casecard__body">
@@ -290,11 +334,14 @@
           <div class="caselogos"><span class="kicker">{{ s4.logosK }}</span><span class="caselogos__imgs"><sc-for list="{{ s4.logos }}" as="l"><img sc-camel-src="{{ l.img }}" alt="{{ l.name }}" loading="lazy" decoding="async"></sc-for></span><span class="caselogos__t">{{ s4.logosT }}</span></div>
         </div>
       </div>
-      <div class="callout mt-m rv">
+      </div></sc-if>
+      <sc-if value="{{ s4T2 }}"><div class="solpanel" role="tabpanel">
+      <div class="callout">
         <div class="callout__head"><span class="kicker kicker--cyan">Why it matters</span><h3>{{ s4.whyT }}<span class="dot">.</span></h3></div>
         <ul class="ticks ticks--cols"><sc-for list="{{ s4.whyPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
       </div>
       <div class="solfoot rv"><sc-if value="{{ s4.note }}"><span class="solfoot__note"><i class="ic ic-shield"></i><span><b>AI Act:</b> {{ s4.note }}</span></span></sc-if><span class="solfoot__avail"><span class="kicker">Available as</span><b>{{ s4.availT }}</b></span></div>
+      </div></sc-if>
     </div>
   </div>
 </section>
@@ -318,7 +365,7 @@
 </section>
 
 <section class="cta-band" data-oaks-bg-scope="">
-  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" sc-camel-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" data-sm="" data-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
   <div class="wrap">
     <div class="inner rv">
@@ -375,7 +422,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { w: window.innerWidth, menuOpen: false, assam: [] };
+  state = { w: window.innerWidth, menuOpen: false, assam: [], t_s1: 0, t_s2: 0, t_s3: 0, t_s4: 0 };
   PAGE = "/solutions";
   NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
@@ -881,6 +928,10 @@ class Component extends DCLogic {
         "About €4,000 per full-time person a month",
         "30-day notice; IP and source code are yours"
       ],
+      "icon": "ic-users",
+      "one": "A senior team at €25/hr, scaled within two weeks",
+      "mv": "€25/hr",
+      "ml": "blended rate, one monthly invoice",
       "id": "dedicated-pods",
       "go": "/partners#pricing",
       "goT": "See pricing"
@@ -902,6 +953,10 @@ class Component extends DCLogic {
         "Integrated with your APIs, LMS, HRMS and ERP",
         "IP and full source code assigned to you"
       ],
+      "icon": "ic-code",
+      "one": "A fixed-price prototype in two weeks",
+      "mv": "2 weeks",
+      "ml": "to a working prototype on your data",
       "id": "custom-ai",
       "go": "/book",
       "goT": "Book a call"
@@ -932,6 +987,12 @@ class Component extends DCLogic {
         "Joiners productive sooner"
       ]
     }
+  },
+  "vp": {
+    "p7255101": [
+      "assets/video/stock-pexels-7255101.webp",
+      "assets/video/stock-pexels-7255101-sm.webp"
+    ]
   }
 };
   CP = {
@@ -959,13 +1020,22 @@ class Component extends DCLogic {
     const s = this.state, mob = (s.w || 1280) < 768;
     const R = {
       ...this.D, mob,
+      vp: Object.fromEntries(Object.entries(this.D.vp || {}).map(([k, v]) => [k, mob ? v[1] : v[0]])), // hero poster: [desktop, 960px phone cut]
       nav: this.NAV.map(([label, href]) => ({ label, href, cur: href === this.PAGE ? 'page' : undefined })),
+      cur: (p => ({ solutions: p === '/solutions' ? 'page' : undefined, partners: p === '/partners' ? 'page' : undefined, trust: p === '/trust' ? 'page' : undefined,
+        company: ['/about', '/team', '/contact'].includes(p) ? 'page' : undefined, about: p === '/about' ? 'page' : undefined, team: p === '/team' ? 'page' : undefined, contact: p === '/contact' ? 'page' : undefined }))(this.PAGE),
       menuOpen: s.menuOpen, hdrCls: s.menuOpen ? 'is-open' : '', menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
       toggleMenu: () => this.setMenu(!s.menuOpen), closeMenu: () => this.setMenu(false),
       cp: Object.fromEntries(Object.entries(this.CP).map(([k, v]) => [k, mob ? v[1] : v[0]])),
     };
     R.assam = s.assam; R.assamVB = s.assamVB || '0 0 600 406';
     if (mob) ['s1', 's2', 's3', 's4'].forEach(k => { R[k] = { ...R[k], ...this.D.MB[k] }; });
+    const TABS = [['Proof', 'ic-trend'], ['How it works', 'ic-layers'], ['Why it matters', 'ic-check']];
+    ['s1', 's2', 's3', 's4'].forEach(k => {
+      const on = s['t_' + k];
+      R[k + 'Tabs'] = TABS.map(([t, icon], i) => ({ t, icon, cls: i === on ? 'is-on' : '', sel: i === on ? 'true' : 'false', pick: () => this.setState({ ['t_' + k]: i }) }));
+      [0, 1, 2].forEach(i => { R[k + 'T' + i] = on === i; });
+    });
     return R;
   }
 }

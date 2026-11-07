@@ -199,5 +199,25 @@
       "source": "/terms",
       "destination": "/OAKS%20Terms%20and%20Conditions.dc.html"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(support|media|forms|image-slot)\\.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(assets|export-assets|_ds)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    }
   ]
 }

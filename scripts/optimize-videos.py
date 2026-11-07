@@ -22,6 +22,7 @@ for name,url,start in jobs:
 
 # Decorative stock footage (Pexels licence), shown as "Illustrative footage": (pexels id, source file, start second)
 # Full-HD cuts: 1920px wide, 12 s, CRF 21, silent, fast-start; posters at 1920px.
+# Each also gets a 960px "-sm" cut and poster, which media.js and the pages use on phones and slow connections.
 stock=[
 ('7597819','7597819/7597819-uhd_2560_1440_30fps.mp4',2),   # Valletta, Carmelite Basilica at dusk: home
 ('7255101','7255101/7255101-hd_2048_1080_30fps.mp4',0),    # operations room: solutions
@@ -38,4 +39,8 @@ for pid,src,start in stock:
                         '-vf','scale=1920:-2:flags=lanczos,fps=25','-c:v','libx264','-preset','slow','-crf','24' if pid=='7597819' else '21','-profile:v','high','-pix_fmt','yuv420p','-movflags','+faststart',str(target)],check=True,timeout=600)
     poster=target.with_suffix('.webp')
     subprocess.run([ffmpeg,'-nostdin','-y','-loglevel','error','-i',str(target),'-frames:v','1','-quality','85',str(poster)],check=True)
-    print(pid, target.stat().st_size, flush=True)
+    small=target.with_name(target.stem+'-sm.mp4')
+    subprocess.run([ffmpeg,'-nostdin','-y','-loglevel','error','-i',str(target),'-an','-vf','scale=960:-2:flags=lanczos','-c:v','libx264','-preset','slow','-crf','25',
+                    '-profile:v','high','-pix_fmt','yuv420p','-movflags','+faststart',str(small)],check=True)
+    subprocess.run([ffmpeg,'-nostdin','-y','-loglevel','error','-i',str(small),'-frames:v','1','-quality','80',str(small.with_suffix('.webp'))],check=True)
+    print(pid, target.stat().st_size, small.stat().st_size, flush=True)

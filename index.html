@@ -32,13 +32,13 @@
 <meta name="theme-color" content="#0f1840">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/video/stock-pexels-7597819.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css?v=6fd3229a">
 <link rel="stylesheet" href="assets/player.css?v=92ebb20c">
+<link rel="stylesheet" href="assets/ui.css?v=0583c1e7">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
-<script defer src="media.js?v=89ef59f3"></script>
-<script defer src="assets/site.js?v=39e84a23"></script>
+<script defer src="media.js?v=828f5394"></script>
+<script defer src="assets/site.js?v=53dd3908"></script>
 <script defer src="./support.js?v=951ae391"></script>
 </head>
 <body>
@@ -55,15 +55,38 @@
     <div class="header-row">
       <a class="brand" href="/" aria-label="OAKS Solutions home"><img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="107" height="38" decoding="async"></a>
       <nav class="nav" aria-label="Main">
-        <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
+        <div class="nav__item">
+          <a class="nav__top" href="/solutions" aria-current="{{ cur.solutions }}" aria-haspopup="true">Solutions<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega">
+            <div class="mega__grid"><a class="mega__link" href="/solutions#assessments"><span class="ic-tile ic-tile--sm"><i class="ic ic-cap"></i></span><span><b>AI Assessment Platform</b><span>Handwritten work marked and mapped to the curriculum</span></span></a><a class="mega__link" href="/solutions#surveys"><span class="ic-tile ic-tile--sm"><i class="ic ic-mic"></i></span><span><b>AI Survey Analytics</b><span>Voice and text surveys, understood in any language</span></span></a><a class="mega__link" href="/solutions#document-intelligence"><span class="ic-tile ic-tile--sm"><i class="ic ic-doc"></i></span><span><b>Document Intelligence</b><span>Scanned records made searchable, every answer sourced</span></span></a><a class="mega__link" href="/solutions#upskilling"><span class="ic-tile ic-tile--sm"><i class="ic ic-useradd"></i></span><span><b>Gamified Hiring &amp; L&amp;D</b><span>Hire, onboard and upskill on real tasks</span></span></a><a class="mega__link" href="/solutions#dedicated-pods"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Dedicated delivery pods</b><span>A senior team at €25/hr, scaled within two weeks</span></span></a><a class="mega__link" href="/solutions#custom-ai"><span class="ic-tile ic-tile--sm"><i class="ic ic-code"></i></span><span><b>Custom AI &amp; Software</b><span>A fixed-price prototype in two weeks</span></span></a></div>
+            <div class="mega__side"><span class="kicker kicker--cyan">Not sure where to start?</span><b>Talk it through with our EU desk in 30 minutes.</b><a class="link-arrow" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/solutions">All solutions <span class="arr" aria-hidden="true">→</span></a></div>
+          </div>
+        </div>
+        <a class="nav__top" href="/partners" aria-current="{{ cur.partners }}">Pricing</a>
+        <a class="nav__top" href="/trust" aria-current="{{ cur.trust }}">Trust</a>
+        <div class="nav__item">
+          <a class="nav__top" href="/about" aria-current="{{ cur.company }}" aria-haspopup="true">Company<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega mega--sm">
+            <a class="mega__link" href="/about"><span class="ic-tile ic-tile--sm"><i class="ic ic-globe"></i></span><span><b>About OAKS</b><span>Malta contract, Hyderabad delivery, since 2017</span></span></a>
+            <a class="mega__link" href="/team"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Team</b><span>The people who lead your delivery</span></span></a>
+            <a class="mega__link" href="/contact"><span class="ic-tile ic-tile--sm"><i class="ic ic-mail"></i></span><span><b>Contact</b><span>EU desk, offices and enquiries</span></span></a>
+          </div>
+        </div>
       </nav>
+      <a class="nav__desk" href="tel:+35699786876"><i class="ic ic-phone" aria-hidden="true"></i>EU desk</a>
       <a class="btn btn--sm header-cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
+      <span class="m-group">Solutions</span>
+      <div class="m-sols"><a href="/solutions#assessments" onClick="{{ closeMenu }}"><i class="ic ic-cap"></i>AI Assessment Platform</a><a href="/solutions#surveys" onClick="{{ closeMenu }}"><i class="ic ic-mic"></i>AI Survey Analytics</a><a href="/solutions#document-intelligence" onClick="{{ closeMenu }}"><i class="ic ic-doc"></i>Document Intelligence</a><a href="/solutions#upskilling" onClick="{{ closeMenu }}"><i class="ic ic-useradd"></i>Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods" onClick="{{ closeMenu }}"><i class="ic ic-users"></i>Dedicated delivery pods</a><a href="/solutions#custom-ai" onClick="{{ closeMenu }}"><i class="ic ic-code"></i>Custom AI &amp; Software</a></div>
+      <a class="m-link" href="/partners" aria-current="{{ cur.partners }}" onClick="{{ closeMenu }}">Pricing</a>
+      <a class="m-link" href="/trust" aria-current="{{ cur.trust }}" onClick="{{ closeMenu }}">Trust</a>
+      <a class="m-link" href="/about" aria-current="{{ cur.about }}" onClick="{{ closeMenu }}">About</a>
+      <a class="m-link" href="/team" aria-current="{{ cur.team }}" onClick="{{ closeMenu }}">Team</a>
+      <a class="m-link" href="/contact" aria-current="{{ cur.contact }}" onClick="{{ closeMenu }}">Contact</a>
       <a class="btn" href="/book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
       <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
@@ -72,103 +95,96 @@
 
 <main id="main">
 
-<section id="hero" class="hero hero--full hero--home hero--clean" data-oaks-bg-scope="">
-  <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-7597819.mp4" sc-camel-poster="assets/video/stock-pexels-7597819.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
-  <div class="hero__shade"></div>
-  <div class="wrap hero__body">
-    <div class="hero__inner">
-      <span class="eyebrow">{{ cp.heroK }}</span>
-      <h1 class="h-xl">Your delivery partner <br>for AI at scale<span class="dot">.</span></h1>
-      <p class="lede">{{ cp.heroP }}</p>
-      <div class="hero__ctas"><a class="btn" href="/book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost" href="#solutions">Explore solutions</a></div>
+<section id="hero" class="phero">
+  <div class="phero__bg" aria-hidden="true"><span class="phero__glow"></span><span class="phero__glow phero__glow--2"></span><span class="phero__mesh"></span></div>
+  <div class="wrap phero__layout">
+    <div class="phero__copy">
+      <a class="badge-link" href="/trust"><span class="badge-link__new">EU</span>Malta entity · GDPR-ready · ISO 27001<span class="arr" aria-hidden="true">→</span></a>
+      <h1 class="phero__h">Your delivery partner for AI at scale<span class="dot">.</span></h1>
+      <p class="phero__p">{{ cp.heroP }}</p>
+      <div class="hero__ctas"><a class="btn btn--lg" href="/book">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn--ghost btn--lg" href="#solutions">Explore solutions</a></div>
+      <ul class="phero__facts"><sc-for list="{{ glance3 }}" as="k"><li><b>{{ k.v }}</b><span>{{ k.l }}</span></li></sc-for></ul>
     </div>
+    
+<div class="showcase" aria-label="Product preview">
+  <div class="showcase__bar">
+    <span class="showcase__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="showcase__tabs" role="tablist" aria-label="Preview a solution"><sc-for list="{{ heroTabs }}" as="t"><button type="button" role="tab" class="showcase__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}">{{ t.t }}</button></sc-for></div>
   </div>
-  <div class="wrap hero__foot">
-    <ul class="trustline" aria-label="Compliance"><sc-for list="{{ seals }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="28" height="28"><span>{{ b.t }}</span></li></sc-for></ul>
-    <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
+  <div class="showcase__body">
+    <sc-if value="{{ hero0 }}"><div class="mock">
+      <div class="mock__head"><div><span class="mock__k">Worksheet · Year 6 · Fractions</span><b>Pupil 0427</b></div><span class="ring" style="--p: 90"><b>18/20</b></span></div>
+      <ul class="mock__rows">
+        <li><span class="mock__q">Q1</span><span class="mock__hand">3/4 + 1/8 = 7/8</span><span class="tag tag--ok">Correct</span></li>
+        <li><span class="mock__q">Q2</span><span class="mock__hand">2 1/3 × 3 = 7</span><span class="tag tag--ok">Correct</span></li>
+        <li><span class="mock__q">Q3</span><span class="mock__hand">2/5 of 30 = 15</span><span class="tag tag--warn">Check: 12</span></li>
+        <li><span class="mock__q">Q4</span><span class="mock__hand">0.6 = 3/5</span><span class="tag tag--ok">Correct</span></li>
+      </ul>
+      <div class="mock__foot"><span class="tag tag--soft">Mapped to outcome M6.3 · Fractions</span><span class="mock__ok"><i class="ic ic-usercheck"></i>Teacher approves</span></div>
+    </div></sc-if>
+    <sc-if value="{{ hero1 }}"><div class="mock">
+      <div class="mock__head"><div><span class="mock__k">Student survey · voice answers</span><b>Open question 4 of 6</b></div><span class="live"><i></i>Live</span></div>
+      <div class="wave" aria-hidden="true"><sc-for list="{{ wave }}" as="h"><i style="--h: {{ h }}"></i></sc-for></div>
+      <p class="mock__quote">“The library closes before our bus arrives.”<span>Spoken in Assamese · translated and themed</span></p>
+      <div class="bars"><sc-for list="{{ themes }}" as="b"><div class="bars__row"><span>{{ b.t }}</span><span class="bars__track"><i style="width: {{ b.w }}"></i></span><b>{{ b.w }}</b></div></sc-for></div>
+    </div></sc-if>
+    <sc-if value="{{ hero2 }}"><div class="mock">
+      <div class="mock__head"><div><span class="mock__k">Land records · scanned deed</span><b>“Who owns parcel 214/B?”</b></div><i class="ic ic-search mock__icon"></i></div>
+      <div class="docs">
+        <div class="docs__page" aria-hidden="true"><i></i><i></i><i class="hl"></i><i></i><i class="short"></i><i></i><i class="hl short"></i><i></i></div>
+        <dl class="docs__fields">
+          <div><dt>Owner</dt><dd>A. Kumar <cite>p. 2</cite></dd></div>
+          <div><dt>Parcel</dt><dd>214/B <cite>p. 1</cite></dd></div>
+          <div><dt>Area</dt><dd>1.6 acres <cite>p. 1</cite></dd></div>
+          <div><dt>Registered</dt><dd>2009 <cite>p. 3</cite></dd></div>
+        </dl>
+      </div>
+    </div></sc-if>
+  </div>
+  <div class="showcase__proof"><i class="ic ic-check"></i><span>In production: <b>{{ heroProof }}</b></span></div>
+  <span class="showcase__note">Illustrative interface</span>
+</div>
   </div>
 </section>
 
-<section id="glance" class="glance">
-  <div class="wrap glance__row">
-    <sc-for list="{{ glance }}" as="k"><div class="glance__item"><b>{{ k.v }}</b><span>{{ k.l }}</span></div></sc-for>
-    <a class="glance__link" href="/partners#pricing">See how it’s priced <span class="arr" aria-hidden="true">→</span></a>
+<section class="logos-strip" aria-label="Clients and empanelments">
+  <p class="logos-strip__t">Trusted by governments, national agencies, universities and industry</p>
+  <div class="marquee">
+    <ul class="marquee__list"><sc-for list="{{ marquee }}" as="c"><li><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" style="height: {{ c.h }}" decoding="async"></li></sc-for></ul>
+    <ul class="marquee__list" aria-hidden="true"><sc-for list="{{ marquee }}" as="c"><li><img sc-camel-src="{{ c.img }}" alt="" style="height: {{ c.h }}" decoding="async"></li></sc-for></ul>
   </div>
 </section>
 
-<section id="solutions" class="sec sec--sols dots-bg">
+<section id="solutions" class="sec" style="scroll-margin-top: 40px">
   <div class="wrap">
-    <div class="sec-head sec-head--split rv">
-      <div class="grid" style="gap:18px"><span class="eyebrow">What we deliver</span><h2 class="h-lg">Six solutions, already running at scale<span class="dot">.</span></h2></div>
+    <div class="sec-head sec-head--center rv">
+      <span class="label">Solutions</span>
+      <h2 class="h-lg">Six ways to put AI to work<span class="dot">.</span></h2>
       <p class="lede">{{ cp.solP }}</p>
     </div>
-    <div class="sol-cards">
-      <sc-for list="{{ sols }}" as="s"><a class="sol-card rv" href="{{ s.href }}">
-        <span class="sol-card__img"><img sc-camel-src="{{ s.img }}" alt="" loading="lazy" decoding="async"><span class="sol-card__n">{{ s.n }}</span><span class="sol-card__k">{{ s.k }}</span></span>
-        <span class="sol-card__body">
-          <h3>{{ s.t }}</h3>
-          <span class="sol-card__h">{{ s.h }}</span>
-          <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ s.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
-          <span class="sol-card__foot"><span class="sol-card__avail"><sc-for list="{{ s.avail }}" as="a"><span>{{ a }}</span></sc-for></span><span class="sol-card__go">Explore <span class="arr" aria-hidden="true">→</span></span></span>
-        </span>
-      </a></sc-for>
-    </div>
-  </div>
-</section>
-
-<section id="who" class="sec who">
-  <div class="calm-bg" aria-hidden="true"><span class="calm-bg__year">2017</span></div>
-  <div class="wrap who__grid">
-    <div class="who__copy rv">
-      <span class="eyebrow">Who we are</span>
-      <h2 class="h-lg">Built where the work is hardest<span class="dot">.</span></h2>
-      <p class="lede">{{ cp.storyP }}</p>
-      <div class="where">
-        <div class="where__item"><span class="where__pin"><i class="ic ic-pin"></i></span><div><span class="kicker kicker--cyan">Europe · you contract here</span><b>Malta &amp; Spain · since 2026</b><span>OAKS SIYA Europe Limited</span><em><i class="ic ic-check"></i>Contract, invoicing (EUR) and governing law in the EU.</em></div></div>
-        <div class="where__item"><span class="where__pin"><i class="ic ic-pin"></i></span><div><span class="kicker kicker--cyan">India · we build here</span><b>Hyderabad · since 2017</b><span>OAKS Solutions Pvt Ltd · delivery centre</span></div></div>
+    <div class="explorer rv">
+      <div class="explorer__tabs" role="tablist" aria-label="Solutions">
+        <sc-for list="{{ solTabs }}" as="t"><button type="button" role="tab" class="explorer__tab {{ t.cls }}" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}"><span class="ic-tile ic-tile--sm"><i class="ic {{ t.icon }}"></i></span><span class="explorer__tt"><b>{{ t.t }}</b><span>{{ t.k }}</span></span></button></sc-for>
       </div>
-      <div class="flex"><a class="btn" href="/about">About OAKS <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/team">Meet the team <span class="arr" aria-hidden="true">→</span></a></div>
-    </div>
-    <div class="who__visual rv">
-      <div class="who__photo who__photo--main"><img sc-camel-src="assets/optimized/brochure-who-we-are.webp" alt="The OAKS team in a project review in Hyderabad" loading="lazy" decoding="async"></div>
-      <div class="who__photo who__photo--sub"><img sc-camel-src="assets/optimized/brochure-team-group.webp" alt="The OAKS team" loading="lazy" decoding="async"></div>
-      <div class="who__float">
-        <div class="leaders__faces"><sc-for list="{{ team }}" as="p"><img sc-camel-src="{{ p.img }}" alt="{{ p.name }}, {{ p.role }}" title="{{ p.name }} · {{ p.role }}" loading="lazy" decoding="async"></sc-for></div>
-        <span>50+ in-house specialists · India, Malta, Spain</span>
+      <div class="explorer__panel" role="tabpanel">
+        <div class="explorer__media"><img sc-camel-src="{{ sol.img }}" alt="" decoding="async"><span class="explorer__metric"><b>{{ sol.mv }}</b><span>{{ sol.ml }}</span></span></div>
+        <div class="explorer__body">
+          <span class="label label--plain">{{ sol.k }}</span>
+          <h3>{{ sol.t }}</h3>
+          <p class="explorer__h">{{ sol.h }}</p>
+          <ul class="ticks ticks--dark ticks--sm"><sc-for list="{{ sol.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+          <div class="chips-row"><span class="chips-row__k">Available as</span><sc-for list="{{ sol.avail }}" as="a"><span class="mini-chip">{{ a }}</span></sc-for></div>
+          <div class="flex"><a class="btn" href="{{ sol.href }}">See how it works <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/book">Book a demo <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="wrap">
-    <div class="sectors rv">
-      <span class="kicker">Sectors we serve</span>
-      <div class="sectors__row"><sc-for list="{{ sectors }}" as="x"><div class="sectors__item"><span class="ic-tile"><i class="ic {{ x.icon }}"></i></span><div><b>{{ x.t }}</b><span>{{ x.d }}</span></div></div></sc-for></div>
-    </div>
-  </div>
-</section>
-
-<section id="clients" class="sec">
-  <div class="wrap">
-    <div class="sec-head sec-head--wide rv">
-      <span class="eyebrow">Trusted by</span><h2 class="h-lg">20+ government and institutional clients<span class="dot">.</span></h2>
-      <p class="lede">{{ cp.clientsP }}</p>
-    </div>
-    <div class="lboard rv">
-  <div class="lboard__tier lboard__tier--emp">
-    <div class="lboard__label"><span class="kicker kicker--cyan">Empanelled with</span><span>India’s national education and quality agencies</span></div>
-    <ul class="lboard__emp"><sc-for list="{{ empanel }}" as="e"><li><span class="lboard__mark"><img sc-camel-src="{{ e.img }}" alt="{{ e.full }}" style="height: {{ e.h }}" loading="lazy" decoding="async"></span><b>{{ e.name }}</b><span>{{ e.line }}</span></li></sc-for></ul>
-  </div>
-  <div class="lboard__tier">
-    <div class="lboard__label"><span class="kicker kicker--cyan">Clients</span><span>Governments, universities and industry</span></div>
-    <div class="lboard__groups"><sc-for list="{{ cgroups }}" as="g"><div class="lboard__group"><span class="lboard__gt">{{ g.t }}</span><ul class="lboard__logos"><sc-for list="{{ g.items }}" as="c"><li><span class="lboard__img"><img sc-camel-src="{{ c.img }}" alt="{{ c.name }}" style="height: {{ c.h }}" loading="lazy" decoding="async"></span><span class="lboard__name">{{ c.name }}</span></li></sc-for></ul></div></sc-for></div>
-  </div>
-</div>
   </div>
 </section>
 
 <section id="impact" class="sec impact">
   <div class="wrap">
     <div class="sec-head sec-head--split rv">
-      <div class="grid" style="gap:18px"><span class="eyebrow">Delivered since 2017</span><h2 class="h-lg">Nine years, in numbers<span class="dot">.</span></h2></div>
+      <div class="grid" style="gap:16px"><span class="label label--dark">Proof</span><h2 class="h-lg">Proven at the scale of a state<span class="dot">.</span></h2></div>
       <p class="lede">{{ cp.impactP }}</p>
     </div>
     <div class="counters rv">
@@ -178,46 +194,69 @@
   </div>
 </section>
 
-<section id="how" class="sec how dots-bg">
+<section id="how" class="sec sec--mist">
   <div class="wrap">
-    <div class="sec-head sec-head--split rv">
-      <div class="grid" style="gap:18px"><span class="eyebrow">How we partner</span><h2 class="h-lg">Your brand in front. <br>Our team behind it<span class="dot">.</span></h2></div>
-      <p class="lede">{{ cp.howP }}</p>
+    <div class="sec-head sec-head--center rv">
+      <span class="label">How it works</span>
+      <h2 class="h-lg">From first call to a working prototype in two weeks<span class="dot">.</span></h2>
     </div>
-    <div class="start mt-s rv">
-      <div class="start__card"><span class="start__icon"><i class="ic ic-rocket"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Deploy</span><span class="pill">Live in weeks</span></span><h3>A proven OAKS solution<span class="dot">.</span></h3><p>Under your brand, or plugged in by API.</p></div></div>
-      <span class="start__or">OR</span>
-      <div class="start__card start__card--build"><span class="start__icon start__icon--solid"><i class="ic ic-code"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Build</span><span class="pill">Fixed price · 2 weeks</span></span><h3>Something new, with us<span class="dot">.</span></h3><p>A 2-week prototype in your repository.</p></div></div>
+    <div class="stepper rv">
+      <div class="stepper__nav" role="tablist" aria-label="How it works">
+        <sc-for list="{{ stepTabs }}" as="s"><button type="button" role="tab" class="stepper__tab {{ s.cls }}" aria-selected="{{ s.sel }}" onClick="{{ s.pick }}"><span class="stepper__n">{{ s.n }}</span><span class="stepper__tt"><b>{{ s.t }}</b><span>{{ s.when }}</span></span></button></sc-for>
+      </div>
+      <div class="stepper__bar" aria-hidden="true"><span style="width: {{ stepPct }}"></span></div>
+      <div class="stepper__panel" role="tabpanel">
+        <div class="stepper__copy">
+          <span class="label label--plain">Step {{ step.n }} · {{ step.when }}</span>
+          <h3>{{ step.t }}</h3>
+          <p>{{ step.d }}</p>
+          <div class="stepper__nav2"><button type="button" class="btn btn--line btn--sm" onClick="{{ stepPrev }}" disabled="{{ stepFirst }}">← Back</button><button type="button" class="btn btn--sm" onClick="{{ stepNext }}" disabled="{{ stepLast }}">Next step →</button></div>
+        </div>
+        <ul class="stepper__list"><sc-for list="{{ step.pts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      </div>
     </div>
-    <div class="own3 mt-m rv">
-      <div><span class="kicker">Partnering?</span><h3>You own <br>the client<span class="dot">.</span></h3></div>
-      <div><span class="kicker">Buying direct?</span><h3>You own <br>the outcome<span class="dot">.</span></h3></div>
-      <div><span class="kicker">Either way</span><h3>OAKS owns <br>delivery<span class="dot">.</span></h3></div>
+  </div>
+</section>
+
+<section id="pricing" class="sec">
+  <div class="wrap price-split">
+    <div class="rv">
+      <span class="label">Pricing</span>
+      <h2 class="h-lg mt-s">Senior people at €25 an hour<span class="dot">.</span></h2>
+      <p class="lede mt-s">{{ cp.priceP }}</p>
+      <ul class="ticks ticks--dark ticks--2 mt-m"><sc-for list="{{ includes }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+      <div class="flex mt-m"><a class="link-arrow" href="/partners#pricing">All partner models and pricing <span class="arr" aria-hidden="true">→</span></a></div>
     </div>
-    <div class="includes rv"><span class="kicker">Every engagement includes</span><ul><sc-for list="{{ includes }}" as="p"><li><i class="ic ic-check"></i>{{ p }}</li></sc-for></ul></div>
-    <div class="mt-m rv"><a class="btn btn--line" href="/partners#pricing">Partner model and pricing <span class="arr" aria-hidden="true">→</span></a></div>
+    <div class="calc rv">
+  <div class="calc__top"><b>Estimate your pod</b><span class="mini-chip mini-chip--cyan">€25/hr blended</span></div>
+  <label class="calc__label" for="pod-size"><span>Team size</span><b>{{ pods }} {{ podsWord }}</b></label>
+  <input id="pod-size" class="calc__range" type="range" min="1" max="12" step="1" value="{{ pods }}" onChange="{{ setPods }}" style="--fill: {{ podsFill }}">
+  <div class="calc__people" aria-hidden="true"><sc-for list="{{ podPeople }}" as="p"><i class="{{ p }}"></i></sc-for></div>
+  <div class="calc__out">
+    <div><span>Per month, about</span><b>€{{ podsMonth }}</b></div>
+    <div><span>Hours a month, about</span><b>{{ podsHours }}</b></div>
+  </div>
+  <p class="calc__note">Indicative: about €4,000 per full-time person a month (≈160 h × €25), billed monthly in EUR. Your price is agreed per engagement.</p>
+  <a class="btn btn--block" href="/book">Plan my pod <span class="arr" aria-hidden="true">→</span></a>
+</div>
   </div>
 </section>
 
 <section id="trust" class="sec sec--mist">
-  <div class="wrap split">
-    <div class="grid rv" style="gap:22px">
-      <span class="eyebrow">Trust · GDPR &amp; EU AI Act</span>
-      <h2 class="h-lg">Compliance built in, not bolted on<span class="dot">.</span></h2>
-      <p class="lede">{{ cp.trustP }}</p>
-      <ul class="ticks ticks--dark ticks--2">
-        <sc-for list="{{ trustPts }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for>
-      </ul>
-      <div class="flex"><a class="link-arrow" href="/trust">How we handle data and AI <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/trust#procurement">For your procurement team <span class="arr" aria-hidden="true">→</span></a></div>
+  <div class="wrap faq-split">
+    <div class="rv">
+      <span class="label">Trust</span>
+      <h2 class="h-lg mt-s">Compliance built in, not bolted on<span class="dot">.</span></h2>
+      <p class="lede mt-s">{{ cp.trustP }}</p>
+      <ul class="seal-mini mt-m"><sc-for list="{{ sealsFull }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="44" height="44" loading="lazy"><span><b>{{ b.t }}</b>{{ b.d }}</span></li></sc-for></ul>
+      <div class="flex mt-m"><a class="link-arrow" href="/trust">How we handle data and AI <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/trust#sub-processors">Sub-processors <span class="arr" aria-hidden="true">→</span></a></div>
     </div>
-    <ul class="seals seals--grid rv" aria-label="Compliance and certifications">
-      <sc-for list="{{ sealsFull }}" as="b"><li><img sc-camel-src="{{ b.img }}" alt="" width="96" height="96" loading="lazy"><b>{{ b.t }}</b><span>{{ b.d }}</span></li></sc-for>
-    </ul>
+    <div class="acc rv"><sc-for list="{{ faqs }}" as="f"><div class="acc__item {{ f.cls }}"><h3><button type="button" class="acc__q" aria-expanded="{{ f.open }}" onClick="{{ f.toggle }}"><span>{{ f.t }}</span><i class="acc__icon" aria-hidden="true"></i></button></h3><div class="acc__a"><div><p>{{ f.d }}</p></div></div></div></sc-for></div>
   </div>
 </section>
 
 <section class="cta-band" data-oaks-bg-scope="">
-  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" sc-camel-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" data-sm="" data-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
   <div class="wrap">
     <div class="inner rv">
@@ -274,204 +313,23 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { w: window.innerWidth, menuOpen: false };
+  state = { w: window.innerWidth, menuOpen: false, hero: 0, heroPinned: false, tab: 0, step: 0, pods: 4, faqOpen: 0 };
   PAGE = "/";
   NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
   D = {
-  "deliver": [
+  "glance3": [
     {
-      "n": "01",
-      "t": "AI Assessment Platform",
-      "sub": "Schools",
-      "href": "/solutions#assessments"
-    },
-    {
-      "n": "02",
-      "t": "AI Survey Analytics",
-      "sub": "Universities & govt",
-      "href": "/solutions#surveys"
-    },
-    {
-      "n": "03",
-      "t": "Document Intelligence",
-      "sub": "Records",
-      "href": "/solutions#document-intelligence"
-    },
-    {
-      "n": "04",
-      "t": "Gamified Hiring & L&D",
-      "sub": "HR programmes",
-      "href": "/solutions#upskilling"
-    },
-    {
-      "n": "05",
-      "t": "Dedicated delivery pods",
-      "sub": "Your extended team",
-      "href": "/solutions#dedicated-pods"
-    },
-    {
-      "n": "06",
-      "t": "Custom AI & Software",
-      "sub": "Under your brand",
-      "href": "/solutions#custom-ai"
-    }
-  ],
-  "glance": [
-    {
-      "v": "€25/hr",
-      "l": "blended rate across roles and seniority"
+      "v": "20+",
+      "l": "government & institutional clients"
     },
     {
       "v": "2 weeks",
-      "l": "to a fixed-price prototype, in your repository"
+      "l": "to a fixed-price prototype"
     },
     {
-      "v": "4–5 hrs",
-      "l": "shared working time every CET morning"
-    },
-    {
-      "v": "Flexible",
-      "l": "team scales up or down within 2 weeks"
-    }
-  ],
-  "models": [
-    {
-      "n": "01",
-      "t": "Custom build",
-      "d": "Prototype to production, to spec.",
-      "best": "New products",
-      "price": "Fixed price per milestone"
-    },
-    {
-      "n": "02",
-      "t": "White-label",
-      "d": "OAKS platforms under your name.",
-      "best": "Fast launch",
-      "price": "Setup fee + per user/year"
-    },
-    {
-      "n": "03",
-      "t": "API integration",
-      "d": "Our AI inside your platform.",
-      "best": "Software firms",
-      "price": "Volume-based"
-    },
-    {
-      "n": "04",
-      "t": "Revenue share",
-      "d": "Win together, share the upside.",
-      "best": "Co-selling",
-      "price": "Agreed % split"
-    },
-    {
-      "n": "05",
-      "t": "Dedicated pods",
-      "d": "Scale people up or down.",
-      "best": "Ongoing build",
-      "price": "€25/hr blended, billed monthly",
-      "hl": true
-    }
-  ],
-  "team": [
-    {
-      "name": "Suman Matcha",
-      "role": "CEO",
-      "d": "Founder, leading OAKS since 2017",
-      "img": "assets/optimized/brochure-team-suman.webp"
-    },
-    {
-      "name": "Divya Bandreddy",
-      "role": "Chief of Staff",
-      "d": "Delivery governance and operations",
-      "img": "assets/optimized/brochure-team-divya.webp"
-    },
-    {
-      "name": "Sai Gireesh Sabbu",
-      "role": "AI Lead",
-      "d": "Vision, language and voice models",
-      "img": "assets/optimized/brochure-team-gireesh.webp"
-    },
-    {
-      "name": "Navyatha Avula",
-      "role": "Head of Tech & DPO",
-      "d": "Data Protection Officer · navyatha@oaks.guru",
-      "img": "assets/optimized/brochure-team-navyatha.webp"
-    },
-    {
-      "name": "Gaddam Sampath Reddy",
-      "role": "Head of IT & Network Operations",
-      "d": "Network operations and IT administration · 16+ years in education and IT, five at Digiclass",
-      "img": "assets/optimized/brochure-team-sampath.webp"
-    },
-    {
-      "name": "Pavan Kumar Thota",
-      "role": "Head of Interactives",
-      "d": "Games, 3D and AR experiences",
-      "img": "assets/optimized/brochure-team-pavan.webp"
-    },
-    {
-      "name": "Haritha Gadamsetty",
-      "role": "Head of Content",
-      "d": "Curriculum and learning design",
-      "img": "assets/optimized/brochure-team-haritha.webp"
-    },
-    {
-      "name": "Sachin Menon",
-      "role": "Creative Head",
-      "d": "Brand, video and visual design",
-      "img": "assets/optimized/brochure-team-sachin.webp"
-    },
-    {
-      "name": "Mani Sankar Nakkala",
-      "role": "EU Account Lead",
-      "d": "Malta Operations · partnerships and pilots",
-      "img": "assets/optimized/brochure-team-mani.webp",
-      "eu": true
-    }
-  ],
-  "seals": [
-    {
-      "img": "assets/badges/gdpr.svg",
-      "t": "GDPR-ready",
-      "d": "DPA & EU hosting"
-    },
-    {
-      "img": "assets/badges/eu-ai-act.svg",
-      "t": "EU AI Act-aware",
-      "d": "Human oversight built in"
-    },
-    {
-      "img": "assets/badges/eu-entity.svg",
-      "t": "EU entity · Malta",
-      "d": "EUR contracts"
-    },
-    {
-      "img": "assets/badges/iso-27001.svg",
-      "t": "ISO 9001 & 27001",
-      "d": "Certified"
-    }
-  ],
-  "sealsFull": [
-    {
-      "img": "assets/badges/gdpr.svg",
-      "t": "GDPR-ready",
-      "d": "DPA signed before any personal data"
-    },
-    {
-      "img": "assets/badges/eu-ai-act.svg",
-      "t": "EU AI Act-aware",
-      "d": "Risk-classified per use case"
-    },
-    {
-      "img": "assets/badges/iso-9001.svg",
-      "t": "ISO 9001:2015",
-      "d": "Quality management"
-    },
-    {
-      "img": "assets/badges/iso-27001.svg",
-      "t": "ISO/IEC 27001:2022",
-      "d": "Information security"
+      "v": "€25/hr",
+      "l": "blended, billed monthly in EUR"
     }
   ],
   "sols": [
@@ -492,7 +350,11 @@ class Component extends DCLogic {
         "10+ hours saved per teacher, every week",
         "1.14M+ pupil works analysed, 95.6% handwriting accuracy",
         "Teachers approve every result"
-      ]
+      ],
+      "icon": "ic-cap",
+      "one": "Handwritten work marked and mapped to the curriculum",
+      "mv": "1.14M+",
+      "ml": "pupil works analysed by AI"
     },
     {
       "n": "02",
@@ -511,7 +373,11 @@ class Component extends DCLogic {
         "Every open answer understood and themed",
         "26,500+ students surveyed in 5 days across 33 districts",
         "Reports by region or team, with live dashboards"
-      ]
+      ],
+      "icon": "ic-mic",
+      "one": "Voice and text surveys, understood in any language",
+      "mv": "26,500+",
+      "ml": "students surveyed in 5 days"
     },
     {
       "n": "03",
@@ -530,7 +396,11 @@ class Component extends DCLogic {
         "Plain-language answers, each citing its source page",
         "200,000+ land deeds digitised, 100,000+ parcels linked",
         "Your record types, languages and rules"
-      ]
+      ],
+      "icon": "ic-doc",
+      "one": "Scanned records made searchable, every answer sourced",
+      "mv": "200,000+",
+      "ml": "land deeds digitised"
     },
     {
       "n": "04",
@@ -549,7 +419,11 @@ class Component extends DCLogic {
         "Self-paced onboarding with an AI guide for every joiner",
         "40K+ employees trained, 2M+ views of produced content",
         "Continuous AI upskilling with skill-gap analytics"
-      ]
+      ],
+      "icon": "ic-useradd",
+      "one": "Hire, onboard and upskill on real tasks",
+      "mv": "40K+",
+      "ml": "employees trained"
     },
     {
       "n": "05",
@@ -566,7 +440,11 @@ class Component extends DCLogic {
         "New people within two weeks — no hiring on your side",
         "About €4,000 per full-time person a month",
         "30-day notice; IP and source code are yours"
-      ]
+      ],
+      "icon": "ic-users",
+      "one": "A senior team at €25/hr, scaled within two weeks",
+      "mv": "€25/hr",
+      "ml": "blended rate, one monthly invoice"
     },
     {
       "n": "06",
@@ -584,127 +462,11 @@ class Component extends DCLogic {
         "A working demo every week",
         "Integrated with your APIs, LMS, HRMS and ERP",
         "IP and full source code assigned to you"
-      ]
-    }
-  ],
-  "empanel": [
-    {
-      "name": "QCI",
-      "full": "Quality Council of India",
-      "img": "assets/optimized/client-qci.webp",
-      "line": "Empanelled agency for e-learning module development",
-      "h": "35px"
-    },
-    {
-      "name": "EdCIL",
-      "full": "EdCIL (India) Ltd",
-      "img": "assets/optimized/client-edcil.webp",
-      "line": "Software solutions in education · OLabs rate contract",
-      "h": "40px"
-    },
-    {
-      "name": "NCERT",
-      "full": "National Council of Educational Research and Training",
-      "img": "assets/optimized/client-ncert.webp",
-      "line": "Digital content producer; PSSCIVE skill labs",
-      "h": "60px"
-    },
-    {
-      "name": "BECIL",
-      "full": "Broadcast Engineering Consultants India",
-      "img": "assets/optimized/client-becil.webp",
-      "line": "Empanelled back-end partner for digital learning material",
-      "h": "50px"
-    }
-  ],
-  "cgroups": [
-    {
-      "t": "Governments & public programmes",
-      "d": "State departments, school societies and national programmes",
-      "items": [
-        {
-          "name": "Samagra Shiksha",
-          "img": "assets/optimized/client-samagra.webp",
-          "h": "33px"
-        },
-        {
-          "name": "Government of Assam",
-          "img": "assets/optimized/client-assam.webp",
-          "h": "50px"
-        },
-        {
-          "name": "Government of Telangana",
-          "img": "assets/optimized/client-telangana.webp",
-          "h": "48px"
-        },
-        {
-          "name": "Government of Jharkhand",
-          "img": "assets/optimized/client-jharkhand.webp",
-          "h": "48px"
-        },
-        {
-          "name": "TSWREIS",
-          "img": "assets/optimized/client-tswreis.webp",
-          "h": "50px"
-        },
-        {
-          "name": "TGTWREIS",
-          "img": "assets/optimized/client-tgtwreis.webp",
-          "h": "49px"
-        },
-        {
-          "name": "MP Farmer Welfare & Agriculture",
-          "img": "assets/optimized/client-mp.webp",
-          "h": "38px"
-        }
-      ]
-    },
-    {
-      "t": "Universities & national bodies",
-      "d": "Research, evaluation and higher education",
-      "items": [
-        {
-          "name": "University of Malta",
-          "img": "assets/optimized/client-malta.webp",
-          "h": "27px"
-        },
-        {
-          "name": "IIT Bombay",
-          "img": "assets/optimized/client-iitb.webp",
-          "h": "48px"
-        },
-        {
-          "name": "UGC",
-          "img": "assets/optimized/client-ugc.webp",
-          "h": "50px"
-        }
-      ]
-    },
-    {
-      "t": "Industry",
-      "d": "Enterprise, mining and platform clients",
-      "items": [
-        {
-          "name": "Singareni Collieries",
-          "img": "assets/optimized/client-sccl.webp",
-          "h": "48px"
-        },
-        {
-          "name": "BGR Mining & Infra",
-          "img": "assets/optimized/client-bgr.webp",
-          "h": "29px"
-        },
-        {
-          "name": "YuppTV",
-          "img": "assets/optimized/client-yupptv.webp",
-          "h": "22px"
-        },
-        {
-          "name": "Vidura Digital",
-          "img": "assets/optimized/client-vidura.webp",
-          "h": "41px"
-        }
-      ]
+      ],
+      "icon": "ic-code",
+      "one": "A fixed-price prototype in two weeks",
+      "mv": "2 weeks",
+      "ml": "to a working prototype on your data"
     }
   ],
   "stats": [
@@ -733,77 +495,272 @@ class Component extends DCLogic {
       "l": "land deeds digitised"
     }
   ],
-  "sectors": [
-    {
-      "icon": "ic-cap",
-      "t": "Education",
-      "d": "Schools, universities, national agencies"
-    },
-    {
-      "icon": "ic-bank",
-      "t": "Government",
-      "d": "State departments and public programmes"
-    },
-    {
-      "icon": "ic-users",
-      "t": "Enterprise & HR",
-      "d": "Hiring, onboarding and upskilling"
-    },
-    {
-      "icon": "ic-doc",
-      "t": "Records",
-      "d": "Archives, land and operational records"
-    }
-  ],
-  "why": [
-    "Nine years of public-sector delivery",
-    "ISO 9001 & ISO 27001 certified",
-    "One EU contract. No offshore paperwork."
-  ],
   "includes": [
     "IP assigned to you",
     "Full source code",
     "Exit & handover plan",
     "30-day notice on pods"
   ],
-  "trustPts": [
-    "DPA signed before any personal data",
-    "EU hosting by default — AWS Frankfurt",
-    "People make every final call; every output logged",
-    "Your data never trains our models"
+  "sealsFull": [
+    {
+      "img": "assets/badges/gdpr.svg",
+      "t": "GDPR-ready",
+      "d": "DPA signed before any personal data"
+    },
+    {
+      "img": "assets/badges/eu-ai-act.svg",
+      "t": "EU AI Act-aware",
+      "d": "Risk-classified per use case"
+    },
+    {
+      "img": "assets/badges/iso-9001.svg",
+      "t": "ISO 9001:2015",
+      "d": "Quality management"
+    },
+    {
+      "img": "assets/badges/iso-27001.svg",
+      "t": "ISO/IEC 27001:2022",
+      "d": "Information security"
+    }
+  ],
+  "marquee": [
+    {
+      "name": "Samagra Shiksha",
+      "img": "assets/optimized/logo96-client-samagra.webp",
+      "h": "27px"
+    },
+    {
+      "name": "Government of Assam",
+      "img": "assets/optimized/logo96-client-assam.webp",
+      "h": "40px"
+    },
+    {
+      "name": "Government of Telangana",
+      "img": "assets/optimized/logo96-client-telangana.webp",
+      "h": "39px"
+    },
+    {
+      "name": "Government of Jharkhand",
+      "img": "assets/optimized/logo96-client-jharkhand.webp",
+      "h": "39px"
+    },
+    {
+      "name": "TSWREIS",
+      "img": "assets/optimized/logo96-client-tswreis.webp",
+      "h": "40px"
+    },
+    {
+      "name": "TGTWREIS",
+      "img": "assets/optimized/logo96-client-tgtwreis.webp",
+      "h": "39px"
+    },
+    {
+      "name": "MP Farmer Welfare & Agriculture",
+      "img": "assets/optimized/logo96-client-mp.webp",
+      "h": "30px"
+    },
+    {
+      "name": "University of Malta",
+      "img": "assets/optimized/logo96-client-malta.webp",
+      "h": "22px"
+    },
+    {
+      "name": "IIT Bombay",
+      "img": "assets/optimized/logo96-client-iitb.webp",
+      "h": "38px"
+    },
+    {
+      "name": "UGC",
+      "img": "assets/optimized/logo96-client-ugc.webp",
+      "h": "40px"
+    },
+    {
+      "name": "Singareni Collieries",
+      "img": "assets/optimized/logo96-client-sccl.webp",
+      "h": "39px"
+    },
+    {
+      "name": "BGR Mining & Infra",
+      "img": "assets/optimized/logo96-client-bgr.webp",
+      "h": "24px"
+    },
+    {
+      "name": "YuppTV",
+      "img": "assets/optimized/logo96-client-yupptv.webp",
+      "h": "17px"
+    },
+    {
+      "name": "Vidura Digital",
+      "img": "assets/optimized/logo96-client-vidura.webp",
+      "h": "33px"
+    },
+    {
+      "name": "Quality Council of India",
+      "img": "assets/optimized/logo96-client-qci.webp",
+      "h": "23px"
+    },
+    {
+      "name": "EdCIL (India) Ltd",
+      "img": "assets/optimized/logo96-client-edcil.webp",
+      "h": "27px"
+    },
+    {
+      "name": "National Council of Educational Research and Training",
+      "img": "assets/optimized/logo96-client-ncert.webp",
+      "h": "40px"
+    },
+    {
+      "name": "Broadcast Engineering Consultants India",
+      "img": "assets/optimized/logo96-client-becil.webp",
+      "h": "33px"
+    }
+  ],
+  "steps": [
+    {
+      "n": "01",
+      "when": "This week",
+      "t": "Book a call",
+      "d": "A 30-minute call with our EU desk, at no cost. Bring your requirements, or an existing OAKS solution you want adapted for your market.",
+      "pts": [
+        "30 minutes, no cost",
+        "EU desk in Malta, 09:00–17:00 CET",
+        "Your requirements, or a proven OAKS solution"
+      ]
+    },
+    {
+      "n": "02",
+      "when": "Week 1",
+      "t": "Scope one workflow",
+      "d": "Together we pick one workflow to prove, and agree the goal, the data and how success is measured.",
+      "pts": [
+        "Goals, data and success measures",
+        "DPA signed before any personal data",
+        "A fixed price, agreed up front"
+      ]
+    },
+    {
+      "n": "03",
+      "when": "Weeks 1–2",
+      "t": "Fixed-price prototype",
+      "d": "We build it on your data, in your repository, and show you a working demo every week.",
+      "pts": [
+        "Fixed price, on your data, in two weeks",
+        "Built in your repository",
+        "A working demo every week"
+      ]
+    },
+    {
+      "n": "04",
+      "when": "Then",
+      "t": "Decide on a pod",
+      "d": "After the demos, you decide. Scale with a dedicated pod billed monthly in euros, with the IP and source code assigned to you.",
+      "pts": [
+        "€25/hr blended, one monthly invoice in EUR",
+        "Team scales up or down within two weeks",
+        "30-day notice; IP and source code are yours"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "t": "Who owns the IP and the code?",
+      "d": "You do. The IP is assigned to you on payment, together with the full source code."
+    },
+    {
+      "t": "Where is our data held?",
+      "d": "In the EU, on AWS Frankfurt, by default. Support from India runs under standard contractual clauses; EU-only access is available on request."
+    },
+    {
+      "t": "How do you handle the EU AI Act?",
+      "d": "Each use case is risk-classified. For high-risk uses such as education assessment and HR screening, people make every final call, every output is logged and bias is tested before go-live."
+    },
+    {
+      "t": "Does our data train your models?",
+      "d": "Never. Your data does not train our models, or any third party’s."
+    },
+    {
+      "t": "Who do we contract with?",
+      "d": "OAKS SIYA Europe Limited, our Malta entity, under Malta law, invoiced monthly in EUR."
+    },
+    {
+      "t": "What happens if we want to exit?",
+      "d": "Every engagement includes a handover plan and the source code, with 30 days’ notice on pods."
+    }
+  ],
+  "heroT": [
+    {
+      "t": "Assessment",
+      "proof": "1.14M+ pupil works analysed"
+    },
+    {
+      "t": "Surveys",
+      "proof": "26,500+ students surveyed in 5 days"
+    },
+    {
+      "t": "Records",
+      "proof": "200,000+ land deeds digitised"
+    }
+  ],
+  "wave": [
+    "30%",
+    "55%",
+    "80%",
+    "45%",
+    "95%",
+    "60%",
+    "35%",
+    "70%",
+    "100%",
+    "50%",
+    "25%",
+    "65%",
+    "85%",
+    "40%",
+    "75%",
+    "55%",
+    "30%",
+    "90%",
+    "60%",
+    "45%",
+    "70%",
+    "35%",
+    "80%",
+    "50%"
+  ],
+  "themes": [
+    {
+      "t": "Facilities",
+      "w": "38%"
+    },
+    {
+      "t": "Teaching",
+      "w": "27%"
+    },
+    {
+      "t": "Wellbeing",
+      "w": "21%"
+    }
   ]
 };
   CP = {
-  "heroK": [
-    "International Edition 2026 · Valletta, Malta",
-    "Valletta · Malta · 2026"
-  ],
   "heroP": [
-    "EU contract and accountability. India-scale engineering.",
-    "EU contract and accountability. India-scale engineering."
+    "Production AI for assessment, surveys, records and hiring, proven with governments and national agencies. Delivered under an EU contract, built by an in-house team since 2017.",
+    "Production AI, proven with governments. Delivered under an EU contract."
   ],
   "solP": [
-    "Not pilots. Each solution runs in live programmes with figures on record — deploy it under your brand, plug it in by API, or have us build something new.",
+    "Not pilots. Each one runs in live programmes with figures on record. Deploy it under your brand, plug it in by API, or have us build something new.",
     "Each one runs in live programmes, with figures on record."
   ],
-  "storyP": [
-    "Since 2017, OAKS has built AI for governments, national agencies and industry — for handwritten records, many languages and first-time users. Today we bring it to partners across Europe.",
-    "AI for governments, agencies and industry since 2017. Today, for partners across Europe."
-  ],
-  "clientsP": [
-    "AI proven with governments and national agencies — empanelled with India’s national education and quality bodies, and trusted by universities and industry.",
-    "Empanelled with national agencies; trusted by governments, universities and industry."
-  ],
   "impactP": [
-    "Nine years of public-sector delivery, at the scale of a state. Every figure comes from programme records or a client’s written confirmation.",
-    "Nine years of public-sector delivery, at state scale."
+    "Nine years of public-sector delivery. Every figure comes from programme records or a client’s written confirmation.",
+    "Nine years of public-sector delivery, on record."
   ],
-  "howP": [
-    "Deploy a proven OAKS solution, or build something new with us — always under your brand. Whichever you choose, OAKS owns delivery.",
-    "Deploy a proven solution or build something new. OAKS owns delivery."
+  "priceP": [
+    "One blended rate across roles and seniority, one monthly invoice in euros. Your team scales up or down within two weeks.",
+    "One blended rate, one monthly invoice in euros."
   ],
   "trustP": [
-    "Your clients ask about data and AI first. We answer in writing, before kickoff — and your clients stay the data controller.",
+    "Your clients ask about data and AI first. We answer in writing, before kickoff, and your clients stay the data controller.",
     "Data and AI questions answered in writing, before kickoff."
   ],
   "ctaP": [
@@ -816,6 +773,7 @@ class Component extends DCLogic {
     this.onR(); window.addEventListener('resize', this.onR);
     // Pages render client-side, so a #fragment from a link or redirect is scrolled to once the section exists.
     if (location.hash.length > 1) setTimeout(() => { const el = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (!el) return; const h = document.documentElement; h.style.scrollBehavior = 'auto'; el.scrollIntoView(); h.style.scrollBehavior = ''; }, 300);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) this.heroTimer = setInterval(() => { if (!this.state.heroPinned && !document.hidden) this.setState(s => ({ hero: (s.hero + 1) % 3 })); }, 5500);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onR); document.body.style.overflow = ''; }
   setMenu(open) { document.body.style.overflow = open ? 'hidden' : ''; this.setState({ menuOpen: open }); }
@@ -823,12 +781,32 @@ class Component extends DCLogic {
     const s = this.state, mob = (s.w || 1280) < 768;
     const R = {
       ...this.D, mob,
+      vp: Object.fromEntries(Object.entries(this.D.vp || {}).map(([k, v]) => [k, mob ? v[1] : v[0]])), // hero poster: [desktop, 960px phone cut]
       nav: this.NAV.map(([label, href]) => ({ label, href, cur: href === this.PAGE ? 'page' : undefined })),
+      cur: (p => ({ solutions: p === '/solutions' ? 'page' : undefined, partners: p === '/partners' ? 'page' : undefined, trust: p === '/trust' ? 'page' : undefined,
+        company: ['/about', '/team', '/contact'].includes(p) ? 'page' : undefined, about: p === '/about' ? 'page' : undefined, team: p === '/team' ? 'page' : undefined, contact: p === '/contact' ? 'page' : undefined }))(this.PAGE),
       menuOpen: s.menuOpen, hdrCls: s.menuOpen ? 'is-open' : '', menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
       toggleMenu: () => this.setMenu(!s.menuOpen), closeMenu: () => this.setMenu(false),
       cp: Object.fromEntries(Object.entries(this.CP).map(([k, v]) => [k, mob ? v[1] : v[0]])),
     };
-    R.sols = R.sols.map(x => ({ ...x, pts: x.pts.slice(0, 3) }));
+    R.solTabs = this.D.sols.map((x, i) => ({ t: x.t, k: x.k, icon: x.icon, cls: i === s.tab ? 'is-on' : '', sel: i === s.tab ? 'true' : 'false', pick: () => this.setState({ tab: i }) }));
+    R.sol = this.D.sols[s.tab];
+    const st = s.step, ns = this.D.steps.length;
+    R.stepTabs = this.D.steps.map((x, i) => ({ ...x, cls: i === st ? 'is-on' : i < st ? 'is-done' : '', sel: i === st ? 'true' : 'false', pick: () => this.setState({ step: i }) }));
+    R.step = this.D.steps[st]; R.stepPct = ((st + 1) / ns * 100) + '%';
+    R.stepPrev = () => this.setState({ step: Math.max(0, st - 1) }); R.stepNext = () => this.setState({ step: Math.min(ns - 1, st + 1) });
+    R.stepFirst = st === 0; R.stepLast = st === ns - 1;
+    const n = s.pods;
+    R.pods = n; R.podsWord = n === 1 ? 'person' : 'people';
+    R.podsMonth = (n * 4000).toLocaleString('en-GB'); R.podsHours = (n * 160).toLocaleString('en-GB');
+    R.podsFill = ((n - 1) / 11 * 100) + '%';
+    R.podPeople = Array.from({ length: 12 }, (_, i) => i < n ? 'on' : '');
+    R.setPods = e => this.setState({ pods: +e.target.value });
+    R.faqs = this.D.faq.map((f, i) => ({ ...f, cls: s.faqOpen === i ? 'is-open' : '', open: s.faqOpen === i ? 'true' : 'false', toggle: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) }));
+    const h = s.hero;
+    R.heroTabs = this.D.heroT.map((x, i) => ({ t: x.t, cls: i === h ? 'is-on' : '', sel: i === h ? 'true' : 'false', pick: () => this.setState({ hero: i, heroPinned: true }) }));
+    R.hero0 = h === 0; R.hero1 = h === 1; R.hero2 = h === 2; R.heroProof = this.D.heroT[h].proof;
+
     return R;
   }
 }

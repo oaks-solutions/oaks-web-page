@@ -29,10 +29,11 @@ with sync_playwright() as p:
     assert not page.evaluate('document.documentElement.scrollWidth > innerWidth'), 'mobile overflow'
     page.screenshot(path='/private/tmp/oaks-mobile-optimized.png')
     page.close()
+    # The home hero is a product preview; a page with a background hero clip checks lazy loading and pausing.
     page=browser.new_page(viewport={'width':1440,'height':900})
-    page.goto(base,wait_until='domcontentloaded')
+    page.goto(base+'partners',wait_until='domcontentloaded')
     page.wait_for_selector('#hero h1')
-    assert page.locator('#hero video').evaluate_all('(vs)=>vs.filter(v=>v.hasAttribute("src")).length')==1
+    page.wait_for_function('document.querySelector("#hero video").getAttribute("src")')
     page.locator('#hero button[data-oaks-bg]').click()
     page.wait_for_function('document.querySelector("#hero video").paused')
     page.locator('.cta-band video').scroll_into_view_if_needed()
@@ -42,7 +43,7 @@ with sync_playwright() as p:
     page=browser.new_page(viewport={'width':1440,'height':900})
     page.goto(base+'solutions',wait_until='domcontentloaded')
     page.wait_for_selector('#surveys .vizmap path')
-    assert page.locator('#hero video').evaluate_all('(vs)=>vs.filter(v=>v.hasAttribute("src")).length')==1
+    page.wait_for_function('document.querySelector("#hero video").getAttribute("src")')
     assert not page.locator('#upskilling video').get_attribute('src'), 'offscreen clip loaded early'
     browser.close()
     print(json.dumps({'pages':results,'mobile':'passed','reduced_motion':'no video requests','lazy_loading':'passed'},indent=2))

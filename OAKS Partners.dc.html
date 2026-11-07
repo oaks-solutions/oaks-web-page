@@ -32,13 +32,15 @@
 <meta name="theme-color" content="#0f1840">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/video/stock-pexels-8033300.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/video/stock-pexels-8033300-sm.webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/video/stock-pexels-8033300.webp" media="(min-width: 768px)" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css?v=6fd3229a">
 <link rel="stylesheet" href="assets/player.css?v=92ebb20c">
+<link rel="stylesheet" href="assets/ui.css?v=0583c1e7">
 <script defer src="assets/vendor/react-18.3.1.min.js"></script>
 <script defer src="assets/vendor/react-dom-18.3.1.min.js"></script>
-<script defer src="media.js?v=89ef59f3"></script>
-<script defer src="assets/site.js?v=39e84a23"></script>
+<script defer src="media.js?v=828f5394"></script>
+<script defer src="assets/site.js?v=53dd3908"></script>
 <script defer src="./support.js?v=951ae391"></script>
 </head>
 <body>
@@ -55,15 +57,38 @@
     <div class="header-row">
       <a class="brand" href="/" aria-label="OAKS Solutions home"><img sc-camel-src="assets/optimized/assets_oaks-logo-white.webp" alt="OAKS Solutions" width="107" height="38" decoding="async"></a>
       <nav class="nav" aria-label="Main">
-        <sc-for list="{{ nav }}" as="l"><a href="{{ l.href }}" aria-current="{{ l.cur }}">{{ l.label }}</a></sc-for>
+        <div class="nav__item">
+          <a class="nav__top" href="/solutions" aria-current="{{ cur.solutions }}" aria-haspopup="true">Solutions<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega">
+            <div class="mega__grid"><a class="mega__link" href="/solutions#assessments"><span class="ic-tile ic-tile--sm"><i class="ic ic-cap"></i></span><span><b>AI Assessment Platform</b><span>Handwritten work marked and mapped to the curriculum</span></span></a><a class="mega__link" href="/solutions#surveys"><span class="ic-tile ic-tile--sm"><i class="ic ic-mic"></i></span><span><b>AI Survey Analytics</b><span>Voice and text surveys, understood in any language</span></span></a><a class="mega__link" href="/solutions#document-intelligence"><span class="ic-tile ic-tile--sm"><i class="ic ic-doc"></i></span><span><b>Document Intelligence</b><span>Scanned records made searchable, every answer sourced</span></span></a><a class="mega__link" href="/solutions#upskilling"><span class="ic-tile ic-tile--sm"><i class="ic ic-useradd"></i></span><span><b>Gamified Hiring &amp; L&amp;D</b><span>Hire, onboard and upskill on real tasks</span></span></a><a class="mega__link" href="/solutions#dedicated-pods"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Dedicated delivery pods</b><span>A senior team at €25/hr, scaled within two weeks</span></span></a><a class="mega__link" href="/solutions#custom-ai"><span class="ic-tile ic-tile--sm"><i class="ic ic-code"></i></span><span><b>Custom AI &amp; Software</b><span>A fixed-price prototype in two weeks</span></span></a></div>
+            <div class="mega__side"><span class="kicker kicker--cyan">Not sure where to start?</span><b>Talk it through with our EU desk in 30 minutes.</b><a class="link-arrow" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/solutions">All solutions <span class="arr" aria-hidden="true">→</span></a></div>
+          </div>
+        </div>
+        <a class="nav__top" href="/partners" aria-current="{{ cur.partners }}">Pricing</a>
+        <a class="nav__top" href="/trust" aria-current="{{ cur.trust }}">Trust</a>
+        <div class="nav__item">
+          <a class="nav__top" href="/about" aria-current="{{ cur.company }}" aria-haspopup="true">Company<i class="nav__chev" aria-hidden="true"></i></a>
+          <div class="mega mega--sm">
+            <a class="mega__link" href="/about"><span class="ic-tile ic-tile--sm"><i class="ic ic-globe"></i></span><span><b>About OAKS</b><span>Malta contract, Hyderabad delivery, since 2017</span></span></a>
+            <a class="mega__link" href="/team"><span class="ic-tile ic-tile--sm"><i class="ic ic-users"></i></span><span><b>Team</b><span>The people who lead your delivery</span></span></a>
+            <a class="mega__link" href="/contact"><span class="ic-tile ic-tile--sm"><i class="ic ic-mail"></i></span><span><b>Contact</b><span>EU desk, offices and enquiries</span></span></a>
+          </div>
+        </div>
       </nav>
+      <a class="nav__desk" href="tel:+35699786876"><i class="ic ic-phone" aria-hidden="true"></i>EU desk</a>
       <a class="btn btn--sm header-cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a>
       <button class="menu-btn" type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
   <sc-if value="{{ menuOpen }}">
     <nav class="mobile-menu" aria-label="Mobile">
-      <sc-for list="{{ nav }}" as="l"><a class="m-link" href="{{ l.href }}" aria-current="{{ l.cur }}" onClick="{{ closeMenu }}">{{ l.label }}</a></sc-for>
+      <span class="m-group">Solutions</span>
+      <div class="m-sols"><a href="/solutions#assessments" onClick="{{ closeMenu }}"><i class="ic ic-cap"></i>AI Assessment Platform</a><a href="/solutions#surveys" onClick="{{ closeMenu }}"><i class="ic ic-mic"></i>AI Survey Analytics</a><a href="/solutions#document-intelligence" onClick="{{ closeMenu }}"><i class="ic ic-doc"></i>Document Intelligence</a><a href="/solutions#upskilling" onClick="{{ closeMenu }}"><i class="ic ic-useradd"></i>Gamified Hiring &amp; L&amp;D</a><a href="/solutions#dedicated-pods" onClick="{{ closeMenu }}"><i class="ic ic-users"></i>Dedicated delivery pods</a><a href="/solutions#custom-ai" onClick="{{ closeMenu }}"><i class="ic ic-code"></i>Custom AI &amp; Software</a></div>
+      <a class="m-link" href="/partners" aria-current="{{ cur.partners }}" onClick="{{ closeMenu }}">Pricing</a>
+      <a class="m-link" href="/trust" aria-current="{{ cur.trust }}" onClick="{{ closeMenu }}">Trust</a>
+      <a class="m-link" href="/about" aria-current="{{ cur.about }}" onClick="{{ closeMenu }}">About</a>
+      <a class="m-link" href="/team" aria-current="{{ cur.team }}" onClick="{{ closeMenu }}">Team</a>
+      <a class="m-link" href="/contact" aria-current="{{ cur.contact }}" onClick="{{ closeMenu }}">Contact</a>
       <a class="btn" href="/book" onClick="{{ closeMenu }}">Book a 30-minute call <span class="arr" aria-hidden="true">→</span></a>
       <div class="m-contact"><span>EU desk · Malta · 09:00–17:00 CET</span><a href="tel:+35699786876">+356 9978 6876</a><a href="mailto:info@oaks.guru">info@oaks.guru</a></div>
     </nav>
@@ -73,7 +98,7 @@
 <main id="main">
 
 <section id="hero" class="hero hero--rule" data-oaks-bg-scope="">
-  <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-8033300.mp4" sc-camel-poster="assets/video/stock-pexels-8033300.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+  <div class="hero__media hero__media--kb"><video data-src="assets/video/stock-pexels-8033300.mp4" data-sm="" sc-camel-poster="{{ vp.p8033300 }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
   <div class="wrap"><div class="hero__inner">
     <span class="eyebrow">Partner model</span>
@@ -82,17 +107,27 @@
   </div></div>
   <div class="footage-note"><span class="txt">Illustrative footage</span><button class="bg-toggle" type="button" data-oaks-bg="" aria-label="Pause background video"><i class="ic ic-pause"></i><i class="ic ic-play"></i></button></div>
 </section>
+<nav class="subnav" aria-label="On this page"><div class="wrap subnav__row"><a href="#models"><i class="ic ic-layers" aria-hidden="true"></i>Partner models</a><a href="#launch"><i class="ic ic-rocket" aria-hidden="true"></i>What you can launch</a><a href="#pricing"><i class="ic ic-euro" aria-hidden="true"></i>Commercials</a><a href="#estimate"><i class="ic ic-users" aria-hidden="true"></i>Estimate a pod</a><a class="subnav__cta" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a></div></nav>
 
-<section class="sec dots-bg">
+<section class="sec">
   <div class="wrap">
-    <div class="statement-row rv"><span class="kicker">How we partner</span><p class="statement">Two ways to start. Five ways to work with us. <span class="hl">OAKS owns delivery.</span></p></div>
-    <div class="start mt-m rv">
+    <div class="sec-head sec-head--center rv"><span class="label">How we partner</span><h2 class="h-lg">Two ways to start. Five ways to work with us<span class="dot">.</span></h2></div>
+    <div class="start rv">
       <div class="start__card"><span class="start__icon"><i class="ic ic-rocket"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Deploy</span><span class="pill">Live in weeks</span></span><h3>A proven OAKS solution<span class="dot">.</span></h3><p>Under your brand, or plugged in by API.</p></div></div>
       <span class="start__or">OR</span>
       <div class="start__card start__card--build"><span class="start__icon start__icon--solid"><i class="ic ic-code"></i></span><div><span class="start__top"><span class="kicker kicker--cyan">Build</span><span class="pill">Fixed price · 2 weeks</span></span><h3>Something new, with us<span class="dot">.</span></h3><p>A 2-week prototype in your repository.</p></div></div>
     </div>
-    <span class="kicker mt-l" style="display:block">Five ways to work with us</span>
-    <div class="ways mt-s rv"><sc-for list="{{ models }}" as="m"><div class="way"><span class="way__n">{{ m.n }}</span><b>{{ m.t }}</b><span class="way__d">{{ m.d }}</span><span class="way__best"><span class="kicker">Best for</span><span>{{ m.best }}</span></span></div></sc-for></div>
+    <div id="models" class="models mt-l rv">
+      <div class="models__tabs" role="tablist" aria-label="Partner models"><sc-for list="{{ modelTabs }}" as="m"><button type="button" role="tab" class="models__tab {{ m.cls }}" aria-selected="{{ m.sel }}" onClick="{{ m.pick }}"><span class="models__n">{{ m.n }}</span><span class="models__tt"><b>{{ m.t }}</b><span>{{ m.best }}</span></span></button></sc-for></div>
+      <div class="models__panel" role="tabpanel">
+        <span class="label label--plain">Model {{ model.n }} of 5</span>
+        <h3>{{ model.t }}</h3>
+        <p class="models__d">{{ model.d }}</p>
+        <dl class="models__facts"><div><dt>Best for</dt><dd>{{ model.best }}</dd></div><div><dt>How it’s priced</dt><dd>{{ model.price }}</dd></div></dl>
+        <ul class="ticks ticks--dark ticks--2"><sc-for list="{{ includes }}" as="p"><li><i class="ic ic-check"></i><span>{{ p }}</span></li></sc-for></ul>
+        <div class="flex"><a class="btn" href="/book">Talk about this model <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="#estimate">Estimate a pod <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
     <div id="launch" class="launch mt-l">
       <div class="rv"><span class="kicker">What you can launch</span>
         <div class="matrix mt-s" role="table" aria-label="What you can launch, and how">
@@ -100,12 +135,9 @@
           <sc-for list="{{ matrix }}" as="r"><div class="mrow" role="row"><a role="rowheader" href="{{ r.href }}">{{ r.t }}</a><sc-for list="{{ r.c }}" as="c"><span role="cell"><sc-if value="{{ c.y }}"><span class="tick tick--line" role="img" aria-label="Available"><i class="ic ic-check"></i></span></sc-if><sc-if value="{{ c.n }}"><span class="dash" role="img" aria-label="Not offered"></span></sc-if></span></sc-for></div></sc-for>
         </div>
       </div>
-      <div id="pricing-basis" class="rv"><span class="kicker">How it’s priced</span>
-        <div class="pricetable mt-s" role="table" aria-label="How each model is priced">
-          <div class="prow phead" role="row"><span role="columnheader">Model</span><span role="columnheader">Pricing basis</span></div>
-          <sc-for list="{{ models }}" as="m"><div class="prow {{ m.hlCls }}" role="row"><b role="rowheader">{{ m.t }}</b><span role="cell">{{ m.price }}</span></div></sc-for>
-        </div>
-        <p class="fine mt-s">Pods: about €4,000 per full-time person a month.</p>
+      <div class="rv"><span class="kicker">Ready to go further?</span>
+        <p class="lede mt-s">Every model starts the same way: a 30-minute call, then a fixed-price prototype on your data in two weeks.</p>
+        <div class="flex mt-m"><a class="btn" href="/book">Book a call <span class="arr" aria-hidden="true">→</span></a><a class="link-arrow" href="/solutions">Browse solutions <span class="arr" aria-hidden="true">→</span></a></div>
       </div>
     </div>
     <div class="own3 mt-l rv">
@@ -146,15 +178,24 @@
         <div class="rows mt-s"><sc-for list="{{ how }}" as="x"><div class="row"><span class="row__n">{{ x.n }}</span><h3>{{ x.t }}</h3><p>{{ x.d }}</p></div></sc-for></div>
       </div>
     </div>
-    <span class="kicker mt-l" style="display:block">Worked example · a 4-person pod</span>
-    <div class="worked mt-s rv">
-      <span class="worked__faces"><sc-for list="{{ pod }}" as="p"><img sc-camel-src="{{ p.img }}" alt="" loading="lazy" decoding="async"></sc-for></span>
-      <div><b>4 people</b><span>one dedicated pod</span></div><i>×</i>
-      <div><b>~160 hrs</b><span>each, per month</span></div><i>×</i>
-      <div><b>€25</b><span>per hour</span></div><i>=</i>
-      <div class="worked__total"><span class="kicker kicker--cyan">About</span><b>€16,000</b><span>/ month</span></div>
+    <div id="estimate" class="price-split mt-l">
+      <div class="rv"><span class="label">Estimate your pod</span><h2 class="h-lg mt-s">See what a pod costs<span class="dot">.</span></h2>
+        <p class="lede mt-s">Move the slider to size your team. A typical 4-person pod is about €16,000 a month: 4 people × ~160 hours × €25.</p>
+        <p class="fine mt-s">Illustrative only. Based on about 160 working hours per person a month; VAT extra where applicable. Rate confirmed per project; billed monthly.</p>
+      </div>
+      <div class="calc rv">
+  <div class="calc__top"><b>Estimate your pod</b><span class="mini-chip mini-chip--cyan">€25/hr blended</span></div>
+  <label class="calc__label" for="pod-size"><span>Team size</span><b>{{ pods }} {{ podsWord }}</b></label>
+  <input id="pod-size" class="calc__range" type="range" min="1" max="12" step="1" value="{{ pods }}" onChange="{{ setPods }}" style="--fill: {{ podsFill }}">
+  <div class="calc__people" aria-hidden="true"><sc-for list="{{ podPeople }}" as="p"><i class="{{ p }}"></i></sc-for></div>
+  <div class="calc__out">
+    <div><span>Per month, about</span><b>€{{ podsMonth }}</b></div>
+    <div><span>Hours a month, about</span><b>{{ podsHours }}</b></div>
+  </div>
+  <p class="calc__note">Indicative: about €4,000 per full-time person a month (≈160 h × €25), billed monthly in EUR. Your price is agreed per engagement.</p>
+  <a class="btn btn--block" href="/book">Plan my pod <span class="arr" aria-hidden="true">→</span></a>
+</div>
     </div>
-    <p class="fine mt-s">Illustrative only. Based on about 160 working hours per person a month; VAT extra where applicable. Rate confirmed per project; billed monthly.</p>
     <span class="kicker mt-l" style="display:block">What never changes</span>
     <p class="statement statement--sm mt-s">A lower rate never means a lower standard.</p>
     <div class="never mt-m rv"><sc-for list="{{ never }}" as="x"><div><b>{{ x.t }}</b><span>{{ x.d }}</span></div></sc-for></div>
@@ -166,7 +207,7 @@
 </section>
 
 <section class="cta-band" data-oaks-bg-scope="">
-  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" sc-camel-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
+  <div class="hero__media"><video data-src="assets/video/stock-pexels-5311422.mp4" data-sm="" data-poster="assets/video/stock-pexels-5311422.webp" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" aria-hidden="true"></video></div>
   <div class="hero__shade"></div>
   <div class="wrap">
     <div class="inner rv">
@@ -223,7 +264,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { w: window.innerWidth, menuOpen: false };
+  state = { w: window.innerWidth, menuOpen: false, model: 4, pods: 4 };
   PAGE = "/partners";
   NAV = [["Home", "/"], ["Solutions", "/solutions"], ["Partners & pricing", "/partners"], ["Trust", "/trust"], ["About", "/about"], ["Team", "/team"], ["Contact", "/contact"]];
   // Page content. Phone copy is written separately: CP holds [desktop, phone] pairs (phone = below 768px).
@@ -416,7 +457,13 @@ class Component extends DCLogic {
     "Built in your repository",
     "A working demo every week",
     "Then scale into a dedicated pod"
-  ]
+  ],
+  "vp": {
+    "p8033300": [
+      "assets/video/stock-pexels-8033300.webp",
+      "assets/video/stock-pexels-8033300-sm.webp"
+    ]
+  }
 };
   CP = {
   "heroP": [
@@ -444,11 +491,22 @@ class Component extends DCLogic {
     const s = this.state, mob = (s.w || 1280) < 768;
     const R = {
       ...this.D, mob,
+      vp: Object.fromEntries(Object.entries(this.D.vp || {}).map(([k, v]) => [k, mob ? v[1] : v[0]])), // hero poster: [desktop, 960px phone cut]
       nav: this.NAV.map(([label, href]) => ({ label, href, cur: href === this.PAGE ? 'page' : undefined })),
+      cur: (p => ({ solutions: p === '/solutions' ? 'page' : undefined, partners: p === '/partners' ? 'page' : undefined, trust: p === '/trust' ? 'page' : undefined,
+        company: ['/about', '/team', '/contact'].includes(p) ? 'page' : undefined, about: p === '/about' ? 'page' : undefined, team: p === '/team' ? 'page' : undefined, contact: p === '/contact' ? 'page' : undefined }))(this.PAGE),
       menuOpen: s.menuOpen, hdrCls: s.menuOpen ? 'is-open' : '', menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
       toggleMenu: () => this.setMenu(!s.menuOpen), closeMenu: () => this.setMenu(false),
       cp: Object.fromEntries(Object.entries(this.CP).map(([k, v]) => [k, mob ? v[1] : v[0]])),
     };
+    R.modelTabs = this.D.models.map((m, i) => ({ ...m, cls: i === s.model ? 'is-on' : '', sel: i === s.model ? 'true' : 'false', pick: () => this.setState({ model: i }) }));
+    R.model = this.D.models[s.model];
+    const n = s.pods;
+    R.pods = n; R.podsWord = n === 1 ? 'person' : 'people';
+    R.podsMonth = (n * 4000).toLocaleString('en-GB'); R.podsHours = (n * 160).toLocaleString('en-GB');
+    R.podsFill = ((n - 1) / 11 * 100) + '%';
+    R.podPeople = Array.from({ length: 12 }, (_, i) => i < n ? 'on' : '');
+    R.setPods = e => this.setState({ pods: +e.target.value });
     return R;
   }
 }

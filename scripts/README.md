@@ -1,7 +1,7 @@
 Performance tools
 
 - `optimize-assets.py` creates smaller WebP copies of referenced images and WOFF2 fonts. Originals remain available. This also syncs the homepage to index.html. Requires Pillow, fonttools and brotli.
-- `optimize-videos.py` creates silent eight-second hero/background clips with fast-start MP4 metadata and WebP posters. Requires imageio-ffmpeg and network access to the original videos.
+- `optimize-videos.py` creates silent hero/background clips with fast-start MP4 metadata and WebP posters, plus a 960px `-sm` cut of each for phones. Requires imageio-ffmpeg and network access to the original videos.
 - `serve.py` previews the site locally with the same clean URLs, 301 redirects and 404 page as production (it reads `vercel.json`): `python3 scripts/serve.py 8000`, then open http://localhost:8000/.
 - `check-site.py` checks all pages, mobile layout, reduced-motion handling and viewport-driven video loading. Requires Playwright and a server on port 8000. Set CHROME_PATH to an installed Chromium executable if needed.
 

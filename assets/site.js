@@ -7,6 +7,22 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Sticky sub-navigation: highlight the link of the section in view, and keep it scrolled into sight.
+  const spy = () => {
+    const nav = document.querySelector('.subnav');
+    if (!nav || nav.dataset.spy) return;
+    nav.dataset.spy = '1';
+    const links = [...nav.querySelectorAll('a[href^="#"]')];
+    const mark = id => links.forEach(a => {
+      const on = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('is-on', on);
+      if (on) nav.querySelector('.subnav__row').scrollTo({ left: a.offsetLeft - 24, behavior: 'smooth' });
+    });
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) mark(e.target.id); }), { rootMargin: '-35% 0px -60% 0px' });
+    links.forEach(a => { const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) io.observe(t); });
+  };
+  if ('IntersectionObserver' in window) { spy(); new MutationObserver(spy).observe(root, { childList: true, subtree: true }); }
+
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   root.classList.add('rv-on');
   const io = new IntersectionObserver(entries => entries.forEach(e => {
